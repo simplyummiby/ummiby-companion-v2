@@ -1,5 +1,198 @@
 # Changelog
 
+## v2.2.4 — Qur’an Reading Bar Alignment — 2026-07-25
+
+- Removed the separate background behind **Exit Reading Mode**, allowing the rich green header color to remain uninterrupted.
+- Centered the Reading Unit label and ayah range within a balanced three-part top bar.
+- Expanded the top and bottom reading bars to the full page width, following the Duaa Reading Mode structure.
+- Adopted the richer bottom-bar green for the top bar as well.
+- Kept the bottom bar compact and shortened the centered unit or section progress indicator.
+- Refined the Qur’an **Mark Complete** control to mimic the Duaa action-button treatment in the Qur’an color palette.
+
+## v2.2.3 — Qur’an Reading Mode Refinement
+
+- Changed the top-left reading control to clearly say **Exit Reading Mode** and return directly to Qur’an Home.
+- Added a Qur’an reading settings dialog based on the Duaa reader, focused on Arabic text size while retaining the side-by-side English layout when space allows.
+- Removed the upper unit and surah progress bars so reading progress appears only in the bottom navigation.
+- Slimmed the bottom reading bar and centered a shorter progress indicator with a clear percentage label for the current unit or surah.
+- Added a visible **Study Library below** cue between the reading passage and the green Study Library.
+- Preserved the v2.2.2 Qur’an Home layout without further changes.
+
+## v2.2.2 — Qur’an Home and Reading Workspace Polish
+
+- Added **Switch Journey** to the Continue Reading feature card.
+- Rebuilt the Qur’an Home as an aligned two-column layout whose supporting progress column ends at the same height as the main reading feature.
+- Preserved the Friday behavior: Surah al-Kahf replaces the left Continue Reading feature while the right-side consistency and reading progress remain visible.
+- Widened the shared Qur’an reading workspace and increased the Reading Unit label size in the green top bar.
+- Removed the duplicate Reading Unit heading from the content area.
+- Replaced topic pills with a connected bulleted Topics in this Unit list.
+- Reworked the Qur’an Study Library to use the Duaa Study Library interaction and visual pattern with green theming.
+- Rebuilt the bottom reading controls to match the Duaa action-bar pattern, including a prominent Mark Complete action and integrated passage progress bar.
+- Preserved existing Duaa data, routes, and Qur’an vision-layout pages.
+
+## v2.2.0 — Qur’an Vision Layouts
+
+- Added a clickable rough draft of the redesigned Qur’an Home.
+- Added Reading Journeys with Reading Unit and Classic Journey cards.
+- Added Special Readings with Friday Reading, Ayat al-Kursī, the last two ayat of al-Baqarah, and Surah al-Mulk.
+- Added shared visual reading workspaces for Reading Unit, Classic, Friday Reading, and Ramadan Reading.
+- Moved the Ramadan Reading Journey into Ramadan Central while reusing the Qur’an reading workspace pattern.
+- Preserved the completed Duaa module and inline Study Library behavior.
+
+## v2.1.9 — Duaa Workspace Alignment
+
+### Changed
+
+- Removed the narrow centered desktop constraint from Duaa pages so collection content begins farther left and uses the available workspace more naturally.
+- Rebuilt the collection grid’s left rail so Today’s Status is genuinely centered in the full white-space area rather than moved with a small transform.
+- Further inset the Study Library category rows and capped their width so the pale-blue section remains clearly visible on both sides.
+
+### Preserved
+
+- All v2.1.7 functionality, 44 duaas, stable IDs, completion data, worship history, custom ordering, reading preferences, and the `ummiby.duaa.v2.1` storage key.
+
+## v2.1.7 — Duaa Final Layout Alignment
+
+### Changed
+
+- Shifted the complete Today’s Status rail left from the collection grid rather than repositioning only its inner text.
+- Centered the Today’s Status heading and status block within the left rail.
+- Narrowed Study Library category rows slightly so the section’s blue background remains visible along both sides.
+
+### Preserved
+
+- All v2.1.6 functionality, 44 duaas, stable IDs, completion data, worship history, custom ordering, reading preferences, and the `ummiby.duaa.v2.1` storage key.
+
+## v2.1.6 — Duaa Experience Polish
+
+### Added
+
+- Added circular icons beside the tracked collection titles on Duaa Home.
+- Added a reversible **Mark Done / Done Today** action directly on every tracked collection card.
+- Added accessible information tooltips for weekly-consistency and drag-order guidance.
+- Added a Reading Preferences dialog opened from a gear in the Reading Mode bar.
+- Added persistent Arabic font-size, English translation, and transliteration preferences.
+- Added rich Study Library category rows, internal category views, resource counts, empty states, and external-resource notices.
+
+### Changed
+
+- Moved Today’s Status farther left and widened the duaa list column.
+- Standardized collection-row height by visually truncating long descriptions to one line.
+- Changed the Reading Mode bar to the same dark blue used by Duaa navigation, with white controls and progress text.
+- Removed the Duaa Settings item from module navigation because reading controls now live inside Reading Mode.
+- Replaced the sterile Study Library table with the approved Option 2 rich-row presentation and a clearer visual transition from reading to study.
+
+### Preserved
+
+- All 44 duaas, stable IDs, completion data, worship history, custom ordering, and the `ummiby.duaa.v2.1` storage key.
+
+## v2.1.5 — Duaa Visual Refinement
+
+### Changed
+
+- Reduced the dashboard-card appearance of tracked collection status and progress areas.
+- Refined Daily Companion card spacing, hierarchy, weekly consistency, and recorded-state color.
+- Improved Duaa row alignment, long-title wrapping, hover behavior, focus visibility, and mobile spacing.
+- Reworked Reading Mode into a stable, full-width sticky band with fixed progress alignment.
+- Improved Arabic, transliteration, meaning, source, controls, and Study Library spacing.
+- Added stronger keyboard focus states and reduced-motion handling.
+- Consolidated the visual polish in a dedicated versioned CSS section without changing collection data or stored worship records.
+
+### Preserved
+
+- All 44 restored duaas and their stable IDs.
+- Completion, worship history, custom ordering, Reading Mode order, and the `ummiby.duaa.v2.1` storage key.
+
+## v2.1.4 – Duaa Interaction Polish
+
+- Added a familiar six-dot SVG drag handle and restricted reordering to the handle.
+- Added grab and grabbing cursor feedback and removed the obsolete up/down reorder controls.
+- Reordered each Duaa row to drag handle, completion control, title, and Read action.
+- Changed completion styling to gray outlined checks for incomplete items and dark blue filled checks for completed items; titles no longer turn green.
+- Replaced the one-way daily worship action with a reversible Record Today / Recorded for Today toggle.
+- Returned weekly consistency to the bottom of each tracked Daily Companion card and removed the separate Home consistency section.
+- Kept the Study Library visible in Reading Mode with zero-count Audio, Video, Articles, Books, and Tweets categories.
+- Stabilized the Reading Mode header height and completed a focused cleanup of obsolete reorder code and CSS.
+
+## v2.1.3 – Full Duaa Collection Restoration
+
+- Restored all 44 duaas from the complete v0.5.5 collection package.
+- Restored 16 Morning, 15 Evening, 3 Before Sleep, 2 Travel, 5 Weather, 2 Prayer, and 1 Istikharah entries.
+- Preserved source references, repeat guidance, focus phrases, virtues, verification metadata, and resource arrays.
+- Added compatible legacy ID migration for existing completion and custom-order state.
+- Kept the established `ummiby.duaa.v2.1` storage key so worship history is not reset.
+- Added `js/version.js` as the single source for the visible app version.
+- Moved collection content into `js/data/duaa-collections.js` to reduce technical debt in the behavior layer.
+- Added a complete data-integrity audit and regression tests for collection counts, required fields, duplicate IDs, saved-order behavior, and legacy completion migration.
+
+## v2.1.1 – Duaa Navigation & Collection Polish
+
+- Moved the sticky Duaa module navigation beneath the hero so every normal route opens with the hero first.
+- Replaced active-tab underlines with a quiet background highlight.
+- Removed the local Supabase setup reminder from the app workspace.
+- Restored the Weekly Consistency overview on Duaa Home.
+- Consolidated Travel, Weather, Prayer, and Istikharah under a single Collections navigation item and added a visual collection-library page.
+- Flattened and shifted the tracked collection progress area left so it no longer appears as a card.
+- Replaced Reading Mode module navigation with a dedicated colored top band and ensured all route changes start at the top.
+- Added persistent user-controlled duaa ordering with drag handles and accessible up/down controls.
+
+
+## v2.1.0 – Duaa Collection & Reading Experience
+
+- Added sticky Duaa module navigation with mobile horizontal scrolling.
+- Removed breadcrumbs from Duaa pages.
+- Added tracked Morning, Evening, and Before Sleep collection pages.
+- Separated collection completion from the daily worship record; one duaa counts.
+- Added manual daily worship recording and Sunday–Saturday consistency display.
+- Added untracked Travel, Weather, Prayer, and Istikharah collections.
+- Replaced the old modal/focus concept with dedicated full-page Reading Mode.
+- Reading Mode hides the global sidebar, retains subdued module navigation, and supports Previous/Next navigation.
+- Added local persistence for completion and worship-record state.
+- Updated version labels and documentation.
+
+## v2.0.3 — App Shell Polish Pass 2A: Banner & Canvas Refinement
+
+- Replaced the temporary illustrated shell hero with a restrained complementary module-color background.
+- Reduced banner title scaling so longer module headings remain on one line at desktop widths.
+- Reduced banner subtitle size and prevented desktop wrapping.
+- Shifted the main application canvas to a clean warm white.
+- Preserved responsive wrapping on smaller screens.
+- Documented the preferred future imagery direction based on the established Duaa module visuals.
+
+## v2.0.2 — App Shell Polish Pass 2: Bright & Welcoming
+
+- Reworked the Brand Panel and App Sidebar to use bright white and near-white surfaces.
+- Retained the circular U brand mark with a lighter, friendlier presentation.
+- Replaced the wide sidebar selection pill with a more compact active tile and removed the dark dashboard styling.
+- Kept Phosphor sidebar icons at 36px and expanded the sidebar label to “Names of Allah.”
+- Added a simple, text-free shared hero illustration sized to the existing 190px module banner area.
+- Kept banner headings and descriptions as accessible HTML, separate from the artwork.
+- Updated the App Home greeting to “Welcome” with a concise description of the companion.
+- Brightened the canvas, borders, card shadows, and responsive shell presentation.
+- Completed a focused cleanup and version consistency pass.
+
+## v2.0.1 — App Shell Polish Pass 1
+
+### Changed
+
+- Replaced the temporary hand-drawn sidebar SVG set with consistent Phosphor Regular icons.
+- Standardized desktop sidebar icons at 36px.
+- Selected House, Book Open Text, Heart, Star, Moon, and Gear icons.
+- Reworked the sidebar into a crisp dark-blue navigation rail inspired by Momentum while preserving Ummiby Companion’s warmer personality.
+- Removed the vertical active-item accent line.
+- Added a bright rounded active card with stronger contrast and clearer hover states.
+- Brightened canvas, cards, borders, and module theme colors to reduce the previous matte appearance.
+- Simplified the Module Banner by removing decorative ring/blob effects.
+- Refined typography, content spacing, card rhythm, navigation spacing, and mobile behavior.
+- Added the visible release number to the Brand Panel.
+- Added reduced-motion support for shell navigation transitions.
+
+### Preserved
+
+- Semantic HTML, modular CSS, and native JavaScript architecture.
+- Existing client-side routing, Supabase authentication boundary, module registry, and placeholder module views.
+- Memorization remains inside the Qur’an module rather than becoming a separate app-sidebar destination.
+
 ## v2.0.0 — App Shell Foundation
 
 ### Added
@@ -27,3 +220,10 @@
 - Full feature migration from Version 1.
 - Module-specific database tables.
 - Offline caching and realtime multi-device updates.
+
+
+## 2.1.9 — Duaa Inline Study Library
+
+- Narrowed Duaa Home independently from collection pages.
+- Added a light card cue around Today's Status.
+- Converted Study Library categories to expandable in-page sections with inline resources and empty states.

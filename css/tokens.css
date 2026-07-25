@@ -4,25 +4,28 @@
   --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-serif: Georgia, "Times New Roman", serif;
 
-  --color-ink: #25302d;
-  --color-muted: #68716e;
+  --color-ink: #17233a;
+  --color-muted: #667084;
   --color-surface: #ffffff;
-  --color-canvas: #f5f3ee;
-  --color-border: #dedbd2;
-  --color-sidebar: #f0eee8;
-  --color-sidebar-active: #e4e1d9;
-  --color-danger: #9d2f2f;
-  --color-success: #2f7357;
+  --color-canvas: #fffefa;
+  --color-border: #e3e8ee;
+  --color-sidebar: #fffefb;
+  --color-sidebar-deep: #fafaf7;
+  --color-sidebar-text: #18243a;
+  --color-sidebar-muted: #536173;
+  --color-sidebar-active: #f7f8fb;
+  --color-danger: #a83145;
+  --color-success: #19704e;
 
-  --theme-accent: #5f746d;
-  --theme-accent-strong: #405a52;
-  --theme-soft: #e9efed;
+  --theme-accent: #4f6f91;
+  --theme-accent-strong: #244f7a;
+  --theme-soft: #edf5fc;
   --theme-contrast: #ffffff;
 
-  --sidebar-width: 176px;
-  --banner-height: 188px;
-  --module-nav-height: 58px;
-  --content-max-width: 1180px;
+  --sidebar-width: 152px;
+  --banner-height: 190px;
+  --module-nav-height: 60px;
+  --content-max-width: 1200px;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -32,10 +35,11 @@
   --space-6: 2rem;
   --space-7: 3rem;
 
-  --radius-sm: 0.5rem;
-  --radius-md: 0.85rem;
-  --radius-lg: 1.25rem;
-  --shadow-soft: 0 12px 34px rgb(40 48 45 / 0.09);
+  --radius-sm: 0.65rem;
+  --radius-md: 0.95rem;
+  --radius-lg: 1.15rem;
+  --shadow-soft: 0 12px 30px rgb(28 54 86 / 0.07);
+  --shadow-card: 0 8px 22px rgb(28 54 86 / 0.055);
 
   font-family: var(--font-sans);
   color: var(--color-ink);
@@ -43,56 +47,42 @@
 }
 
 [data-theme="home"] {
-  --theme-accent: #6d716b;
-  --theme-accent-strong: #4f554f;
-  --theme-soft: #eceeea;
+  --theme-accent: #6c64a3;
+  --theme-accent-strong: #4e4388;
+  --theme-soft: #f1effa;
 }
 
 [data-theme="quran"] {
-  --theme-accent: #4f8069;
-  --theme-accent-strong: #315d4b;
-  --theme-soft: #e3efe9;
+  --theme-accent: #31825f;
+  --theme-accent-strong: #176342;
+  --theme-soft: #eaf7f0;
 }
 
 [data-theme="duaa"] {
-  --theme-accent: #5f83aa;
-  --theme-accent-strong: #3f638a;
-  --theme-soft: #e5eef7;
+  --theme-accent: #3d82c4;
+  --theme-accent-strong: #1f639f;
+  --theme-soft: #edf6ff;
 }
 
 [data-theme="names"] {
-  --theme-accent: #9a7a49;
-  --theme-accent-strong: #74582e;
-  --theme-soft: #f4ecdc;
+  --theme-accent: #c08728;
+  --theme-accent-strong: #96600e;
+  --theme-soft: #fff7e7;
 }
 
 [data-theme="ramadan"] {
-  --theme-accent: #76536f;
-  --theme-accent-strong: #57384f;
-  --theme-soft: #efe5ed;
+  --theme-accent: #7d3e79;
+  --theme-accent-strong: #61255d;
+  --theme-soft: #f8eef9;
 }
 
 [data-theme="settings"] {
-  --theme-accent: #68736f;
-  --theme-accent-strong: #4b5652;
-  --theme-soft: #e8ecea;
+  --theme-accent: #52677b;
+  --theme-accent-strong: #344b61;
+  --theme-soft: #f0f4f7;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  min-height: 100%;
-  margin: 0;
-}
-
-button,
-input {
-  font: inherit;
-}
-
-a {
-  color: inherit;
-}
+* { box-sizing: border-box; }
+html, body { min-height: 100%; margin: 0; }
+button, input { font: inherit; }
+a { color: inherit; }

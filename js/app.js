@@ -1,4 +1,5 @@
 import { renderShell } from "./shell.js";
+import { toggleComplete, toggleWorshipToday, setDuaaOrder, updateReadingPreferences } from "./duaa.js";
 import {
   initializeAuth,
   onAuthStateChange,
@@ -35,8 +36,10 @@ function render() {
 function navigate(route) {
   if (normalizedPath() === route) return;
   window.history.pushState({}, "", route);
+  window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   render();
-  document.querySelector("#module-content")?.focus();
+  window.scrollTo(0, 0);
+  document.querySelector("#module-content")?.focus({ preventScroll: true });
 }
 
 function bindShellEvents() {
@@ -44,6 +47,78 @@ function bindShellEvents() {
     link.addEventListener("click", (event) => {
       event.preventDefault();
       navigate(link.getAttribute("href"));
+    });
+  });
+
+  app.querySelectorAll("[data-toggle-worship]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const recorded = toggleWorshipToday(button.dataset.toggleWorship);
+      toast(recorded ? "Recorded for today." : "Today's record removed.");
+      render();
+    });
+  });
+
+  app.querySelectorAll("[data-toggle-complete]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const [collectionId, itemId] = button.dataset.toggleComplete.split(":");
+      const complete = toggleComplete(collectionId, itemId);
+      toast(complete ? "Duaa marked complete." : "Completion removed.");
+      render();
+    });
+  });
+
+  const readingDialog = app.querySelector("[data-reading-dialog]");
+  app.querySelector("[data-reading-settings]")?.addEventListener("click", () => readingDialog?.showModal());
+  const sizeInput = app.querySelector("[data-reading-size]");
+  const sizeOutput = app.querySelector("[data-size-output]");
+  sizeInput?.addEventListener("input", () => {
+    const size = Number(sizeInput.value);
+    if (sizeOutput) sizeOutput.textContent = `${size.toFixed(1)}rem`;
+    app.querySelector(".reader-page, .quran-reader")?.style.setProperty("--reader-arabic-size", `${size}rem`);
+    updateReadingPreferences({ arabicSize: size });
+  });
+  app.querySelector("[data-reading-transliteration]")?.addEventListener("change", (event) => {
+    updateReadingPreferences({ showTransliteration: event.currentTarget.checked });
+    render();
+    app.querySelector("[data-reading-dialog]")?.showModal();
+  });
+  app.querySelector("[data-reading-english]")?.addEventListener("change", (event) => {
+    updateReadingPreferences({ showEnglish: event.currentTarget.checked });
+    render();
+    app.querySelector("[data-reading-dialog]")?.showModal();
+  });
+
+  app.querySelectorAll("[data-collection-list]").forEach((list) => {
+    let draggedId = null;
+    list.querySelectorAll("[data-duaa-row]").forEach((row) => {
+      const handle = row.querySelector("[data-drag-handle]");
+      handle?.addEventListener("pointerdown", () => { row.draggable = true; });
+      handle?.addEventListener("pointerup", () => { row.draggable = false; });
+      row.addEventListener("dragstart", (event) => {
+        draggedId = row.dataset.duaaRow;
+        row.classList.add("is-dragging");
+        event.dataTransfer.effectAllowed = "move";
+      });
+      row.addEventListener("dragend", () => {
+        row.classList.remove("is-dragging");
+        row.draggable = false;
+        list.querySelectorAll(".is-drag-over").forEach(x => x.classList.remove("is-drag-over"));
+      });
+      row.addEventListener("dragover", (event) => {
+        event.preventDefault();
+        if (draggedId && draggedId !== row.dataset.duaaRow) row.classList.add("is-drag-over");
+      });
+      row.addEventListener("dragleave", () => row.classList.remove("is-drag-over"));
+      row.addEventListener("drop", (event) => {
+        event.preventDefault();
+        row.classList.remove("is-drag-over");
+        if (!draggedId || draggedId === row.dataset.duaaRow) return;
+        const ids = [...list.querySelectorAll("[data-duaa-row]")].map(x => x.dataset.duaaRow);
+        const from = ids.indexOf(draggedId);
+        const to = ids.indexOf(row.dataset.duaaRow);
+        ids.splice(to, 0, ids.splice(from, 1)[0]);
+        if (setDuaaOrder(list.dataset.collectionList, ids)) render();
+      });
     });
   });
 
