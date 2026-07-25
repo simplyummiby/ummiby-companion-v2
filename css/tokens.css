@@ -1,0 +1,98 @@
+:root {
+  color-scheme: light;
+
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+
+  --color-ink: #25302d;
+  --color-muted: #68716e;
+  --color-surface: #ffffff;
+  --color-canvas: #f5f3ee;
+  --color-border: #dedbd2;
+  --color-sidebar: #f0eee8;
+  --color-sidebar-active: #e4e1d9;
+  --color-danger: #9d2f2f;
+  --color-success: #2f7357;
+
+  --theme-accent: #5f746d;
+  --theme-accent-strong: #405a52;
+  --theme-soft: #e9efed;
+  --theme-contrast: #ffffff;
+
+  --sidebar-width: 176px;
+  --banner-height: 188px;
+  --module-nav-height: 58px;
+  --content-max-width: 1180px;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.85rem;
+  --radius-lg: 1.25rem;
+  --shadow-soft: 0 12px 34px rgb(40 48 45 / 0.09);
+
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-canvas);
+}
+
+[data-theme="home"] {
+  --theme-accent: #6d716b;
+  --theme-accent-strong: #4f554f;
+  --theme-soft: #eceeea;
+}
+
+[data-theme="quran"] {
+  --theme-accent: #4f8069;
+  --theme-accent-strong: #315d4b;
+  --theme-soft: #e3efe9;
+}
+
+[data-theme="duaa"] {
+  --theme-accent: #5f83aa;
+  --theme-accent-strong: #3f638a;
+  --theme-soft: #e5eef7;
+}
+
+[data-theme="names"] {
+  --theme-accent: #9a7a49;
+  --theme-accent-strong: #74582e;
+  --theme-soft: #f4ecdc;
+}
+
+[data-theme="ramadan"] {
+  --theme-accent: #76536f;
+  --theme-accent-strong: #57384f;
+  --theme-soft: #efe5ed;
+}
+
+[data-theme="settings"] {
+  --theme-accent: #68736f;
+  --theme-accent-strong: #4b5652;
+  --theme-soft: #e8ecea;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
