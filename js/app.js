@@ -1,7 +1,6 @@
 import { renderShell } from "./shell.js";
 import {
   initializeAuth,
-  isConfigured,
   onAuthStateChange,
   sendPasswordReset,
   signInWithPassword,
