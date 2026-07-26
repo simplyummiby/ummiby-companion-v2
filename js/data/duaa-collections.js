@@ -4020,5 +4020,35 @@ export const collections = {
         "resourceIds": []
       }
     ]
+  },
+  "food": {
+    "id": "food",
+    "label": "Food & Drink Duaas",
+    "navLabel": "Food & Drink",
+    "tracked": false,
+    "intro": "Supplications connected to eating, drinking, gratitude, and hospitality.",
+    "quote": "Eat of the good things We have provided for you and be grateful to Allah.",
+    "quoteSource": "Qur’an 2:172",
+    "items": []
+  },
+  "clothing": {
+    "id": "clothing",
+    "label": "Clothing Duaas",
+    "navLabel": "Clothing",
+    "tracked": false,
+    "intro": "Supplications for dressing, new clothing, and remembering Allah’s provision.",
+    "quote": "The clothing of righteousness—that is best.",
+    "quoteSource": "Qur’an 7:26",
+    "items": []
+  },
+  "anxiety": {
+    "id": "anxiety",
+    "label": "Anxiety & Sadness Duaas",
+    "navLabel": "Anxiety & Sadness",
+    "tracked": false,
+    "intro": "Authentic supplications for worry, grief, distress, and seeking relief from Allah.",
+    "quote": "Surely in the remembrance of Allah do hearts find rest.",
+    "quoteSource": "Qur’an 13:28",
+    "items": []
   }
 };

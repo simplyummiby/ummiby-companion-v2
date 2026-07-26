@@ -94,6 +94,75 @@
   --overlay-mobile-edge-alpha: .28;
 }
 
+
+.module-banner.is-duaa-collections-banner {
+  --banner-position-desktop: center bottom;
+  --banner-size-desktop: cover;
+  --banner-size-tablet: cover;
+  --banner-size-mobile: cover;
+  --banner-position-tablet: 58% bottom;
+  --banner-position-mobile: 66% bottom;
+  --overlay-start-alpha: .96;
+  --overlay-middle-alpha: .86;
+  --overlay-soft-alpha: .46;
+  --overlay-edge-alpha: .06;
+}
+
+.module-banner.is-duaa-history-banner {
+  --banner-position-desktop: center bottom;
+  --banner-size-desktop: cover;
+  --banner-size-tablet: cover;
+  --banner-size-mobile: cover;
+  --banner-position-tablet: 60% bottom;
+  --banner-position-mobile: 69% bottom;
+  --overlay-start-alpha: .68;
+  --overlay-middle-alpha: .55;
+  --overlay-soft-alpha: .25;
+  --overlay-edge-alpha: .04;
+  --overlay-mobile-start-alpha: .84;
+  --overlay-mobile-middle-alpha: .75;
+  --overlay-mobile-edge-alpha: .36;
+}
+
+.module-banner.is-duaa-food-banner {
+  --banner-position-desktop: center bottom;
+  --banner-size-desktop: cover;
+  --banner-size-tablet: cover;
+  --banner-size-mobile: cover;
+  --banner-position-tablet: 59% bottom;
+  --banner-position-mobile: 68% bottom;
+  --overlay-start-alpha: .95;
+  --overlay-middle-alpha: .84;
+  --overlay-soft-alpha: .45;
+  --overlay-edge-alpha: .06;
+}
+
+.module-banner.is-duaa-clothing-banner {
+  --banner-position-desktop: center bottom;
+  --banner-size-desktop: cover;
+  --banner-size-tablet: cover;
+  --banner-size-mobile: cover;
+  --banner-position-tablet: 60% bottom;
+  --banner-position-mobile: 70% bottom;
+  --overlay-start-alpha: .95;
+  --overlay-middle-alpha: .84;
+  --overlay-soft-alpha: .44;
+  --overlay-edge-alpha: .06;
+}
+
+.module-banner.is-duaa-anxiety-banner {
+  --banner-position-desktop: center bottom;
+  --banner-size-desktop: cover;
+  --banner-size-tablet: cover;
+  --banner-size-mobile: cover;
+  --banner-position-tablet: 59% bottom;
+  --banner-position-mobile: 68% bottom;
+  --overlay-start-alpha: .95;
+  --overlay-middle-alpha: .85;
+  --overlay-soft-alpha: .46;
+  --overlay-edge-alpha: .06;
+}
+
 /* ---------- Shared application of the settings ---------- */
 
 .module-banner.is-duaa-home-banner,
@@ -102,8 +171,21 @@
 .module-banner.is-duaa-weather-banner,
 .module-banner.is-duaa-prayer-banner,
 .module-banner.is-duaa-evening-banner,
-.module-banner.is-duaa-sleep-banner {
+.module-banner.is-duaa-sleep-banner,
+.module-banner.is-duaa-collections-banner,
+.module-banner.is-duaa-history-banner,
+.module-banner.is-duaa-food-banner,
+.module-banner.is-duaa-clothing-banner,
+.module-banner.is-duaa-anxiety-banner {
   background-position: var(--banner-position-desktop);
+}
+
+.module-banner.is-duaa-collections-banner,
+.module-banner.is-duaa-history-banner,
+.module-banner.is-duaa-food-banner,
+.module-banner.is-duaa-clothing-banner,
+.module-banner.is-duaa-anxiety-banner {
+  background-size: var(--banner-size-desktop);
 }
 
 .module-banner.is-duaa-travel-banner::before,
@@ -122,6 +204,28 @@
     rgb(239 246 251 / var(--overlay-middle-alpha)) 27%,
     rgb(225 236 244 / var(--overlay-soft-alpha)) 44%,
     rgb(211 225 235 / var(--overlay-edge-alpha)) 62%,
+    transparent 75%);
+}
+
+
+.module-banner.is-duaa-collections-banner::before,
+.module-banner.is-duaa-food-banner::before,
+.module-banner.is-duaa-clothing-banner::before,
+.module-banner.is-duaa-anxiety-banner::before {
+  background: linear-gradient(90deg,
+    rgb(244 250 255 / var(--overlay-start-alpha)) 0%,
+    rgb(244 250 255 / var(--overlay-middle-alpha)) 25%,
+    rgb(244 250 255 / var(--overlay-soft-alpha)) 43%,
+    rgb(244 250 255 / var(--overlay-edge-alpha)) 62%,
+    transparent 75%);
+}
+
+.module-banner.is-duaa-history-banner::before {
+  background: linear-gradient(90deg,
+    rgb(20 37 64 / var(--overlay-start-alpha)) 0%,
+    rgb(23 42 72 / var(--overlay-middle-alpha)) 26%,
+    rgb(34 49 78 / var(--overlay-soft-alpha)) 44%,
+    rgb(34 49 78 / var(--overlay-edge-alpha)) 62%,
     transparent 75%);
 }
 
@@ -150,8 +254,21 @@
   .module-banner.is-duaa-weather-banner,
   .module-banner.is-duaa-prayer-banner,
   .module-banner.is-duaa-evening-banner,
-  .module-banner.is-duaa-sleep-banner {
+  .module-banner.is-duaa-sleep-banner,
+  .module-banner.is-duaa-collections-banner,
+  .module-banner.is-duaa-history-banner,
+  .module-banner.is-duaa-food-banner,
+  .module-banner.is-duaa-clothing-banner,
+  .module-banner.is-duaa-anxiety-banner {
     background-position: var(--banner-position-tablet);
+  }
+
+  .module-banner.is-duaa-collections-banner,
+  .module-banner.is-duaa-history-banner,
+  .module-banner.is-duaa-food-banner,
+  .module-banner.is-duaa-clothing-banner,
+  .module-banner.is-duaa-anxiety-banner {
+    background-size: var(--banner-size-tablet);
   }
 }
 
@@ -162,8 +279,38 @@
   .module-banner.is-duaa-weather-banner,
   .module-banner.is-duaa-prayer-banner,
   .module-banner.is-duaa-evening-banner,
-  .module-banner.is-duaa-sleep-banner {
+  .module-banner.is-duaa-sleep-banner,
+  .module-banner.is-duaa-collections-banner,
+  .module-banner.is-duaa-history-banner,
+  .module-banner.is-duaa-food-banner,
+  .module-banner.is-duaa-clothing-banner,
+  .module-banner.is-duaa-anxiety-banner {
     background-position: var(--banner-position-mobile);
+  }
+
+  .module-banner.is-duaa-collections-banner,
+  .module-banner.is-duaa-history-banner,
+  .module-banner.is-duaa-food-banner,
+  .module-banner.is-duaa-clothing-banner,
+  .module-banner.is-duaa-anxiety-banner {
+    background-size: var(--banner-size-mobile);
+  }
+
+  .module-banner.is-duaa-collections-banner::before,
+  .module-banner.is-duaa-food-banner::before,
+  .module-banner.is-duaa-clothing-banner::before,
+  .module-banner.is-duaa-anxiety-banner::before {
+    background: linear-gradient(90deg,
+      rgb(244 250 255 / .98) 0%,
+      rgb(244 250 255 / .92) 62%,
+      rgb(244 250 255 / .5) 100%);
+  }
+
+  .module-banner.is-duaa-history-banner::before {
+    background: linear-gradient(90deg,
+      rgb(20 37 64 / var(--overlay-mobile-start-alpha)) 0%,
+      rgb(23 42 72 / var(--overlay-mobile-middle-alpha)) 62%,
+      rgb(34 49 78 / var(--overlay-mobile-edge-alpha)) 100%);
   }
 
   .module-banner.is-duaa-evening-banner::before {

@@ -1,3 +1,35 @@
+# Changelog
+
+## 3.4.4.4 — Full-Image Bottom Banner Positioning Fix
+
+- Kept the already-approved Collections, History, Food & Drink, Clothing, and Anxiety & Sadness artwork.
+- Replaced the overly shallow pre-cropped banner derivatives with the full approved images so CSS positioning can reveal the lower foreground.
+- Anchored all five banners to the bottom on desktop, tablet, and mobile.
+- Added explicit background-size variables to the banner tuning file for easy future adjustment.
+- No new graphics were generated and no page content or navigation was changed.
+
+## 3.4.4.3 — Lower Foreground Banner Crop Tuning
+
+### Changed
+
+- Adjusted the existing Collections, History, Food & Drink, Clothing, and Anxiety & Sadness banners to display the lower portion of each image.
+- Preserved the topic-specific foreground content at desktop, tablet, and mobile widths by changing the vertical banner anchor from center to bottom.
+- Kept all approved artwork, overlays, page structure, and horizontal crop settings unchanged.
+- Added no new graphics.
+
+# Changelog
+
+## 3.4.4.2 — Collections, History, and Collection Page Banners
+
+- Installed the approved Collections banner on `/duaa/collections`.
+- Installed the approved History banner on `/duaa/history`.
+- Added Food & Drink, Clothing, and Anxiety & Sadness collection routes and cards.
+- Installed the previously approved banner artwork on each new collection page.
+- Kept the new situational pages out of the Duaa module navigation bar; they are reached through Collections.
+- Extended Banner Tuning with independent desktop, tablet, mobile, and overlay controls for all five banners.
+- Added graceful content-ready states so no unverified supplication text is introduced before the dedicated content-verification pass.
+- Added matching SVG collection icons and updated version/cache references.
+
 ## 3.4.4.1 — Before Sleep Banner and Banner Tuning
 
 - Reduced the Before Sleep navy overlay so the moonlit sea, mosque, terrace, and warm porch lighting remain visible.

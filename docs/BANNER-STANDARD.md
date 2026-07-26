@@ -55,3 +55,8 @@ For a quick adjustment:
 - make small changes, usually about `.05`, and verify desktop and mobile
 
 The Before Sleep overlay is intentionally lighter beginning in v3.4.4.1 so the night atmosphere remains peaceful and visible rather than becoming visually heavy.
+
+
+## Collection discovery pages
+
+The Collections and History pages use their own banners. Situational collections that are intentionally omitted from the module navigation still receive full page banners and remain associated with the Collections navigation state.

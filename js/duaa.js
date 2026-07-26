@@ -3,7 +3,7 @@
 import { collections } from './data/duaa-collections.js';
 
 export const duaaCollections = collections;
-export const duaaOrder = ['morning','evening','sleep','travel','weather','prayer','istikharah'];
+export const duaaOrder = ['morning','evening','sleep','travel','weather','prayer','istikharah','food','clothing','anxiety'];
 
 // Keep the v2.1 storage key so a content restoration does not erase existing
 // completion, worship-history, or custom-order records.

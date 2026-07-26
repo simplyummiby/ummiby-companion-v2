@@ -44,3 +44,28 @@ Lower values reveal more of the image. Higher values make the overlay stronger. 
 5. Confirm the page-specific subject remains visible.
 
 The artwork files and the main `app-shell.css` file normally do not need to be touched for a simple crop or opacity adjustment.
+
+
+## v3.4.4.2 additions
+
+The editable profile list now also includes:
+
+- Collections
+- History
+- Food & Drink
+- Clothing
+- Anxiety & Sadness
+
+Each profile can be adjusted without affecting any other banner.
+## Showing more of the bottom of an image
+
+Use `bottom` as the second value in a banner position, for example:
+
+```css
+--banner-position-desktop: center bottom;
+--banner-position-tablet: 58% bottom;
+--banner-position-mobile: 66% bottom;
+```
+
+The first value controls left/right positioning. The second controls top/bottom positioning. This is the setting used by the v3.4.4.4 foreground crop pass.
+
