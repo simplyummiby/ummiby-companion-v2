@@ -1,5 +1,39 @@
 # Changelog
 
+## v3.4.1 — Page Epigraph & Navigation Typography Polish
+
+### Changed
+
+- Replaced the Duaa Home reflection card with the new sitewide centered page-epigraph pattern.
+- Removed the “Reflection” label and all quote background, border, and card styling.
+- Added a reusable module-colored geometric divider beneath page-introduction quotations.
+- Refined module navigation typography for clearer Windows/browser rendering using stronger contrast, moderate weight, whole-pixel-equivalent sizing, and flex alignment.
+- Updated page-introduction and design-decision documentation.
+
+### Preserved
+
+- Approved Duaa Home banner artwork, banner copy, navigation routes, Duaa data, tracking, readers, account controls, and application services.
+
+## v3.4.0 — Duaa Home Banner & Page Introduction Refresh
+
+### Added
+
+- Installed an intentionally composed, 190-pixel-tall Duaa Home banner using the approved blue coastal artwork.
+- Added a route-specific Duaa Home banner treatment without changing banners on other Duaa pages.
+- Added a concise Reflection section beneath the banner using Qur’an 40:60.
+
+### Changed
+
+- Simplified the Duaa Home banner overlay to `DUAA`, `Duaa Home`, and the purpose statement “Authentic supplications for every stage of your day.”
+- Removed the duplicate editorial introduction from the Duaa Home content area.
+- Applied a left-side readability gradient while preserving the mosque, lantern, and account control on the right.
+- Updated the visible application version and release metadata to v3.4.0.
+
+### Validation
+
+- Confirmed the approved source artwork was cropped directly to the app’s 190-pixel banner height.
+- Confirmed Duaa collection, reader, navigation, and account-menu behavior remain unchanged.
+
 ## v3.3.0 — Duaa Learning Reader & Global Knowledge Foundation — 2026-07-25
 
 ### Added

@@ -1,9 +1,8 @@
 # Ummiby Companion
 
-**v3.3.0 — Duaa Learning Reader & Global Knowledge Foundation**
+**v3.4.1 — Page Epigraph & Navigation Typography Polish**
 
-This patch fixes the missing profile control in local preview mode. The profile circle and dropdown now remain visibly testable in the shared application banner without Supabase configuration, while authenticated sessions continue to show the real user name, email, profile details, and Sign Out action.
-
+This patch establishes the centered quotation treatment as the sitewide page-introduction standard and sharpens the module navigation typography. The approved Duaa Home banner and all functional behavior are preserved.
 
 ## Duaa Learning Reader and shared knowledge libraries
 
@@ -23,25 +22,17 @@ This patch fixes the missing profile control in local preview mode. The profile 
 
 ## Current version
 
-**v3.3.0 — Duaa Learning Reader & Global Knowledge Foundation**
-
-### Added
-
-- A profile circle in the upper-right of the application banner, generated from each user’s name or email.
-- A responsive account dropdown with My Profile, Preferences, About Ummiby Companion, and Sign Out.
-- Read-only profile details using the authenticated Supabase user and loaded profile identity.
-- A confirmation dialog before ending the session.
-- Keyboard and outside-click behavior for opening and closing the account menu.
+**v3.4.1 — Page Epigraph & Navigation Typography Polish**
 
 ### Changed
 
-- Removed the temporary signed-in user strip from module content.
-- Made the profile circle the single consistent account access point throughout the application.
-- Updated application metadata and visible version references to v3.2.2.
+- Established a centered English page epigraph with no heading, card, background, or border.
+- Added a shared geometric divider that inherits the active module color.
+- Improved module-navigation clarity and text rendering without changing routes or layout.
 
 ### Preserved
 
-- Existing login, account creation, password reset, persistent session restoration, modules, routes, Duaa records, reading preferences, and local-development behavior.
+- Approved Duaa Home banner, banner text, Duaa collections and readers, tracking, account controls, authentication, and application services.
 
 ## Setup and architecture documents
 

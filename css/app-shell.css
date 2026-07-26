@@ -211,15 +211,20 @@ body {
 
 .module-nav-link {
   flex: 0 0 auto;
-  display: grid;
+  display: flex;
   align-items: center;
   min-height: var(--module-nav-height);
   padding: 0 var(--space-4);
   border-bottom: 3px solid transparent;
-  color: rgb(255 255 255 / 0.78);
+  color: rgb(255 255 255 / 0.92);
   text-decoration: none;
-  font-size: 0.86rem;
-  font-weight: 800;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.005em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
   transition: color 150ms ease, border-color 150ms ease, background 150ms ease;
 }
 
@@ -310,8 +315,10 @@ body {
 }
 
 /* v2.1.3 active module navigation */
-.module-nav-link{border-bottom:0}
-.module-nav-link.is-active{background:rgb(255 255 255 / .16);color:white}
+.module-nav-link.is-active {
+  background: rgb(255 255 255 / .14);
+  color: #fff;
+}
 
 /* v3.2.2 account menu polish and layout fixes */
 .sr-only {
@@ -555,3 +562,47 @@ body {
   line-height: 1.45;
 }
 .account-preview-note i { color: var(--theme-accent-strong); font-size: 1rem; }
+
+
+/* v3.4.0 Duaa Home intentionally composed banner */
+.module-banner.is-duaa-home-banner {
+  background-color: #dceefa;
+  background-image: url('../assets/banners/duaa-home-banner.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  border-bottom-color: rgb(39 104 153 / .2);
+}
+
+.module-banner.is-duaa-home-banner::before {
+  background: linear-gradient(90deg,
+    rgb(244 250 255 / .97) 0%,
+    rgb(244 250 255 / .9) 25%,
+    rgb(244 250 255 / .62) 39%,
+    rgb(244 250 255 / .12) 56%,
+    transparent 70%);
+}
+
+.module-banner.is-duaa-home-banner .banner-copy {
+  max-width: min(43%, 620px);
+}
+
+.module-banner.is-duaa-home-banner .banner-eyebrow { color: #1f6597; }
+.module-banner.is-duaa-home-banner .banner-title { color: #163e5e; }
+.module-banner.is-duaa-home-banner .banner-description {
+  max-width: 40ch;
+  color: #355f7a;
+}
+
+@media (max-width: 780px) {
+  .module-banner.is-duaa-home-banner { background-position: 57% center; }
+  .module-banner.is-duaa-home-banner .banner-copy { max-width: 68%; }
+}
+
+@media (max-width: 520px) {
+  .module-banner.is-duaa-home-banner { background-position: 63% center; }
+  .module-banner.is-duaa-home-banner::before {
+    background: linear-gradient(90deg, rgb(244 250 255 / .98) 0%, rgb(244 250 255 / .92) 62%, rgb(244 250 255 / .48) 100%);
+  }
+  .module-banner.is-duaa-home-banner .banner-copy { max-width: calc(100% - 2.5rem); }
+}
