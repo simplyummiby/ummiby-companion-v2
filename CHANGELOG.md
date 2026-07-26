@@ -1,5 +1,63 @@
 # Changelog
 
+## v3.2.2 — Account Menu Polish & Layout Fixes — 2026-07-25
+
+### Fixed
+
+- Prevented the account dropdown from being clipped by the module banner and covered by the sticky module navigation.
+- Removed the overlapping-avatar appearance by increasing the trigger-to-menu spacing and strengthening the menu stacking order.
+- Kept the dropdown fully visible on desktop and narrow screens.
+
+### Changed
+
+- Replaced the pill-shaped profile trigger with a simpler circular avatar and chevron.
+- Increased the dropdown width, spacing, corner radius, and elevation.
+- Added a subtle open animation and chevron rotation.
+- Renamed the unauthenticated local state from Local Preview to Preview Mode.
+
+### Release QA
+
+- Preserved authenticated user details, profile dialogs, preferences, About, and Sign Out.
+- Preserved all module routes, navigation, data keys, and Supabase startup behavior.
+- Updated visible release metadata to v3.2.2.
+
+## v3.2.1 — Account Menu Visibility Fix — 2026-07-25
+
+### Fixed
+
+- Fixed the profile circle being completely absent when the app ran without a local Supabase configuration.
+- The shared banner now renders a clearly labeled Local Preview profile control so the account-menu UI can be seen and tested during local development.
+- Authenticated sessions continue to use the real user name, email, initials, profile dates, and Sign Out action.
+- Fixed outside-click closing so it continues working every time the account menu is reopened.
+
+### Release QA
+
+- Preserved login, signup, password reset, session restoration, and authenticated sign-out behavior.
+- Preserved all existing modules, routes, navigation, Duaa records, reading settings, and local-storage keys.
+- Updated release metadata and visible version references to v3.2.1.
+
+## v3.2.0 — Account Menu & Session Management — 2026-07-25
+
+### Added
+
+- Added a reusable profile-circle control to the upper-right of every authenticated application banner.
+- Added an account dropdown with My Profile, Preferences, About Ummiby Companion, and Sign Out.
+- Added generated initials with display-name and email fallbacks for all users.
+- Added read-only profile information sourced from the authenticated user and profile identity.
+- Added accessible dialogs, Escape handling, outside-click closure, and a sign-out confirmation step.
+
+### Changed
+
+- Removed the temporary signed-in strip and its inline Sign Out button from module content.
+- Established the account menu as the single shell-level home for user and session controls.
+- Updated all release references to v3.2.0.
+
+### Compatibility and regression protection
+
+- Preserved email/password login, signup, reset, session restoration, and Supabase auth-state behavior.
+- Preserved all existing routes, module navigation, Qur’an layouts, Ramadan layouts, Duaa data, completion records, worship history, custom ordering, and reading preferences.
+- Preserved local-development rendering when Supabase configuration is absent.
+
 ## v3.1.0 — Application Services Foundation — 2026-07-25
 
 ### Added

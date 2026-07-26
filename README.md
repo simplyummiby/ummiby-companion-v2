@@ -1,34 +1,39 @@
 # Ummiby Companion
 
-**v3.1.0 — Application Services Foundation**
+**v3.2.2 — Account Menu Polish & Layout Fixes**
 
-This infrastructure release establishes one clean startup and service boundary for Supabase, authentication, profile identity, and account preferences while preserving the existing visible application and module behavior.
+This patch fixes the missing profile control in local preview mode. The profile circle and dropdown now remain visibly testable in the shared application banner without Supabase configuration, while authenticated sessions continue to show the real user name, email, profile details, and Sign Out action.
+
+## Account menu polish
+
+- Replaced the profile pill with a clean circular avatar and chevron.
+- Fixed dropdown clipping behind the module navigation.
+- Removed the overlapping-avatar appearance and increased menu spacing.
+- Added responsive positioning, a polished shadow, and a subtle open animation.
+- Renamed the local state to Preview Mode.
+
 
 ## Current version
 
-**v3.1.0 — Application Services Foundation**
+**v3.2.2 — Account Menu Polish & Layout Fixes**
 
 ### Added
 
-- One centralized Supabase client in `js/supabase.js`.
-- Dedicated authentication, identity, and preferences service responsibilities.
-- A deterministic application startup pipeline: Initialize Supabase → Restore Session → Load Profile → Load Preferences → Initialize Identity → Render Application.
-- Shared auth-state handling that reuses the same application-context loading path.
-- Permanent service-architecture documentation in `docs/APPLICATION-SERVICES.md`.
+- A profile circle in the upper-right of the application banner, generated from each user’s name or email.
+- A responsive account dropdown with My Profile, Preferences, About Ummiby Companion, and Sign Out.
+- Read-only profile details using the authenticated Supabase user and loaded profile identity.
+- A confirmation dialog before ending the session.
+- Keyboard and outside-click behavior for opening and closing the account menu.
 
-### Refactored
+### Changed
 
-- Removed Supabase client creation and configuration loading from `js/auth.js`.
-- Connected the v3.0.0 profile identity foundation to real application startup.
-- Centralized `app_preferences` loading instead of leaving it for feature code to duplicate later.
-- Preserved fail-soft profile and preference loading so temporary data-query failures do not destroy the authenticated shell.
+- Removed the temporary signed-in user strip from module content.
+- Made the profile circle the single consistent account access point throughout the application.
+- Updated application metadata and visible version references to v3.2.2.
 
 ### Preserved
 
-- Email/password sign-in, account creation, password reset, sign-out, and persistent sessions.
-- The unconfigured local-development fallback when `js/config.js` is absent.
-- Existing Qur’an, Duaa, Ramadan, shell, route, and local-storage behavior.
-- The vanilla HTML, CSS, JavaScript, and Supabase stack with no framework conversion.
+- Existing login, account creation, password reset, persistent session restoration, modules, routes, Duaa records, reading preferences, and local-development behavior.
 
 ## Setup and architecture documents
 

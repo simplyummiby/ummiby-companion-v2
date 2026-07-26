@@ -24,6 +24,13 @@ Grid cell A1. Holds the app mark and app name. The temporary `U` mark will be re
 ### Module Banner
 Grid cell B1. Holds module-specific artwork and supporting title content. Banner structure remains shared; each module supplies its own identity.
 
+
+### Account Control
+The authenticated profile circle in the upper-right of the Module Banner. It is part of the shared App Shell and must remain available across every module. The circle uses the signed-in user’s initials and opens the Account Menu.
+
+### Account Menu
+The shared dropdown containing My Profile, Preferences, About Ummiby Companion, and Sign Out. Account and session controls must not be duplicated inside individual module content.
+
 ### App Sidebar
 Grid cell A2. Provides app-wide navigation between App Home, Qur'an, Duaa, Names of Allah, Ramadan, and Settings. Phosphor Regular icons appear above labels at a consistent 36px desktop size. The active item uses a bright rounded card rather than a vertical accent line.
 

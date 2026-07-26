@@ -9,7 +9,7 @@ import {
   signUpWithPassword
 } from "./auth.js";
 import { initializeSupabase, getSupabaseClient } from "./supabase.js";
-import { clearIdentity, initializeIdentity, loadProfile } from "./identity.js";
+import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js";
 import { clearPreferences, loadPreferences } from "./preferences.js";
 
 const app = document.querySelector("#app");
@@ -32,7 +32,7 @@ function toast(message, type = "info") {
 
 function render() {
   const pathname = normalizedPath();
-  app.innerHTML = renderShell({ pathname, user: currentUser, configured });
+  app.innerHTML = renderShell({ pathname, user: currentUser, identity: getIdentity(), configured });
   bindShellEvents();
 }
 
@@ -125,12 +125,57 @@ function bindShellEvents() {
     });
   });
 
-  app.querySelector("[data-sign-out]")?.addEventListener("click", async () => {
+  const profileButton = app.querySelector("[data-profile-button]");
+  const accountMenu = app.querySelector("[data-account-menu]");
+  const closeAccountMenu = ({ returnFocus = false } = {}) => {
+    if (!accountMenu || !profileButton) return;
+    accountMenu.hidden = true;
+    profileButton.setAttribute("aria-expanded", "false");
+    if (returnFocus) profileButton.focus();
+  };
+  const openAccountMenu = () => {
+    if (!accountMenu || !profileButton) return;
+    accountMenu.hidden = false;
+    profileButton.setAttribute("aria-expanded", "true");
+    accountMenu.querySelector('[role="menuitem"]')?.focus();
+  };
+  profileButton?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    accountMenu?.hidden ? openAccountMenu() : closeAccountMenu();
+  });
+  accountMenu?.addEventListener("click", (event) => event.stopPropagation());
+  app.addEventListener("click", () => closeAccountMenu());
+  app.querySelectorAll("[data-open-account-dialog]").forEach((button) => {
+    button.addEventListener("click", () => {
+      closeAccountMenu();
+      app.querySelector(`#${button.dataset.openAccountDialog}`)?.showModal();
+    });
+  });
+  app.querySelector("[data-request-sign-out]")?.addEventListener("click", () => {
+    closeAccountMenu();
+    app.querySelector("#sign-out-dialog")?.showModal();
+  });
+  app.querySelector("[data-confirm-sign-out]")?.addEventListener("click", async (event) => {
+    const button = event.currentTarget;
+    button.disabled = true;
     try {
       await signOut();
+      app.querySelector("#sign-out-dialog")?.close();
       toast("You have been signed out.");
     } catch (error) {
+      button.disabled = false;
       toast(error.message, "error");
+    }
+  });
+  app.querySelectorAll(".account-dialog").forEach((dialog) => {
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+  });
+  app.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && accountMenu && !accountMenu.hidden) {
+      event.preventDefault();
+      closeAccountMenu({ returnFocus: true });
     }
   });
 }
