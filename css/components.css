@@ -1176,3 +1176,9 @@
     overflow:hidden;
   }
 }
+
+/* v3.4.9 Shared collection artwork */
+.collection-art.is-fallback img {
+  object-fit: contain;
+  padding: 1rem;
+}

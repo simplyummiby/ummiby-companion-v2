@@ -35,7 +35,8 @@ export async function signUpWithPassword(email, password) {
 }
 
 export async function sendPasswordReset(email) {
-  const redirectTo = `${window.location.origin}${window.location.pathname}`;
+  const basePath = window.location.pathname.replace(/\/index\.html$/, "");
+  const redirectTo = `${window.location.origin}${basePath || "/"}`;
   const { error } = await requireClient().auth.resetPasswordForEmail(email, { redirectTo });
   if (error) throw error;
 }

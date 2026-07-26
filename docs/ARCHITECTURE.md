@@ -108,3 +108,8 @@ Ummiby Companion now distinguishes between shared editorial content and personal
 - `user` receives the standard worship experience and isolated personal progress.
 - Row Level Security, rather than hidden navigation alone, is the security boundary.
 - v3.1.0 loads the signed-in profile, preferences, and application identity through the shared startup pipeline.
+
+
+## Static-host routing
+
+As of v3.4.10, application navigation uses hash routes (for example, `/#/duaa/collections`). This is intentional: the project is currently served as a static single-page application, and hash routing ensures refreshes, bookmarks, and direct links always load the root `index.html` before the client router renders the requested view. All internal application links should continue to use `data-route`; `js/app.js` converts them to safe hash URLs centrally.

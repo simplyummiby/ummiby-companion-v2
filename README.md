@@ -1,6 +1,6 @@
 # Ummiby Companion
 
-**v3.4.8 — Duaa Collections Library Refresh**
+**v3.4.10 — Static Hosting Route Reliability**
 
 This release establishes one reusable Page Epigraph system across the Duaa module while preserving collection, reader, tracking, account, banner, and application-service behavior.
 
@@ -22,20 +22,19 @@ This release establishes one reusable Page Epigraph system across the Duaa modul
 
 ## Current version
 
-**v3.4.8 — Duaa Collections Library Refresh**
+**v3.4.10 — Static Hosting Route Reliability**
 
 ### Changed
 
-- Standardized Duaa page introductions with one reusable Page Epigraph component.
-- Installed the approved quotations and citations across navigation, history, and collection pages.
-- Added optional context, detail, multi-line citation, and external-link support without empty spacing.
-- Refined navigation-to-epigraph spacing and tightened multi-line quote leading.
-- Replaced the detached Morning source icon with one inline source-text link using the Phosphor arrow-square-out icon.
-- Added `docs/EPIGRAPH-STANDARD.md`.
+- Replaced refresh-breaking clean client routes with static-host-safe hash routes.
+- Applied the fix centrally to Duaa, Qur’an, Ramadan, reading views, history, collections, and future internal `data-route` links.
+- Preserved browser Back and Forward navigation.
+- Made nested pages safe to refresh, bookmark, copy, and open in a new tab through Live Server.
+- Corrected password-reset redirects so they return to the real application entry point.
 
 ### Preserved
 
-- Approved banners and tuning, Duaa collections and readers, tracking, account controls, authentication, and application services.
+- Duaa collection artwork, epigraphs, readers, tracking, account controls, authentication, application services, and all existing page content.
 
 ## Setup and architecture documents
 

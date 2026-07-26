@@ -18,9 +18,19 @@ let currentUser = null;
 let configured = false;
 
 function normalizedPath() {
-  const withoutIndex = window.location.pathname.replace(/\/index\.html$/, "");
-  const path = withoutIndex.length > 1 ? withoutIndex.replace(/\/+$/, "") : withoutIndex;
-  return path === "/" || path === "" ? "/home" : path;
+  const hashRoute = window.location.hash.replace(/^#/, "");
+  if (!hashRoute || hashRoute === "/") return "/home";
+
+  const route = hashRoute.startsWith("/") ? hashRoute : `/${hashRoute}`;
+  return route.length > 1 ? route.replace(/\/+$/, "") : route;
+}
+
+function prepareRouteLinks() {
+  app.querySelectorAll("[data-route]").forEach((link) => {
+    const route = link.getAttribute("href") || "/home";
+    link.dataset.appRoute = route;
+    link.setAttribute("href", `#${route}`);
+  });
 }
 
 function toast(message, type = "info") {
@@ -34,23 +44,20 @@ function toast(message, type = "info") {
 function render() {
   const pathname = normalizedPath();
   app.innerHTML = renderShell({ pathname, user: currentUser, identity: getIdentity(), configured });
+  prepareRouteLinks();
   bindShellEvents();
 }
 
 function navigate(route) {
   if (normalizedPath() === route) return;
-  window.history.pushState({}, "", route);
-  window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-  render();
-  window.scrollTo(0, 0);
-  document.querySelector("#module-content")?.focus({ preventScroll: true });
+  window.location.hash = route;
 }
 
 function bindShellEvents() {
   app.querySelectorAll("[data-route]").forEach((link) => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
-      navigate(link.getAttribute("href"));
+      navigate(link.dataset.appRoute || "/home");
     });
   });
 
@@ -328,5 +335,10 @@ async function start() {
   }
 }
 
-window.addEventListener("popstate", render);
+window.addEventListener("hashchange", () => {
+  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  render();
+  window.scrollTo(0, 0);
+  document.querySelector("#module-content")?.focus({ preventScroll: true });
+});
 start();

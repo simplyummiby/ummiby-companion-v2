@@ -1,5 +1,23 @@
 # Changelog
 
+## 3.4.10 — Static Hosting Route Reliability
+
+- Fixed `Cannot GET /...` refresh failures across the entire application.
+- Replaced `history.pushState` clean routes with static-host-safe hash routes.
+- Applied the routing fix centrally to every internal link marked with `data-route`.
+- Preserved browser Back and Forward navigation with `hashchange`.
+- Made copied links and links opened in new tabs safe on Live Server and ordinary static hosting.
+- Updated password-reset redirects to return to the real application entry point.
+- Updated application, cache, documentation, and release references to 3.4.10.
+
+## 3.4.9 — Duaa Collection Artwork Reuse
+
+- Updated Duaa Home “More Collections” cards to use the same resized page-banner artwork as the Collections index.
+- Kept Morning, Evening, and Before Sleep icon-based because those are content-heavy daily tracking cards.
+- Preserved the Istikharah illustration fallback until a dedicated Istikharah page banner exists.
+- Centralized thumbnail selection so the Collections index and Duaa Home browse cards cannot drift apart.
+- Updated application, cache, documentation, and release references to 3.4.9.
+
 ## 3.4.8 — Duaa Collections Library Refresh
 
 - Replaced the Collections page card grid with a centered alphabetical library index.
