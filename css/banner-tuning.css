@@ -1,0 +1,182 @@
+/*
+  UMMIBY COMPANION — BANNER TUNING
+  =================================
+  This file is intentionally kept separate so banner presentation can be
+  adjusted without searching through the main app styles.
+
+  QUICK CHANGES
+  -------------
+  1. Move an image left/right:
+       --banner-position-desktop: 55% center;
+     A larger first percentage shows more of the LEFT side of the image.
+     A smaller first percentage shows more of the RIGHT side.
+
+  2. Brighten an overlay:
+       lower the --overlay-*-alpha numbers.
+     Darken an overlay:
+       raise the --overlay-*-alpha numbers.
+
+  3. Tablet and phone have their own position values below.
+
+  Keep values between 0 and 1 for opacity. Small changes such as .05 are
+  usually enough. Reload the page after saving this file.
+*/
+
+/* ---------- Per-banner editable settings ---------- */
+
+.module-banner.is-duaa-home-banner {
+  --banner-position-desktop: center center;
+  --banner-position-tablet: 57% center;
+  --banner-position-mobile: 63% center;
+}
+
+.module-banner.is-duaa-morning-banner {
+  --banner-position-desktop: center center;
+  --banner-position-tablet: 57% center;
+  --banner-position-mobile: 63% center;
+}
+
+.module-banner.is-duaa-travel-banner {
+  --banner-position-desktop: center center;
+  --banner-position-tablet: 58% center;
+  --banner-position-mobile: 66% center;
+  --overlay-start-alpha: .94;
+  --overlay-middle-alpha: .84;
+  --overlay-soft-alpha: .48;
+  --overlay-edge-alpha: .08;
+}
+
+.module-banner.is-duaa-weather-banner {
+  --banner-position-desktop: center center;
+  --banner-position-tablet: 58% center;
+  --banner-position-mobile: 66% center;
+  --overlay-start-alpha: .93;
+  --overlay-middle-alpha: .82;
+  --overlay-soft-alpha: .47;
+  --overlay-edge-alpha: .08;
+}
+
+.module-banner.is-duaa-prayer-banner {
+  --banner-position-desktop: center center;
+  --banner-position-tablet: 58% center;
+  --banner-position-mobile: 66% center;
+  --overlay-start-alpha: .94;
+  --overlay-middle-alpha: .84;
+  --overlay-soft-alpha: .48;
+  --overlay-edge-alpha: .08;
+}
+
+.module-banner.is-duaa-evening-banner {
+  --banner-position-desktop: center center;
+  --banner-position-tablet: 59% center;
+  --banner-position-mobile: 67% center;
+  --overlay-start-alpha: .76;
+  --overlay-middle-alpha: .64;
+  --overlay-soft-alpha: .34;
+  --overlay-edge-alpha: .07;
+  --overlay-mobile-start-alpha: .90;
+  --overlay-mobile-middle-alpha: .82;
+  --overlay-mobile-edge-alpha: .42;
+}
+
+.module-banner.is-duaa-sleep-banner {
+  --banner-position-desktop: center center;
+  --banner-position-tablet: 62% center;
+  --banner-position-mobile: 72% center;
+
+  /* v3.4.4.1: lighter than the original sleep treatment. */
+  --overlay-start-alpha: .56;
+  --overlay-middle-alpha: .44;
+  --overlay-soft-alpha: .21;
+  --overlay-edge-alpha: .035;
+  --overlay-mobile-start-alpha: .72;
+  --overlay-mobile-middle-alpha: .62;
+  --overlay-mobile-edge-alpha: .28;
+}
+
+/* ---------- Shared application of the settings ---------- */
+
+.module-banner.is-duaa-home-banner,
+.module-banner.is-duaa-morning-banner,
+.module-banner.is-duaa-travel-banner,
+.module-banner.is-duaa-weather-banner,
+.module-banner.is-duaa-prayer-banner,
+.module-banner.is-duaa-evening-banner,
+.module-banner.is-duaa-sleep-banner {
+  background-position: var(--banner-position-desktop);
+}
+
+.module-banner.is-duaa-travel-banner::before,
+.module-banner.is-duaa-prayer-banner::before {
+  background: linear-gradient(90deg,
+    rgb(244 250 255 / var(--overlay-start-alpha)) 0%,
+    rgb(244 250 255 / var(--overlay-middle-alpha)) 25%,
+    rgb(244 250 255 / var(--overlay-soft-alpha)) 42%,
+    rgb(244 250 255 / var(--overlay-edge-alpha)) 61%,
+    transparent 74%);
+}
+
+.module-banner.is-duaa-weather-banner::before {
+  background: linear-gradient(90deg,
+    rgb(239 246 251 / var(--overlay-start-alpha)) 0%,
+    rgb(239 246 251 / var(--overlay-middle-alpha)) 27%,
+    rgb(225 236 244 / var(--overlay-soft-alpha)) 44%,
+    rgb(211 225 235 / var(--overlay-edge-alpha)) 62%,
+    transparent 75%);
+}
+
+.module-banner.is-duaa-evening-banner::before {
+  background: linear-gradient(90deg,
+    rgb(20 37 64 / var(--overlay-start-alpha)) 0%,
+    rgb(23 42 72 / var(--overlay-middle-alpha)) 25%,
+    rgb(34 49 78 / var(--overlay-soft-alpha)) 43%,
+    rgb(34 49 78 / var(--overlay-edge-alpha)) 61%,
+    transparent 74%);
+}
+
+.module-banner.is-duaa-sleep-banner::before {
+  background: linear-gradient(90deg,
+    rgb(8 20 39 / var(--overlay-start-alpha)) 0%,
+    rgb(10 24 45 / var(--overlay-middle-alpha)) 27%,
+    rgb(12 28 52 / var(--overlay-soft-alpha)) 45%,
+    rgb(12 28 52 / var(--overlay-edge-alpha)) 63%,
+    transparent 76%);
+}
+
+@media (max-width: 900px) {
+  .module-banner.is-duaa-home-banner,
+  .module-banner.is-duaa-morning-banner,
+  .module-banner.is-duaa-travel-banner,
+  .module-banner.is-duaa-weather-banner,
+  .module-banner.is-duaa-prayer-banner,
+  .module-banner.is-duaa-evening-banner,
+  .module-banner.is-duaa-sleep-banner {
+    background-position: var(--banner-position-tablet);
+  }
+}
+
+@media (max-width: 620px) {
+  .module-banner.is-duaa-home-banner,
+  .module-banner.is-duaa-morning-banner,
+  .module-banner.is-duaa-travel-banner,
+  .module-banner.is-duaa-weather-banner,
+  .module-banner.is-duaa-prayer-banner,
+  .module-banner.is-duaa-evening-banner,
+  .module-banner.is-duaa-sleep-banner {
+    background-position: var(--banner-position-mobile);
+  }
+
+  .module-banner.is-duaa-evening-banner::before {
+    background: linear-gradient(90deg,
+      rgb(20 37 64 / var(--overlay-mobile-start-alpha)) 0%,
+      rgb(23 42 72 / var(--overlay-mobile-middle-alpha)) 62%,
+      rgb(34 49 78 / var(--overlay-mobile-edge-alpha)) 100%);
+  }
+
+  .module-banner.is-duaa-sleep-banner::before {
+    background: linear-gradient(90deg,
+      rgb(8 20 39 / var(--overlay-mobile-start-alpha)) 0%,
+      rgb(10 24 45 / var(--overlay-mobile-middle-alpha)) 62%,
+      rgb(12 28 52 / var(--overlay-mobile-edge-alpha)) 100%);
+  }
+}

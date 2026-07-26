@@ -1,13 +1,17 @@
 # Version
 
-**Current version:** 3.4.4  
-**Release name:** Evening and Before Sleep Banner Integration  
+**Current version:** 3.4.4.1  
+**Release name:** Before Sleep Banner and Banner Tuning  
 **Release date:** 2026-07-26
 
 ## Scope
 
-This release installs the approved Evening Duaas and Before Sleep Duaas artwork and gives each page an independently tuned crop, overlay, typography contrast, and responsive focal position.
+This polish release brightens the Before Sleep banner overlay and introduces a dedicated, human-readable `css/banner-tuning.css` file for quick per-banner crop and overlay adjustments.
+
+## Quick maintenance
+
+Banner focal positions and overlay opacity values can now be changed in one place without editing the main application stylesheet. Desktop, tablet, and mobile values are clearly labeled and documented.
 
 ## Preserved
 
-Duaa content, completion tracking, worship history, collection ordering, readers, navigation, preferences, authentication, account controls, and all unrelated layouts remain unchanged.
+Approved artwork, Duaa content, completion tracking, worship history, readers, navigation, preferences, authentication, account controls, and unrelated layouts remain unchanged.

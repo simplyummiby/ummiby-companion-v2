@@ -1,3 +1,12 @@
+## 3.4.4.1 — Before Sleep Banner and Banner Tuning
+
+- Reduced the Before Sleep navy overlay so the moonlit sea, mosque, terrace, and warm porch lighting remain visible.
+- Added `css/banner-tuning.css` as the single, clearly documented location for per-banner crop and overlay adjustments.
+- Added separate desktop, tablet, and mobile focal-position variables for the current Duaa banners.
+- Exposed readable opacity variables for Travel, Weather, Prayer, Evening, and Before Sleep overlays.
+- Added a maintenance guide explaining how to make small banner adjustments safely.
+- Preserved all approved banner artwork and unrelated application behavior.
+
 # Changelog
 
 ## 3.4.4 — Evening and Before Sleep Banner Integration

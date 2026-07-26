@@ -41,3 +41,17 @@ Situational banner artwork must be re-cropped from the approved source when the 
 ## v3.4.4 Evening and Before Sleep Variants
 
 Evening and Before Sleep extend the “Same Place, Different Time of Day” family. Evening preserves the sunset horizon, coastal silhouette, and illuminated mosque. Before Sleep preserves the moonlit sea, mosque, terrace railing, and restful porch seating. Because these scenes are naturally darker, they use individually tuned navy glass overlays with light typography rather than the pale daytime treatment. The overlay must support text contrast without flattening the atmospheric light or concealing the collection-defining details.
+
+
+## v3.4.4.1 Banner Tuning Standard
+
+Banner presentation values are centralized in `css/banner-tuning.css`. This file is the approved first stop for visual adjustments after installing artwork. Each supported Duaa banner has clearly labeled desktop, tablet, and mobile focal positions. Banners that require an overlay also expose readable alpha variables.
+
+For a quick adjustment:
+
+- change `--banner-position-*` to move the visible crop
+- lower an `--overlay-*-alpha` value to reveal more artwork
+- raise an `--overlay-*-alpha` value to increase text contrast
+- make small changes, usually about `.05`, and verify desktop and mobile
+
+The Before Sleep overlay is intentionally lighter beginning in v3.4.4.1 so the night atmosphere remains peaceful and visible rather than becoming visually heavy.
