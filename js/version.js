@@ -1,3 +1,2 @@
-export const APP_VERSION = "3.4.10";
-export const APP_RELEASE_NAME = "Static Hosting Route Reliability";
-export const APP_RELEASE_DATE = "2026-07-26";
+export const APP_VERSION = '3.4.12';
+export const APP_VERSION_LABEL = `v${APP_VERSION}`;

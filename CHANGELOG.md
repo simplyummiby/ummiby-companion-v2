@@ -1,6 +1,24 @@
 # Changelog
 
-## 3.4.10 — Static Hosting Route Reliability
+## v3.4.12 — Duaa Collection Image Path Reliability
+
+- Corrected Duaa collection image URLs so they resolve relative to the extracted project folder instead of the Live Server root.
+- Restored banner-derived thumbnails on the Collections index and landscape banner crops on Duaa Home browse cards.
+- Preserved hash-based refresh-safe routing from v3.4.10.
+- Kept Morning, Evening, and Before Sleep icon-based on Duaa Home.
+
+## v3.4.12 — Duaa Collection Banner Artwork
+
+- Installed dedicated square crops of the appropriate page banners in the Collections index.
+- Installed separate landscape banner crops in the Travel, Weather, and Prayer cards on Duaa Home.
+- Preserved icon-based Morning, Evening, and Before Sleep dashboard cards.
+- Retained the existing Istikharah illustration until a dedicated banner is created.
+- Added versioned artwork paths to prevent stale browser caching.
+- Preserved the site-wide static-host routing fix from v3.4.10.
+
+# Changelog
+
+## 3.4.12 — Static Hosting Route Reliability
 
 - Fixed `Cannot GET /...` refresh failures across the entire application.
 - Replaced `history.pushState` clean routes with static-host-safe hash routes.
@@ -8,7 +26,7 @@
 - Preserved browser Back and Forward navigation with `hashchange`.
 - Made copied links and links opened in new tabs safe on Live Server and ordinary static hosting.
 - Updated password-reset redirects to return to the real application entry point.
-- Updated application, cache, documentation, and release references to 3.4.10.
+- Updated application, cache, documentation, and release references to 3.4.12.
 
 ## 3.4.9 — Duaa Collection Artwork Reuse
 
