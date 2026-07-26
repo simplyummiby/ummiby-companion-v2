@@ -18,7 +18,8 @@ let currentUser = null;
 let configured = false;
 
 function normalizedPath() {
-  const path = window.location.pathname.replace(/\/index\.html$/, "");
+  const withoutIndex = window.location.pathname.replace(/\/index\.html$/, "");
+  const path = withoutIndex.length > 1 ? withoutIndex.replace(/\/+$/, "") : withoutIndex;
   return path === "/" || path === "" ? "/home" : path;
 }
 

@@ -8,3 +8,17 @@ Banner assets must be prepared for the actual visible banner dimensions rather t
 
 The larger generation canvas exists only to enable composition and crop selection. It is not the final application asset. Important architecture, atmosphere, and foreground details must remain readable in the final shallow strip.
 
+
+
+## Same Place, Different Time of Day — v3.4.2
+
+A related page may use a time-of-day variation of an established banner when the setting itself provides useful continuity. The variant must preserve:
+
+- the same location and architectural landmarks
+- the same camera position and composition
+- the same horizon and major foreground placement
+- the same crop-safe text and account-control zones
+
+Only environmental qualities should shift: daylight direction and warmth, sky color, haze, reflections, and the overall time-of-day mood.
+
+Morning Duaas is the first implementation. It uses the Duaa Home terrace, mosque, sea, composition, and camera position with a distinctly brighter morning treatment. The final repository asset remains cropped to the visible 190-pixel banner height.

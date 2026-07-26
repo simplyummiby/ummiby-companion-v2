@@ -606,3 +606,36 @@ body {
   }
   .module-banner.is-duaa-home-banner .banner-copy { max-width: calc(100% - 2.5rem); }
 }
+
+/* v3.4.2 Morning Duaas — same place, different time of day */
+.module-banner.is-duaa-morning-banner {
+  background-color: #e5f2fb;
+  background-image: url('../assets/banners/duaa-morning-banner.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  border-bottom-color: rgb(39 104 153 / .2);
+}
+.module-banner.is-duaa-morning-banner::before {
+  background: linear-gradient(90deg,
+    rgb(247 251 255 / .98) 0%,
+    rgb(247 251 255 / .91) 25%,
+    rgb(247 251 255 / .64) 39%,
+    rgb(247 251 255 / .14) 56%,
+    transparent 70%);
+}
+.module-banner.is-duaa-morning-banner .banner-copy { max-width: min(43%, 620px); }
+.module-banner.is-duaa-morning-banner .banner-eyebrow { color: #1f6597; }
+.module-banner.is-duaa-morning-banner .banner-title { color: #163e5e; }
+.module-banner.is-duaa-morning-banner .banner-description { max-width: 40ch; color: #355f7a; }
+@media (max-width: 780px) {
+  .module-banner.is-duaa-morning-banner { background-position: 57% center; }
+  .module-banner.is-duaa-morning-banner .banner-copy { max-width: 68%; }
+}
+@media (max-width: 520px) {
+  .module-banner.is-duaa-morning-banner { background-position: 63% center; }
+  .module-banner.is-duaa-morning-banner::before {
+    background: linear-gradient(90deg, rgb(247 251 255 / .98) 0%, rgb(247 251 255 / .93) 62%, rgb(247 251 255 / .5) 100%);
+  }
+  .module-banner.is-duaa-morning-banner .banner-copy { max-width: calc(100% - 2.5rem); }
+}

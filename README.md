@@ -1,8 +1,8 @@
 # Ummiby Companion
 
-**v3.4.1 — Page Epigraph & Navigation Typography Polish**
+**v3.4.2 — Morning Duaa Page Introduction**
 
-This patch establishes the centered quotation treatment as the sitewide page-introduction standard and sharpens the module navigation typography. The approved Duaa Home banner and all functional behavior are preserved.
+This release brings the Morning Duaa page into the official banner and Page Introduction system while preserving all collection, reader, tracking, account, and application-service behavior.
 
 ## Duaa Learning Reader and shared knowledge libraries
 
@@ -22,13 +22,13 @@ This patch establishes the centered quotation treatment as the sitewide page-int
 
 ## Current version
 
-**v3.4.1 — Page Epigraph & Navigation Typography Polish**
+**v3.4.2 — Morning Duaa Page Introduction**
 
 ### Changed
 
-- Established a centered English page epigraph with no heading, card, background, or border.
-- Added a shared geometric divider that inherits the active module color.
-- Improved module-navigation clarity and text rendering without changing routes or layout.
+- Added a dedicated Morning banner using the “Same Place, Different Time of Day” philosophy.
+- Applied the official centered Page Introduction Standard to Morning Duaas.
+- Added the Ibn Taymiyyah quotation with an icon-only external source link.
 
 ### Preserved
 

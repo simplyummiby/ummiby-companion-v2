@@ -1,5 +1,30 @@
 # Changelog
 
+## v3.4.2 — Morning Duaa Page Introduction
+
+### Release correction
+- Added local-preview route normalization so `/duaa/morning/` and `/duaa/morning` render the same Morning-specific banner and Page Introduction.
+- Added v3.4.2 cache-busting references for the touched CSS and JavaScript entry files so local preview does not reuse the prior page presentation.
+
+### Added
+
+- Installed a dedicated Morning Duaa banner derived from the approved Duaa terrace composition, preserving the same mosque, sea, terrace, and camera position while shifting the atmosphere clearly into morning.
+- Added the Morning quotation from Shaykh al-Islam Ibn Taymiyyah using the official centered Page Introduction Standard.
+- Added an icon-only external source link immediately beside the attribution.
+
+### Changed
+
+- Updated the Morning banner overlay to `DUAA`, `Morning Duaas`, and “Begin your day with authentic remembrance.”
+- Removed the old Morning collection heading and quote-card introduction from this page only.
+- Extended the shared epigraph component to support an optional explanatory attribution line and accessible external-link icon.
+- Updated release metadata and design documentation for the “Same Place, Different Time of Day” philosophy.
+
+### Cleanup and validation
+
+- Retained only the active Duaa Home and Morning banner assets.
+- Avoided collection-specific duplicate quote styling by reusing the shared Page Introduction component.
+- Verified JavaScript syntax, route-specific banner selection, responsive banner rules, external-link safety attributes, and unchanged Duaa collection/tracking behavior.
+
 ## v3.4.1 — Page Epigraph & Navigation Typography Polish
 
 ### Changed
