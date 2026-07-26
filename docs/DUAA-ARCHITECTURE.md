@@ -2,7 +2,7 @@
 
 ## Navigation
 
-Normal Duaa pages retain the global module sidebar and use a sticky horizontal Duaa navigation bar. Duaa pages do not use breadcrumbs. On mobile, the module bar scrolls horizontally.
+Normal Duaa pages retain the global module sidebar and use a sticky horizontal Duaa navigation bar. Duaa pages do not use breadcrumbs or reserve breadcrumb spacing. The Page Epigraph is the first page element beneath the module bar. On mobile, the module bar scrolls horizontally.
 
 ## Tracked collections
 
@@ -24,3 +24,8 @@ Reading Mode is a dedicated page rather than a modal. It hides the global sideba
 ## User-controlled order
 
 Each collection supports a persistent preferred recitation order. Desktop users can drag rows by the handle; touch and keyboard users can use the up/down controls. The saved order is local to the browser until cloud synchronization is added. Reading Mode follows that saved order.
+
+
+## Accent color
+
+All solid Duaa interaction accents use `#1F639F`, including the module navigation, primary buttons, progress fills, and completed checkmark backgrounds.

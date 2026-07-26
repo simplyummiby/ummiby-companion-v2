@@ -1,8 +1,8 @@
 # Ummiby Companion
 
-**v3.4.2 — Morning Duaa Page Introduction**
+**v3.4.7 — Duaa Epigraph Spacing and Source-Link Polish**
 
-This release brings the Morning Duaa page into the official banner and Page Introduction system while preserving all collection, reader, tracking, account, and application-service behavior.
+This release establishes one reusable Page Epigraph system across the Duaa module while preserving collection, reader, tracking, account, banner, and application-service behavior.
 
 ## Duaa Learning Reader and shared knowledge libraries
 
@@ -22,17 +22,20 @@ This release brings the Morning Duaa page into the official banner and Page Intr
 
 ## Current version
 
-**v3.4.2 — Morning Duaa Page Introduction**
+**v3.4.7 — Duaa Epigraph Spacing and Source-Link Polish**
 
 ### Changed
 
-- Added a dedicated Morning banner using the “Same Place, Different Time of Day” philosophy.
-- Applied the official centered Page Introduction Standard to Morning Duaas.
-- Added the Ibn Taymiyyah quotation with an icon-only external source link.
+- Standardized Duaa page introductions with one reusable Page Epigraph component.
+- Installed the approved quotations and citations across navigation, history, and collection pages.
+- Added optional context, detail, multi-line citation, and external-link support without empty spacing.
+- Refined navigation-to-epigraph spacing and tightened multi-line quote leading.
+- Replaced the detached Morning source icon with one inline source-text link using the Phosphor arrow-square-out icon.
+- Added `docs/EPIGRAPH-STANDARD.md`.
 
 ### Preserved
 
-- Approved Duaa Home banner, banner text, Duaa collections and readers, tracking, account controls, authentication, and application services.
+- Approved banners and tuning, Duaa collections and readers, tracking, account controls, authentication, and application services.
 
 ## Setup and architecture documents
 

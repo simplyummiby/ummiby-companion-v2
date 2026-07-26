@@ -1,5 +1,56 @@
 # Changelog
 
+## 3.4.7 — Duaa Epigraph Spacing and Source-Link Polish
+
+- Added balanced spacing between the Duaa module navigation and each Page Epigraph without restoring unused breadcrumb space.
+- Tightened multi-line quote leading from the earlier loose setting for a more cohesive quotation block.
+- Replaced the Morning epigraph's detached icon-only link with a descriptive inline source link.
+- Kept the Phosphor `arrow-square-out` icon on the same line and inside the same clickable element as the source text.
+- Preserved the breadcrumb-free epigraph-first page hierarchy and unified Duaa accent color `#1F639F`.
+- Updated application, cache, documentation, and release references to 3.4.7.
+
+## 3.4.6 — Duaa Epigraph Alignment and Accent Unification
+
+### Changed
+- Audited every Duaa module route to keep the reusable Page Epigraph as the first page element beneath the module navigation.
+- Removed the inherited top spacing that had been reserved by the global page layout despite Duaa pages not using breadcrumbs.
+- Confirmed Duaa landing, collection library, history, tracked collection, and untracked collection pages do not render duplicate page titles or secondary subtitles above their epigraphs.
+- Unified the Duaa solid accent token to `#1F639F`.
+- Standardized the Duaa navigation bar, primary buttons, recorded-state buttons, active progress fills, weekly completion dots, and checked-circle backgrounds to the approved accent.
+- Updated Page Epigraph and Duaa architecture documentation with the epigraph-first hierarchy and no-breadcrumb-spacing rule.
+- Updated application and cache version references to 3.4.6.
+
+## 3.4.5 — Duaa Page Epigraph System
+
+### Added
+
+- Added a centralized Duaa epigraph registry for consistent page-level quotation content.
+- Added standardized epigraphs to Morning, Evening, Before Sleep, Travel, Weather, Prayer, Food & Drink, Clothing, Anxiety & Sadness, Collections, and History.
+- Added stacked citation support for sources that require multiple lines.
+- Added `docs/EPIGRAPH-STANDARD.md` with component, typography, spacing, and contributor guidance.
+
+### Changed
+
+- Extended the existing `pageEpigraph()` renderer to use one object-based API with `context`, `quote`, `citation`, `detail`, and `externalLink`.
+- Standardized the quote as the italic visual focus and made context, citation, detail, link, and divider styling consistent across all pages.
+- Tightened the space below the banner/module navigation before each epigraph.
+- Preserved the existing Morning external source destination and diagonal-arrow treatment.
+- Replaced legacy collection-specific quotation headers with the shared component.
+- Removed the Morning-only spacing exception and consolidated duplicate epigraph CSS.
+- Updated all application and cache version references to 3.4.5.
+
+### Preserved
+
+- Existing Duaa navigation, collection lists, completion tracking, weekly history, reading mode, source/resource displays, account controls, banner artwork, and banner positioning.
+
+## 3.4.4.5 — Individual Banner Vertical Position Tuning
+
+- Left the approved Food & Drink banner exactly as it appeared in v3.4.4.4.
+- Raised Collections, History, Clothing, and Anxiety & Sadness from the full-bottom anchor so their foreground subjects are framed without sitting too low.
+- Tuned each banner independently at desktop, tablet, and mobile breakpoints.
+- Kept the approved source images, overlays, text, page content, and navigation unchanged.
+- No new graphics were generated.
+
 ## 3.4.4.4 — Full-Image Bottom Banner Positioning Fix
 
 - Kept the already-approved Collections, History, Food & Drink, Clothing, and Anxiety & Sadness artwork.

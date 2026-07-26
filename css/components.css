@@ -910,42 +910,89 @@
 .segment-missing{font-style:normal;color:var(--color-muted);opacity:.72}
 
 
-/* v3.4.1 sitewide page epigraph standard */
+/* v3.4.5 reusable Page Epigraph system */
 .page-epigraph {
   width: min(100%, 780px);
-  margin: 0 auto clamp(2rem, 4vw, 3rem);
-  padding: clamp(1.5rem, 3vw, 2.25rem) 1rem 0;
+  margin: 0 auto 2rem;
+  padding: 1rem 1rem 0;
   text-align: center;
 }
 .page-epigraph blockquote { margin: 0; }
-.page-epigraph blockquote .page-epigraph-quote {
-  margin: 0;
-  color: var(--color-ink);
-  font-family: var(--font-serif);
-  font-size: clamp(1.1rem, 1.8vw, 1.42rem);
-  line-height: 1.55;
-  text-wrap: balance;
-}
-
 .page-epigraph-context {
-  margin: 0 0 .55rem;
-  color: var(--color-muted);
-  font-family: var(--font-sans);
-  font-size: .82rem;
-  font-weight: 650;
-  line-height: 1.45;
-  letter-spacing: .015em;
-}
-.page-epigraph cite {
-  display: block;
-  margin-top: .65rem;
+  margin: 0 0 10px;
   color: var(--theme-accent-strong);
   font-family: var(--font-sans);
-  font-size: .74rem;
+  font-size: .9rem;
   font-style: normal;
-  font-weight: 750;
-  letter-spacing: .12em;
-  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.page-epigraph-quote {
+  max-width: 680px;
+  margin: 0 auto;
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 450;
+  line-height: 1.5;
+  text-wrap: balance;
+}
+.page-epigraph-citation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .22rem;
+  margin-top: 18px;
+  color: var(--color-muted);
+  font-family: var(--font-sans);
+  font-size: .95rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.page-epigraph-citation cite {
+  display: block;
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  font-style: normal;
+}
+.page-epigraph-detail {
+  margin: 10px 0 0;
+  color: var(--color-muted);
+  font-family: var(--font-sans);
+  font-size: .85rem;
+  line-height: 1.5;
+}
+.page-epigraph-source {
+  margin: 10px 0 0;
+  color: var(--color-muted);
+  font-family: var(--font-sans);
+  font-size: .85rem;
+  line-height: 1.5;
+}
+.page-epigraph-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  max-width: 100%;
+  color: inherit;
+  font: inherit;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color .16s ease;
+}
+.page-epigraph-link span:not(.sr-only) {
+  min-width: 0;
+}
+.page-epigraph-link i {
+  flex: 0 0 auto;
+  font-size: .95em;
+}
+.page-epigraph-link:hover,
+.page-epigraph-link:focus-visible {
+  color: var(--theme-accent-strong);
+  outline: none;
 }
 .page-epigraph-divider {
   display: grid;
@@ -953,13 +1000,11 @@
   align-items: center;
   gap: .7rem;
   width: min(100%, 265px);
-  margin: 1rem auto 0;
+  margin: 24px auto 0;
+  padding-bottom: 32px;
   color: color-mix(in srgb, var(--theme-accent) 78%, white);
 }
-.page-epigraph-divider span {
-  height: 1px;
-  background: currentColor;
-}
+.page-epigraph-divider span { height: 1px; background: currentColor; }
 .page-epigraph-divider svg {
   display: block;
   width: 22px;
@@ -969,46 +1014,13 @@
   stroke-width: 1.25;
   stroke-linejoin: round;
 }
+@media (max-width: 900px) {
+  .page-epigraph-quote { font-size: 1.2rem; }
+}
 @media (max-width: 560px) {
-  .page-epigraph { padding-inline: .35rem; }
-  .page-epigraph blockquote .page-epigraph-quote { font-size: 1.08rem; }
-}
-
-/* v3.4.2 Page Introduction source detail and icon-only external link */
-.page-epigraph cite {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: .35rem;
-}
-.page-epigraph-detail {
-  margin: .35rem 0 0;
-  color: var(--color-muted);
-  font-family: var(--font-sans);
-  font-size: .7rem;
-  line-height: 1.45;
-  letter-spacing: .015em;
-}
-.page-epigraph-external {
-  display: inline-grid;
-  place-items: center;
-  width: 1.45rem;
-  height: 1.45rem;
-  border-radius: 50%;
-  color: var(--theme-accent-strong);
-  font-size: .9rem;
-  text-decoration: none;
-  transition: background-color .16s ease, transform .16s ease;
-}
-.page-epigraph-external:hover,
-.page-epigraph-external:focus-visible {
-  background: var(--theme-soft);
-  transform: translateY(-1px);
-  outline: none;
-}
-.collection-page.is-morning-collection > .page-epigraph {
-  margin-bottom: clamp(2.25rem, 5vw, 3.5rem);
-  padding-top: clamp(2rem, 4vw, 3rem);
+  .page-epigraph { padding: .75rem .35rem 0; }
+  .page-epigraph-quote { font-size: 1.1rem; line-height: 1.55; }
+  .page-epigraph-citation { font-size: .9rem; }
 }
 
 /* v3.4.4.2 empty content state for newly prepared collection pages */
@@ -1017,3 +1029,43 @@
 .collection-empty-state h4{margin:0;font-family:var(--font-serif);font-size:1.35rem;color:var(--color-ink)}
 .collection-empty-state p{max-width:54ch;margin:0;line-height:1.65}
 .collection-empty-state a{font-weight:700;color:var(--theme-accent-strong)}
+
+
+/* v3.4.7 Duaa epigraph spacing and inline source-link polish */
+/* Duaa has no breadcrumb row. Remove the inherited global top reserve so the
+   epigraph is the first page element directly beneath the module navigation. */
+.module-content.is-duaa-content:not(.is-reader-content) {
+  padding-top: 1.25rem;
+}
+
+.page-epigraph {
+  padding-top: .5rem;
+}
+
+/* All solid Duaa interaction accents use the approved module blue. */
+[data-theme="duaa"] .module-nav-bar,
+[data-theme="duaa"] .button-primary,
+[data-theme="duaa"] .worship-button.is-recorded,
+[data-theme="duaa"] .row-state[aria-pressed="true"],
+[data-theme="duaa"] .mini-progress span,
+[data-theme="duaa"] .collection-progress span,
+[data-theme="duaa"] .week-day.is-active i {
+  background-color: #1f639f;
+}
+
+[data-theme="duaa"] .button-primary,
+[data-theme="duaa"] .worship-button.is-recorded,
+[data-theme="duaa"] .row-state[aria-pressed="true"],
+[data-theme="duaa"] .week-day.is-active i {
+  border-color: #1f639f;
+}
+
+@media (max-width: 780px) {
+  .module-content.is-duaa-content:not(.is-reader-content) {
+    padding-top: 1rem;
+  }
+
+  .page-epigraph {
+    padding-top: .35rem;
+  }
+}

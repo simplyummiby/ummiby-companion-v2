@@ -1,18 +1,32 @@
 # Version
 
-**Current version:** 3.4.4.4  
-**Release name:** Full-Image Bottom Banner Positioning Fix  
+**Current version:** 3.4.7  
+**Release name:** Duaa Epigraph Alignment and Accent Unification  
 **Release date:** 2026-07-26
 
 ## Scope
 
-This focused banner correction keeps the existing approved artwork and changes how the five newest banners are displayed so their lower, topic-specific foreground areas can be seen.
+This UI/UX polish release corrects the Duaa page hierarchy after the Page Epigraph rollout and unifies the module’s solid interaction accent.
 
 ## Changes
 
-- No new artwork was generated.
-- Restored the full approved source images for Collections, History, Food & Drink, Clothing, and Anxiety & Sadness rather than using vertically pre-cropped banner derivatives.
-- Kept all five banners anchored to the bottom at desktop, tablet, and mobile breakpoints.
-- Added explicit per-banner background-size controls to `css/banner-tuning.css`.
-- Existing text, overlays, page content, and navigation remain unchanged.
-- Cache and release references advanced to 3.4.4.4.
+- Removed the unused global top reserve from standard Duaa content pages because Duaa does not currently render breadcrumbs.
+- Kept the Page Epigraph as the first page element beneath the module navigation on Duaa Home, Collections, History, tracked collection pages, and hidden collection pages.
+- Confirmed no duplicate page title or secondary subtitle renders above the epigraph.
+- Standardized the Duaa solid accent token to `#1F639F`.
+- Applied the approved accent to the module navigation, primary buttons, recorded buttons, progress fills, weekly completion dots, and checked-circle backgrounds.
+- Updated the Duaa architecture and Page Epigraph contributor standards.
+- Preserved collection content, tracking, reader mode, banners, account behavior, and navigation routes.
+- Updated cache and release references to 3.4.7.
+
+
+## v3.4.7 release focus
+
+- Restored balanced breathing room between the Duaa navigation bar and Page Epigraph.
+- Reduced multi-line epigraph quote line-height for a more cohesive reading rhythm.
+- Reworked optional external sources as a single inline text-and-icon link so the Phosphor icon never drops onto a line by itself.
+- Preserved the breadcrumb-free Duaa hierarchy and unified `#1F639F` accent system.
+
+- No-breadcrumb spacing removal on all standard Duaa pages.
+- Epigraph-first Duaa page hierarchy with no duplicate secondary titling.
+- Unified solid Duaa accent color: `#1F639F`.

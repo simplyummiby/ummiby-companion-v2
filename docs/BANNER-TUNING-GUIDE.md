@@ -67,5 +67,5 @@ Use `bottom` as the second value in a banner position, for example:
 --banner-position-mobile: 66% bottom;
 ```
 
-The first value controls left/right positioning. The second controls top/bottom positioning. This is the setting used by the v3.4.4.4 foreground crop pass.
+The first value controls left/right positioning. The second controls top/bottom positioning. A value of `100%` is the full-bottom anchor; smaller values raise the image. In v3.4.4.5, the five newest banners use independent vertical values so each can be tuned without affecting the others.
 

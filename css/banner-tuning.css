@@ -96,12 +96,12 @@
 
 
 .module-banner.is-duaa-collections-banner {
-  --banner-position-desktop: center bottom;
+  --banner-position-desktop: center 88%;
   --banner-size-desktop: cover;
   --banner-size-tablet: cover;
   --banner-size-mobile: cover;
-  --banner-position-tablet: 58% bottom;
-  --banner-position-mobile: 66% bottom;
+  --banner-position-tablet: 58% 88%;
+  --banner-position-mobile: 66% 88%;
   --overlay-start-alpha: .96;
   --overlay-middle-alpha: .86;
   --overlay-soft-alpha: .46;
@@ -109,12 +109,12 @@
 }
 
 .module-banner.is-duaa-history-banner {
-  --banner-position-desktop: center bottom;
+  --banner-position-desktop: center 90%;
   --banner-size-desktop: cover;
   --banner-size-tablet: cover;
   --banner-size-mobile: cover;
-  --banner-position-tablet: 60% bottom;
-  --banner-position-mobile: 69% bottom;
+  --banner-position-tablet: 60% 90%;
+  --banner-position-mobile: 69% 90%;
   --overlay-start-alpha: .68;
   --overlay-middle-alpha: .55;
   --overlay-soft-alpha: .25;
@@ -138,12 +138,12 @@
 }
 
 .module-banner.is-duaa-clothing-banner {
-  --banner-position-desktop: center bottom;
+  --banner-position-desktop: center 85%;
   --banner-size-desktop: cover;
   --banner-size-tablet: cover;
   --banner-size-mobile: cover;
-  --banner-position-tablet: 60% bottom;
-  --banner-position-mobile: 70% bottom;
+  --banner-position-tablet: 60% 85%;
+  --banner-position-mobile: 70% 85%;
   --overlay-start-alpha: .95;
   --overlay-middle-alpha: .84;
   --overlay-soft-alpha: .44;
@@ -151,12 +151,12 @@
 }
 
 .module-banner.is-duaa-anxiety-banner {
-  --banner-position-desktop: center bottom;
+  --banner-position-desktop: center 88%;
   --banner-size-desktop: cover;
   --banner-size-tablet: cover;
   --banner-size-mobile: cover;
-  --banner-position-tablet: 59% bottom;
-  --banner-position-mobile: 68% bottom;
+  --banner-position-tablet: 59% 88%;
+  --banner-position-mobile: 68% 88%;
   --overlay-start-alpha: .95;
   --overlay-middle-alpha: .85;
   --overlay-soft-alpha: .46;
