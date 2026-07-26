@@ -1,13 +1,13 @@
 # Version
 
-**Current version:** 3.4.2  
-**Release name:** Morning Duaa Page Introduction  
+**Current version:** 3.4.3  
+**Release name:** Duaa Collection Banner Expansion  
 **Release date:** 2026-07-26
 
 ## Scope
 
-This release updates the Morning Duaa page and related design documentation only.
+This release installs approved situational artwork on the Travel, Weather, and Prayer Duaa collection pages.
 
 ## Preserved
 
-Duaa content, completion tracking, worship history, custom ordering, reading preferences, readers, authentication, account controls, application services, and all non-Morning page designs remain unchanged.
+Duaa content, completion tracking, worship history, collection ordering, reading preferences, authentication, account controls, and all non-banner layouts remain unchanged.

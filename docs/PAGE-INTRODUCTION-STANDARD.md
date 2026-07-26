@@ -34,3 +34,7 @@ When a quotation needs a brief transmission or explanation note, place it direct
 A source may be represented by a small external-link icon immediately beside the attribution. Only the icon is clickable. The link must open in a new tab, include `rel="noopener noreferrer"`, and have an accessible label describing its action. Do not add “Read more” when the icon pattern is used.
 
 Morning Duaas is the first collection page to adopt the official Page Introduction Standard. Its quotation, attribution, explanatory line, source icon, whitespace, and shared divider establish the approved collection-page implementation.
+
+## Morning Duaa Refinement (v3.4.3)
+
+When a quotation is meaningful only with situational context, a brief restrained context line may appear immediately above the quotation. Transmission or explanation notes must remain visibly smaller than the quotation and primary attribution.

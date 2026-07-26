@@ -1,5 +1,15 @@
 # Changelog
 
+## 3.4.3 — Duaa Collection Banner Expansion
+
+- Installed the approved coastal-road artwork on Travel Duaas.
+- Installed the approved wet-road and softened-cloud artwork on Weather Duaas.
+- Installed the approved mosque-terrace artwork on Prayer Duaas.
+- Added collection-specific banner titles and descriptions.
+- Added responsive image positioning and contrast overlays for readable banner typography.
+- Exported each installed asset at the official 1717 × 190 banner size and optimized it for web delivery.
+- Preserved all collection content, tracking, readers, navigation, and non-banner page styling.
+
 ## v3.4.2 — Morning Duaa Page Introduction
 
 ### Release correction
