@@ -35,7 +35,10 @@ Ummiby Companion Version 2 is a clean rebuild. Version 1 remains a reference for
 │   └── components.css
 ├── js/
 │   ├── app.js
+│   ├── supabase.js
 │   ├── auth.js
+│   ├── identity.js
+│   ├── preferences.js
 │   ├── modules.js
 │   ├── shell.js
 │   ├── config.example.js
@@ -60,6 +63,19 @@ Every registered module supplies:
 
 The shared shell consumes this contract and renders the module consistently.
 
+## Application services and startup (v3.1.0)
+
+The application owns one Supabase client in `js/supabase.js`. Authentication, profile identity, and preferences are separate services. Startup always follows this sequence:
+
+1. Initialize Supabase.
+2. Restore Session.
+3. Load Profile.
+4. Load Preferences.
+5. Initialize Identity.
+6. Render Application.
+
+See `docs/APPLICATION-SERVICES.md` for the permanent service contract.
+
 ## Authentication boundary
 
 When Supabase is configured:
@@ -81,3 +97,14 @@ Before module tracking UI is built:
 5. Add a module data service.
 6. Implement loading, saving, empty, failure, and offline states.
 7. Verify cross-device reads using the same account.
+
+## Multi-user identity foundation (v3.0.0, activated in v3.1.0)
+
+Ummiby Companion now distinguishes between shared editorial content and personal user data.
+
+- Supabase Auth owns login identity.
+- `public.profiles` owns application role and active status.
+- `super_admin` will gain private content-management tools.
+- `user` receives the standard worship experience and isolated personal progress.
+- Row Level Security, rather than hidden navigation alone, is the security boundary.
+- v3.1.0 loads the signed-in profile, preferences, and application identity through the shared startup pipeline.

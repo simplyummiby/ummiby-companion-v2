@@ -1,13 +1,16 @@
 import { renderShell } from "./shell.js";
 import { toggleComplete, toggleWorshipToday, setDuaaOrder, updateReadingPreferences } from "./duaa.js";
 import {
-  initializeAuth,
   onAuthStateChange,
+  restoreSession,
   sendPasswordReset,
   signInWithPassword,
   signOut,
   signUpWithPassword
 } from "./auth.js";
+import { initializeSupabase, getSupabaseClient } from "./supabase.js";
+import { clearIdentity, initializeIdentity, loadProfile } from "./identity.js";
+import { clearPreferences, loadPreferences } from "./preferences.js";
 
 const app = document.querySelector("#app");
 const toastRegion = document.querySelector("#toast-region");
@@ -209,23 +212,68 @@ function authScreen(mode = "signin") {
   });
 }
 
+async function loadApplicationContext(user) {
+  if (!user) {
+    clearIdentity();
+    clearPreferences();
+    return;
+  }
+
+  const client = getSupabaseClient();
+
+  // 3. Load Profile
+  const { profile, error: profileError } = await loadProfile(client, user.id);
+
+  // 4. Load Preferences
+  const { error: preferencesError } = await loadPreferences(client, user.id);
+
+  // Profile and preference services fail soft so a temporary database issue does
+  // not replace the established authenticated application with a blank screen.
+  if (profileError) console.warn("Profile could not be loaded.", profileError);
+  if (preferencesError) console.warn("Preferences could not be loaded.", preferencesError);
+
+  // 5. Initialize Identity
+  initializeIdentity(profile, user);
+}
+
+async function handleAuthenticatedUser(user) {
+  currentUser = user;
+  await loadApplicationContext(user);
+  render();
+}
+
 async function start() {
   try {
-    const state = await initializeAuth();
-    configured = state.configured;
-    currentUser = state.user;
+    // 1. Initialize Supabase
+    const supabaseState = await initializeSupabase();
+    configured = supabaseState.configured;
 
     if (!configured) {
+      // Preserve the existing local-development behavior when config.js is absent.
       render();
       return;
     }
 
-    onAuthStateChange((user) => {
-      currentUser = user;
-      if (user) render();
-      else authScreen("signin");
+    // 2. Restore Session
+    const { user } = await restoreSession();
+    currentUser = user;
+
+    // 3. Load Profile
+    // 4. Load Preferences
+    // 5. Initialize Identity
+    if (currentUser) await loadApplicationContext(currentUser);
+
+    onAuthStateChange(async ({ user: changedUser }) => {
+      if (changedUser) await handleAuthenticatedUser(changedUser);
+      else {
+        currentUser = null;
+        clearIdentity();
+        clearPreferences();
+        authScreen("signin");
+      }
     });
 
+    // 6. Render Application
     if (currentUser) render();
     else authScreen("signin");
   } catch (error) {

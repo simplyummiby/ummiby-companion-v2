@@ -1,5 +1,56 @@
 # Changelog
 
+## v3.1.0 — Application Services Foundation — 2026-07-25
+
+### Added
+
+- Added `js/supabase.js` as the single source of Supabase initialization and client access.
+- Added `js/preferences.js` for centralized loading, in-memory access, clearing, and saving of account preferences.
+- Added `docs/APPLICATION-SERVICES.md` with service boundaries and future implementation rules.
+- Activated profile-backed application identity during startup.
+
+### Refactored
+
+- Reduced `js/auth.js` to authentication responsibilities only.
+- Rebuilt startup around the ordered sequence: Initialize Supabase, Restore Session, Load Profile, Load Preferences, Initialize Identity, and Render Application.
+- Reused one application-context loader for restored sessions and later authentication state changes.
+- Removed duplicated Supabase configuration, client initialization, session restoration, and profile-loading responsibilities.
+
+### Compatibility and regression protection
+
+- Preserved the existing email/password authentication screens and actions.
+- Preserved persistent sessions, password reset redirects, and sign-out behavior.
+- Preserved local operation when Supabase configuration is absent.
+- Preserved all existing routes, shell rendering, Qur’an layouts, Ramadan layouts, Duaa content, worship records, completion records, custom ordering, and reading preferences.
+- Kept existing Duaa local-storage data in place without migration or key changes.
+
+### Cleanup
+
+- Removed the obsolete v3.0.0 identity note stating that identity was intentionally disconnected from startup.
+- Established one client owner and one startup path to prevent future service duplication.
+- Updated version and release references to v3.1.0.
+
+## v3.0.0 — Supabase Milestone 1 Foundation — 2026-07-25
+
+### Added
+
+- Added ordered SQL migrations for application roles, profile upgrades, automatic profile creation, role helpers, RLS policies, and controlled admin functions.
+- Preserved compatibility with the existing `user_id`-based profiles and app-preferences foundation.
+- Added a vanilla-JavaScript identity module without activating login gating.
+- Added permanent Supabase setup, database reference, and schema documentation.
+- Established the rule that applied migrations are never edited; later changes receive new numbered migrations.
+
+### Security
+
+- New accounts default to the regular `user` role.
+- Active users may read only their own profile unless they are the super admin.
+- Sensitive role and active-status updates are reserved for controlled super-admin operations.
+- No service-role credential is included in browser code.
+
+### Compatibility
+
+- Existing visible app behavior and module data remain unchanged while the database foundation is tested.
+
 ## v2.2.4 — Qur’an Reading Bar Alignment — 2026-07-25
 
 - Removed the separate background behind **Exit Reading Mode**, allowing the rich green header color to remain uninterrupted.
