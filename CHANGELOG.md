@@ -1,5 +1,26 @@
 # Changelog
 
+## v3.3.0 — Duaa Learning Reader & Global Knowledge Foundation — 2026-07-25
+
+### Added
+
+- Added shared global source and study-resource libraries for use across all Ummiby Companion modules.
+- Added explicit `segments`, `sourceIds`, `virtue.sourceIds`, and `resourceIds` relationships to all 44 Duaa records.
+- Added a three-column desktop learning view: Transliteration, English, and Arabic.
+- Added an Arabic-first stacked mobile learning view.
+- Added recitation-count, virtue, evidence, grade, and source-link presentation to Duaa Reading Mode.
+- Added verified-link readiness; source citations display safely as Link pending until a URL is supplied.
+
+### Preserved
+
+- Preserved all 44 existing Duaa records, seven collections, completion state, worship history, custom ordering, reading preferences, resource content, routes, authentication, and account-menu behavior.
+
+### Release QA
+
+- Confirmed every Duaa has aligned learning segments.
+- Confirmed all Duaa source IDs resolve to the shared source library.
+- Updated application version metadata and documentation to v3.3.0.
+
 ## v3.2.2 — Account Menu Polish & Layout Fixes — 2026-07-25
 
 ### Fixed

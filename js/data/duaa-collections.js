@@ -1,4 +1,4 @@
-// Restored collection content from Ummiby Companion v0.5.5.
+// Duaa collection content with aligned learning segments and shared-library references.
 export const collections = {
   "morning": {
     "id": "morning",
@@ -82,7 +82,69 @@ export const collections = {
             "translation": "For indeed, none forgives sins except You."
           }
         ],
-        "virtues": "Whoever says it during the day with firm faith in it and dies before evening will be from the people of Paradise; and whoever says it at night with firm faith in it and dies before morning will be from the people of Paradise."
+        "virtues": "Whoever says it during the day with firm faith in it and dies before evening will be from the people of Paradise; and whoever says it at night with firm faith in it and dies before morning will be from the people of Paradise.",
+        "sourceIds": [
+          "sahih-al-bukhari-6306",
+          "sahih-al-bukhari-6323"
+        ],
+        "virtue": {
+          "text": "Whoever says it during the day with firm faith in it and dies before evening will be from the people of Paradise; and whoever says it at night with firm faith in it and dies before morning will be from the people of Paradise.",
+          "sourceIds": [
+            "sahih-al-bukhari-6306",
+            "sahih-al-bukhari-6323"
+          ]
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَٰهَ إِلَّا أَنْتَ",
+            "english": "O Allah, You are my Lord; none has the right to be worshipped except You.",
+            "transliteration": "Allahumma anta Rabbi la ilaha illa Anta"
+          },
+          {
+            "order": 2,
+            "arabic": "خَلَقْتَنِي وَأَنَا عَبْدُكَ",
+            "english": "You created me, and I am Your servant.",
+            "transliteration": "Khalaqtani wa ana 'abduka"
+          },
+          {
+            "order": 3,
+            "arabic": "وَأَنَا عَلَىٰ عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ",
+            "english": "And I abide by Your covenant and promise as best as I am able.",
+            "transliteration": "Wa ana 'ala 'ahdika wa wa'dika mastata'tu"
+          },
+          {
+            "order": 4,
+            "arabic": "أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ",
+            "english": "I seek refuge in You from the evil of what I have done.",
+            "transliteration": "A'udhu bika min sharri ma sana'tu"
+          },
+          {
+            "order": 5,
+            "arabic": "أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ",
+            "english": "I acknowledge before You Your favor upon me.",
+            "transliteration": "Abu'u laka bini'matika 'alayya"
+          },
+          {
+            "order": 6,
+            "arabic": "وَأَبُوءُ بِذَنْبِي",
+            "english": "And I acknowledge my sin.",
+            "transliteration": "Wa abu'u bidhanbi"
+          },
+          {
+            "order": 7,
+            "arabic": "فَاغْفِرْ لِي",
+            "english": "So forgive me.",
+            "transliteration": "Faghfir li"
+          },
+          {
+            "order": 8,
+            "arabic": "فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ",
+            "english": "For indeed, none forgives sins except You.",
+            "transliteration": "Fa innahu la yaghfirudh-dhunuba illa Anta"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "morning-002",
@@ -169,7 +231,77 @@ export const collections = {
             "translation": "And from punishment in the grave."
           }
         ],
-        "virtues": ""
+        "virtues": "",
+        "sourceIds": [
+          "sahih-muslim-2723"
+        ],
+        "virtue": {
+          "text": "",
+          "sourceIds": []
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ",
+            "english": "We have entered the morning, and sovereignty has entered the morning belonging to Allah alone.",
+            "transliteration": "Asbahna wa asbahal-mulku lillah"
+          },
+          {
+            "order": 2,
+            "arabic": "وَالْحَمْدُ لِلَّهِ",
+            "english": "And all praise is for Allah.",
+            "transliteration": "Walhamdu lillah"
+          },
+          {
+            "order": 3,
+            "arabic": "لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ",
+            "english": "None has the right to be worshipped except Allah alone, having no partner.",
+            "transliteration": "La ilaha illallahu wahdahu la sharika lah"
+          },
+          {
+            "order": 4,
+            "arabic": "لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ",
+            "english": "Sovereignty belongs to Him, and all praise belongs to Him.",
+            "transliteration": "Lahul-mulku wa lahul-hamd"
+          },
+          {
+            "order": 5,
+            "arabic": "وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
+            "english": "And He has power over all things.",
+            "transliteration": "Wa huwa 'ala kulli shay'in qadir"
+          },
+          {
+            "order": 6,
+            "arabic": "رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذَا الْيَوْمِ وَخَيْرَ مَا بَعْدَهُ",
+            "english": "My Lord, I ask You for the good that is in this day and the good that comes after it.",
+            "transliteration": "Rabbi as'aluka khayra ma fi hadhal-yawmi wa khayra ma ba'dahu"
+          },
+          {
+            "order": 7,
+            "arabic": "وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذَا الْيَوْمِ وَشَرِّ مَا بَعْدَهُ",
+            "english": "And I seek refuge in You from the evil that is in this day and the evil that comes after it.",
+            "transliteration": "Wa a'udhu bika min sharri ma fi hadhal-yawmi wa sharri ma ba'dahu"
+          },
+          {
+            "order": 8,
+            "arabic": "رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ",
+            "english": "My Lord, I seek refuge in You from laziness and decrepit old age.",
+            "transliteration": "Rabbi a'udhu bika minal-kasali wa su'il-kibar"
+          },
+          {
+            "order": 9,
+            "arabic": "وَأَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ",
+            "english": "And I seek refuge in You from punishment in the Fire.",
+            "transliteration": "Wa a'udhu bika min 'adhabin fin-nar"
+          },
+          {
+            "order": 10,
+            "arabic": "وَعَذَابٍ فِي الْقَبْرِ",
+            "english": "And from punishment in the grave.",
+            "transliteration": "Wa 'adhabin fil-qabr"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "morning-003",
@@ -226,7 +358,49 @@ export const collections = {
             "translation": "And as plentiful as His Words."
           }
         ],
-        "virtues": "The Prophet ﷺ said: “I recited four words three times after I left you; if these are weighed against what you have recited since morning, these would outweigh them.”"
+        "virtues": "The Prophet ﷺ said: “I recited four words three times after I left you; if these are weighed against what you have recited since morning, these would outweigh them.”",
+        "sourceIds": [
+          "sahih-muslim-2726"
+        ],
+        "virtue": {
+          "text": "The Prophet ﷺ said: “I recited four words three times after I left you; if these are weighed against what you have recited since morning, these would outweigh them.”",
+          "sourceIds": [
+            "sahih-muslim-2726"
+          ]
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "سُبْحَانَ اللهِ وَبِحَمْدِهِ",
+            "english": "I declare Allah free of all imperfections, and all praise is for Him.",
+            "transliteration": "Subhanallahi wa bihamdihi"
+          },
+          {
+            "order": 2,
+            "arabic": "عَدَدَ خَلْقِهِ",
+            "english": "As much as the number of His creation.",
+            "transliteration": "'Adada khalqihi"
+          },
+          {
+            "order": 3,
+            "arabic": "وَرِضَا نَفْسِهِ",
+            "english": "As much as He Himself is pleased with.",
+            "transliteration": "Wa rida nafsihi"
+          },
+          {
+            "order": 4,
+            "arabic": "وَزِنَةَ عَرْشِهِ",
+            "english": "As much as the weight of His Throne.",
+            "transliteration": "Wa zinata 'arshihi"
+          },
+          {
+            "order": 5,
+            "arabic": "وَمِدَادَ كَلِمَاتِهِ",
+            "english": "And as plentiful as His Words.",
+            "transliteration": "Wa midada kalimatihi"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "morning-004",
@@ -271,7 +445,42 @@ export const collections = {
             "translation": "Recite Sūrah an-Nās - 3x"
           }
         ],
-        "virtues": "The Prophet ﷺ said to recite Sūrah al-Ikhlāṣ and al-Muʿawwidhatayn three times in the morning and evening; “they will serve you for every purpose.”"
+        "virtues": "The Prophet ﷺ said to recite Sūrah al-Ikhlāṣ and al-Muʿawwidhatayn three times in the morning and evening; “they will serve you for every purpose.”",
+        "sourceIds": [
+          "sunan-abi-dawud-5082",
+          "jami-at-tirmidhi-3575"
+        ],
+        "virtue": {
+          "text": "The Prophet ﷺ said to recite Sūrah al-Ikhlāṣ and al-Muʿawwidhatayn three times in the morning and evening; “they will serve you for every purpose.”",
+          "sourceIds": [
+            "sunan-abi-dawud-5082",
+            "jami-at-tirmidhi-3575"
+          ]
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "قُلْ هُوَ اللَّهُ أَحَدٌ",
+            "english": "Recite Sūrah al-Ikhlāṣ - 3x.",
+            "transliteration": "",
+            "transliterationStatus": "not-provided"
+          },
+          {
+            "order": 2,
+            "arabic": "وَالْمُعَوِّذَتَيْنِ",
+            "english": "Recite Sūrah al-Falaq - 3x.",
+            "transliteration": "",
+            "transliterationStatus": "not-provided"
+          },
+          {
+            "order": 3,
+            "arabic": "ثَلَاثَ مَرَّاتٍ",
+            "english": "Recite Sūrah an-Nās - 3x",
+            "transliteration": "",
+            "transliterationStatus": "not-provided"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "morning-005",
@@ -328,7 +537,47 @@ export const collections = {
             "translation": "And to You is the Resurrection."
           }
         ],
-        "virtues": ""
+        "virtues": "",
+        "sourceIds": [
+          "sunan-abi-dawud-5068"
+        ],
+        "virtue": {
+          "text": "",
+          "sourceIds": []
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "اللَّهُمَّ بِكَ أَصْبَحْنَا",
+            "english": "O Allah, by Your aid we enter the morning.",
+            "transliteration": "Allahumma bika asbahna"
+          },
+          {
+            "order": 2,
+            "arabic": "وَبِكَ أَمْسَيْنَا",
+            "english": "And by Your aid we enter the evening.",
+            "transliteration": "Wa bika amsayna"
+          },
+          {
+            "order": 3,
+            "arabic": "وَبِكَ نَحْيَا",
+            "english": "By Your leave we live.",
+            "transliteration": "Wa bika nahya"
+          },
+          {
+            "order": 4,
+            "arabic": "وَبِكَ نَمُوتُ",
+            "english": "And by Your leave we die.",
+            "transliteration": "Wa bika namut"
+          },
+          {
+            "order": 5,
+            "arabic": "وَإِلَيْكَ النُّشُورُ",
+            "english": "And to You is the Resurrection.",
+            "transliteration": "Wa ilaykan-nushur"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "morning-006",
@@ -382,16 +631,54 @@ export const collections = {
             "order": 5,
             "arabic": "وَهُوَ السَّمِيعُ الْعَلِيمُ",
             "transliteration": "Wa Huwas-Sami'ul-'Alim",
-            "translation": "and He is the All-Hearing,"
-          },
-          {
-            "order": 6,
-            "arabic": "",
-            "transliteration": "",
-            "translation": "the All-Knowing."
+            "translation": "and He is the All-Hearing, the All-Knowing."
           }
         ],
-        "virtues": "Whoever says this three times in the evening will not suffer sudden affliction until morning; and whoever says it in the morning will not suffer sudden affliction until evening."
+        "virtues": "Whoever says this three times in the evening will not suffer sudden affliction until morning; and whoever says it in the morning will not suffer sudden affliction until evening.",
+        "sourceIds": [
+          "sunan-abi-dawud-5088",
+          "jami-at-tirmidhi-3388"
+        ],
+        "virtue": {
+          "text": "Whoever says this three times in the evening will not suffer sudden affliction until morning; and whoever says it in the morning will not suffer sudden affliction until evening.",
+          "sourceIds": [
+            "sunan-abi-dawud-5088",
+            "jami-at-tirmidhi-3388"
+          ]
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "بِسْمِ اللَّهِ",
+            "english": "In the Name of Allah,",
+            "transliteration": "Bismillah"
+          },
+          {
+            "order": 2,
+            "arabic": "الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ",
+            "english": "with Whose Name nothing can cause harm,",
+            "transliteration": "Alladhi la yadurru ma'a ismihi shay'un"
+          },
+          {
+            "order": 3,
+            "arabic": "فِي الْأَرْضِ",
+            "english": "in the earth,",
+            "transliteration": "Fil-ard"
+          },
+          {
+            "order": 4,
+            "arabic": "وَلَا فِي السَّمَاءِ",
+            "english": "nor in the heavens,",
+            "transliteration": "Wa la fis-sama'"
+          },
+          {
+            "order": 5,
+            "arabic": "وَهُوَ السَّمِيعُ الْعَلِيمُ",
+            "english": "and He is the All-Hearing, the All-Knowing.",
+            "transliteration": "Wa Huwas-Sami'ul-'Alim"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "morning-007",
@@ -472,7 +759,73 @@ export const collections = {
             "translation": "and I seek refuge in Your Greatness from being unexpectedly destroyed from beneath me."
           }
         ],
-        "virtues": "The Messenger of Allah ﷺ never failed to utter these supplications in the evening and in the morning."
+        "virtues": "The Messenger of Allah ﷺ never failed to utter these supplications in the evening and in the morning.",
+        "sourceIds": [
+          "sunan-abi-dawud-5074"
+        ],
+        "virtue": {
+          "text": "The Messenger of Allah ﷺ never failed to utter these supplications in the evening and in the morning.",
+          "sourceIds": [
+            "sunan-abi-dawud-5074"
+          ]
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ",
+            "english": "O Allah, I ask You for well-being in this world and the Hereafter.",
+            "transliteration": "Allahumma inni as'alukal-'afiyata fid-dunya wal-akhirah"
+          },
+          {
+            "order": 2,
+            "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي دِينِي وَدُنْيَايَ وَأَهْلِي وَمَالِي",
+            "english": "O Allah, I ask You for pardon and well-being in my religion, my worldly life, my family, and my wealth.",
+            "transliteration": "Allahumma inni as'alukal-'afwa wal-'afiyah fi dini wa dunyaya wa ahli wa mali"
+          },
+          {
+            "order": 3,
+            "arabic": "اللَّهُمَّ اسْتُرْ عَوْرَاتِي وَآمِنْ رَوْعَاتِي",
+            "english": "O Allah, conceal my faults and calm my fears.",
+            "transliteration": "Allahummastur 'awrati wa amin raw'ati"
+          },
+          {
+            "order": 4,
+            "arabic": "اللَّهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَيَّ",
+            "english": "O Allah, protect me from in front of me,",
+            "transliteration": "Allahummahfazni min bayni yadayya"
+          },
+          {
+            "order": 5,
+            "arabic": "وَمِنْ خَلْفِي",
+            "english": "and from behind me,",
+            "transliteration": "Wa min khalfi"
+          },
+          {
+            "order": 6,
+            "arabic": "وَعَنْ يَمِينِي",
+            "english": "and from my right,",
+            "transliteration": "Wa 'an yamini"
+          },
+          {
+            "order": 7,
+            "arabic": "وَعَنْ شِمَالِي",
+            "english": "and from my left,",
+            "transliteration": "Wa 'an shimali"
+          },
+          {
+            "order": 8,
+            "arabic": "وَمِنْ فَوْقِي",
+            "english": "and from above me,",
+            "transliteration": "Wa min fawqi"
+          },
+          {
+            "order": 9,
+            "arabic": "وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي",
+            "english": "and I seek refuge in Your Greatness from being unexpectedly destroyed from beneath me.",
+            "transliteration": "Wa a'udhu bi'azamatika an ughtala min tahti"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "morning-008",
@@ -523,7 +876,43 @@ export const collections = {
             "translation": "And He has power over all things."
           }
         ],
-        "virtues": "Whoever says this in the morning will receive reward like freeing a slave, ten good deeds will be recorded, ten sins erased, he will be raised ten degrees, and he will be guarded from Shaytan until evening."
+        "virtues": "Whoever says this in the morning will receive reward like freeing a slave, ten good deeds will be recorded, ten sins erased, he will be raised ten degrees, and he will be guarded from Shaytan until evening.",
+        "sourceIds": [
+          "sunan-abi-dawud-5077"
+        ],
+        "virtue": {
+          "text": "Whoever says this in the morning will receive reward like freeing a slave, ten good deeds will be recorded, ten sins erased, he will be raised ten degrees, and he will be guarded from Shaytan until evening.",
+          "sourceIds": [
+            "sunan-abi-dawud-5077"
+          ]
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ",
+            "english": "None has the right to be worshipped except Allah alone, having no partner.",
+            "transliteration": "La ilaha illallahu wahdahu la sharika lah"
+          },
+          {
+            "order": 2,
+            "arabic": "لَهُ الْمُلْكُ",
+            "english": "Sovereignty belongs to Him.",
+            "transliteration": "Lahul-mulku"
+          },
+          {
+            "order": 3,
+            "arabic": "وَلَهُ الْحَمْدُ",
+            "english": "And all praise belongs to Him.",
+            "transliteration": "Wa lahul-hamd"
+          },
+          {
+            "order": 4,
+            "arabic": "وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",
+            "english": "And He has power over all things.",
+            "transliteration": "Wa huwa 'ala kulli shay'in qadir"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "morning-009",
@@ -598,7 +987,67 @@ export const collections = {
             "translation": "Or bringing it upon a Muslim."
           }
         ],
-        "virtues": "The Prophet ﷺ instructed Abu Bakr as-Siddiq to say this in the morning and in the evening."
+        "virtues": "The Prophet ﷺ instructed Abu Bakr as-Siddiq to say this in the morning and in the evening.",
+        "sourceIds": [
+          "sunan-abi-dawud-5067"
+        ],
+        "virtue": {
+          "text": "The Prophet ﷺ instructed Abu Bakr as-Siddiq to say this in the morning and in the evening.",
+          "sourceIds": [
+            "sunan-abi-dawud-5067"
+          ]
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "اللَّهُمَّ فَاطِرَ السَّمَاوَاتِ وَالْأَرْضِ",
+            "english": "O Allah, Creator and Originator of the heavens and the earth.",
+            "transliteration": "Allahumma Fatiras-samawati wal-ard"
+          },
+          {
+            "order": 2,
+            "arabic": "عَالِمَ الْغَيْبِ وَالشَّهَادَةِ",
+            "english": "Knower of the hidden and the apparent.",
+            "transliteration": "'Alimal-ghaybi wash-shahadah"
+          },
+          {
+            "order": 3,
+            "arabic": "لَا إِلَٰهَ إِلَّا أَنْتَ",
+            "english": "None has the right to be worshipped except You.",
+            "transliteration": "La ilaha illa Anta"
+          },
+          {
+            "order": 4,
+            "arabic": "رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ",
+            "english": "Lord and Sovereign of everything.",
+            "transliteration": "Rabba kulli shay'in wa malikah"
+          },
+          {
+            "order": 5,
+            "arabic": "أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي",
+            "english": "I seek refuge in You from the evil of myself.",
+            "transliteration": "A'udhu bika min sharri nafsi"
+          },
+          {
+            "order": 6,
+            "arabic": "وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ",
+            "english": "And from the evil of Satan and his shirk.",
+            "transliteration": "Wa min sharrish-shaytani wa shirkih"
+          },
+          {
+            "order": 7,
+            "arabic": "وَأَنْ أَقْتَرِفَ عَلَىٰ نَفْسِي سُوءًا",
+            "english": "And from committing evil against myself.",
+            "transliteration": "Wa an aqtarifa 'ala nafsi su'an"
+          },
+          {
+            "order": 8,
+            "arabic": "أَوْ أَجُرَّهُ إِلَىٰ مُسْلِمٍ",
+            "english": "Or bringing it upon a Muslim.",
+            "transliteration": "Aw ajurrahu ila Muslim"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "morning-010",
@@ -637,7 +1086,29 @@ export const collections = {
             "translation": "And I bear witness that none has the right to be worshipped except Allah."
           }
         ],
-        "virtues": ""
+        "virtues": "",
+        "sourceIds": [
+          "an-nasai-as-sunan-al-kubra-10331"
+        ],
+        "virtue": {
+          "text": "",
+          "sourceIds": []
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "أَصْبَحْتُ أُثْنِي عَلَيْكَ حَمْدًا",
+            "english": "I have entered the morning praising You.",
+            "transliteration": "Asbahtu uthni 'alayka hamdan"
+          },
+          {
+            "order": 2,
+            "arabic": "وَأَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ",
+            "english": "And I bear witness that none has the right to be worshipped except Allah.",
+            "transliteration": "Wa ashhadu an la ilaha illallah"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "morning-011",
@@ -700,7 +1171,53 @@ export const collections = {
             "translation": "And he was not from those who associate others with Allah."
           }
         ],
-        "virtues": ""
+        "virtues": "",
+        "sourceIds": [
+          "musnad-ahmad-21144"
+        ],
+        "virtue": {
+          "text": "",
+          "sourceIds": []
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "أَصْبَحْنَا عَلَى فِطْرَةِ الْإِسْلَامِ",
+            "english": "We have entered the morning upon the true religion of Islam.",
+            "transliteration": "Asbahna 'ala fitratil-Islam"
+          },
+          {
+            "order": 2,
+            "arabic": "وَعَلَى كَلِمَةِ الْإِخْلَاصِ",
+            "english": "And upon the word of sincere worship.",
+            "transliteration": "Wa 'ala kalimatil-ikhlas"
+          },
+          {
+            "order": 3,
+            "arabic": "وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ ﷺ",
+            "english": "And upon the religion of our Prophet Muhammad ﷺ.",
+            "transliteration": "Wa 'ala dini nabiyyina Muhammad ﷺ"
+          },
+          {
+            "order": 4,
+            "arabic": "وَعَلَى مِلَّةِ أَبِينَا إِبْرَاهِيمَ",
+            "english": "And upon the way of our forefather Ibrahim.",
+            "transliteration": "Wa 'ala millati abina Ibrahim"
+          },
+          {
+            "order": 5,
+            "arabic": "حَنِيفًا مُسْلِمًا",
+            "english": "He was upright, submitting to Allah.",
+            "transliteration": "Hanifan musliman"
+          },
+          {
+            "order": 6,
+            "arabic": "وَمَا كَانَ مِنَ الْمُشْرِكِينَ",
+            "english": "And he was not from those who associate others with Allah.",
+            "transliteration": "Wa ma kana minal-mushrikin"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "morning-012",
@@ -751,7 +1268,41 @@ export const collections = {
             "translation": "None has the right to be worshipped except You."
           }
         ],
-        "virtues": ""
+        "virtues": "",
+        "sourceIds": [
+          "sunan-abi-dawud-5090"
+        ],
+        "virtue": {
+          "text": "",
+          "sourceIds": []
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "اللَّهُمَّ عَافِنِي فِي بَدَنِي",
+            "english": "O Allah, grant me health in my body.",
+            "transliteration": "Allahumma 'afini fi badani"
+          },
+          {
+            "order": 2,
+            "arabic": "اللَّهُمَّ عَافِنِي فِي سَمْعِي",
+            "english": "O Allah, grant me good hearing.",
+            "transliteration": "Allahumma 'afini fi sam'i"
+          },
+          {
+            "order": 3,
+            "arabic": "اللَّهُمَّ عَافِنِي فِي بَصَرِي",
+            "english": "O Allah, grant me good eyesight.",
+            "transliteration": "Allahumma 'afini fi basari"
+          },
+          {
+            "order": 4,
+            "arabic": "لَا إِلَٰهَ إِلَّا أَنْتَ",
+            "english": "None has the right to be worshipped except You.",
+            "transliteration": "La ilaha illa Anta"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "morning-013",
@@ -796,7 +1347,39 @@ export const collections = {
             "translation": "And with Muhammad as my Prophet."
           }
         ],
-        "virtues": "Whoever says this in the morning and evening, Allah will certainly please him."
+        "virtues": "Whoever says this in the morning and evening, Allah will certainly please him.",
+        "sourceIds": [
+          "sunan-abi-dawud-5072",
+          "jami-at-tirmidhi-3389"
+        ],
+        "virtue": {
+          "text": "Whoever says this in the morning and evening, Allah will certainly please him.",
+          "sourceIds": [
+            "sunan-abi-dawud-5072",
+            "jami-at-tirmidhi-3389"
+          ]
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "رَضِيتُ بِاللَّهِ رَبًّا",
+            "english": "I am pleased with Allah as my Lord.",
+            "transliteration": "Raditu billahi Rabba"
+          },
+          {
+            "order": 2,
+            "arabic": "وَبِالْإِسْلَامِ دِينًا",
+            "english": "And with Islam as my religion.",
+            "transliteration": "Wa bil-Islami dina"
+          },
+          {
+            "order": 3,
+            "arabic": "وَبِمُحَمَّدٍ نَبِيًّا",
+            "english": "And with Muhammad as my Prophet.",
+            "transliteration": "Wa bi Muhammadin nabiyya"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "morning-014",
@@ -847,7 +1430,43 @@ export const collections = {
             "translation": "And He is the Lord of the Magnificent Throne."
           }
         ],
-        "virtues": "Whoever says this seven times in the morning and evening, Allah will suffice him regarding all that concerns him."
+        "virtues": "Whoever says this seven times in the morning and evening, Allah will suffice him regarding all that concerns him.",
+        "sourceIds": [
+          "sunan-abi-dawud-5081"
+        ],
+        "virtue": {
+          "text": "Whoever says this seven times in the morning and evening, Allah will suffice him regarding all that concerns him.",
+          "sourceIds": [
+            "sunan-abi-dawud-5081"
+          ]
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "حَسْبِيَ اللَّهُ",
+            "english": "Allah is sufficient for me.",
+            "transliteration": "Hasbiyallahu"
+          },
+          {
+            "order": 2,
+            "arabic": "لَا إِلَٰهَ إِلَّا هُوَ",
+            "english": "None has the right to be worshipped except Him.",
+            "transliteration": "La ilaha illa Huwa"
+          },
+          {
+            "order": 3,
+            "arabic": "عَلَيْهِ تَوَكَّلْتُ",
+            "english": "Upon Him I rely.",
+            "transliteration": "'Alayhi tawakkaltu"
+          },
+          {
+            "order": 4,
+            "arabic": "وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ",
+            "english": "And He is the Lord of the Magnificent Throne.",
+            "transliteration": "Wa Huwa Rabbul-'Arshil-'Azim"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "morning-015",
@@ -898,7 +1517,43 @@ export const collections = {
             "translation": "And do not entrust me to myself for the blink of an eye."
           }
         ],
-        "virtues": "Whenever a matter would distress him, the Prophet ﷺ would say: 'O Living, O Self-Sustaining Sustainer! In Your Mercy do I seek relief.'"
+        "virtues": "Whenever a matter would distress him, the Prophet ﷺ would say: 'O Living, O Self-Sustaining Sustainer! In Your Mercy do I seek relief.'",
+        "sourceIds": [
+          "jami-at-tirmidhi-3524"
+        ],
+        "virtue": {
+          "text": "Whenever a matter would distress him, the Prophet ﷺ would say: 'O Living, O Self-Sustaining Sustainer! In Your Mercy do I seek relief.'",
+          "sourceIds": [
+            "jami-at-tirmidhi-3524"
+          ]
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "يَا حَيُّ يَا قَيُّومُ",
+            "english": "O Ever-Living One, O Self-Subsisting Sustainer of everything.",
+            "transliteration": "Ya Hayyu ya Qayyum"
+          },
+          {
+            "order": 2,
+            "arabic": "بِرَحْمَتِكَ أَسْتَغِيثُ",
+            "english": "By Your mercy I seek help.",
+            "transliteration": "Bi rahmatika astaghith"
+          },
+          {
+            "order": 3,
+            "arabic": "أَصْلِحْ لِي شَأْنِيَ كُلَّهُ",
+            "english": "Rectify all of my affairs for me.",
+            "transliteration": "Aslih li sha'ni kullahu"
+          },
+          {
+            "order": 4,
+            "arabic": "وَلَا تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ",
+            "english": "And do not entrust me to myself for the blink of an eye.",
+            "transliteration": "Wa la takilni ila nafsi tarfata 'ayn"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "morning-016",
@@ -985,7 +1640,73 @@ export const collections = {
             "translation": "And He is the Most High, the Magnificent."
           }
         ],
-        "virtues": "Whoever recites Ayat al-Kursi in the morning will be protected until evening."
+        "virtues": "Whoever recites Ayat al-Kursi in the morning will be protected until evening.",
+        "sourceIds": [
+          "quran-2-255"
+        ],
+        "virtue": {
+          "text": "Whoever recites Ayat al-Kursi in the morning will be protected until evening.",
+          "sourceIds": [
+            "quran-2-255"
+          ]
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ",
+            "english": "Allah — none has the right to be worshipped except Him, the Ever-Living, the Self-Subsisting Sustainer.",
+            "transliteration": "Allahu la ilaha illa Huwal-Hayyul-Qayyum"
+          },
+          {
+            "order": 2,
+            "arabic": "لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ",
+            "english": "Neither drowsiness nor sleep overtakes Him.",
+            "transliteration": "La ta'khudhuhu sinatun wa la nawm"
+          },
+          {
+            "order": 3,
+            "arabic": "لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ",
+            "english": "To Him belongs whatever is in the heavens and whatever is in the earth.",
+            "transliteration": "Lahu ma fis-samawati wa ma fil-ard"
+          },
+          {
+            "order": 4,
+            "arabic": "مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ",
+            "english": "Who is it that can intercede with Him except by His permission?",
+            "transliteration": "Man dhal-ladhi yashfa'u 'indahu illa bi idhnih"
+          },
+          {
+            "order": 5,
+            "arabic": "يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ",
+            "english": "He knows what is before them and what is behind them.",
+            "transliteration": "Ya'lamu ma bayna aydihim wa ma khalfahum"
+          },
+          {
+            "order": 6,
+            "arabic": "وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ",
+            "english": "And they encompass nothing of His knowledge except what He wills.",
+            "transliteration": "Wa la yuhituna bishay'in min 'ilmihi illa bima sha'"
+          },
+          {
+            "order": 7,
+            "arabic": "وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ",
+            "english": "His Footstool extends over the heavens and the earth.",
+            "transliteration": "Wasi'a Kursiyyuhus-samawati wal-ard"
+          },
+          {
+            "order": 8,
+            "arabic": "وَلَا يَئُودُهُ حِفْظُهُمَا",
+            "english": "And preserving them does not tire Him.",
+            "transliteration": "Wa la ya'uduhu hifzuhuma"
+          },
+          {
+            "order": 9,
+            "arabic": "وَهُوَ الْعَلِيُّ الْعَظِيمُ",
+            "english": "And He is the Most High, the Magnificent.",
+            "transliteration": "Wa Huwal-'Aliyyul-'Azim"
+          }
+        ],
+        "resourceIds": []
       }
     ]
   },
@@ -1071,7 +1792,69 @@ export const collections = {
             "translation": "For indeed, none forgives sins except You."
           }
         ],
-        "virtues": "Whoever says it during the day with firm faith in it and dies before evening will be from the people of Paradise; and whoever says it at night with firm faith in it and dies before morning will be from the people of Paradise."
+        "virtues": "Whoever says it during the day with firm faith in it and dies before evening will be from the people of Paradise; and whoever says it at night with firm faith in it and dies before morning will be from the people of Paradise.",
+        "sourceIds": [
+          "sahih-al-bukhari-6306",
+          "sahih-al-bukhari-6323"
+        ],
+        "virtue": {
+          "text": "Whoever says it during the day with firm faith in it and dies before evening will be from the people of Paradise; and whoever says it at night with firm faith in it and dies before morning will be from the people of Paradise.",
+          "sourceIds": [
+            "sahih-al-bukhari-6306",
+            "sahih-al-bukhari-6323"
+          ]
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَٰهَ إِلَّا أَنْتَ",
+            "english": "O Allah, You are my Lord; none has the right to be worshipped except You.",
+            "transliteration": "Allahumma anta Rabbi la ilaha illa Anta"
+          },
+          {
+            "order": 2,
+            "arabic": "خَلَقْتَنِي وَأَنَا عَبْدُكَ",
+            "english": "You created me, and I am Your servant.",
+            "transliteration": "Khalaqtani wa ana 'abduka"
+          },
+          {
+            "order": 3,
+            "arabic": "وَأَنَا عَلَىٰ عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ",
+            "english": "And I abide by Your covenant and promise as best as I am able.",
+            "transliteration": "Wa ana 'ala 'ahdika wa wa'dika mastata'tu"
+          },
+          {
+            "order": 4,
+            "arabic": "أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ",
+            "english": "I seek refuge in You from the evil of what I have done.",
+            "transliteration": "A'udhu bika min sharri ma sana'tu"
+          },
+          {
+            "order": 5,
+            "arabic": "أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ",
+            "english": "I acknowledge before You Your favor upon me.",
+            "transliteration": "Abu'u laka bini'matika 'alayya"
+          },
+          {
+            "order": 6,
+            "arabic": "وَأَبُوءُ بِذَنْبِي",
+            "english": "And I acknowledge my sin.",
+            "transliteration": "Wa abu'u bidhanbi"
+          },
+          {
+            "order": 7,
+            "arabic": "فَاغْفِرْ لِي",
+            "english": "So forgive me.",
+            "transliteration": "Faghfir li"
+          },
+          {
+            "order": 8,
+            "arabic": "فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ",
+            "english": "For indeed, none forgives sins except You.",
+            "transliteration": "Fa innahu la yaghfirudh-dhunuba illa Anta"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "evening-002",
@@ -1116,7 +1899,42 @@ export const collections = {
             "translation": "Recite Sūrah an-Nās - 3x"
           }
         ],
-        "virtues": "The Prophet ﷺ said to recite Sūrah al-Ikhlāṣ and al-Muʿawwidhatayn three times in the morning and evening; “they will serve you for every purpose.”"
+        "virtues": "The Prophet ﷺ said to recite Sūrah al-Ikhlāṣ and al-Muʿawwidhatayn three times in the morning and evening; “they will serve you for every purpose.”",
+        "sourceIds": [
+          "sunan-abi-dawud-5082",
+          "jami-at-tirmidhi-3575"
+        ],
+        "virtue": {
+          "text": "The Prophet ﷺ said to recite Sūrah al-Ikhlāṣ and al-Muʿawwidhatayn three times in the morning and evening; “they will serve you for every purpose.”",
+          "sourceIds": [
+            "sunan-abi-dawud-5082",
+            "jami-at-tirmidhi-3575"
+          ]
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "قُلْ هُوَ اللَّهُ أَحَدٌ",
+            "english": "Recite Sūrah al-Ikhlāṣ - 3x.",
+            "transliteration": "",
+            "transliterationStatus": "not-provided"
+          },
+          {
+            "order": 2,
+            "arabic": "وَالْمُعَوِّذَتَيْنِ",
+            "english": "Recite Sūrah al-Falaq - 3x.",
+            "transliteration": "",
+            "transliterationStatus": "not-provided"
+          },
+          {
+            "order": 3,
+            "arabic": "ثَلَاثَ مَرَّاتٍ",
+            "english": "Recite Sūrah an-Nās - 3x",
+            "transliteration": "",
+            "transliterationStatus": "not-provided"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "evening-003",
@@ -1203,7 +2021,77 @@ export const collections = {
             "translation": "And from punishment in the grave."
           }
         ],
-        "virtues": ""
+        "virtues": "",
+        "sourceIds": [
+          "sahih-muslim-2723"
+        ],
+        "virtue": {
+          "text": "",
+          "sourceIds": []
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ",
+            "english": "We have entered the evening and Sovereignty has entered the evening belonging to Allah.",
+            "transliteration": "Amsayna wa amsal-mulku lillah"
+          },
+          {
+            "order": 2,
+            "arabic": "وَالْحَمْدُ لِلَّهِ",
+            "english": "And all praise is for Allah.",
+            "transliteration": "Walhamdu lillah"
+          },
+          {
+            "order": 3,
+            "arabic": "لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ",
+            "english": "None has the right to be worshipped except Allah alone, having no partner.",
+            "transliteration": "La ilaha illallahu wahdahu la sharika lah"
+          },
+          {
+            "order": 4,
+            "arabic": "لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ",
+            "english": "Sovereignty belongs to Him and all praise belongs to Him.",
+            "transliteration": "Lahul-mulku wa lahul-hamd"
+          },
+          {
+            "order": 5,
+            "arabic": "وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",
+            "english": "And He has power over all things.",
+            "transliteration": "Wa huwa 'ala kulli shay'in qadir"
+          },
+          {
+            "order": 6,
+            "arabic": "رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا",
+            "english": "My Lord, I ask You for the good that is in this night and the good that comes after it.",
+            "transliteration": "Rabbi as'aluka khayra ma fi hadhihil-laylati wa khayra ma ba'daha"
+          },
+          {
+            "order": 7,
+            "arabic": "وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا",
+            "english": "And I seek refuge in You from the evil that is in this night and the evil that comes after it.",
+            "transliteration": "Wa a'udhu bika min sharri ma fi hadhihil-laylati wa sharri ma ba'daha"
+          },
+          {
+            "order": 8,
+            "arabic": "رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ",
+            "english": "My Lord, I seek refuge in You from laziness and the misery of old age.",
+            "transliteration": "Rabbi a'udhu bika minal-kasali wa su'il-kibar"
+          },
+          {
+            "order": 9,
+            "arabic": "رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ",
+            "english": "My Lord, I seek refuge in You from punishment in the Fire.",
+            "transliteration": "Rabbi a'udhu bika min 'adhabin fin-nar"
+          },
+          {
+            "order": 10,
+            "arabic": "وَعَذَابٍ فِي الْقَبْرِ",
+            "english": "And from punishment in the grave.",
+            "transliteration": "Wa 'adhabin fil-qabr"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "evening-004",
@@ -1257,16 +2145,54 @@ export const collections = {
             "order": 5,
             "arabic": "وَهُوَ السَّمِيعُ الْعَلِيمُ",
             "transliteration": "Wa Huwas-Sami'ul-'Alim",
-            "translation": "and He is the All-Hearing,"
-          },
-          {
-            "order": 6,
-            "arabic": "",
-            "transliteration": "",
-            "translation": "the All-Knowing."
+            "translation": "and He is the All-Hearing, the All-Knowing."
           }
         ],
-        "virtues": "Whoever says this three times in the evening will not suffer sudden affliction until morning; and whoever says it in the morning will not suffer sudden affliction until evening."
+        "virtues": "Whoever says this three times in the evening will not suffer sudden affliction until morning; and whoever says it in the morning will not suffer sudden affliction until evening.",
+        "sourceIds": [
+          "sunan-abi-dawud-5088",
+          "jami-at-tirmidhi-3388"
+        ],
+        "virtue": {
+          "text": "Whoever says this three times in the evening will not suffer sudden affliction until morning; and whoever says it in the morning will not suffer sudden affliction until evening.",
+          "sourceIds": [
+            "sunan-abi-dawud-5088",
+            "jami-at-tirmidhi-3388"
+          ]
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "بِسْمِ اللَّهِ",
+            "english": "In the Name of Allah,",
+            "transliteration": "Bismillah"
+          },
+          {
+            "order": 2,
+            "arabic": "الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ",
+            "english": "with Whose Name nothing can cause harm,",
+            "transliteration": "Alladhi la yadurru ma'a ismihi shay'un"
+          },
+          {
+            "order": 3,
+            "arabic": "فِي الْأَرْضِ",
+            "english": "in the earth,",
+            "transliteration": "Fil-ard"
+          },
+          {
+            "order": 4,
+            "arabic": "وَلَا فِي السَّمَاءِ",
+            "english": "nor in the heavens,",
+            "transliteration": "Wa la fis-sama'"
+          },
+          {
+            "order": 5,
+            "arabic": "وَهُوَ السَّمِيعُ الْعَلِيمُ",
+            "english": "and He is the All-Hearing, the All-Knowing.",
+            "transliteration": "Wa Huwas-Sami'ul-'Alim"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "evening-005",
@@ -1347,7 +2273,73 @@ export const collections = {
             "translation": "and I seek refuge in Your Greatness from being unexpectedly destroyed from beneath me."
           }
         ],
-        "virtues": "The Messenger of Allah ﷺ never failed to utter these supplications in the evening and in the morning."
+        "virtues": "The Messenger of Allah ﷺ never failed to utter these supplications in the evening and in the morning.",
+        "sourceIds": [
+          "sunan-abi-dawud-5074"
+        ],
+        "virtue": {
+          "text": "The Messenger of Allah ﷺ never failed to utter these supplications in the evening and in the morning.",
+          "sourceIds": [
+            "sunan-abi-dawud-5074"
+          ]
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ",
+            "english": "O Allah, I ask You for well-being in this world and the Hereafter.",
+            "transliteration": "Allahumma inni as'alukal-'afiyata fid-dunya wal-akhirah"
+          },
+          {
+            "order": 2,
+            "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي دِينِي وَدُنْيَايَ وَأَهْلِي وَمَالِي",
+            "english": "O Allah, I ask You for pardon and well-being in my religion, my worldly life, my family, and my wealth.",
+            "transliteration": "Allahumma inni as'alukal-'afwa wal-'afiyah fi dini wa dunyaya wa ahli wa mali"
+          },
+          {
+            "order": 3,
+            "arabic": "اللَّهُمَّ اسْتُرْ عَوْرَاتِي وَآمِنْ رَوْعَاتِي",
+            "english": "O Allah, conceal my faults and calm my fears.",
+            "transliteration": "Allahummastur 'awrati wa amin raw'ati"
+          },
+          {
+            "order": 4,
+            "arabic": "اللَّهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَيَّ",
+            "english": "O Allah, protect me from in front of me,",
+            "transliteration": "Allahummahfazni min bayni yadayya"
+          },
+          {
+            "order": 5,
+            "arabic": "وَمِنْ خَلْفِي",
+            "english": "and from behind me,",
+            "transliteration": "Wa min khalfi"
+          },
+          {
+            "order": 6,
+            "arabic": "وَعَنْ يَمِينِي",
+            "english": "and from my right,",
+            "transliteration": "Wa 'an yamini"
+          },
+          {
+            "order": 7,
+            "arabic": "وَعَنْ شِمَالِي",
+            "english": "and from my left,",
+            "transliteration": "Wa 'an shimali"
+          },
+          {
+            "order": 8,
+            "arabic": "وَمِنْ فَوْقِي",
+            "english": "and from above me,",
+            "transliteration": "Wa min fawqi"
+          },
+          {
+            "order": 9,
+            "arabic": "وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي",
+            "english": "and I seek refuge in Your Greatness from being unexpectedly destroyed from beneath me.",
+            "transliteration": "Wa a'udhu bi'azamatika an ughtala min tahti"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "evening-006",
@@ -1398,7 +2390,43 @@ export const collections = {
             "translation": "And He has power over all things."
           }
         ],
-        "virtues": "Whoever says this in the morning will receive reward like freeing a slave, ten good deeds will be recorded, ten sins erased, he will be raised ten degrees, and he will be guarded from Shayṭān until evening."
+        "virtues": "Whoever says this in the morning will receive reward like freeing a slave, ten good deeds will be recorded, ten sins erased, he will be raised ten degrees, and he will be guarded from Shayṭān until evening.",
+        "sourceIds": [
+          "sunan-abi-dawud-5077"
+        ],
+        "virtue": {
+          "text": "Whoever says this in the morning will receive reward like freeing a slave, ten good deeds will be recorded, ten sins erased, he will be raised ten degrees, and he will be guarded from Shayṭān until evening.",
+          "sourceIds": [
+            "sunan-abi-dawud-5077"
+          ]
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ",
+            "english": "None has the right to be worshipped except Allah alone, having no partner.",
+            "transliteration": "La ilaha illallahu wahdahu la sharika lah"
+          },
+          {
+            "order": 2,
+            "arabic": "لَهُ الْمُلْكُ",
+            "english": "Sovereignty belongs to Him.",
+            "transliteration": "Lahul-mulku"
+          },
+          {
+            "order": 3,
+            "arabic": "وَلَهُ الْحَمْدُ",
+            "english": "And all praise belongs to Him.",
+            "transliteration": "Wa lahul-hamd"
+          },
+          {
+            "order": 4,
+            "arabic": "وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",
+            "english": "And He has power over all things.",
+            "transliteration": "Wa huwa 'ala kulli shay'in qadir"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "evening-007",
@@ -1455,7 +2483,47 @@ export const collections = {
             "translation": "and to You is the final return."
           }
         ],
-        "virtues": ""
+        "virtues": "",
+        "sourceIds": [
+          "sunan-abi-dawud-5068"
+        ],
+        "virtue": {
+          "text": "",
+          "sourceIds": []
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "اللَّهُمَّ بِكَ أَمْسَيْنَا",
+            "english": "O Allah, with Your aid we enter the evening,",
+            "transliteration": "Allahumma bika amsayna"
+          },
+          {
+            "order": 2,
+            "arabic": "وَبِكَ أَصْبَحْنَا",
+            "english": "and with Your aid we enter the morning.",
+            "transliteration": "Wa bika asbahna"
+          },
+          {
+            "order": 3,
+            "arabic": "وَبِكَ نَحْيَا",
+            "english": "By Your leave we live,",
+            "transliteration": "Wa bika nahya"
+          },
+          {
+            "order": 4,
+            "arabic": "وَبِكَ نَمُوتُ",
+            "english": "and by Your leave we die,",
+            "transliteration": "Wa bika namut"
+          },
+          {
+            "order": 5,
+            "arabic": "وَإِلَيْكَ الْمَصِيرُ",
+            "english": "and to You is the final return.",
+            "transliteration": "Wa ilaykal-masir"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "evening-008",
@@ -1530,7 +2598,67 @@ export const collections = {
             "translation": "Or bringing it upon a Muslim."
           }
         ],
-        "virtues": "The Prophet ﷺ instructed Abū Bakr aṣ-Ṣiddīq to say this in the morning and in the evening."
+        "virtues": "The Prophet ﷺ instructed Abū Bakr aṣ-Ṣiddīq to say this in the morning and in the evening.",
+        "sourceIds": [
+          "sunan-abi-dawud-5067"
+        ],
+        "virtue": {
+          "text": "The Prophet ﷺ instructed Abū Bakr aṣ-Ṣiddīq to say this in the morning and in the evening.",
+          "sourceIds": [
+            "sunan-abi-dawud-5067"
+          ]
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "اللَّهُمَّ فَاطِرَ السَّمَاوَاتِ وَالْأَرْضِ",
+            "english": "O Allah, Creator and Originator of the heavens and the earth.",
+            "transliteration": "Allahumma Fatiras-samawati wal-ard"
+          },
+          {
+            "order": 2,
+            "arabic": "عَالِمَ الْغَيْبِ وَالشَّهَادَةِ",
+            "english": "Knower of the hidden and the apparent.",
+            "transliteration": "'Alimal-ghaybi wash-shahadah"
+          },
+          {
+            "order": 3,
+            "arabic": "لَا إِلَٰهَ إِلَّا أَنْتَ",
+            "english": "None has the right to be worshipped except You.",
+            "transliteration": "La ilaha illa Anta"
+          },
+          {
+            "order": 4,
+            "arabic": "رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ",
+            "english": "Lord and Sovereign of everything.",
+            "transliteration": "Rabba kulli shay'in wa malikah"
+          },
+          {
+            "order": 5,
+            "arabic": "أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي",
+            "english": "I seek refuge in You from the evil of myself.",
+            "transliteration": "A'udhu bika min sharri nafsi"
+          },
+          {
+            "order": 6,
+            "arabic": "وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ",
+            "english": "And from the evil of Satan and his shirk.",
+            "transliteration": "Wa min sharrish-shaytani wa shirkih"
+          },
+          {
+            "order": 7,
+            "arabic": "وَأَنْ أَقْتَرِفَ عَلَىٰ نَفْسِي سُوءًا",
+            "english": "And from committing evil against myself.",
+            "transliteration": "Wa an aqtarifa 'ala nafsi su'an"
+          },
+          {
+            "order": 8,
+            "arabic": "أَوْ أَجُرَّهُ إِلَىٰ مُسْلِمٍ",
+            "english": "Or bringing it upon a Muslim.",
+            "transliteration": "Aw ajurrahu ila Muslim"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "evening-009",
@@ -1569,7 +2697,29 @@ export const collections = {
             "translation": "And I bear witness that none has the right to be worshipped except You."
           }
         ],
-        "virtues": ""
+        "virtues": "",
+        "sourceIds": [
+          "an-nas-as-sunan-al-kubr-10331"
+        ],
+        "virtue": {
+          "text": "",
+          "sourceIds": []
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "أَمْسَيْتُ أُثْنِي عَلَيْكَ حَمْدًا",
+            "english": "I have entered the evening praising You.",
+            "transliteration": "Amsaytu uthni 'alayka hamdan"
+          },
+          {
+            "order": 2,
+            "arabic": "وَأَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ",
+            "english": "And I bear witness that none has the right to be worshipped except You.",
+            "transliteration": "Wa ashhadu an la ilaha illallah"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "evening-010",
@@ -1620,7 +2770,41 @@ export const collections = {
             "translation": "None has the right to be worshipped except You."
           }
         ],
-        "virtues": ""
+        "virtues": "",
+        "sourceIds": [
+          "sunan-abi-dawud-5090"
+        ],
+        "virtue": {
+          "text": "",
+          "sourceIds": []
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "اللَّهُمَّ عَافِنِي فِي بَدَنِي",
+            "english": "O Allah, grant me health in my body.",
+            "transliteration": "Allahumma 'afini fi badani"
+          },
+          {
+            "order": 2,
+            "arabic": "اللَّهُمَّ عَافِنِي فِي سَمْعِي",
+            "english": "O Allah, grant me good hearing.",
+            "transliteration": "Allahumma 'afini fi sam'i"
+          },
+          {
+            "order": 3,
+            "arabic": "اللَّهُمَّ عَافِنِي فِي بَصَرِي",
+            "english": "O Allah, grant me good eyesight.",
+            "transliteration": "Allahumma 'afini fi basari"
+          },
+          {
+            "order": 4,
+            "arabic": "لَا إِلَٰهَ إِلَّا أَنْتَ",
+            "english": "None has the right to be worshipped except You.",
+            "transliteration": "La ilaha illa Anta"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "evening-011",
@@ -1665,7 +2849,39 @@ export const collections = {
             "translation": "And with Muhammad as my Prophet."
           }
         ],
-        "virtues": "Whoever says this in the morning and evening, Allah will certainly please him."
+        "virtues": "Whoever says this in the morning and evening, Allah will certainly please him.",
+        "sourceIds": [
+          "sunan-abi-dawud-5072",
+          "jami-at-tirmidhi-3389"
+        ],
+        "virtue": {
+          "text": "Whoever says this in the morning and evening, Allah will certainly please him.",
+          "sourceIds": [
+            "sunan-abi-dawud-5072",
+            "jami-at-tirmidhi-3389"
+          ]
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "رَضِيتُ بِاللَّهِ رَبًّا",
+            "english": "I am pleased with Allah as my Lord.",
+            "transliteration": "Raditu billahi Rabba"
+          },
+          {
+            "order": 2,
+            "arabic": "وَبِالْإِسْلَامِ دِينًا",
+            "english": "And with Islam as my religion.",
+            "transliteration": "Wa bil-Islami dina"
+          },
+          {
+            "order": 3,
+            "arabic": "وَبِمُحَمَّدٍ نَبِيًّا",
+            "english": "And with Muhammad as my Prophet.",
+            "transliteration": "Wa bi Muhammadin nabiyya"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "evening-012",
@@ -1728,7 +2944,54 @@ export const collections = {
             "translation": "And he was not from those who associate others with Allah."
           }
         ],
-        "virtues": ""
+        "virtues": "",
+        "sourceIds": [
+          "musnad-ahmad-21144",
+          "an-nasai"
+        ],
+        "virtue": {
+          "text": "",
+          "sourceIds": []
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "أَمْسَيْنَا عَلَى فِطْرَةِ الْإِسْلَامِ",
+            "english": "We have entered the evening upon the true religion of Islam.",
+            "transliteration": "Amsayna 'ala fitratil-Islam"
+          },
+          {
+            "order": 2,
+            "arabic": "وَعَلَى كَلِمَةِ الْإِخْلَاصِ",
+            "english": "And upon the word of sincere worship.",
+            "transliteration": "Wa 'ala kalimatil-ikhlas"
+          },
+          {
+            "order": 3,
+            "arabic": "وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ ﷺ",
+            "english": "And upon the religion of our Prophet Muhammad ﷺ.",
+            "transliteration": "Wa 'ala dini nabiyyina Muhammad sallallahu 'alayhi wa sallam"
+          },
+          {
+            "order": 4,
+            "arabic": "وَعَلَى مِلَّةِ أَبِينَا إِبْرَاهِيمَ",
+            "english": "And upon the way of our forefather Ibrahim.",
+            "transliteration": "Wa 'ala millati abina Ibrahim"
+          },
+          {
+            "order": 5,
+            "arabic": "حَنِيفًا مُسْلِمًا",
+            "english": "He was upright, submitting to Allah.",
+            "transliteration": "Hanifan musliman"
+          },
+          {
+            "order": 6,
+            "arabic": "وَمَا كَانَ مِنَ الْمُشْرِكِينَ",
+            "english": "And he was not from those who associate others with Allah.",
+            "transliteration": "Wa ma kana minal-mushrikin"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "evening-013",
@@ -1779,7 +3042,43 @@ export const collections = {
             "translation": "And do not entrust me to myself for the blink of an eye."
           }
         ],
-        "virtues": "Whenever a matter would distress him, the Prophet ﷺ would say: “O Living, O Self-Sustaining Sustainer! In Your Mercy do I seek relief.”"
+        "virtues": "Whenever a matter would distress him, the Prophet ﷺ would say: “O Living, O Self-Sustaining Sustainer! In Your Mercy do I seek relief.”",
+        "sourceIds": [
+          "jami-at-tirmidhi-3524"
+        ],
+        "virtue": {
+          "text": "Whenever a matter would distress him, the Prophet ﷺ would say: “O Living, O Self-Sustaining Sustainer! In Your Mercy do I seek relief.”",
+          "sourceIds": [
+            "jami-at-tirmidhi-3524"
+          ]
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "يَا حَيُّ يَا قَيُّومُ",
+            "english": "O Ever-Living One, O Self-Subsisting Sustainer of everything.",
+            "transliteration": "Ya Hayyu ya Qayyum"
+          },
+          {
+            "order": 2,
+            "arabic": "بِرَحْمَتِكَ أَسْتَغِيثُ",
+            "english": "By Your mercy I seek help.",
+            "transliteration": "Bi rahmatika astaghith"
+          },
+          {
+            "order": 3,
+            "arabic": "أَصْلِحْ لِي شَأْنِيَ كُلَّهُ",
+            "english": "Rectify all of my affairs for me.",
+            "transliteration": "Aslih li sha'ni kullahu"
+          },
+          {
+            "order": 4,
+            "arabic": "وَلَا تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ",
+            "english": "And do not entrust me to myself for the blink of an eye.",
+            "transliteration": "Wa la takilni ila nafsi tarfata 'ayn"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "evening-014",
@@ -1866,7 +3165,73 @@ export const collections = {
             "translation": "And He is the Most High, the Magnificent."
           }
         ],
-        "virtues": "Whoever recites Ayat al-Kursi before sleeping will have a guardian from Allah, and Shayṭān will not come near him until morning."
+        "virtues": "Whoever recites Ayat al-Kursi before sleeping will have a guardian from Allah, and Shayṭān will not come near him until morning.",
+        "sourceIds": [
+          "quran-2-255"
+        ],
+        "virtue": {
+          "text": "Whoever recites Ayat al-Kursi before sleeping will have a guardian from Allah, and Shayṭān will not come near him until morning.",
+          "sourceIds": [
+            "quran-2-255"
+          ]
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ",
+            "english": "Allah — none has the right to be worshipped except Him, the Ever-Living, the Self-Subsisting Sustainer.",
+            "transliteration": "Allahu la ilaha illa Huwal-Hayyul-Qayyum"
+          },
+          {
+            "order": 2,
+            "arabic": "لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ",
+            "english": "Neither drowsiness nor sleep overtakes Him.",
+            "transliteration": "La ta'khudhuhu sinatun wa la nawm"
+          },
+          {
+            "order": 3,
+            "arabic": "لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ",
+            "english": "To Him belongs whatever is in the heavens and whatever is in the earth.",
+            "transliteration": "Lahu ma fis-samawati wa ma fil-ard"
+          },
+          {
+            "order": 4,
+            "arabic": "مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ",
+            "english": "Who is it that can intercede with Him except by His permission?",
+            "transliteration": "Man dhal-ladhi yashfa'u 'indahu illa bi idhnih"
+          },
+          {
+            "order": 5,
+            "arabic": "يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ",
+            "english": "He knows what is before them and what is behind them.",
+            "transliteration": "Ya'lamu ma bayna aydihim wa ma khalfahum"
+          },
+          {
+            "order": 6,
+            "arabic": "وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ",
+            "english": "And they encompass nothing of His knowledge except what He wills.",
+            "transliteration": "Wa la yuhituna bishay'in min 'ilmihi illa bima sha'"
+          },
+          {
+            "order": 7,
+            "arabic": "وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ",
+            "english": "His Footstool extends over the heavens and the earth.",
+            "transliteration": "Wasi'a Kursiyyuhus-samawati wal-ard"
+          },
+          {
+            "order": 8,
+            "arabic": "وَلَا يَئُودُهُ حِفْظُهُمَا",
+            "english": "And preserving them does not tire Him.",
+            "transliteration": "Wa la ya'uduhu hifzuhuma"
+          },
+          {
+            "order": 9,
+            "arabic": "وَهُوَ الْعَلِيُّ الْعَظِيمُ",
+            "english": "And He is the Most High, the Magnificent.",
+            "transliteration": "Wa Huwal-'Aliyyul-'Azim"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "evening-015",
@@ -1905,7 +3270,31 @@ export const collections = {
             "translation": "From the evil of whatever He has created."
           }
         ],
-        "virtues": "Whoever says this when stopping at a place, nothing will harm him until he leaves that place."
+        "virtues": "Whoever says this when stopping at a place, nothing will harm him until he leaves that place.",
+        "sourceIds": [
+          "sahih-muslim-2708"
+        ],
+        "virtue": {
+          "text": "Whoever says this when stopping at a place, nothing will harm him until he leaves that place.",
+          "sourceIds": [
+            "sahih-muslim-2708"
+          ]
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ",
+            "english": "I seek refuge in the perfect and complete Words of Allah.",
+            "transliteration": "A'udhu bikalimatillahit-tammat"
+          },
+          {
+            "order": 2,
+            "arabic": "مِنْ شَرِّ مَا خَلَقَ",
+            "english": "From the evil of whatever He has created.",
+            "transliteration": "Min sharri ma khalaq"
+          }
+        ],
+        "resourceIds": []
       }
     ]
   },
@@ -1955,7 +3344,29 @@ export const collections = {
             "translation": ""
           }
         ],
-        "virtues": ""
+        "virtues": "",
+        "sourceIds": [
+          "sahih-al-bukhari-6320"
+        ],
+        "virtue": {
+          "text": "",
+          "sourceIds": []
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "بِاسْمِكَ رَبِّي وَضَعْتُ جَنْبِي",
+            "english": "In Your name, my Lord, I lie down,",
+            "transliteration": "Bismika Rabbi wada'tu janbi,"
+          },
+          {
+            "order": 2,
+            "arabic": "وَبِكَ أَرْفَعُهُ",
+            "english": "and by You I rise.",
+            "transliteration": "wa bika arfa'uhu."
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "sleep-002",
@@ -1994,7 +3405,29 @@ export const collections = {
             "translation": ""
           }
         ],
-        "virtues": ""
+        "virtues": "",
+        "sourceIds": [
+          "sunan-abi-dawud-5045"
+        ],
+        "virtue": {
+          "text": "",
+          "sourceIds": []
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "اللَّهُمَّ قِنِي عَذَابَكَ",
+            "english": "O Allah, protect me from Your punishment",
+            "transliteration": "Allahumma qini 'adhabaka"
+          },
+          {
+            "order": 2,
+            "arabic": "يَوْمَ تَبْعَثُ عِبَادَكَ",
+            "english": "on the Day You resurrect Your servants.",
+            "transliteration": "yawma tab'athu 'ibadak."
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "sleep-003",
@@ -2027,7 +3460,23 @@ export const collections = {
             "translation": "In Your name, O Allah, I die and I live."
           }
         ],
-        "virtues": ""
+        "virtues": "",
+        "sourceIds": [
+          "sahih-al-bukhari-6324"
+        ],
+        "virtue": {
+          "text": "",
+          "sourceIds": []
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا",
+            "english": "In Your name, O Allah, I die and I live.",
+            "transliteration": "Bismika Allahumma amutu wa ahya."
+          }
+        ],
+        "resourceIds": []
       }
     ]
   },
@@ -2071,7 +3520,23 @@ export const collections = {
             "translation": "Glory is to Him who has subjected this to us, and we could never have it by our efforts; surely to our Lord we are returning."
           }
         ],
-        "virtues": ""
+        "virtues": "",
+        "sourceIds": [
+          "sahih-muslim-1342"
+        ],
+        "virtue": {
+          "text": "",
+          "sourceIds": []
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ وَإِنَّا إِلَى رَبِّنَا لَمُنقَلِبُونَ",
+            "english": "Glory is to Him who has subjected this to us, and we could never have it by our efforts; surely to our Lord we are returning.",
+            "transliteration": "Subhana alladhi sakhkhara lana hadha wa ma kunna lahu muqrinin, wa inna ila Rabbina lamunqalibun."
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "travel-002",
@@ -2104,7 +3569,24 @@ export const collections = {
             "translation": "Returning, repenting, worshipping, and praising our Lord."
           }
         ],
-        "virtues": ""
+        "virtues": "",
+        "sourceIds": [
+          "sahih-al-bukhari-1797",
+          "sahih-muslim-1344"
+        ],
+        "virtue": {
+          "text": "",
+          "sourceIds": []
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "آيِبُونَ تَائِبُونَ عَابِدُونَ لِرَبِّنَا حَامِدُونَ",
+            "english": "Returning, repenting, worshipping, and praising our Lord.",
+            "transliteration": "Ayibuna, ta'ibuna, 'abiduna, li-Rabbina hamidun."
+          }
+        ],
+        "resourceIds": []
       }
     ]
   },
@@ -2148,7 +3630,24 @@ export const collections = {
             "translation": "O Allah, make it beneficial rain."
           }
         ],
-        "virtues": ""
+        "virtues": "",
+        "sourceIds": [
+          "sahih-al-bukhari-1032"
+        ],
+        "virtue": {
+          "text": "",
+          "sourceIds": []
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "اللَّهُمَّ صَيِّبًا نَافِعًا",
+            "english": "O Allah, make it beneficial rain.",
+            "transliteration": "",
+            "transliterationStatus": "not-provided"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "weather-002",
@@ -2181,7 +3680,24 @@ export const collections = {
             "translation": "O Allah, I ask You for its good and seek refuge in You from its evil."
           }
         ],
-        "virtues": ""
+        "virtues": "",
+        "sourceIds": [
+          "sunan-abi-dawud-5097"
+        ],
+        "virtue": {
+          "text": "",
+          "sourceIds": []
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَهَا وَأَعُوذُ بِكَ مِنْ شَرِّهَا",
+            "english": "O Allah, I ask You for its good and seek refuge in You from its evil.",
+            "transliteration": "",
+            "transliterationStatus": "not-provided"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "weather-003",
@@ -2214,7 +3730,24 @@ export const collections = {
             "translation": "Glory is to the One whom thunder glorifies with His praise, and the angels from awe of Him."
           }
         ],
-        "virtues": ""
+        "virtues": "",
+        "sourceIds": [
+          "al-muwatta-3641"
+        ],
+        "virtue": {
+          "text": "",
+          "sourceIds": []
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "سُبْحَانَ الَّذِي يُسَبِّحُ الرَّعْدُ بِحَمْدِهِ وَالْمَلَائِكَةُ مِنْ خِيفَتِهِ",
+            "english": "Glory is to the One whom thunder glorifies with His praise, and the angels from awe of Him.",
+            "transliteration": "",
+            "transliterationStatus": "not-provided"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "weather-004",
@@ -2247,7 +3780,25 @@ export const collections = {
             "translation": "We have been given rain by Allah's grace and mercy."
           }
         ],
-        "virtues": ""
+        "virtues": "",
+        "sourceIds": [
+          "sahih-al-bukhari-846",
+          "sahih-muslim-71"
+        ],
+        "virtue": {
+          "text": "",
+          "sourceIds": []
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "مُطِرْنَا بِفَضْلِ اللَّهِ وَرَحْمَتِهِ",
+            "english": "We have been given rain by Allah's grace and mercy.",
+            "transliteration": "",
+            "transliterationStatus": "not-provided"
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "weather-005",
@@ -2280,7 +3831,24 @@ export const collections = {
             "translation": "O Allah, give us rain that is relieving, wholesome, and beneficial."
           }
         ],
-        "virtues": ""
+        "virtues": "",
+        "sourceIds": [
+          "sunan-abi-dawud-1169"
+        ],
+        "virtue": {
+          "text": "",
+          "sourceIds": []
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "اللَّهُمَّ اسْقِنَا غَيْثًا مُغِيثًا مَرِيئًا نَافِعًا",
+            "english": "O Allah, give us rain that is relieving, wholesome, and beneficial.",
+            "transliteration": "",
+            "transliterationStatus": "not-provided"
+          }
+        ],
+        "resourceIds": []
       }
     ]
   },
@@ -2324,7 +3892,23 @@ export const collections = {
             "translation": "Glory and praise are Yours, O Allah. Blessed is Your name, exalted is Your majesty, and none has the right to be worshipped but You."
           }
         ],
-        "virtues": ""
+        "virtues": "",
+        "sourceIds": [
+          "sunan-abi-dawud-775"
+        ],
+        "virtue": {
+          "text": "",
+          "sourceIds": []
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ وَتَبَارَكَ اسْمُكَ وَتَعَالَى جَدُّكَ وَلَا إِلَهَ غَيْرُكَ",
+            "english": "Glory and praise are Yours, O Allah. Blessed is Your name, exalted is Your majesty, and none has the right to be worshipped but You.",
+            "transliteration": "Subhanaka Allahumma wa bihamdika, wa tabaraka ismuka, wa ta'ala jadduka, wa la ilaha ghayruk."
+          }
+        ],
+        "resourceIds": []
       },
       {
         "id": "prayer-002",
@@ -2357,7 +3941,23 @@ export const collections = {
             "translation": "My Lord, forgive me, have mercy on me, guide me, and provide for me."
           }
         ],
-        "virtues": ""
+        "virtues": "",
+        "sourceIds": [
+          "sunan-abi-dawud-850"
+        ],
+        "virtue": {
+          "text": "",
+          "sourceIds": []
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "رَبِّ اغْفِرْ لِي وَارْحَمْنِي وَاهْدِنِي وَارْزُقْنِي",
+            "english": "My Lord, forgive me, have mercy on me, guide me, and provide for me.",
+            "transliteration": "Rabbi-ghfir li, warhamni, wahdini, warzuqni."
+          }
+        ],
+        "resourceIds": []
       }
     ]
   },
@@ -2401,7 +4001,23 @@ export const collections = {
             "translation": "O Allah, I seek Your choice by Your knowledge, I seek ability by Your power, and I ask You from Your immense bounty."
           }
         ],
-        "virtues": ""
+        "virtues": "",
+        "sourceIds": [
+          "sahih-al-bukhari-1162"
+        ],
+        "virtue": {
+          "text": "",
+          "sourceIds": []
+        },
+        "segments": [
+          {
+            "order": 1,
+            "arabic": "اللَّهُمَّ إِنِّي أَسْتَخِيرُكَ بِعِلْمِكَ وَأَسْتَقْدِرُكَ بِقُدْرَتِكَ وَأَسْأَلُكَ مِنْ فَضْلِكَ الْعَظِيمِ",
+            "english": "O Allah, I seek Your choice by Your knowledge, I seek ability by Your power, and I ask You from Your immense bounty.",
+            "transliteration": "Allahumma inni astakhiruka bi'ilmika, wa astaqdiruka biqudratika, wa as'aluka min fadlika al-'azim."
+          }
+        ],
+        "resourceIds": []
       }
     ]
   }

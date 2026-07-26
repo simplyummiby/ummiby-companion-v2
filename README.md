@@ -1,8 +1,16 @@
 # Ummiby Companion
 
-**v3.2.2 — Account Menu Polish & Layout Fixes**
+**v3.3.0 — Duaa Learning Reader & Global Knowledge Foundation**
 
 This patch fixes the missing profile control in local preview mode. The profile circle and dropdown now remain visibly testable in the shared application banner without Supabase configuration, while authenticated sessions continue to show the real user name, email, profile details, and Sign Out action.
+
+
+## Duaa Learning Reader and shared knowledge libraries
+
+- Duaa Reading Mode now uses aligned Transliteration, English, and Arabic learning segments.
+- Mobile reading stacks Arabic first, followed by English and transliteration.
+- Recitation count, virtues, evidence, grades, and source-link readiness are restored.
+- Global source and resource libraries can now serve every current and future module.
 
 ## Account menu polish
 
@@ -15,7 +23,7 @@ This patch fixes the missing profile control in local preview mode. The profile 
 
 ## Current version
 
-**v3.2.2 — Account Menu Polish & Layout Fixes**
+**v3.3.0 — Duaa Learning Reader & Global Knowledge Foundation**
 
 ### Added
 
