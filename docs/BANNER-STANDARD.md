@@ -31,3 +31,13 @@ The Morning Duaa implementation uses a softer, slightly dimmer early-morning col
 ## v3.4.3 Situational Collection Artwork
 
 Travel, Weather, and Prayer now use dedicated situational banners rather than the generic Duaa module artwork. Each production asset is exported at 1717 × 190 pixels. The artwork may change by collection while the overlay typography, readable contrast treatment, and responsive composition remain consistent.
+
+
+## v3.4.3.1 Visible-Subject Crop Validation
+
+Situational banner artwork must be re-cropped from the approved source when the collection-defining subject falls outside the final shallow strip. Travel retains the winding road, Weather retains both softened clouds and wet pavement, and Prayer retains the Qur’an stand and prayer-space foreground. Overlay strength must support readability without obscuring those subjects.
+
+
+## v3.4.4 Evening and Before Sleep Variants
+
+Evening and Before Sleep extend the “Same Place, Different Time of Day” family. Evening preserves the sunset horizon, coastal silhouette, and illuminated mosque. Before Sleep preserves the moonlit sea, mosque, terrace railing, and restful porch seating. Because these scenes are naturally darker, they use individually tuned navy glass overlays with light typography rather than the pale daytime treatment. The overlay must support text contrast without flattening the atmospheric light or concealing the collection-defining details.

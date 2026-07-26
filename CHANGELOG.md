@@ -1,5 +1,24 @@
 # Changelog
 
+## 3.4.4 — Evening and Before Sleep Banner Integration
+
+- Installed the approved sunset terrace artwork on Evening Duaas.
+- Installed the approved moonlit porch artwork on Before Sleep Duaas.
+- Exported both production assets at the official 1717 × 190 banner size.
+- Tuned the Evening crop to preserve the glowing horizon, coastline, and illuminated mosque.
+- Tuned the Before Sleep crop to preserve the moonlit sea, mosque, railing, and restful porch seating.
+- Added collection-specific navy glass overlays with white typography and restrained gold eyebrow text.
+- Added independent desktop, tablet, and mobile focal positioning for both banners.
+- Preserved all Duaa content and non-banner behavior.
+
+## 3.4.3.1 — Duaa Banner Presentation Polish
+
+- Re-cropped the Travel banner so the winding coastal road remains clearly visible in the final 1717 × 190 strip.
+- Re-cropped the Weather banner so both the softened cloud cover and rain-wet roadway remain visible.
+- Re-cropped the Prayer banner so the Qur’an stand and prayer-space foreground remain visible.
+- Replaced the overly dark situational overlays with lighter glass gradients and dark blue typography.
+- Preserved responsive focal positioning and all non-banner behavior.
+
 ## 3.4.3 — Duaa Collection Banner Expansion
 
 - Installed the approved coastal-road artwork on Travel Duaas.

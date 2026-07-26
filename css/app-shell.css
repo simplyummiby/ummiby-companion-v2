@@ -643,40 +643,47 @@ body {
   .module-banner.is-duaa-morning-banner .banner-copy { max-width: calc(100% - 2.5rem); }
 }
 
-/* v3.4.3 situational Duaa collection banners */
+/* v3.4.3.1 situational Duaa banner presentation polish */
 .module-banner.is-duaa-travel-banner,
 .module-banner.is-duaa-weather-banner,
 .module-banner.is-duaa-prayer-banner {
   isolation: isolate;
-  background-color: #315d78;
+  background-color: #dceefa;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+  border-bottom-color: rgb(39 104 153 / .2);
 }
 .module-banner.is-duaa-travel-banner { background-image: url('../assets/banners/duaa-travel-banner.jpg'); }
 .module-banner.is-duaa-weather-banner { background-image: url('../assets/banners/duaa-weather-banner.jpg'); }
 .module-banner.is-duaa-prayer-banner { background-image: url('../assets/banners/duaa-prayer-banner.jpg'); }
 .module-banner.is-duaa-travel-banner::before,
-.module-banner.is-duaa-weather-banner::before,
 .module-banner.is-duaa-prayer-banner::before {
   content: '';
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(90deg, rgba(12,35,52,.76) 0%, rgba(16,43,61,.62) 38%, rgba(16,43,61,.18) 72%, rgba(16,43,61,.08) 100%);
+  background: linear-gradient(90deg, rgb(244 250 255 / .94) 0%, rgb(244 250 255 / .84) 25%, rgb(244 250 255 / .48) 42%, rgb(244 250 255 / .08) 61%, transparent 74%);
+}
+.module-banner.is-duaa-weather-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgb(239 246 251 / .93) 0%, rgb(239 246 251 / .82) 27%, rgb(225 236 244 / .47) 44%, rgb(211 225 235 / .08) 62%, transparent 75%);
 }
 .module-banner.is-duaa-travel-banner .banner-copy,
 .module-banner.is-duaa-weather-banner .banner-copy,
-.module-banner.is-duaa-prayer-banner .banner-copy { max-width: min(44%, 620px); }
+.module-banner.is-duaa-prayer-banner .banner-copy { max-width: min(43%, 620px); }
 .module-banner.is-duaa-travel-banner .banner-eyebrow,
 .module-banner.is-duaa-weather-banner .banner-eyebrow,
-.module-banner.is-duaa-prayer-banner .banner-eyebrow { color: #d8edf9; }
+.module-banner.is-duaa-prayer-banner .banner-eyebrow { color: #1f6597; }
 .module-banner.is-duaa-travel-banner .banner-title,
 .module-banner.is-duaa-weather-banner .banner-title,
-.module-banner.is-duaa-prayer-banner .banner-title,
+.module-banner.is-duaa-prayer-banner .banner-title { color: #163e5e; text-shadow: none; }
 .module-banner.is-duaa-travel-banner .banner-description,
 .module-banner.is-duaa-weather-banner .banner-description,
-.module-banner.is-duaa-prayer-banner .banner-description { color: #fff; text-shadow: 0 2px 14px rgba(0,0,0,.38); }
+.module-banner.is-duaa-prayer-banner .banner-description { max-width: 40ch; color: #355f7a; text-shadow: none; }
 @media (max-width: 900px) {
   .module-banner.is-duaa-travel-banner,
   .module-banner.is-duaa-weather-banner,
@@ -690,9 +697,89 @@ body {
   .module-banner.is-duaa-weather-banner,
   .module-banner.is-duaa-prayer-banner { background-position: 66% center; }
   .module-banner.is-duaa-travel-banner::before,
-  .module-banner.is-duaa-weather-banner::before,
-  .module-banner.is-duaa-prayer-banner::before { background: linear-gradient(90deg, rgba(10,31,47,.84), rgba(10,31,47,.54) 72%, rgba(10,31,47,.25)); }
+  .module-banner.is-duaa-prayer-banner::before {
+    background: linear-gradient(90deg, rgb(244 250 255 / .98) 0%, rgb(244 250 255 / .92) 62%, rgb(244 250 255 / .5) 100%);
+  }
+  .module-banner.is-duaa-weather-banner::before {
+    background: linear-gradient(90deg, rgb(239 246 251 / .98) 0%, rgb(239 246 251 / .92) 62%, rgb(225 236 244 / .52) 100%);
+  }
   .module-banner.is-duaa-travel-banner .banner-copy,
   .module-banner.is-duaa-weather-banner .banner-copy,
   .module-banner.is-duaa-prayer-banner .banner-copy { max-width: calc(100% - 2.5rem); }
+}
+
+
+/* v3.4.4 Evening and Before Sleep — same place, later hours */
+.module-banner.is-duaa-evening-banner,
+.module-banner.is-duaa-sleep-banner {
+  isolation: isolate;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border-bottom-color: rgb(39 104 153 / .24);
+}
+.module-banner.is-duaa-evening-banner {
+  background-color: #384c70;
+  background-image: url('../assets/banners/duaa-evening-banner.jpg');
+}
+.module-banner.is-duaa-sleep-banner {
+  background-color: #101f38;
+  background-image: url('../assets/banners/duaa-sleep-banner.jpg');
+}
+.module-banner.is-duaa-evening-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg,
+    rgb(20 37 64 / .76) 0%,
+    rgb(23 42 72 / .64) 25%,
+    rgb(34 49 78 / .34) 43%,
+    rgb(34 49 78 / .07) 61%,
+    transparent 74%);
+}
+.module-banner.is-duaa-sleep-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg,
+    rgb(8 20 39 / .82) 0%,
+    rgb(10 24 45 / .7) 27%,
+    rgb(12 28 52 / .38) 45%,
+    rgb(12 28 52 / .09) 63%,
+    transparent 76%);
+}
+.module-banner.is-duaa-evening-banner .banner-copy,
+.module-banner.is-duaa-sleep-banner .banner-copy { max-width: min(43%, 620px); }
+.module-banner.is-duaa-evening-banner .banner-eyebrow,
+.module-banner.is-duaa-sleep-banner .banner-eyebrow { color: #f1c56f; }
+.module-banner.is-duaa-evening-banner .banner-title,
+.module-banner.is-duaa-sleep-banner .banner-title {
+  color: #fffdf8;
+  text-shadow: 0 2px 18px rgb(4 12 26 / .35);
+}
+.module-banner.is-duaa-evening-banner .banner-description,
+.module-banner.is-duaa-sleep-banner .banner-description {
+  max-width: 42ch;
+  color: rgb(244 248 255 / .9);
+  text-shadow: 0 1px 10px rgb(4 12 26 / .38);
+}
+@media (max-width: 900px) {
+  .module-banner.is-duaa-evening-banner { background-position: 59% center; }
+  .module-banner.is-duaa-sleep-banner { background-position: 62% center; }
+  .module-banner.is-duaa-evening-banner .banner-copy,
+  .module-banner.is-duaa-sleep-banner .banner-copy { max-width: 68%; }
+}
+@media (max-width: 620px) {
+  .module-banner.is-duaa-evening-banner { background-position: 67% center; }
+  .module-banner.is-duaa-sleep-banner { background-position: 72% center; }
+  .module-banner.is-duaa-evening-banner::before {
+    background: linear-gradient(90deg, rgb(20 37 64 / .9) 0%, rgb(23 42 72 / .82) 62%, rgb(34 49 78 / .42) 100%);
+  }
+  .module-banner.is-duaa-sleep-banner::before {
+    background: linear-gradient(90deg, rgb(8 20 39 / .92) 0%, rgb(10 24 45 / .86) 62%, rgb(12 28 52 / .48) 100%);
+  }
+  .module-banner.is-duaa-evening-banner .banner-copy,
+  .module-banner.is-duaa-sleep-banner .banner-copy { max-width: calc(100% - 2.5rem); }
 }
