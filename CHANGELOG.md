@@ -1,5 +1,16 @@
 # Changelog
 
+## 3.4.8 — Duaa Collections Library Refresh
+
+- Replaced the Collections page card grid with a centered alphabetical library index.
+- Added reusable collection list rows with square artwork, collection names, brief descriptions, and whole-row navigation.
+- Generated optimized square thumbnails from each destination page banner without distorting the original artwork.
+- Preserved Istikharah in the index with its existing collection illustration until dedicated page-banner artwork is available.
+- Constrained the library to an 860px maximum width so rows do not stretch awkwardly across the page.
+- Added responsive tablet and mobile sizing while preserving comfortable touch targets.
+- Kept the Duaa Home Daily Companion cards icon-based and left the existing More Collections cards unchanged.
+- Updated application, cache, documentation, and release references to 3.4.8.
+
 ## 3.4.7 — Duaa Epigraph Spacing and Source-Link Polish
 
 - Added balanced spacing between the Duaa module navigation and each Page Epigraph without restoring unused breadcrumb space.

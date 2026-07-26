@@ -29,3 +29,8 @@ Each collection supports a persistent preferred recitation order. Desktop users 
 ## Accent color
 
 All solid Duaa interaction accents use `#1F639F`, including the module navigation, primary buttons, progress fills, and completed checkmark backgrounds.
+
+
+## Collections library index (v3.4.8)
+
+The `/duaa/collections` route is an alphabetical index rather than a card gallery. It uses the reusable `collectionListItem` renderer and `.collection-index*` CSS classes. The index is centered at a maximum width of 860px, each entire row is a navigation target, and square thumbnails are derived from destination-page banner artwork in `assets/collection-thumbnails/`. Daily Companion cards on Duaa Home remain icon-based because they carry tracking and consistency information.
