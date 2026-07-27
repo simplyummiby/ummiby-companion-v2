@@ -1,8 +1,14 @@
-# Ummiby Companion v3.4.19
+# Ummiby Companion v3.4.20
 
-## Duaa Collection Page Composition Polish
+## Global Sidebar Module Placeholders
 
-- Refined the shared Duaa Page Epigraph system for a tighter editorial opening across collection and supporting pages.
-- Narrowed and centered the duaa collection list for more comfortable scanning.
-- Redesigned Today’s Status as a unified premium card with a pale-blue header and structured white content area.
-- Added restrained row-card styling and responsive composition improvements.
+This release registers Prayer and Fasting as future top-level modules.
+
+### Included
+
+- Added **Prayer** to the global sidebar with a mosque-outline icon.
+- Added **Fasting** to the global sidebar with a sunrise/horizon icon.
+- Added working `/prayer` and `/fasting` placeholder routes.
+- Added concise future-scope placeholders for prayer learning, trusted resources, prayer times, fasting records, guidance, and history.
+- Kept Prayer and Fasting off the App Home card grid until their blueprints and real module content are ready.
+- Preserved Ramadan Central as the home of Ramadan-specific fasting and reading tools.

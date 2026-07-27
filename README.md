@@ -1,6 +1,6 @@
 # Ummiby Companion
 
-**v3.4.19 — Focus Mode Study Resources and Collection Ending**
+**v3.4.20 — Prayer and Fasting Sidebar Placeholders**
 
 This release establishes one reusable Page Epigraph system across the Duaa module while preserving collection, reader, tracking, account, banner, and application-service behavior.
 
@@ -62,3 +62,9 @@ Copy `js/config.example.js` to `js/config.js` and add the Supabase project URL a
 - Added a subtle card treatment to Today's Status.
 - Replaced Study Library category navigation with in-page expandable accordion sections.
 - Resource links now appear directly beneath their category and still open externally in a new tab.
+
+## v3.4.20 — Prayer and Fasting Sidebar Placeholders
+
+- Registers Prayer and Fasting as top-level global-navigation modules.
+- Adds working placeholder pages without enabling unfinished tracking or location services.
+- Keeps the focused App Home card set unchanged until the new modules receive full blueprints.

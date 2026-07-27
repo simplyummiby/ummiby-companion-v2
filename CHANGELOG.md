@@ -1,3 +1,11 @@
+## v3.4.20 — Prayer and Fasting Sidebar Placeholders
+
+- Added Prayer and Fasting to the global sidebar with distinct SVG icon-font symbols.
+- Added working placeholder routes at `/prayer` and `/fasting`.
+- Added future-scope cards for prayer learning, study resources, prayer times, year-round fasting records, guidance, and history.
+- Kept the new unfinished modules off App Home for now.
+- Preserved Ramadan Central as the dedicated Ramadan experience.
+
 ## v3.4.19 — Duaa Collection Page Composition Polish
 
 - Tightened the reusable Duaa epigraph styling across all pages while preserving its clean, unboxed editorial treatment.

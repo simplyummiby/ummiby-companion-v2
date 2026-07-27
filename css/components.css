@@ -2104,3 +2104,53 @@
     padding:.95rem .55rem;
   }
 }
+
+
+/* v3.4.20 — Prayer and Fasting placeholder modules */
+.future-module-placeholder{
+  max-width:980px;
+  margin:0 auto;
+}
+.future-module-placeholder .editorial-header{
+  max-width:760px;
+}
+.future-module-placeholder .editorial-header .status-pill{
+  display:inline-flex;
+  margin-top:10px;
+}
+.vision-link-grid.three{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+}
+.future-module-feature{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  min-height:170px;
+  padding:24px;
+  border:1px solid var(--border-soft);
+  border-radius:18px;
+  background:var(--surface-raised);
+}
+.future-module-feature .vision-icon{
+  flex:0 0 auto;
+}
+.future-module-feature span{
+  display:grid;
+  gap:8px;
+}
+.future-module-feature strong{
+  font-family:var(--font-display);
+  font-size:1.1rem;
+}
+.future-module-feature small{
+  color:var(--text-muted);
+  font-size:.94rem;
+  line-height:1.55;
+}
+.future-module-placeholder .placeholder-panel{
+  margin-top:24px;
+}
+@media (max-width:900px){
+  .vision-link-grid.three{grid-template-columns:1fr;}
+  .future-module-feature{min-height:0;}
+}
