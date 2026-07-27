@@ -1,4 +1,46 @@
+## v3.4.16 — Duaa Focus Mode Rendered Text Alignment Correction
+
+- Corrected the actual rendered phrase markup in Focus Mode instead of relying only on the parent column styles.
+- Wrapped transliteration, English, and Arabic content in dedicated full-width text elements.
+- Kept transliteration and English body text left-aligned.
+- Right-aligned every wrapped Arabic duaa line while keeping all three column headings centered.
+- Preserved responsive mobile labels and the existing Focus Mode layout.
+
 # Changelog
+
+## v3.4.15 — Duaa Focus Mode Typography and Alignment Polish
+
+- Switched Focus Mode Arabic text to Amiri Quran with Amiri/serif fallbacks.
+- Right-aligned Arabic phrase text and the Arabic column heading.
+- Reduced English and transliteration line spacing.
+- Removed the repeat arrows icon so repeat guidance no longer resembles a clickable control.
+- Moved the About This Duaa panel closer to the left page edge and widened it slightly.
+- Re-centered the Previous / Mark Complete / Next group in the full blue footer.
+- Reduced the width of the Mark Complete / Completed pill.
+
+## v3.4.14 — Duaa Focus Mode Layout Stabilization
+
+- Removed the legacy reader width constraint so Focus Mode uses the full desktop workspace.
+- Stabilized the sticky top bar and centered the collection title, item count, and progress bar.
+- Reduced and balanced the duaa summary title sizing.
+- Rebalanced the left information panel and three-column reading area.
+- Increased Arabic column width and prevented awkward word-by-word wrapping.
+- Added safe bottom spacing so reading content is not hidden behind the sticky footer.
+- Centered the Previous / completion / Next control group with reserved side slots.
+- Improved responsive transitions for medium and small screens.
+
+## v3.4.13 — Duaa Focus Mode Workspace Redesign
+
+- Rebuilt Duaa Focus Mode as a framed reading workspace with matching sticky blue top and bottom bars.
+- Centered the collection title and item count in the top bar and added a thin white progress indicator.
+- Removed the duplicate collection label from the white reading area.
+- Added a left-side “About This Duaa” panel with Evidence and Virtue always visible.
+- Added one Study Resources dropdown with resources grouped by category and no nested category accordions.
+- Reworked phrase-by-phrase reading into a lighter three-column layout: transliteration left, English center, Arabic right.
+- Removed the heavy card/table treatment while retaining subtle phrase alignment and separators.
+- Centered Previous, completion toggle, and Next in the sticky bottom bar.
+- Preserved the reversible completion toggle: white “Mark Complete” and powder-blue “✓ Completed.”
+- Preserved Arabic-size and display preferences through the settings gear.
 
 ## v3.4.12 — Duaa Collection Image Path Reliability
 

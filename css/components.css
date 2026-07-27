@@ -1198,3 +1198,673 @@
 .collection-library-card .collection-art.is-fallback img{
   object-fit:contain;
 }
+
+/* v3.4.13 — Duaa Focus Mode workspace redesign */
+.focus-reader{
+  min-height:100vh;
+  background:linear-gradient(180deg,#f7fbff 0%,#fffdfa 44%,#f8fbff 100%);
+  padding-bottom:92px;
+}
+.focus-reader-top{
+  min-height:118px;
+  margin:0 calc(50% - 50vw);
+  padding:14px clamp(24px,3vw,48px) 16px;
+  display:grid;
+  grid-template-columns:minmax(190px,1fr) minmax(300px,620px) minmax(190px,1fr);
+  align-items:start;
+  background:linear-gradient(135deg,#0f5aa2,#07508e);
+  box-shadow:0 5px 18px rgb(12 55 95 / .2);
+}
+.focus-reader-top .reader-exit{
+  align-self:center;
+  display:inline-flex;
+  align-items:center;
+  gap:.55rem;
+  width:max-content;
+  color:#fff;
+  font-weight:800;
+  text-decoration:none;
+}
+.focus-reader-top .reader-exit i{font-size:1.25rem}
+.focus-reader-top .reader-position{
+  width:100%;
+  display:grid;
+  justify-items:center;
+  gap:.2rem;
+  color:#fff;
+}
+.focus-reader-top .reader-position>span{
+  color:#fff;
+  font-family:var(--font-serif);
+  font-size:clamp(1.45rem,2.1vw,2rem);
+  font-weight:800;
+  line-height:1.15;
+}
+.focus-reader-top .reader-position>strong{font-size:.95rem;color:#fff}
+.focus-progress{
+  width:min(100%,520px);
+  height:5px;
+  margin-top:.45rem;
+  overflow:hidden;
+  border:1px solid rgb(255 255 255 / .42);
+  border-radius:999px;
+  background:rgb(255 255 255 / .16);
+}
+.focus-progress span{display:block;width:var(--focus-progress);height:100%;border-radius:inherit;background:#fff}
+.focus-reader-top .reader-settings-button{align-self:center;justify-self:end;width:44px;height:44px}
+
+.focus-workspace{
+  width:min(100%,1500px);
+  margin:0 auto;
+  padding:30px clamp(22px,3vw,44px) 36px;
+  display:grid;
+  grid-template-columns:minmax(285px,360px) minmax(0,1fr);
+  gap:clamp(32px,4vw,64px);
+  align-items:start;
+}
+.focus-about{
+  position:sticky;
+  top:142px;
+  overflow:hidden;
+  border:1px solid #cfe0ef;
+  border-radius:18px;
+  background:rgb(255 255 255 / .9);
+  box-shadow:0 10px 28px rgb(29 65 101 / .07);
+}
+.focus-about>h2{
+  margin:0;
+  padding:20px 24px;
+  border-bottom:1px solid #d9e5ef;
+  background:linear-gradient(180deg,#f4f9fe,#eef6fc);
+  color:#07549b;
+  font-family:var(--font-sans);
+  font-size:.86rem;
+  font-weight:900;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+.focus-about-section{
+  display:grid;
+  grid-template-columns:46px minmax(0,1fr);
+  gap:14px;
+  margin:0 22px;
+  padding:20px 0;
+  border-bottom:1px solid #dbe6ef;
+}
+.focus-about-icon{
+  display:grid;
+  place-items:center;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:#eaf6e8;
+  color:#16903d;
+  font-size:1.25rem;
+}
+.focus-virtue .focus-about-icon{background:#edf3ff;color:#165fc1}
+.focus-about-section h3{
+  margin:1px 0 8px;
+  color:#07549b;
+  font-size:.78rem;
+  font-weight:900;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+.focus-evidence h3{color:#168d39}
+.focus-about-section p{margin:0;color:#17263b;line-height:1.65;font-size:.95rem}
+.focus-source-list{display:grid;gap:8px}
+.focus-source-link{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+  color:#17263b;
+  text-decoration:none;
+  line-height:1.35;
+  font-size:.93rem;
+}
+.focus-source-link i{color:#0870cb;font-size:1rem;flex:0 0 auto}
+.focus-source-link.is-pending{display:grid;gap:2px}
+.focus-source-link.is-pending small{color:var(--color-muted);font-size:.7rem}
+.focus-source-grade{margin-top:8px!important;color:var(--color-muted)!important;font-size:.75rem!important}
+.focus-source-list.is-virtue{margin-top:10px;padding-top:10px;border-top:1px dashed #dbe6ef}
+
+.focus-study-resources{border-top:0}
+.focus-study-resources>summary{
+  list-style:none;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:18px 24px;
+  color:#07549b;
+  cursor:pointer;
+  font-size:.8rem;
+  font-weight:900;
+  letter-spacing:.045em;
+  text-transform:uppercase;
+}
+.focus-study-resources>summary::-webkit-details-marker{display:none}
+.focus-study-resources[open]>summary i{transform:rotate(180deg)}
+.focus-study-resources>summary i{transition:transform .18s ease}
+.focus-resource-groups{padding:0 22px 20px;border-top:1px solid #e2ebf2}
+.focus-resource-group{padding:16px 0;border-bottom:1px solid #e2ebf2}
+.focus-resource-group:last-child{border-bottom:0}
+.focus-resource-group h4{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:0 0 10px;
+  color:#07549b;
+  font-size:.78rem;
+}
+.focus-resource-group h4 span{color:var(--color-muted);font-size:.7rem}
+.focus-resource-group>div{display:grid;gap:8px}
+.focus-resource-group a{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:9px 10px;
+  border-radius:9px;
+  background:#f5f9fd;
+  color:#17263b;
+  text-decoration:none;
+}
+.focus-resource-group a:hover{background:#eaf4fc}
+.focus-resource-group a>span{display:grid;gap:2px}
+.focus-resource-group a strong{font-size:.82rem}
+.focus-resource-group a small{color:var(--color-muted);font-size:.7rem}
+.focus-resource-group a>i{color:#0870cb}
+.focus-resources-empty{margin:18px 0 0;color:var(--color-muted);font-size:.82rem}
+
+.focus-main{min-width:0;padding-top:36px}
+.focus-duaa-heading{text-align:center;margin-bottom:26px}
+.focus-duaa-heading h1{
+  margin:0;
+  color:#0d203c;
+  font-family:var(--font-serif);
+  font-size:clamp(2.2rem,4vw,4rem);
+  line-height:1.08;
+}
+.focus-repeat{
+  display:grid;
+  grid-template-columns:minmax(60px,1fr) auto minmax(60px,1fr);
+  align-items:center;
+  gap:16px;
+  width:min(100%,780px);
+  margin:22px auto 0;
+}
+.focus-repeat>span{height:1px;background:#c7d9e9}
+.focus-repeat p{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:0;
+  color:#075ca8;
+  font-size:1rem;
+  font-weight:850;
+}
+.focus-repeat p i{
+  display:grid;
+  place-items:center;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background:#eaf3fb;
+}
+
+.focus-learning{
+  border:0;
+  border-radius:0;
+  overflow:visible;
+  background:transparent;
+  box-shadow:none;
+}
+.focus-learning .learning-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.12fr)}
+.focus-learning .learning-grid-heading{
+  padding-left:54px;
+  border:0;
+  background:transparent;
+}
+.focus-learning .learning-grid-heading span{
+  padding:12px 18px;
+  border:0;
+  color:#07549b;
+  font-size:.77rem;
+  font-weight:900;
+  letter-spacing:.055em;
+  text-align:center;
+}
+.focus-learning .learning-grid-heading span:last-child{text-align:center}
+.focus-learning .learning-segment{
+  grid-template-columns:54px minmax(0,1fr);
+  border-bottom:1px solid #d7e3ed;
+}
+.focus-learning .learning-segment:last-child{border-bottom:0}
+.focus-learning .segment-number{
+  align-self:center;
+  justify-self:center;
+  display:grid;
+  place-items:center;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:#eaf3fb;
+  color:#07549b;
+  font-weight:900;
+}
+.focus-learning .learning-grid>p{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:128px;
+  margin:0;
+  padding:22px 24px;
+  border-right:1px dotted #c9d8e5;
+  color:#17263b;
+  text-align:center;
+  line-height:1.65;
+}
+.focus-learning .learning-grid>p:last-child{border-right:0}
+.focus-learning .segment-transliteration{font-style:italic;color:#31547c!important}
+.focus-reader .focus-learning .segment-arabic{
+  font-family:var(--font-arabic);
+  font-size:var(--reader-arabic-size,2.35rem);
+  line-height:1.85;
+  text-align:center;
+  color:#0d1f3a;
+}
+.focus-learning.is-two-column .learning-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr)}
+.focus-learning.is-arabic-only .learning-grid{grid-template-columns:1fr}
+
+.focus-reader-controls{
+  position:fixed;
+  z-index:30;
+  left:0;
+  right:0;
+  bottom:0;
+  min-height:92px;
+  margin:0;
+  padding:13px 24px;
+  display:grid;
+  place-items:center;
+  border:0;
+  background:linear-gradient(135deg,#0e5ca5,#07508e);
+  box-shadow:0 -5px 18px rgb(12 55 95 / .16);
+}
+.focus-control-group{
+  width:min(100%,760px);
+  display:grid;
+  grid-template-columns:minmax(130px,1fr) minmax(190px,260px) minmax(130px,1fr);
+  align-items:center;
+  gap:22px;
+}
+.focus-control-group>a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-height:48px;
+  color:#fff;
+  font-weight:850;
+  text-decoration:none;
+}
+.focus-control-group>a i{font-size:1.25rem}
+.focus-complete-toggle{
+  min-height:58px;
+  padding:0 28px;
+  border:1px solid rgb(255 255 255 / .75);
+  border-radius:999px;
+  background:#fff;
+  color:#07549b;
+  font:850 .98rem/1 var(--font-sans);
+  cursor:pointer;
+  box-shadow:0 5px 16px rgb(0 31 67 / .16);
+}
+.focus-complete-toggle.is-complete{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  background:#dceefb;
+  color:#07549b;
+  border-color:#b8d9ef;
+}
+.focus-complete-toggle:hover{transform:translateY(-1px)}
+.focus-complete-toggle:focus-visible{outline:3px solid #fff;outline-offset:3px}
+
+@media(max-width:980px){
+  .focus-reader-top{grid-template-columns:1fr auto;min-height:126px}
+  .focus-reader-top .reader-position{grid-column:1/-1;grid-row:2}
+  .focus-reader-top .reader-settings-button{grid-column:2;grid-row:1}
+  .focus-workspace{grid-template-columns:1fr;gap:28px}
+  .focus-about{position:static;order:2}
+  .focus-main{order:1;padding-top:16px}
+}
+@media(max-width:700px){
+  .focus-reader{padding-bottom:112px}
+  .focus-reader-top{padding-inline:18px}
+  .focus-reader-top .reader-exit span{font-size:.8rem}
+  .focus-workspace{padding-inline:16px}
+  .focus-duaa-heading h1{font-size:2.25rem}
+  .focus-learning .learning-grid-heading{display:none}
+  .focus-learning .learning-segment{grid-template-columns:40px minmax(0,1fr);padding:16px 0}
+  .focus-learning .learning-grid{grid-template-columns:1fr!important}
+  .focus-learning .learning-grid>p{min-height:0;justify-content:flex-start;padding:12px 14px;border:0;text-align:left}
+  .focus-reader .focus-learning .segment-arabic{justify-content:flex-end;text-align:right}
+  .focus-learning .mobile-segment-label{display:block;min-width:96px;margin-right:12px;color:#07549b;font:850 .65rem/1.2 var(--font-sans);letter-spacing:.05em;text-transform:uppercase}
+  .focus-control-group{grid-template-columns:1fr minmax(150px,190px) 1fr;gap:8px}
+  .focus-control-group>a span{display:none}
+  .focus-complete-toggle{min-height:54px;padding-inline:18px;font-size:.86rem}
+}
+
+/* v3.4.14 — Duaa Focus Mode layout stabilization */
+.app-shell.is-reading .module-content.is-reader-content{
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding:0;
+}
+.app-shell.is-reading .reader-page.focus-reader{
+  margin:0;
+  width:100%;
+  max-width:none;
+}
+.focus-reader{
+  padding-bottom:104px;
+}
+.focus-reader-top{
+  position:sticky;
+  top:0;
+  z-index:40;
+  width:100%;
+  min-height:128px;
+  margin:0;
+  box-sizing:border-box;
+  grid-template-columns:minmax(220px,1fr) minmax(360px,640px) minmax(220px,1fr);
+  align-items:center;
+}
+.focus-reader-top .reader-position{
+  display:grid !important;
+  grid-template-columns:1fr !important;
+  justify-items:center !important;
+  align-items:center !important;
+  gap:.22rem !important;
+  text-align:center;
+}
+.focus-reader-top .reader-position>span,
+.focus-reader-top .reader-position>strong{
+  min-width:0;
+  width:auto;
+  text-align:center;
+}
+.focus-reader-top .reader-position>span{
+  font-size:clamp(1.65rem,2.2vw,2.35rem);
+}
+.focus-progress{
+  width:min(100%,560px);
+}
+.focus-workspace{
+  width:min(100%,1600px);
+  max-width:none;
+  padding:34px clamp(28px,4vw,64px) 54px;
+  grid-template-columns:minmax(300px,330px) minmax(760px,1fr);
+  gap:clamp(36px,4vw,72px);
+}
+.focus-about{
+  top:154px;
+}
+.focus-main{
+  min-width:0;
+  width:100%;
+  padding-top:4px;
+}
+.focus-duaa-heading{
+  margin:0 auto 24px;
+  max-width:980px;
+}
+.focus-duaa-heading h1{
+  font-size:clamp(2.15rem,3.1vw,3.35rem);
+  line-height:1.08;
+  text-wrap:balance;
+}
+.focus-learning{
+  width:100%;
+}
+.focus-learning .learning-grid{
+  grid-template-columns:minmax(220px,.9fr) minmax(230px,.95fr) minmax(320px,1.35fr);
+}
+.focus-learning .learning-grid>p{
+  min-width:0;
+  padding:22px 28px;
+  overflow-wrap:normal;
+  word-break:normal;
+  hyphens:none;
+}
+.focus-reader .focus-learning .segment-arabic{
+  font-size:var(--reader-arabic-size,2.35rem);
+  line-height:1.8;
+  white-space:normal;
+  overflow-wrap:normal;
+  word-break:normal;
+}
+.focus-reader-controls{
+  min-height:104px;
+  padding:15px 24px;
+}
+.focus-control-group{
+  width:min(100%,820px);
+  grid-template-columns:170px minmax(220px,280px) 170px;
+  justify-content:center;
+  gap:26px;
+}
+.focus-control-group>a,
+.focus-control-spacer{
+  width:170px;
+  min-width:170px;
+}
+.focus-control-spacer{
+  display:block;
+  min-height:48px;
+}
+.focus-complete-toggle{
+  width:100%;
+}
+
+@media(max-width:1180px){
+  .focus-workspace{
+    grid-template-columns:minmax(280px,310px) minmax(0,1fr);
+    gap:32px;
+    padding-inline:28px;
+  }
+  .focus-learning .learning-grid{
+    grid-template-columns:minmax(170px,.9fr) minmax(180px,.95fr) minmax(250px,1.3fr);
+  }
+  .focus-learning .learning-grid>p{padding-inline:18px}
+}
+
+@media(max-width:980px){
+  .focus-reader-top{
+    grid-template-columns:minmax(160px,1fr) minmax(280px,1.5fr) minmax(80px,1fr);
+    min-height:118px;
+  }
+  .focus-reader-top .reader-position{
+    grid-column:2;
+    grid-row:1;
+  }
+  .focus-reader-top .reader-settings-button{
+    grid-column:3;
+    grid-row:1;
+  }
+  .focus-workspace{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+  .focus-main{order:1}
+  .focus-about{position:static;order:2}
+  .focus-learning .learning-grid{
+    grid-template-columns:minmax(180px,.9fr) minmax(190px,.95fr) minmax(260px,1.3fr);
+  }
+}
+
+@media(max-width:760px){
+  .focus-reader-top{
+    min-height:136px;
+    grid-template-columns:1fr auto;
+    align-items:center;
+  }
+  .focus-reader-top .reader-exit{grid-column:1;grid-row:1}
+  .focus-reader-top .reader-settings-button{grid-column:2;grid-row:1}
+  .focus-reader-top .reader-position{grid-column:1/-1;grid-row:2}
+  .focus-workspace{padding-inline:16px}
+  .focus-learning .learning-grid-heading{display:none}
+  .focus-learning .learning-segment{grid-template-columns:40px minmax(0,1fr);padding:16px 0}
+  .focus-learning .learning-grid{grid-template-columns:1fr!important}
+  .focus-learning .learning-grid>p{min-height:0;justify-content:flex-start;padding:12px 14px;border:0;text-align:left}
+  .focus-reader .focus-learning .segment-arabic{justify-content:flex-end;text-align:right}
+  .focus-control-group{
+    width:min(100%,620px);
+    grid-template-columns:72px minmax(160px,220px) 72px;
+    gap:10px;
+  }
+  .focus-control-group>a,
+  .focus-control-spacer{width:72px;min-width:72px}
+}
+
+
+/* v3.4.15 — Duaa Focus Mode typography and alignment polish */
+.focus-workspace{
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding-left:clamp(24px,2.25vw,42px);
+  padding-right:clamp(28px,3.5vw,64px);
+  grid-template-columns:minmax(330px,380px) minmax(0,1fr);
+  gap:clamp(38px,4vw,72px);
+}
+.focus-about{
+  width:100%;
+}
+.focus-learning .learning-grid>p{
+  line-height:1.42;
+}
+.focus-learning .segment-transliteration{
+  line-height:1.42!important;
+}
+.focus-reader .focus-learning .segment-arabic{
+  font-family:"Amiri Quran","Amiri",serif;
+  line-height:1.6;
+  text-align:right;
+  justify-content:flex-end;
+  direction:rtl;
+}
+.focus-learning .learning-grid-heading span:last-child{
+  text-align:right;
+}
+.focus-repeat p{
+  gap:0;
+}
+.focus-repeat p i{
+  display:none;
+}
+.focus-reader-controls{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.focus-control-group{
+  width:auto;
+  grid-template-columns:150px auto 150px;
+  justify-content:center;
+  gap:22px;
+}
+.focus-control-group>a,
+.focus-control-spacer{
+  width:150px;
+  min-width:150px;
+}
+.focus-complete-toggle{
+  width:auto;
+  min-width:154px;
+  min-height:54px;
+  padding:0 26px;
+}
+@media(max-width:1180px){
+  .focus-workspace{
+    grid-template-columns:minmax(300px,340px) minmax(0,1fr);
+    padding-left:24px;
+    padding-right:28px;
+  }
+}
+@media(max-width:980px){
+  .focus-workspace{
+    padding-inline:20px;
+  }
+}
+@media(max-width:700px){
+  .focus-control-group{
+    grid-template-columns:54px auto 54px;
+    gap:12px;
+  }
+  .focus-control-group>a,
+  .focus-control-spacer{
+    width:54px;
+    min-width:54px;
+  }
+  .focus-complete-toggle{
+    min-width:142px;
+    padding-inline:20px;
+  }
+}
+
+/* v3.4.16 — Duaa Focus Mode rendered text alignment correction */
+.focus-reader .focus-learning .learning-grid>p{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  text-align:left;
+}
+.focus-reader .focus-learning .segment-text{
+  display:block;
+  width:100%;
+  min-width:0;
+  box-sizing:border-box;
+}
+.focus-reader .focus-learning .segment-text-transliteration,
+.focus-reader .focus-learning .segment-text-english{
+  direction:ltr;
+  text-align:left;
+}
+.focus-reader .focus-learning .segment-arabic{
+  justify-content:flex-end;
+  direction:rtl;
+  text-align:right;
+}
+.focus-reader .focus-learning .segment-text-arabic{
+  direction:rtl;
+  text-align:right;
+  unicode-bidi:isolate;
+}
+.focus-reader .focus-learning .learning-grid-heading span{
+  text-align:center;
+}
+.focus-reader .focus-learning .learning-grid-heading span:last-child{
+  text-align:center;
+}
+@media(max-width:760px){
+  .focus-reader .focus-learning .learning-grid>p{
+    align-items:flex-start;
+    justify-content:flex-start;
+    text-align:left;
+  }
+  .focus-reader .focus-learning .segment-arabic{
+    justify-content:flex-start;
+    direction:rtl;
+    text-align:right;
+  }
+  .focus-reader .focus-learning .segment-text-arabic{
+    text-align:right;
+  }
+}
+
