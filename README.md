@@ -1,4 +1,4 @@
-# Ummiby Companion v3.5.1
+# Ummiby Companion v3.6.1
 
 This release refines the Duaa Memorization Map with canonical duaa records. Shared supplications such as Sayyid al-Istighfar now have one memorization status across every collection where they appear, while each collection keeps its own virtue and usage details.
 
@@ -70,3 +70,14 @@ Copy `js/config.example.js` to `js/config.js` and add the Supabase project URL a
 - Registers Prayer and Fasting as top-level global-navigation modules.
 - Adds working placeholder pages without enabling unfinished tracking or location services.
 - Keeps the focused App Home card set unchanged until the new modules receive full blueprints.
+
+## Duaa Read and Learn Polish (v3.6.1)
+
+- Learn Mode remains selectable for every duaa.
+- Duas without segmented learning data display a centered, responsive placeholder with a Return to Read action.
+- Existing phrase-by-phrase learning remains unchanged for duas with segmented content.
+- Reader navigation, completion, collection exit, settings, and memorization controls use the approved Phosphor icon language.
+
+## Duaa Read and Learn Modes (v3.6.0)
+
+Duaa Reading Mode now offers a calm **Read** view for uninterrupted daily recitation and a segmented **Learn** view for memorization and pronunciation practice. The selected mode is stored with the existing local reading preferences.

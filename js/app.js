@@ -125,6 +125,13 @@ function bindShellEvents() {
     render();
     app.querySelector("[data-reading-dialog]")?.showModal();
   });
+  app.querySelectorAll("[data-reading-mode]").forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.disabled) return;
+      updateReadingPreferences({ mode: button.dataset.readingMode });
+      render();
+    });
+  });
 
   app.querySelectorAll("[data-collection-filters]").forEach((panel) => {
     const collectionId = panel.dataset.collectionFilters;

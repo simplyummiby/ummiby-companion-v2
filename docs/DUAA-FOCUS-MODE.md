@@ -20,3 +20,11 @@ Focus Mode is a dedicated reading workspace framed by sticky blue top and bottom
 ## Responsive Behavior
 
 On narrower screens, the reading area appears first and the About This Duaa panel follows it. Phrase columns stack with labels while preserving Arabic right alignment.
+
+
+## v3.6.0 Read and Learn modes
+
+- **Read** is the everyday view: complete English on the left and complete Arabic on the right in one uninterrupted row.
+- **Learn** keeps the three-column phrase-by-phrase layout for transliteration, English, and Arabic.
+- The selected mode persists while moving through the collection and across sessions.
+- If segmented content is unavailable, Learn is disabled rather than rendering an incomplete layout.

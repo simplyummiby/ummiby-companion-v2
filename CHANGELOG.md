@@ -1,5 +1,25 @@
 # Changelog
 
+## 3.6.1 — Duaa Read / Learn Polish
+
+- Added an intentional centered Learn Mode placeholder for duas without segmented phrase data.
+- Kept Learn selectable so the saved mode is respected across navigation; the placeholder can return directly to Read Mode.
+- Standardized Duaa reader icons with Phosphor BookOpen, Student, CaretLeft, CaretRight, CheckCircle, ListBullets, and GearSix icons.
+- Adopted the Phosphor SealCheck icon for existing memorization status controls.
+- Preserved the existing segmented Learn layout and removed the previous forced-mode fallback logic.
+- Added responsive styling for the unavailable Learn Mode card without changing the broader reader layout.
+- Completed focused cleanup around Read/Learn rendering and retained filtered reading sequences, completion, memorization, and progress behavior.
+
+## 3.6.0 — Duaa Read & Learn Modes
+
+- Added Read and Learn tabs to Duaa Reading Mode.
+- Read view presents the complete English and Arabic duaa in one uninterrupted two-column row.
+- Learn view preserves the existing phrase-by-phrase English, transliteration, and Arabic layout.
+- Read is the default for existing users; the selected mode persists across Previous and Next navigation and future sessions.
+- Learn is disabled gracefully when segmented learning content is unavailable.
+- Preserved filtered Qur’anic reading sequences, collection-specific virtues, completion controls, and Arabic-size preferences.
+
+
 ## 3.5.1 — Duaa Canonical Record Foundation
 
 - Added canonical identities for supplications shared between Morning and Evening collections.

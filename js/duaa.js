@@ -8,7 +8,7 @@ export const duaaOrder = ['morning','evening','sleep','travel','weather','prayer
 // Keep the v2.1 storage key so a content restoration does not erase existing
 // completion, worship-history, or custom-order records.
 const key = 'ummiby.duaa.v2.1';
-const emptyState = () => ({ completed:{}, memorized:{}, memorizedCanonical:{}, worship:{}, history:{}, order:{}, reading:{ arabicSize: 2.35, showEnglish: true, showTransliteration: true } });
+const emptyState = () => ({ completed:{}, memorized:{}, memorizedCanonical:{}, worship:{}, history:{}, order:{}, reading:{ arabicSize: 2.35, showEnglish: true, showTransliteration: true, mode: 'read' } });
 
 const legacyItemAliases = {
   morning: { protection:'morning-006', contentment:'morning-013' },
@@ -69,6 +69,7 @@ function normalizeState(value){
   next.reading.arabicSize = Number.isFinite(Number(next.reading.arabicSize)) ? Math.min(3.4, Math.max(1.7, Number(next.reading.arabicSize))) : 2.35;
   next.reading.showEnglish = next.reading.showEnglish !== false;
   next.reading.showTransliteration = next.reading.showTransliteration !== false;
+  next.reading.mode = next.reading.mode === 'learn' ? 'learn' : 'read';
   return migrateLegacyItemIds(next);
 }
 
@@ -160,7 +161,7 @@ export function weekStatus(collectionId){
 
 export function readingPreferences(){
   const r=state().reading;
-  return { arabicSize:r.arabicSize, showEnglish:r.showEnglish, showTransliteration:r.showTransliteration };
+  return { arabicSize:r.arabicSize, showEnglish:r.showEnglish, showTransliteration:r.showTransliteration, mode:r.mode === 'learn' ? 'learn' : 'read' };
 }
 export function updateReadingPreferences(changes={}){
   const s=state();
@@ -168,6 +169,7 @@ export function updateReadingPreferences(changes={}){
   if(changes.arabicSize !== undefined) s.reading.arabicSize=Math.min(3.4,Math.max(1.7,Number(changes.arabicSize)||2.35));
   if(changes.showEnglish !== undefined) s.reading.showEnglish=Boolean(changes.showEnglish);
   if(changes.showTransliteration !== undefined) s.reading.showTransliteration=Boolean(changes.showTransliteration);
+  if(changes.mode !== undefined) s.reading.mode=changes.mode === 'learn' ? 'learn' : 'read';
   save(s);
   return readingPreferences();
 }
