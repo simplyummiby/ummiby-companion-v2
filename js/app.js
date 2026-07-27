@@ -1,5 +1,5 @@
-import { renderShell } from "./shell.js";
-import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences } from "./duaa.js";
+import { renderShell, saveActiveJourney } from "./shell.js?v=3.8.1";
+import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences } from "./duaa.js?v=3.8.1";
 import {
   onAuthStateChange,
   restoreSession,
@@ -7,10 +7,10 @@ import {
   signInWithPassword,
   signOut,
   signUpWithPassword
-} from "./auth.js";
-import { initializeSupabase, getSupabaseClient } from "./supabase.js";
-import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js";
-import { clearPreferences, loadPreferences } from "./preferences.js";
+} from "./auth.js?v=3.8.1";
+import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.8.1";
+import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.8.1";
+import { clearPreferences, loadPreferences } from "./preferences.js?v=3.8.1";
 
 const app = document.querySelector("#app");
 const toastRegion = document.querySelector("#toast-region");
@@ -113,6 +113,19 @@ function bindShellEvents() {
 
 
   if (app.querySelector('[data-quran-reading-inside]')) recordQuranReading('inside');
+
+
+  app.querySelectorAll('[data-open-active-journey]').forEach(button => {
+    button.addEventListener('click', () => app.querySelector(`#make-active-${button.dataset.openActiveJourney}`)?.showModal());
+  });
+  app.querySelectorAll('[data-confirm-active-journey]').forEach(button => {
+    button.addEventListener('click', () => {
+      const changed = saveActiveJourney(button.dataset.confirmActiveJourney);
+      if (changed) toast(`${button.dataset.confirmActiveJourney === 'classic' ? 'Classic Journey' : 'Reading Unit Journey'} is now your Active Reading Journey.`);
+      app.querySelector('[data-active-journey-dialog][open]')?.close();
+      render();
+    });
+  });
 
   app.querySelector('[data-record-quran-today]')?.addEventListener('click', () => {
     const key = new Date().toISOString().slice(0, 10);

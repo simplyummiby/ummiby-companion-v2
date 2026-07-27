@@ -1,5 +1,27 @@
 # Changelog
 
+## 3.8.1 — Reading Journeys Experience
+
+### Experience and education
+- Rebuilt Reading Journeys as a calm, educational destination rather than a two-card index.
+- Explained what Reading Journeys are, why two paths are available, and how each supports a different reading routine.
+- Added prominent reassurance that Reading Unit Journey and Classic Journey both follow the Qur'an in its traditional order.
+- Clarified that Reading Unit Journey organizes traditional-order reading into 294 natural stopping points; it is not thematic or rearranged.
+- Clarified that Classic Journey can resume from any ayah and never requires completing a surah in one session.
+
+### Active Reading Journey
+- Added a prominent Active Journey summary with current position, progress ring, progress bar, Continue Reading, and View Journey actions.
+- Added confirmation before changing the Active Reading Journey.
+- Preserved separate Reading Unit and Classic progress while changing only which path powers Qur'an Home's Continue Reading experience.
+- Updated Qur'an Home and navigation terminology from Journey/Journeys to Active Reading Journey/Reading Journeys.
+
+### Visual and responsive polish
+- Reused the standard Qur'an banner height and artwork with page-specific live overlay text.
+- Added responsive journey detail cards, comparison guidance, information callouts, and mobile-safe actions consistent with Ummiby Companion's design language.
+
+### Regression review
+- Verified route coverage, JavaScript syntax, active-journey persistence, independent default progress, reader routes, Reading History, study resources, reading preferences, memorization routes, and existing Duaa functionality.
+
 ## 3.8.0 — Qur'an Home & Navigation Refinement
 
 ### Qur'an Home
@@ -957,3 +979,9 @@
 - Restored visibility of the global sidebar and Qur'an module navigation beneath the hero.
 - Re-cropped the Qur'an hero artwork for the shallow application banner rather than a standalone large hero.
 - Returned hero typography to the global banner scale and responsive safe zones.
+
+### Startup correction
+
+- Corrected a JavaScript string syntax error in the Reading Journeys copy that could leave Live Server on the opening screen.
+- Updated release asset cache keys to v3.8.1 so older JavaScript modules are not mixed with the new build.
+- Added a safe local-preview `js/config.js` placeholder.

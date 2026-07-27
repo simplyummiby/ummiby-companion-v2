@@ -81,3 +81,8 @@ Copy `js/config.example.js` to `js/config.js` and add the Supabase project URL a
 ## Duaa Read and Learn Modes (v3.6.0)
 
 Duaa Reading Mode now offers a calm **Read** view for uninterrupted daily recitation and a segmented **Learn** view for memorization and pronunciation practice. The selected mode is stored with the existing local reading preferences.
+
+
+## Local preview note
+
+The v3.8.1 entry assets use release-specific cache keys so Live Server does not mix JavaScript modules from older builds. A blank `js/config.js` is included intentionally for local preview mode.
