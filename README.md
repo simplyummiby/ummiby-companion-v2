@@ -1,4 +1,4 @@
-# Ummiby Companion v3.6.2
+# Ummiby Companion v3.7.0
 
 This release refines the Duaa Memorization Map with canonical duaa records. Shared supplications such as Sayyid al-Istighfar now have one memorization status across every collection where they appear, while each collection keeps its own virtue and usage details.
 

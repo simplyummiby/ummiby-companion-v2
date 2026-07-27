@@ -1,5 +1,5 @@
 # Ummiby Companion
 
-Version: **3.6.2**
+Version: **3.7.0**
 
-Release: **Duaa Consistency Persistence**
+Release: **Duaa History Experience**

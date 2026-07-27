@@ -1,5 +1,23 @@
 # Changelog
 
+## 3.7.0 — Duaa History Experience
+
+### Added
+- Rebuilt Duaa History as a three-tab Morning, Evening, and Before Sleep experience.
+- Added a responsive monthly calendar with active, fully completed, today, and selected-day states.
+- Added Active Days, Completed Days, Completion Rate, Current Streak, and Longest Streak summaries.
+- Added selected-day detail cards and honest legacy-record handling for activity saved before daily counts existed.
+- Began recording daily completed and total counts for richer history from this release forward.
+
+### Preserved
+- Existing local-calendar consistency records and the `ummiby.duaa.v2.1` storage key.
+- Existing tracked collection behavior, completion, memorization, reading progress, filters, ordering, and Read/Learn modes.
+
+### Technical debt
+- Centralized Duaa history record and streak calculations in the Duaa data service.
+- Kept calendar rendering separate from persistence and summary calculations for future Supabase synchronization.
+
+
 ## 3.6.2 — Duaa Consistency Persistence
 
 ### Fixed
@@ -134,6 +152,24 @@
 
 # Changelog
 
+## 3.7.0 — Duaa History Experience
+
+### Added
+- Rebuilt Duaa History as a three-tab Morning, Evening, and Before Sleep experience.
+- Added a responsive monthly calendar with active, fully completed, today, and selected-day states.
+- Added Active Days, Completed Days, Completion Rate, Current Streak, and Longest Streak summaries.
+- Added selected-day detail cards and honest legacy-record handling for activity saved before daily counts existed.
+- Began recording daily completed and total counts for richer history from this release forward.
+
+### Preserved
+- Existing local-calendar consistency records and the `ummiby.duaa.v2.1` storage key.
+- Existing tracked collection behavior, completion, memorization, reading progress, filters, ordering, and Read/Learn modes.
+
+### Technical debt
+- Centralized Duaa history record and streak calculations in the Duaa data service.
+- Kept calendar rendering separate from persistence and summary calculations for future Supabase synchronization.
+
+
 ## v3.4.22 — Qur’anic Duaa Collection
 
 - Added the new **Qur’anic Duaas** collection to the Collections index.
@@ -197,6 +233,24 @@
 - Preserved the site-wide static-host routing fix from v3.4.10.
 
 # Changelog
+
+## 3.7.0 — Duaa History Experience
+
+### Added
+- Rebuilt Duaa History as a three-tab Morning, Evening, and Before Sleep experience.
+- Added a responsive monthly calendar with active, fully completed, today, and selected-day states.
+- Added Active Days, Completed Days, Completion Rate, Current Streak, and Longest Streak summaries.
+- Added selected-day detail cards and honest legacy-record handling for activity saved before daily counts existed.
+- Began recording daily completed and total counts for richer history from this release forward.
+
+### Preserved
+- Existing local-calendar consistency records and the `ummiby.duaa.v2.1` storage key.
+- Existing tracked collection behavior, completion, memorization, reading progress, filters, ordering, and Read/Learn modes.
+
+### Technical debt
+- Centralized Duaa history record and streak calculations in the Duaa data service.
+- Kept calendar rendering separate from persistence and summary calculations for future Supabase synchronization.
+
 
 ## v3.4.22 — Qur’anic Duaa Collection
 
@@ -309,6 +363,24 @@
 
 # Changelog
 
+## 3.7.0 — Duaa History Experience
+
+### Added
+- Rebuilt Duaa History as a three-tab Morning, Evening, and Before Sleep experience.
+- Added a responsive monthly calendar with active, fully completed, today, and selected-day states.
+- Added Active Days, Completed Days, Completion Rate, Current Streak, and Longest Streak summaries.
+- Added selected-day detail cards and honest legacy-record handling for activity saved before daily counts existed.
+- Began recording daily completed and total counts for richer history from this release forward.
+
+### Preserved
+- Existing local-calendar consistency records and the `ummiby.duaa.v2.1` storage key.
+- Existing tracked collection behavior, completion, memorization, reading progress, filters, ordering, and Read/Learn modes.
+
+### Technical debt
+- Centralized Duaa history record and streak calculations in the Duaa data service.
+- Kept calendar rendering separate from persistence and summary calculations for future Supabase synchronization.
+
+
 ## v3.4.22 — Qur’anic Duaa Collection
 
 - Added the new **Qur’anic Duaas** collection to the Collections index.
@@ -342,6 +414,24 @@
 - Preserved all approved banner artwork and unrelated application behavior.
 
 # Changelog
+
+## 3.7.0 — Duaa History Experience
+
+### Added
+- Rebuilt Duaa History as a three-tab Morning, Evening, and Before Sleep experience.
+- Added a responsive monthly calendar with active, fully completed, today, and selected-day states.
+- Added Active Days, Completed Days, Completion Rate, Current Streak, and Longest Streak summaries.
+- Added selected-day detail cards and honest legacy-record handling for activity saved before daily counts existed.
+- Began recording daily completed and total counts for richer history from this release forward.
+
+### Preserved
+- Existing local-calendar consistency records and the `ummiby.duaa.v2.1` storage key.
+- Existing tracked collection behavior, completion, memorization, reading progress, filters, ordering, and Read/Learn modes.
+
+### Technical debt
+- Centralized Duaa history record and streak calculations in the Duaa data service.
+- Kept calendar rendering separate from persistence and summary calculations for future Supabase synchronization.
+
 
 ## v3.4.22 — Qur’anic Duaa Collection
 

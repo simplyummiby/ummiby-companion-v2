@@ -16,6 +16,8 @@ const app = document.querySelector("#app");
 const toastRegion = document.querySelector("#toast-region");
 let currentUser = null;
 let configured = false;
+const nowForHistory = new Date();
+let historyView = { collectionId:'morning', year:nowForHistory.getFullYear(), month:nowForHistory.getMonth(), selectedDate:null };
 
 const collectionFilterKey = (collectionId) => `ummiby.collectionFilters.${collectionId}`;
 const collectionScrollKey = (collectionId) => `ummiby.collectionScroll.${collectionId}`;
@@ -56,7 +58,7 @@ function toast(message, type = "info") {
 
 function render() {
   const pathname = normalizedPath();
-  app.innerHTML = renderShell({ pathname, user: currentUser, identity: getIdentity(), configured });
+  app.innerHTML = renderShell({ pathname, user: currentUser, identity: getIdentity(), configured, historyView });
   prepareRouteLinks();
   bindShellEvents();
 }
@@ -76,6 +78,26 @@ function bindShellEvents() {
         sessionStorage.setItem(collectionScrollKey('quranic'), String(window.scrollY));
       }
       navigate(targetRoute);
+    });
+  });
+
+  app.querySelectorAll('[data-history-collection]').forEach(button => {
+    button.addEventListener('click', () => {
+      historyView = { ...historyView, collectionId:button.dataset.historyCollection };
+      render();
+    });
+  });
+  app.querySelectorAll('[data-history-month]').forEach(button => {
+    button.addEventListener('click', () => {
+      const date=new Date(historyView.year,historyView.month+Number(button.dataset.historyMonth),1);
+      historyView={...historyView,year:date.getFullYear(),month:date.getMonth(),selectedDate:null};
+      render();
+    });
+  });
+  app.querySelectorAll('[data-history-day]').forEach(button => {
+    button.addEventListener('click', () => {
+      historyView={...historyView,selectedDate:button.dataset.historyDay};
+      render();
     });
   });
 

@@ -159,9 +159,22 @@ export function totalMemorizedCount(){
 }
 
 export function isComplete(collectionId,itemId){ return Boolean(state().completed?.[collectionId]?.[itemId]); }
+function updateDailyHistory(collectionId,s,day=localDateKey()){
+  const collection=collections[collectionId];
+  if(!collection?.tracked) return;
+  const completedIds=collection.items.filter(item=>Boolean(s.completed?.[collectionId]?.[item.id])).map(item=>item.id);
+  s.history[collectionId] ||= {};
+  s.history[collectionId][day]={ active:true, completedCount:completedIds.length, totalCount:collection.items.length, complete:completedIds.length===collection.items.length, completedIds };
+}
 export function toggleComplete(collectionId,itemId){
   const s=state(); s.completed[collectionId] ||= {}; s.completed[collectionId][itemId]=!s.completed[collectionId][itemId];
-  if(s.completed[collectionId][itemId]) recordWorship(collectionId,s); else save(s);
+  if(collections[collectionId]?.tracked){
+    const day=localDateKey();
+    s.worship[collectionId] ||= {};
+    if(s.completed[collectionId][itemId]) s.worship[collectionId][day]=true;
+    if(s.worship[collectionId][day]) updateDailyHistory(collectionId,s,day);
+  }
+  save(s);
   return s.completed[collectionId][itemId];
 }
 export function recordWorship(collectionId, existing){
@@ -170,6 +183,7 @@ export function recordWorship(collectionId, existing){
   const day=localDateKey();
   s.worship[collectionId] ||= {};
   s.worship[collectionId][day]=true;
+  updateDailyHistory(collectionId,s,day);
   return save(s);
 }
 export function toggleWorshipToday(collectionId){
@@ -177,8 +191,13 @@ export function toggleWorshipToday(collectionId){
   const s=state();
   const day=localDateKey();
   s.worship[collectionId] ||= {};
-  if(s.worship[collectionId][day]) delete s.worship[collectionId][day];
-  else s.worship[collectionId][day]=true;
+  if(s.worship[collectionId][day]) {
+    delete s.worship[collectionId][day];
+    if(s.history?.[collectionId]) delete s.history[collectionId][day];
+  } else {
+    s.worship[collectionId][day]=true;
+    updateDailyHistory(collectionId,s,day);
+  }
   const recorded=Boolean(s.worship[collectionId][day]);
   return save(s) ? recorded : !recorded;
 }
@@ -212,6 +231,49 @@ export function consistencyStorageAudit(){
   },{});
 }
 
+export function duaaHistoryRecords(collectionId){
+  const s=state();
+  const worship=s.worship?.[collectionId] || {};
+  const details=s.history?.[collectionId] || {};
+  const days=new Set([...Object.keys(worship),...Object.keys(details)]);
+  return [...days].sort().reduce((records,day)=>{
+    if(!worship[day] && !details[day]?.active) return records;
+    const detail=details[day] || {};
+    records[day]={
+      date:day,
+      active:true,
+      completedCount:Number.isFinite(Number(detail.completedCount))?Number(detail.completedCount):null,
+      totalCount:Number.isFinite(Number(detail.totalCount))?Number(detail.totalCount):null,
+      complete:detail.complete===true,
+      legacy:!details[day]
+    };
+    return records;
+  },{});
+}
+export function duaaHistorySummary(collectionId,throughDate=localDateKey()){
+  const records=duaaHistoryRecords(collectionId);
+  const activeDates=Object.keys(records).filter(day=>day<=throughDate).sort();
+  const completedDays=activeDates.filter(day=>records[day].complete).length;
+  const known=activeDates.filter(day=>records[day].completedCount!==null&&records[day].totalCount);
+  const completedTotal=known.reduce((sum,day)=>sum+records[day].completedCount,0);
+  const availableTotal=known.reduce((sum,day)=>sum+records[day].totalCount,0);
+  const streakEndingAt=(dateKey)=>{
+    let date=new Date(`${dateKey}T12:00:00`),streak=0;
+    while(records[localDateKey(date)]?.active){ streak++; date.setDate(date.getDate()-1); }
+    return streak;
+  };
+  let currentStreak=streakEndingAt(throughDate);
+  if(!currentStreak){ const yesterday=new Date(`${throughDate}T12:00:00`); yesterday.setDate(yesterday.getDate()-1); currentStreak=streakEndingAt(localDateKey(yesterday)); }
+  let longestStreak=0,run=0,previous=null;
+  activeDates.forEach(day=>{
+    const current=new Date(`${day}T12:00:00`);
+    const consecutive=previous&&Math.round((current-previous)/86400000)===1;
+    run=consecutive?run+1:1;
+    longestStreak=Math.max(longestStreak,run);
+    previous=current;
+  });
+  return { activeDays:activeDates.length, completedDays, completionRate:availableTotal?Math.round(completedTotal/availableTotal*100):null, currentStreak, longestStreak };
+}
 
 export function readingPreferences(){
   const r=state().reading;
