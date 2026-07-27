@@ -1,3 +1,3 @@
-# Ummiby Companion v3.13.0
+# Ummiby Companion v3.14.0
 
-Prayer Companion Foundation
+Names of Allah Companion Foundation

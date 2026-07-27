@@ -66,9 +66,9 @@
 }
 
 [data-theme="names"] {
-  --theme-accent: #c08728;
-  --theme-accent-strong: #96600e;
-  --theme-soft: #fff7e7;
+  --theme-accent: #35558a;
+  --theme-accent-strong: #213d70;
+  --theme-soft: #edf2fb;
 }
 
 [data-theme="prayer"] {

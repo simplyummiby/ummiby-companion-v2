@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.14.0 — Names of Allah Companion Foundation
+- Added all 99 Names from the specified Shaykh Ibn al-'Uthaymeen/Dawud Burbank source.
+- Added Home, Explore, Learn, Review, Favorites, About, and individual Name routes.
+- Added search, Qur’an/Sunnah filters, favorites, and studied-state persistence.
+- Added deep-lapis visual identity and complete responsive styling.
+- Preserved Prayer Companion v3.13.0 and all existing modules.
+
+# Changelog
+
 ## v3.13.0 — Prayer Companion Foundation
 - Added the complete Prayer Companion module shell, navigation, routing, ancient-gold visual identity, responsive home, prayer-time placeholder panel, and standardized banner.
 - Added five daily prayer indexes and detail frameworks, Sunnah and voluntary prayer pages, sequential prayer lessons, Wudu Companion, Prayer Duaa Library shells, Prayer Knowledge, settings/calendar placeholders, and progress dashboard.

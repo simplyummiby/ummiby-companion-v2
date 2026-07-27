@@ -1,4 +1,4 @@
-# Ummiby Companion v3.13.0
+# Ummiby Companion v3.14.0
 
 **Current release:** Canonical Qur’an Integration QA & Regression Protection — Phase 4
 
@@ -96,3 +96,7 @@ The v3.9.0 entry assets use release-specific cache keys so Live Server does not 
 
 ## Canonical Qur’an data
 Version 3.9.0 includes the complete Arabic and Hilali–Khan Qur’an dataset plus all 294 canonical Reading Units. The browser validates this foundation at module load through `js/data/quran-canonical.js`. Raw source files are retained in `data/quran/source/`.
+
+
+## Names of Allah Companion (v3.14.0)
+Complete module shell with the Ibn al-'Uthaymeen list, Explore, Learn, Review, Favorites, detail routes, local progress, and explicit source attribution.

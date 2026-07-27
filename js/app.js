@@ -1,6 +1,6 @@
-import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.13.0";
-import { renderShell, saveActiveJourney } from "./shell.js?v=3.13.0";
-import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences } from "./duaa.js?v=3.13.0";
+import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.14.0";
+import { renderShell, saveActiveJourney } from "./shell.js?v=3.14.0";
+import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences } from "./duaa.js?v=3.14.0";
 import {
   onAuthStateChange,
   restoreSession,
@@ -8,10 +8,10 @@ import {
   signInWithPassword,
   signOut,
   signUpWithPassword
-} from "./auth.js?v=3.13.0";
-import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.13.0";
-import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.13.0";
-import { clearPreferences, loadPreferences } from "./preferences.js?v=3.13.0";
+} from "./auth.js?v=3.14.0";
+import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.14.0";
+import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.14.0";
+import { clearPreferences, loadPreferences } from "./preferences.js?v=3.14.0";
 
 const app = document.querySelector("#app");
 console.info("Canonical Qur’an data verified", QURAN_CANONICAL_STATUS);
@@ -97,6 +97,12 @@ function recordReadingUnitActivity(type, unitOrder, details = {}) {
 }
 
 function bindShellEvents() {
+  let namesFilter='all';
+  const applyNamesFilters=()=>{const query=(app.querySelector('[data-names-search]')?.value||'').trim().toLowerCase();const cards=[...app.querySelectorAll('[data-name-card]')];let visible=0;cards.forEach(card=>{const matchesText=!query||card.dataset.nameSearch.includes(query);const matchesSource=namesFilter==='all'||card.dataset.nameSource===namesFilter;card.hidden=!(matchesText&&matchesSource);if(!card.hidden)visible+=1});const output=app.querySelector('[data-names-results]');if(output)output.textContent=`${visible} ${visible===1?'Name':'Names'} shown`;const empty=app.querySelector('[data-names-empty]');if(empty)empty.hidden=visible!==0};
+  app.querySelector('[data-names-search]')?.addEventListener('input',applyNamesFilters);
+  app.querySelectorAll('[data-names-filter]').forEach(button=>button.addEventListener('click',()=>{namesFilter=button.dataset.namesFilter;app.querySelectorAll('[data-names-filter]').forEach(x=>x.classList.toggle('is-active',x===button));applyNamesFilters()}));
+  app.querySelectorAll('[data-name-favorite]').forEach(button=>button.addEventListener('click',()=>{const id=String(button.dataset.nameFavorite);let values=[];try{values=JSON.parse(localStorage.getItem('ummiby.names.favorites')||'[]').map(String)}catch{}values=values.includes(id)?values.filter(x=>x!==id):[...values,id];localStorage.setItem('ummiby.names.favorites',JSON.stringify(values));toast(values.includes(id)?'Name added to favorites.':'Name removed from favorites.');render()}));
+  app.querySelector('[data-name-complete]')?.addEventListener('click',button=>{const id=String(button.dataset.nameComplete);let values=[];try{values=JSON.parse(localStorage.getItem('ummiby.names.completed')||'[]').map(String)}catch{}values=values.includes(id)?values.filter(x=>x!==id):[...values,id];localStorage.setItem('ummiby.names.completed',JSON.stringify(values));toast(values.includes(id)?'Name marked as studied.':'Studied status removed.');render()});
   app.querySelectorAll("[data-route]").forEach((link) => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
