@@ -1,4 +1,10 @@
-# Ummiby Companion v3.7.3
+# Ummiby Companion v3.12.0
+
+**Current release:** Canonical Qur’an Integration QA & Regression Protection — Phase 4
+
+The canonical Qur’an foundation now includes 114 surahs, 6,236 Arabic ayat with Hilali–Khan translations, and 294 frozen Reading Units. Run `node tools/validate-release.mjs` from the project root to repeat the integrity audit. See `docs/QURAN-PHASE-4-QA-REPORT.md` for full results and scope boundaries.
+
+---
 
 This release refines the Duaa Memorization Map with canonical duaa records. Shared supplications such as Sayyid al-Istighfar now have one memorization status across every collection where they appear, while each collection keeps its own virtue and usage details.
 

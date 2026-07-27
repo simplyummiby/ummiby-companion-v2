@@ -1,4 +1,4 @@
-import { QURAN_DATA, QURAN_READING_LIBRARY, QURAN_CANONICAL_STATUS, getReadingUnit, getReadingUnitAyat } from "./data/quran-canonical.js?v=3.11.0";
+import { QURAN_DATA, QURAN_READING_LIBRARY, QURAN_CANONICAL_STATUS, getReadingUnit, getReadingUnitAyat } from "./data/quran-canonical.js?v=3.12.0";
 import { modules, sidebarOrder, moduleForPath } from './modules.js';
 import { duaaCollections, duaaOrder, orderedItems, isComplete, completedCount, isMemorized, memorizedCount, totalMemorizedCount, totalUniqueDuaaCount, worshipToday, weekStatus, readingPreferences, duaaHistoryRecords, duaaHistorySummary } from './duaa.js';
 import { APP_VERSION } from './version.js';
@@ -212,7 +212,7 @@ function settings(){return `<section><header class="editorial-header"><p class="
 function duaaContent(path,historyView){const p=routeParts(path);if(path==='/duaa')return duaaHome();if(path==='/duaa/collections')return collectionsPage();if(path==='/duaa/memorization')return duaaMemorizationPage();if(path==='/duaa/history')return history(historyView);const c=duaaCollections[p[1]];if(!c)return `<section class="empty-state"><h2>Collection not found</h2><a href="/duaa" data-route>Return to Duaa Home</a></section>`;if(p[2]==='read'){const allItems=orderedItems(c.id);const item=allItems.find(x=>x.id===p[3])||allItems[0];if(p[4]==='study'&&p[5])return studyCategoryPage(c,item,p[5]);return readerPage(c,item,activeReadingItems(c,item.id))}return collectionPage(c)}
 function visionIcon(name){return `<span class="vision-icon"><i class="ph ph-${name}" aria-hidden="true"></i></span>`}
 function progressBar(value){return `<div class="vision-progress"><span style="width:${value}%"></span></div>`}
-function quranDateKey(date=new Date()){return date.toISOString().slice(0,10)}
+function quranDateKey(date=new Date()){const year=date.getFullYear(),month=String(date.getMonth()+1).padStart(2,'0'),day=String(date.getDate()).padStart(2,'0');return `${year}-${month}-${day}`}
 function quranReadingDays(){try{return JSON.parse(localStorage.getItem('ummiby.quran.readingDays')||'{}')}catch{return {}}}
 function quranReadToday(){return Boolean(quranReadingDays()[quranDateKey()])}
 function quranWeek(){const today=new Date(),sunday=new Date(today);sunday.setDate(today.getDate()-today.getDay());const records=quranReadingDays();return Array.from({length:7},(_,i)=>{const date=new Date(sunday);date.setDate(sunday.getDate()+i);return {label:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][i],done:Boolean(records[quranDateKey(date)]),today:i===today.getDay()}})}

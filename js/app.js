@@ -1,6 +1,6 @@
-import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.11.0";
-import { renderShell, saveActiveJourney } from "./shell.js?v=3.11.0";
-import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences } from "./duaa.js?v=3.11.0";
+import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.12.0";
+import { renderShell, saveActiveJourney } from "./shell.js?v=3.12.0";
+import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences } from "./duaa.js?v=3.12.0";
 import {
   onAuthStateChange,
   restoreSession,
@@ -8,10 +8,10 @@ import {
   signInWithPassword,
   signOut,
   signUpWithPassword
-} from "./auth.js?v=3.11.0";
-import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.11.0";
-import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.11.0";
-import { clearPreferences, loadPreferences } from "./preferences.js?v=3.11.0";
+} from "./auth.js?v=3.12.0";
+import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.12.0";
+import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.12.0";
+import { clearPreferences, loadPreferences } from "./preferences.js?v=3.12.0";
 
 const app = document.querySelector("#app");
 console.info("Canonical Qur’an data verified", QURAN_CANONICAL_STATUS);
@@ -24,6 +24,12 @@ let historyView = { collectionId:'morning', year:nowForHistory.getFullYear(), mo
 const collectionFilterKey = (collectionId) => `ummiby.collectionFilters.${collectionId}`;
 const collectionScrollKey = (collectionId) => `ummiby.collectionScroll.${collectionId}`;
 const collectionReadingSequenceKey = (collectionId) => `ummiby.collectionReadingSequence.${collectionId}`;
+function localDateKey(date = new Date()) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
 function readCollectionFilterState(collectionId) {
   try {
     const value = JSON.parse(sessionStorage.getItem(collectionFilterKey(collectionId)) || '{}');
@@ -71,7 +77,7 @@ function navigate(route) {
 }
 
 function recordQuranReading(source='inside') {
-  const key = new Date().toISOString().slice(0, 10);
+  const key = localDateKey();
   let records = {};
   try { records = JSON.parse(localStorage.getItem('ummiby.quran.readingDays') || '{}'); } catch {}
   records[key] = source;
@@ -84,7 +90,7 @@ function recordReadingUnitActivity(type, unitOrder, details = {}) {
   let entries = [];
   try { entries = JSON.parse(localStorage.getItem('ummiby.quran.readingUnit.history') || '[]'); } catch {}
   const now = new Date();
-  const dateKey = now.toISOString().slice(0, 10);
+  const dateKey = localDateKey(now);
   if (type === 'opened' && entries.some(entry => entry.type === 'opened' && entry.unitOrder === order && entry.dateKey === dateKey)) return;
   entries.unshift({ id: `${now.getTime()}-${type}-${order}`, type, unitOrder: order, dateKey, at: now.toISOString(), ...details });
   localStorage.setItem('ummiby.quran.readingUnit.history', JSON.stringify(entries.slice(0, 250)));
@@ -216,7 +222,7 @@ function bindShellEvents() {
   }));
 
   app.querySelector('[data-record-quran-today]')?.addEventListener('click', () => {
-    const key = new Date().toISOString().slice(0, 10);
+    const key = localDateKey();
     let records = {};
     try { records = JSON.parse(localStorage.getItem('ummiby.quran.readingDays') || '{}'); } catch {}
     if (records[key]) {
