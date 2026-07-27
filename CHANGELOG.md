@@ -1,3 +1,8 @@
+# v3.10.0 — Canonical Qur’an Reader Integration (Phase 2)
+
+- Dynamic reader coverage for P0001–P0294.
+- Previous/Next, completion, saved place, Continue Reading, and Unit Index integration.
+
 # Changelog
 
 ## 3.9.0 — Reading Unit Reader Polish

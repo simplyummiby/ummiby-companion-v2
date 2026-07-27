@@ -1,9 +1,10 @@
-# Ummiby Companion v3.9.0
+# Ummiby Companion v3.10.0
 
-**Release:** Canonical Qur’an Data Foundation — Phase 1
+**Release:** Canonical Qur’an Reader Integration — Phase 2
 
-- Imported the complete 114-surah, 6,236-ayah Arabic and Hilali–Khan data layer.
-- Imported all 294 canonical Reading Units.
-- Added runtime integrity validation for surah counts, ayah counts, translations, unit boundaries, full coverage, gaps, and overlaps.
-- Added the full Reading Unit Index while preserving the polished Unit 87 reader for Phase 2 wiring.
-- Preserved raw source files under `data/quran/source/` for provenance.
+- Connected the polished Reading Unit reader to all 294 canonical units.
+- Added dynamic routes for every Reading Unit.
+- Added working Previous and Next navigation with first/last boundaries.
+- Added per-unit saved-place and completion persistence.
+- Added active-journey continuation and automatic advancement after completion.
+- Made every entry in the Reading Unit Index directly openable.

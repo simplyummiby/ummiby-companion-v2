@@ -1,6 +1,6 @@
-import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.9.0";
-import { renderShell, saveActiveJourney } from "./shell.js?v=3.9.0";
-import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences } from "./duaa.js?v=3.9.0";
+import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.10.0";
+import { renderShell, saveActiveJourney } from "./shell.js?v=3.10.0";
+import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences } from "./duaa.js?v=3.10.0";
 import {
   onAuthStateChange,
   restoreSession,
@@ -8,10 +8,10 @@ import {
   signInWithPassword,
   signOut,
   signUpWithPassword
-} from "./auth.js?v=3.9.0";
-import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.9.0";
-import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.9.0";
-import { clearPreferences, loadPreferences } from "./preferences.js?v=3.9.0";
+} from "./auth.js?v=3.10.0";
+import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.10.0";
+import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.10.0";
+import { clearPreferences, loadPreferences } from "./preferences.js?v=3.10.0";
 
 const app = document.querySelector("#app");
 console.info("Canonical Qur’an data verified", QURAN_CANONICAL_STATUS);
@@ -136,6 +136,7 @@ function bindShellEvents() {
     companionDisclosure.open = !mobileCompanion;
   }
 
+  const activeReadingUnit = Number(app.querySelector('[data-reading-unit-reader]')?.dataset.readingUnit || 0);
   let selectedResumeAyah = Number(app.querySelector('.reader-ayah.is-saved-place')?.dataset.readerAyah || 0);
   app.querySelectorAll('[data-select-resume-ayah]').forEach(button => {
     button.addEventListener('click', () => {
@@ -147,23 +148,27 @@ function bindShellEvents() {
   app.querySelector('[data-save-reading-place]')?.addEventListener('click', () => {
     if (!selectedResumeAyah) { toast('Choose the ayah where you want to resume first.', 'error'); return; }
     let progress = {};
-    try { progress = JSON.parse(localStorage.getItem('ummiby.quran.readingUnit.25') || '{}'); } catch {}
+    try { progress = JSON.parse(localStorage.getItem(`ummiby.quran.readingUnit.${activeReadingUnit}`) || '{}'); } catch {}
     progress.resumeAyah = selectedResumeAyah;
     progress.updatedAt = new Date().toISOString();
-    localStorage.setItem('ummiby.quran.readingUnit.25', JSON.stringify(progress));
+    localStorage.setItem(`ummiby.quran.readingUnit.${activeReadingUnit}`, JSON.stringify(progress));
+    localStorage.setItem('ummiby.quran.readingUnit.current', String(activeReadingUnit));
     toast(`Place saved. You’ll resume at Ayah ${selectedResumeAyah}.`);
     render();
   });
   app.querySelector('[data-resume-saved-ayah]')?.addEventListener('click', button => {
-    document.querySelector(`#ayah-${button.dataset.resumeSavedAyah}`)?.scrollIntoView({ behavior:'smooth', block:'center' });
+    document.querySelector(`#ayah-${button.dataset.resumeSurah}-${button.dataset.resumeSavedAyah}`)?.scrollIntoView({ behavior:'smooth', block:'center' });
   });
   app.querySelector('[data-complete-reading-unit]')?.addEventListener('click', button => {
     let progress = {};
-    try { progress = JSON.parse(localStorage.getItem('ummiby.quran.readingUnit.25') || '{}'); } catch {}
+    try { progress = JSON.parse(localStorage.getItem(`ummiby.quran.readingUnit.${activeReadingUnit}`) || '{}'); } catch {}
     progress.completed = !progress.completed;
     progress.completedAt = progress.completed ? new Date().toISOString() : null;
-    localStorage.setItem('ummiby.quran.readingUnit.25', JSON.stringify(progress));
-    toast(progress.completed ? 'Reading Unit 25 marked complete.' : 'Reading Unit completion removed.');
+    localStorage.setItem(`ummiby.quran.readingUnit.${activeReadingUnit}`, JSON.stringify(progress));
+    localStorage.setItem('ummiby.quran.readingUnit.current', String(activeReadingUnit));
+    if(progress.completed && activeReadingUnit < QURAN_CANONICAL_STATUS.readingUnits)localStorage.setItem('ummiby.quran.readingUnit.current', String(activeReadingUnit + 1));
+    else localStorage.setItem('ummiby.quran.readingUnit.current', String(activeReadingUnit));
+    toast(progress.completed ? `Reading Unit ${activeReadingUnit} marked complete.` : 'Reading Unit completion removed.');
     render();
   });
   app.querySelectorAll('[data-reader-placeholder]').forEach(control => control.addEventListener('click', event => {
