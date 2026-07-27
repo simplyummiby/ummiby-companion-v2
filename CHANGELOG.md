@@ -1,3 +1,22 @@
+# Changelog
+
+## v3.4.25 — Qur’anic Duaa Persistent Filter Dialog Polish
+
+- Preserved prophet/speaker and purpose filters when entering Reading Mode and returning to the collection.
+- Restored the previous list scroll position on return.
+- Replaced nested dropdown scroll areas with floating multi-select dialogs.
+- Added removable active-filter pills and per-group clear controls.
+- Extended the Browse Collection blue header across the full card width.
+- Kept the sidebar itself free of nested scrolling.
+
+## v3.4.23 — Qur’anic Duaa Filter Sidebar Polish
+
+- Moved the Qur’anic Duaa collection filters into a dedicated left-side card.
+- Matched the card formatting to the existing “About This Duaa” panel.
+- Removed the filter panel from above the list so the collection begins higher on the page.
+- Temporarily hid context explanations while retaining them in the collection data for later review.
+- Confirmed existing collection layouts remain unchanged.
+
 ## v3.4.21 — Duaa Collections Card Gallery
 
 - Replaced the compact alphabetical row index on `/duaa/collections` with a spacious visual card gallery.
@@ -716,3 +735,8 @@
 - Narrowed Duaa Home independently from collection pages.
 - Added a light card cue around Today's Status.
 - Converted Study Library categories to expandable in-page sections with inline resources and empty states.
+## v3.4.24 — Qur’anic Duaa Filter Dropdown Polish
+- Widened and left-aligned the Browse Collection sidebar.
+- Added independent sidebar scrolling.
+- Replaced visible filter chips with multi-select dropdown checklists.
+- Added compact selection summaries and retained clear-filter behavior.

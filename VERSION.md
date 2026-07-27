@@ -1,11 +1,11 @@
-# Ummiby Companion v3.4.22
+# Ummiby Companion v3.4.25
 
-## Qur’anic Duaa Collection
+## Qur’anic Duaa Persistent Filter Dialog Polish
 
-- Adds a new Qur’anic Duaas card to the Duaa Collections gallery.
-- Adds a dedicated Qur’anic Duaas collection page with 40 curated supplications from the Qur’an.
-- Includes Arabic, English meaning, exact surah and ayah references, speaker attribution, purpose tags, and brief context.
-- Adds combinable prophet/speaker and purpose filters with a clear-filter action and live result count.
-- Adds Qur’anic attribution and context to Reading Mode.
-- Includes dedicated collection-page and card artwork derived from the established Duaa Collections visual family.
-- Preserves existing tracked and untracked collection behavior.
+- Preserves selected prophet/speaker and purpose filters while moving into Reading Mode and returning to the collection.
+- Restores the collection's previous scroll position after returning from Reading Mode.
+- Replaces nested sidebar dropdown lists with floating multi-select dialogs.
+- Keeps the Browse Collection card itself free of nested scrollbars.
+- Shows active selections as removable pills in the sidebar.
+- Extends the blue Browse Collection header across the full card width.
+- Retains the hidden Qur’anic context text in the data for later review.
