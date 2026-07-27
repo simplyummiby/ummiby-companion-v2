@@ -1,11 +1,9 @@
-# Ummiby Companion v3.4.25
+# Ummiby Companion v3.4.26
 
-## Qur’anic Duaa Persistent Filter Dialog Polish
+## Qur’anic Duaa Filtered Reading Sequence Fix
 
-- Preserves selected prophet/speaker and purpose filters while moving into Reading Mode and returning to the collection.
-- Restores the collection's previous scroll position after returning from Reading Mode.
-- Replaces nested sidebar dropdown lists with floating multi-select dialogs.
-- Keeps the Browse Collection card itself free of nested scrollbars.
-- Shows active selections as removable pills in the sidebar.
-- Extends the blue Browse Collection header across the full card width.
-- Retains the hidden Qur’anic context text in the data for later review.
+- Uses the currently filtered Qur’anic duaa results as the active Reading Mode sequence.
+- Updates the Reading Mode position count to reflect only the filtered results.
+- Keeps Previous and Next navigation inside the filtered set.
+- Ends Reading Mode after the final filtered duaa instead of continuing into the full collection.
+- Preserves the existing filter selections and collection scroll position when returning to the list.

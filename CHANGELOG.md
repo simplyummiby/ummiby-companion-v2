@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.4.26 — Qur’anic Duaa Filtered Reading Sequence Fix
+
+- Reading Mode now follows the currently filtered Qur’anic duaa list.
+- Position, progress, Previous, Next, and end-of-set behavior now use the filtered result count.
+- Returning to the collection still preserves filters and list position.
+
 ## v3.4.25 — Qur’anic Duaa Persistent Filter Dialog Polish
 
 - Preserved prophet/speaker and purpose filters when entering Reading Mode and returning to the collection.

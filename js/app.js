@@ -19,6 +19,7 @@ let configured = false;
 
 const collectionFilterKey = (collectionId) => `ummiby.collectionFilters.${collectionId}`;
 const collectionScrollKey = (collectionId) => `ummiby.collectionScroll.${collectionId}`;
+const collectionReadingSequenceKey = (collectionId) => `ummiby.collectionReadingSequence.${collectionId}`;
 function readCollectionFilterState(collectionId) {
   try {
     const value = JSON.parse(sessionStorage.getItem(collectionFilterKey(collectionId)) || '{}');
@@ -165,6 +166,8 @@ function bindShellEvents() {
       if (clear) clear.hidden = !active;
       if (status) status.textContent = active ? `Showing ${shown} of ${rows.length} duaas` : `Showing all ${rows.length} duaas`;
       saveCollectionFilterState(collectionId, state);
+      const visibleIds = rows.filter(row => !row.hidden).map(row => row.dataset.duaaRow);
+      sessionStorage.setItem(collectionReadingSequenceKey(collectionId), JSON.stringify(visibleIds));
     };
     panel.querySelectorAll('[data-filter-group]').forEach((input) => {
       const target = groupState(input.dataset.filterGroup);
