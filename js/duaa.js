@@ -8,7 +8,7 @@ export const duaaOrder = ['morning','evening','sleep','travel','weather','prayer
 // Keep the v2.1 storage key so a content restoration does not erase existing
 // completion, worship-history, or custom-order records.
 const key = 'ummiby.duaa.v2.1';
-const emptyState = () => ({ completed:{}, memorized:{}, worship:{}, history:{}, order:{}, reading:{ arabicSize: 2.35, showEnglish: true, showTransliteration: true } });
+const emptyState = () => ({ completed:{}, memorized:{}, memorizedCanonical:{}, worship:{}, history:{}, order:{}, reading:{ arabicSize: 2.35, showEnglish: true, showTransliteration: true } });
 
 const legacyItemAliases = {
   morning: { protection:'morning-006', contentment:'morning-013' },
@@ -33,10 +33,35 @@ function migrateLegacyItemIds(next){
   return next;
 }
 
+
+function itemFor(collectionId,itemId){
+  return collections[collectionId]?.items?.find(item=>item.id===itemId) || null;
+}
+export function canonicalDuaaId(collectionId,itemId){
+  const item=itemFor(collectionId,itemId);
+  return item?.canonicalId || `${collectionId}:${itemId}`;
+}
+function migrateMemorizationToCanonical(next){
+  next.memorizedCanonical ||= {};
+  for(const [collectionId,items] of Object.entries(next.memorized||{})){
+    if(!items || typeof items!=='object') continue;
+    for(const [itemId,value] of Object.entries(items)){
+      if(value) next.memorizedCanonical[canonicalDuaaId(collectionId,itemId)]=true;
+    }
+  }
+  return next;
+}
+function uniqueCanonicalIds(){
+  return new Set(Object.values(collections).flatMap(collection=>collection.items.map(item=>item.canonicalId || `${collection.id}:${item.id}`)));
+}
+export function totalUniqueDuaaCount(){ return uniqueCanonicalIds().size; }
+
 function normalizeState(value){
   const next = value && typeof value === 'object' ? value : emptyState();
   next.completed = next.completed && typeof next.completed === 'object' ? next.completed : {};
   next.memorized = next.memorized && typeof next.memorized === 'object' ? next.memorized : {};
+  next.memorizedCanonical = next.memorizedCanonical && typeof next.memorizedCanonical === 'object' ? next.memorizedCanonical : {};
+  migrateMemorizationToCanonical(next);
   next.worship = next.worship && typeof next.worship === 'object' ? next.worship : {};
   next.history = next.history && typeof next.history === 'object' ? next.history : {};
   next.order = next.order && typeof next.order === 'object' ? next.order : {};
@@ -88,22 +113,26 @@ export function setDuaaOrder(collectionId,ids){
 }
 
 
-export function isMemorized(collectionId,itemId){ return Boolean(state().memorized?.[collectionId]?.[itemId]); }
+export function isMemorized(collectionId,itemId){
+  const s=state();
+  return Boolean(s.memorizedCanonical?.[canonicalDuaaId(collectionId,itemId)]);
+}
 export function toggleMemorized(collectionId,itemId){
   const s=state();
-  s.memorized ||= {};
-  s.memorized[collectionId] ||= {};
-  s.memorized[collectionId][itemId]=!s.memorized[collectionId][itemId];
-  if(!s.memorized[collectionId][itemId]) delete s.memorized[collectionId][itemId];
+  s.memorizedCanonical ||= {};
+  const canonicalId=canonicalDuaaId(collectionId,itemId);
+  s.memorizedCanonical[canonicalId]=!s.memorizedCanonical[canonicalId];
+  if(!s.memorizedCanonical[canonicalId]) delete s.memorizedCanonical[canonicalId];
   save(s);
-  return Boolean(s.memorized[collectionId][itemId]);
+  return Boolean(s.memorizedCanonical[canonicalId]);
 }
 export function memorizedCount(collectionId){
   const c=collections[collectionId];
   return c ? c.items.filter(item=>isMemorized(collectionId,item.id)).length : 0;
 }
 export function totalMemorizedCount(){
-  return Object.values(collections).reduce((sum,c)=>sum+memorizedCount(c.id),0);
+  const s=state();
+  return [...uniqueCanonicalIds()].filter(id=>Boolean(s.memorizedCanonical?.[id])).length;
 }
 
 export function isComplete(collectionId,itemId){ return Boolean(state().completed?.[collectionId]?.[itemId]); }

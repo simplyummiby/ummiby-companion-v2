@@ -2373,7 +2373,7 @@
 @media(max-width:980px){.collection-filter-sidebar{position:static}.collection-filter-sidebar>h2{padding:1.05rem 1.2rem}}
 @media(max-width:560px){.collection-filter-dialog footer{flex-direction:column-reverse}.collection-filter-dialog footer .button{width:100%}}
 
-/* v3.5.0 — Duaa memorization map */
+/* v3.5.1 — Canonical duaa memorization foundation */
 .memorized-toggle{
   display:inline-flex;align-items:center;gap:.42rem;border:1px solid var(--color-border);border-radius:999px;background:#fff;color:var(--color-muted);padding:.52rem .72rem;font:inherit;font-size:.75rem;font-weight:800;white-space:nowrap;cursor:pointer
 }

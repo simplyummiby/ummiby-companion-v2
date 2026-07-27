@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.5.1 — Duaa Canonical Record Foundation
+
+- Added canonical identities for supplications shared between Morning and Evening collections.
+- Synced memorization status across every placement of the same duaa.
+- Preserved collection-specific virtues and instructions on each placement.
+- Changed the memorization-page global totals to count unique duaas.
+- Added automatic migration from the previous collection-based memorization state.
+
+
 ## v3.5.0 — Duaa Memorization Map
 
 - Added independent memorized status tracking for every duaa collection.

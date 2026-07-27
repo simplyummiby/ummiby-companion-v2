@@ -49,3 +49,10 @@ The `/duaa/quranic` route is an untracked reference collection containing curate
 ## Duaa Memorization State (v3.5.0)
 
 Memorization is stored independently from daily completion under `memorized[collectionId][itemId]` in the existing Duaa local-storage state. Collection pages expose a memorized toggle, the Collections Index summarizes memorized counts, and `/duaa/memorization` renders the cross-collection badge map. A memorized badge links to the existing Reading Mode route for that item.
+
+
+## Canonical duaa records and collection placements (v3.5.1)
+
+A supplication may appear in more than one collection. Each placement keeps its own item ID, order, repetition wording, virtue, and collection-specific instructions. Shared placements also carry a `canonicalId`. Personal properties that belong to the supplication itself—currently memorization status, and later favorites, notes, audio, or revision status—are stored against that canonical identity.
+
+The global memorization summary counts canonical identities once. Collection progress still counts each placement so a user can see whether an entire Morning or Evening collection is known.

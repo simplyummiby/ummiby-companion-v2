@@ -1,6 +1,6 @@
-# Ummiby Companion v3.5.0
+# Ummiby Companion v3.5.1
 
-This release adds a Duaa Memorization Map: each supplication can be marked memorized, collection cards show memorized progress, and the new My Duaa Memorization page presents every duaa as a visual badge.
+This release refines the Duaa Memorization Map with canonical duaa records. Shared supplications such as Sayyid al-Istighfar now have one memorization status across every collection where they appear, while each collection keeps its own virtue and usage details.
 
 **v3.4.26 — Duaa Collections Card Gallery**
 

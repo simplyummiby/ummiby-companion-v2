@@ -1,5 +1,5 @@
 import { modules, sidebarOrder, moduleForPath } from './modules.js';
-import { duaaCollections, duaaOrder, orderedItems, isComplete, completedCount, isMemorized, memorizedCount, totalMemorizedCount, worshipToday, weekStatus, readingPreferences } from './duaa.js';
+import { duaaCollections, duaaOrder, orderedItems, isComplete, completedCount, isMemorized, memorizedCount, totalMemorizedCount, totalUniqueDuaaCount, worshipToday, weekStatus, readingPreferences } from './duaa.js';
 import { APP_VERSION } from './version.js';
 import { sourcesByIds } from './data/source-library.js';
 import { resourcesByIds } from './data/resource-library.js';
@@ -76,12 +76,12 @@ function collectionPage(c){
 
 function duaaMemorizationPage(){
   const groups=duaaOrder.map(id=>duaaCollections[id]).filter(Boolean);
-  const total=groups.reduce((sum,c)=>sum+c.items.length,0),memorized=totalMemorizedCount(),started=groups.filter(c=>memorizedCount(c.id)>0).length;
+  const total=totalUniqueDuaaCount(),memorized=totalMemorizedCount(),started=groups.filter(c=>memorizedCount(c.id)>0).length;
   const sections=groups.map((c,collectionIndex)=>{
     const count=memorizedCount(c.id),pct=c.items.length?Math.round(count/c.items.length*100):0;
     return `<section class="memorization-collection" style="--collection-index:${collectionIndex}"><header><div><p class="section-eyebrow">${esc(c.navLabel||c.label)}</p><h3>${count} of ${c.items.length} memorized</h3></div><span>${pct}%</span></header><div class="memorization-progress"><span style="width:${pct}%"></span></div><div class="duaa-badge-grid">${orderedItems(c.id).map((item,index)=>{const learned=isMemorized(c.id,item.id);return `<article class="duaa-memory-badge${learned?' is-memorized':''}"><a href="/duaa/${c.id}/read/${item.id}" data-route aria-label="Read ${esc(item.title)}"><span class="badge-number">${index+1}</span><i class="ph ph-${learned?'check-circle-fill':'circle'}" aria-hidden="true"></i><strong>${esc(item.title)}</strong></a><button type="button" data-toggle-memorized="${c.id}:${item.id}" aria-pressed="${learned}">${learned?'Memorized':'Mark memorized'}</button></article>`}).join('')}</div></section>`
   }).join('');
-  return `<section class="duaa-memorization-page"><header class="memorization-intro"><p class="page-kicker">Duaa memorization</p><h2>My Duaa Memorization</h2><p>Watch your collection gradually fill with color as each supplication becomes part of what you know.</p></header><div class="memorization-summary"><article><span>Total duaas</span><strong>${total}</strong></article><article><span>Memorized</span><strong>${memorized}</strong></article><article><span>Still learning</span><strong>${total-memorized}</strong></article><article><span>Collections started</span><strong>${started}</strong></article></div>${sections}</section>`
+  return `<section class="duaa-memorization-page"><header class="memorization-intro"><p class="page-kicker">Duaa memorization</p><h2>My Duaa Memorization</h2><p>Watch your collection gradually fill with color as each supplication becomes part of what you know.</p></header><div class="memorization-summary"><article><span>Unique duaas</span><strong>${total}</strong></article><article><span>Memorized</span><strong>${memorized}</strong></article><article><span>Still learning</span><strong>${total-memorized}</strong></article><article><span>Collections started</span><strong>${started}</strong></article></div>${sections}</section>`
 }
 
 function collectionsPage(){const collections=duaaOrder.map(id=>duaaCollections[id]).filter(Boolean).sort((a,b)=>(a.navLabel||a.label).localeCompare(b.navLabel||b.label));return `<section class="collections-page">${pageEpigraph(DUAA_EPIGRAPHS.collections)}<nav class="collection-index" aria-label="Duaa collections">${collections.map(collectionListItem).join('')}</nav></section>`}
