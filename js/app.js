@@ -68,6 +68,14 @@ function navigate(route) {
   window.location.hash = route;
 }
 
+function recordQuranReading(source='inside') {
+  const key = new Date().toISOString().slice(0, 10);
+  let records = {};
+  try { records = JSON.parse(localStorage.getItem('ummiby.quran.readingDays') || '{}'); } catch {}
+  records[key] = source;
+  localStorage.setItem('ummiby.quran.readingDays', JSON.stringify(records));
+}
+
 function bindShellEvents() {
   app.querySelectorAll("[data-route]").forEach((link) => {
     link.addEventListener("click", (event) => {
@@ -103,6 +111,23 @@ function bindShellEvents() {
     });
   });
 
+
+  if (app.querySelector('[data-quran-reading-inside]')) recordQuranReading('inside');
+
+  app.querySelector('[data-record-quran-today]')?.addEventListener('click', () => {
+    const key = new Date().toISOString().slice(0, 10);
+    let records = {};
+    try { records = JSON.parse(localStorage.getItem('ummiby.quran.readingDays') || '{}'); } catch {}
+    if (records[key]) {
+      delete records[key];
+      toast("Today's Qur’an reading record removed.");
+    } else {
+      records[key] = 'manual';
+      toast("Today's Qur’an reading recorded.");
+    }
+    localStorage.setItem('ummiby.quran.readingDays', JSON.stringify(records));
+    render();
+  });
 
   app.querySelectorAll("[data-toggle-worship]").forEach((button) => {
     button.addEventListener("click", () => {

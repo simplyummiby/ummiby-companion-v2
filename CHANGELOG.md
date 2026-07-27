@@ -1,5 +1,26 @@
 # Changelog
 
+## 3.8.0 — Qur'an Home & Navigation Refinement
+
+### Qur'an Home
+- Added a wide landscape Qur'an hero with a light left overlay area and open-mushaf focal point.
+- Rebuilt the home around Continue Reading, Weekly Consistency, the active Journey, and a timely Featured invitation.
+- Friday and Ramadan features no longer replace the active journey card.
+
+### Reading architecture
+- Limited Journeys to Reading Unit Journey and Classic Journey.
+- Renamed unrestricted Read by Surah navigation to Qur'an Navigator.
+- Added Featured Readings for al-Kahf, al-Mulk, As-Sajdah & Al-Insan, Ayat al-Kursi, and the final two ayat of al-Baqarah.
+- Kept Ramadan reading inside Ramadan Central and removed the standalone Study Library navigation concept.
+
+### Consistency and history
+- Added automatic daily-reading acknowledgement for Qur'an readers inside the app.
+- Added a manual Record Today's Reading control for reading completed in a physical mushaf, masjid, or another app.
+- Added a Qur'an Reading History view backed by the same local reading-day record.
+
+### Regression protection
+- Preserved Reading Unit, Classic Journey, memorization, contextual study resources, Arabic-size preferences, translation layout, reader mode, mobile navigation, and existing Duaa functionality.
+
 ## v3.7.3 — Duaa History Year and Banner Polish
 
 - Simplified the History year selector to begin at the Duaa history launch year, 2026.
@@ -929,3 +950,10 @@
 - Matched Monthly Insights to the Monthly Record calendar height on desktop while preserving natural stacked heights on smaller screens.
 - Reworked the accepted light clock artwork into a sharper panoramic banner that fills the standardized banner area.
 - Removed obsolete Selected Day styling left from earlier History iterations.
+
+### v3.8.0 Qur'an Home shell correction
+- Restored the established 190px panoramic banner contract on Qur'an Home.
+- Prevented the Qur'an hero from overflowing its app-shell grid row and covering the module navigation.
+- Restored visibility of the global sidebar and Qur'an module navigation beneath the hero.
+- Re-cropped the Qur'an hero artwork for the shallow application banner rather than a standalone large hero.
+- Returned hero typography to the global banner scale and responsive safe zones.

@@ -1,5 +1,5 @@
 # Ummiby Companion
 
-Version: **3.7.4**
+Version: **3.8.0**
 
-Release: **Duaa History Layout and Banner Polish**
+Release: **Qur'an Home & Navigation Refinement**

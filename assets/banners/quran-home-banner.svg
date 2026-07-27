@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 88 1800 250" role="img" aria-labelledby="title desc">
+<title id="title">Open Qur'an in a peaceful green landscape</title><desc id="desc">A wide, calm green scene with a stylized open mushaf on a wooden stand toward the right and a softly illuminated left side for page text.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" x2="1"><stop stop-color="#eef8ee"/><stop offset=".48" stop-color="#cce3cf"/><stop offset="1" stop-color="#527d62"/></linearGradient>
+ <radialGradient id="light" cx=".18" cy=".35" r=".7"><stop stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+ <linearGradient id="hill" x1="0" x2="1"><stop stop-color="#9fc3a7"/><stop offset="1" stop-color="#315c45"/></linearGradient>
+ <filter id="shadow"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-opacity=".25"/></filter>
+</defs>
+<rect width="1800" height="520" fill="url(#bg)"/><rect width="1800" height="520" fill="url(#light)"/>
+<path d="M0 385 Q340 305 690 380 T1330 348 T1800 330 V520 H0Z" fill="#bdd6c0" opacity=".85"/>
+<path d="M0 445 Q410 355 805 426 T1460 384 T1800 390 V520 H0Z" fill="url(#hill)" opacity=".92"/>
+<g opacity=".22" fill="#fff"><circle cx="760" cy="100" r="4"/><circle cx="840" cy="160" r="3"/><circle cx="1010" cy="90" r="5"/><circle cx="1180" cy="145" r="3"/></g>
+<g transform="translate(1230 125)" filter="url(#shadow)">
+ <path d="M220 278 L315 345 L275 366 L180 300Z" fill="#73543b"/><path d="M220 278 L125 345 L165 366 L260 300Z" fill="#8a6548"/>
+ <path d="M44 56 Q130 22 221 76 L221 270 Q132 235 44 270Z" fill="#faf6e8" stroke="#d7c8a2" stroke-width="5"/>
+ <path d="M398 56 Q312 22 221 76 L221 270 Q310 235 398 270Z" fill="#fffaf0" stroke="#d7c8a2" stroke-width="5"/>
+ <path d="M221 76 V270" stroke="#b69c68" stroke-width="5"/>
+ <g stroke="#b8aa88" stroke-width="3" opacity=".75"><path d="M72 99 Q140 76 198 101"/><path d="M72 126 Q140 103 198 128"/><path d="M72 153 Q140 130 198 155"/><path d="M72 180 Q140 157 198 182"/><path d="M72 207 Q140 184 198 209"/><path d="M244 101 Q302 76 370 99"/><path d="M244 128 Q302 103 370 126"/><path d="M244 155 Q302 130 370 153"/><path d="M244 182 Q302 157 370 180"/><path d="M244 209 Q302 184 370 207"/></g>
+ <path d="M208 79 Q221 65 234 79" fill="none" stroke="#547b60" stroke-width="5"/>
+</g>
+</svg>
