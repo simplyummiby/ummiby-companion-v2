@@ -1,6 +1,15 @@
 # Changelog
 
-## 3.8.1 — Reading Journeys Experience
+## 3.8.4 — Reading Unit Reader Polish
+
+- Anchored the narrow Reading Companion closer to the left edge and widened the Qur’an reading surface.
+- Renamed the panel to Reading Companion and reordered its sections so Reading Progress appears before Study Resources.
+- Changed the top-bar progress to represent only the current reading unit; overall journey progress remains in the companion panel.
+- Added refined spacing, typography, hover, focus, and transition states throughout the reader.
+- Added a compact collapsible Reading Companion treatment for tablet and mobile layouts.
+- Preserved deliberate Save My Place behavior and all existing journey progress logic.
+
+## 3.8.3 — Reading Journeys Experience
 
 ### Experience and education
 - Rebuilt Reading Journeys as a calm, educational destination rather than a two-card index.
@@ -983,5 +992,15 @@
 ### Startup correction
 
 - Corrected a JavaScript string syntax error in the Reading Journeys copy that could leave Live Server on the opening screen.
-- Updated release asset cache keys to v3.8.1 so older JavaScript modules are not mixed with the new build.
+- Updated release asset cache keys to v3.8.3 so older JavaScript modules are not mixed with the new build.
 - Added a safe local-preview `js/config.js` placeholder.
+
+
+## v3.8.3 – Reader Framework & Reading Unit Experience
+- Introduced the reusable Ummiby Reader Framework.
+- Redesigned the Reading Unit reader with matching Qur’an top and bottom bars.
+- Added a sticky About This Reading Unit companion panel with topics, study resources, and progress.
+- Preserved the Previous / primary action / Next control group.
+- Added deliberate Save My Place behavior; scroll position is never treated as proof an ayah was read.
+- Added saved-place resume guidance and persistent local progress.
+- Added responsive desktop and mobile reader layouts.

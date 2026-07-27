@@ -1,5 +1,3 @@
-# Ummiby Companion
+# Ummiby Companion v3.8.4
 
-Version: **3.8.1**
-
-Release: **Reading Journeys Experience**
+**Release:** Reader Framework & Reading Unit Experience

@@ -1,5 +1,5 @@
-import { renderShell, saveActiveJourney } from "./shell.js?v=3.8.1";
-import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences } from "./duaa.js?v=3.8.1";
+import { renderShell, saveActiveJourney } from "./shell.js?v=3.8.4";
+import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences } from "./duaa.js?v=3.8.4";
 import {
   onAuthStateChange,
   restoreSession,
@@ -7,10 +7,10 @@ import {
   signInWithPassword,
   signOut,
   signUpWithPassword
-} from "./auth.js?v=3.8.1";
-import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.8.1";
-import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.8.1";
-import { clearPreferences, loadPreferences } from "./preferences.js?v=3.8.1";
+} from "./auth.js?v=3.8.4";
+import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.8.4";
+import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.8.4";
+import { clearPreferences, loadPreferences } from "./preferences.js?v=3.8.4";
 
 const app = document.querySelector("#app");
 const toastRegion = document.querySelector("#toast-region");
@@ -126,6 +126,48 @@ function bindShellEvents() {
       render();
     });
   });
+
+
+  const companionDisclosure = app.querySelector('.reader-companion-disclosure');
+  if (companionDisclosure) {
+    const mobileCompanion = window.matchMedia('(max-width: 980px)').matches;
+    companionDisclosure.open = !mobileCompanion;
+  }
+
+  let selectedResumeAyah = Number(app.querySelector('.reader-ayah.is-saved-place')?.dataset.readerAyah || 0);
+  app.querySelectorAll('[data-select-resume-ayah]').forEach(button => {
+    button.addEventListener('click', () => {
+      selectedResumeAyah = Number(button.dataset.selectResumeAyah);
+      app.querySelectorAll('.reader-ayah').forEach(row => row.classList.toggle('is-selected-place', Number(row.dataset.readerAyah) === selectedResumeAyah));
+      toast(`Ayah ${selectedResumeAyah} selected. Choose Save My Place when ready.`);
+    });
+  });
+  app.querySelector('[data-save-reading-place]')?.addEventListener('click', () => {
+    if (!selectedResumeAyah) { toast('Choose the ayah where you want to resume first.', 'error'); return; }
+    let progress = {};
+    try { progress = JSON.parse(localStorage.getItem('ummiby.quran.readingUnit.87') || '{}'); } catch {}
+    progress.resumeAyah = selectedResumeAyah;
+    progress.updatedAt = new Date().toISOString();
+    localStorage.setItem('ummiby.quran.readingUnit.87', JSON.stringify(progress));
+    toast(`Place saved. You’ll resume at Ayah ${selectedResumeAyah}.`);
+    render();
+  });
+  app.querySelector('[data-resume-saved-ayah]')?.addEventListener('click', button => {
+    document.querySelector(`#ayah-${button.dataset.resumeSavedAyah}`)?.scrollIntoView({ behavior:'smooth', block:'center' });
+  });
+  app.querySelector('[data-complete-reading-unit]')?.addEventListener('click', button => {
+    let progress = {};
+    try { progress = JSON.parse(localStorage.getItem('ummiby.quran.readingUnit.87') || '{}'); } catch {}
+    progress.completed = !progress.completed;
+    progress.completedAt = progress.completed ? new Date().toISOString() : null;
+    localStorage.setItem('ummiby.quran.readingUnit.87', JSON.stringify(progress));
+    toast(progress.completed ? 'Reading Unit 87 marked complete.' : 'Reading Unit completion removed.');
+    render();
+  });
+  app.querySelectorAll('[data-reader-placeholder]').forEach(control => control.addEventListener('click', event => {
+    event.preventDefault();
+    toast('This control is ready for the full Qur’an data and navigation phase.');
+  }));
 
   app.querySelector('[data-record-quran-today]')?.addEventListener('click', () => {
     const key = new Date().toISOString().slice(0, 10);

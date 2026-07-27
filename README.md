@@ -85,4 +85,4 @@ Duaa Reading Mode now offers a calm **Read** view for uninterrupted daily recita
 
 ## Local preview note
 
-The v3.8.1 entry assets use release-specific cache keys so Live Server does not mix JavaScript modules from older builds. A blank `js/config.js` is included intentionally for local preview mode.
+The v3.8.4 entry assets use release-specific cache keys so Live Server does not mix JavaScript modules from older builds. A blank `js/config.js` is included intentionally for local preview mode.
