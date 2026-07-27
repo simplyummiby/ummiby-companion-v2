@@ -1,6 +1,6 @@
-import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.12.0";
-import { renderShell, saveActiveJourney } from "./shell.js?v=3.12.0";
-import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences } from "./duaa.js?v=3.12.0";
+import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.12.1";
+import { renderShell, saveActiveJourney } from "./shell.js?v=3.12.1";
+import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences } from "./duaa.js?v=3.12.1";
 import {
   onAuthStateChange,
   restoreSession,
@@ -8,10 +8,10 @@ import {
   signInWithPassword,
   signOut,
   signUpWithPassword
-} from "./auth.js?v=3.12.0";
-import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.12.0";
-import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.12.0";
-import { clearPreferences, loadPreferences } from "./preferences.js?v=3.12.0";
+} from "./auth.js?v=3.12.1";
+import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.12.1";
+import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.12.1";
+import { clearPreferences, loadPreferences } from "./preferences.js?v=3.12.1";
 
 const app = document.querySelector("#app");
 console.info("Canonical Qur’an data verified", QURAN_CANONICAL_STATUS);
@@ -221,6 +221,22 @@ function bindShellEvents() {
     applyUnitFilters();
   }));
 
+  const resetJourneyDialog = app.querySelector('[data-reading-journey-reset-dialog]');
+  app.querySelector('[data-open-reading-journey-reset]')?.addEventListener('click', () => resetJourneyDialog?.showModal());
+  app.querySelector('[data-confirm-reading-journey-reset]')?.addEventListener('click', () => {
+    const keysToRemove = [];
+    for (let index = 0; index < localStorage.length; index += 1) {
+      const key = localStorage.key(index);
+      if (key && /^ummiby\.quran\.readingUnit\.\d+$/.test(key)) keysToRemove.push(key);
+    }
+    keysToRemove.forEach(key => localStorage.removeItem(key));
+    localStorage.removeItem('ummiby.quran.readingUnit.current');
+    localStorage.removeItem('ummiby.quran.readingUnit.history');
+    resetJourneyDialog?.close();
+    toast('Reading Unit Journey reset. Unit 1 is ready to begin.');
+    render();
+  });
+
   app.querySelector('[data-record-quran-today]')?.addEventListener('click', () => {
     const key = localDateKey();
     let records = {};
@@ -263,7 +279,18 @@ function bindShellEvents() {
   });
 
   const readingDialog = app.querySelector("[data-reading-dialog]");
-  app.querySelector("[data-reading-settings]")?.addEventListener("click", () => readingDialog?.showModal());
+  app.querySelectorAll("[data-reading-settings]").forEach(button => button.addEventListener("click", () => readingDialog?.showModal()));
+  app.querySelectorAll("[data-arabic-size-step]").forEach(button => {
+    button.addEventListener("click", () => {
+      const current = Number(readingPreferences().arabicSize) || 2.35;
+      const next = Math.min(3.4, Math.max(1.7, Math.round((current + Number(button.dataset.arabicSizeStep)) * 10) / 10));
+      updateReadingPreferences({ arabicSize: next });
+      app.querySelector(".reader-page, .quran-reader")?.style.setProperty("--reader-arabic-size", `${next}rem`);
+      if (sizeInput) sizeInput.value = String(next);
+      if (sizeOutput) sizeOutput.textContent = `${next.toFixed(1)}rem`;
+      toast(`Arabic text size set to ${next.toFixed(1)}rem.`);
+    });
+  });
   const sizeInput = app.querySelector("[data-reading-size]");
   const sizeOutput = app.querySelector("[data-size-output]");
   sizeInput?.addEventListener("input", () => {

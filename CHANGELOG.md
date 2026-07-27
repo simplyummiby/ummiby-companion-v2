@@ -1,3 +1,13 @@
+# Changelog
+
+## v3.12.1 — Reader Display Controls & Journey Reset
+
+- Added visible Arabic text size decrease/increase controls to Qur’an reader headers.
+- Retained the detailed Arabic-size slider in Reading Preferences.
+- Added a guarded Reset Reading Journey action to the Reading Unit Index.
+- Reset clears all Reading Unit completions, saved places, current position, and unit activity history.
+- Reset preserves general Qur’an reading-day records and display preferences.
+
 # v3.12.0 — Canonical Qur’an Integration QA & Regression Protection (Phase 4)
 
 ## Validated
