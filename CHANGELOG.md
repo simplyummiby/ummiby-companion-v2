@@ -1,5 +1,24 @@
 # Changelog
 
+## v3.7.3 — Duaa History Year and Banner Polish
+
+- Simplified the History year selector to begin at the Duaa history launch year, 2026.
+- The selector now shows every year from 2026 through the current year, plus one upcoming year. In 2026, it displays only 2027 and 2026.
+- Preserved any genuinely imported history earlier than 2026 without generating arbitrary empty years.
+- Added a new History banner featuring clocks and an hourglass, with no text embedded in the image so the app's live banner typography remains accessible and responsive.
+- Removed the previous rolling ten-year helper and centralized the supported History start year.
+- Preserved month navigation, Monthly Insights, KPI calculations, collection tabs, local-date handling, and responsive behavior.
+
+## v3.7.2 — Duaa History Monthly Insights
+
+- Rebalanced the five History KPI cards to a comfortable medium size between the original wide tiles and the overly compact v3.7.1 cards.
+- Replaced Selected Day with Monthly Insights for the month currently shown in the calendar.
+- Added active-days progress, longest monthly streak, most consistent week, most consistent weekday, and gentle rule-based encouragement.
+- Added an intentional future-month empty state rather than presenting incomplete statistics.
+- Added one upcoming year to the year selector; the list continues to advance automatically with the device's local year and retains any years found in saved history.
+- Removed day-selection state and click handling because calendar dates no longer open a detail panel.
+- Preserved existing history records, streak calculations, collection tabs, month navigation, and local-calendar date handling.
+
 ## v3.7.1 — Duaa History Navigation Polish
 
 - Removed the History epigraph so the explanatory page heading appears higher.
@@ -903,3 +922,10 @@
 - Added independent sidebar scrolling.
 - Replaced visible filter chips with multi-select dropdown checklists.
 - Added compact selection summaries and retained clear-filter behavior.
+
+## 3.7.4 — Duaa History Layout and Banner Polish
+
+- Refined the Morning, Evening, and Before Sleep history selector into substantial rounded rectangular controls.
+- Matched Monthly Insights to the Monthly Record calendar height on desktop while preserving natural stacked heights on smaller screens.
+- Reworked the accepted light clock artwork into a sharper panoramic banner that fills the standardized banner area.
+- Removed obsolete Selected Day styling left from earlier History iterations.

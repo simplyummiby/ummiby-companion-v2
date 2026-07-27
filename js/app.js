@@ -17,7 +17,7 @@ const toastRegion = document.querySelector("#toast-region");
 let currentUser = null;
 let configured = false;
 const nowForHistory = new Date();
-let historyView = { collectionId:'morning', year:nowForHistory.getFullYear(), month:nowForHistory.getMonth(), selectedDate:null };
+let historyView = { collectionId:'morning', year:nowForHistory.getFullYear(), month:nowForHistory.getMonth() };
 
 const collectionFilterKey = (collectionId) => `ummiby.collectionFilters.${collectionId}`;
 const collectionScrollKey = (collectionId) => `ummiby.collectionScroll.${collectionId}`;
@@ -90,7 +90,7 @@ function bindShellEvents() {
   app.querySelectorAll('[data-history-month]').forEach(button => {
     button.addEventListener('click', () => {
       const date=new Date(historyView.year,historyView.month+Number(button.dataset.historyMonth),1);
-      historyView={...historyView,year:date.getFullYear(),month:date.getMonth(),selectedDate:null};
+      historyView={...historyView,year:date.getFullYear(),month:date.getMonth()};
       render();
     });
   });
@@ -98,16 +98,11 @@ function bindShellEvents() {
     select.addEventListener('change', () => {
       const year=Number(select.value);
       if(!Number.isInteger(year)) return;
-      historyView={...historyView,year,selectedDate:null};
+      historyView={...historyView,year};
       render();
     });
   });
-  app.querySelectorAll('[data-history-day]').forEach(button => {
-    button.addEventListener('click', () => {
-      historyView={...historyView,selectedDate:button.dataset.historyDay};
-      render();
-    });
-  });
+
 
   app.querySelectorAll("[data-toggle-worship]").forEach((button) => {
     button.addEventListener("click", () => {
