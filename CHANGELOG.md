@@ -1,5 +1,12 @@
 # Changelog
 
+## v3.13.0 — Prayer Companion Foundation
+- Added the complete Prayer Companion module shell, navigation, routing, ancient-gold visual identity, responsive home, prayer-time placeholder panel, and standardized banner.
+- Added five daily prayer indexes and detail frameworks, Sunnah and voluntary prayer pages, sequential prayer lessons, Wudu Companion, Prayer Duaa Library shells, Prayer Knowledge, settings/calendar placeholders, and progress dashboard.
+- Preserved canonical Duaa data boundaries and prepared native Prayer Read/Learn architecture without duplicating records or implementing premature tracking.
+- Preserved existing Qur’an, Duaa, Ramadan, reader, journey, settings, and routing behavior.
+
+
 ## v3.12.1 — Reader Display Controls & Journey Reset
 
 - Added visible Arabic text size decrease/increase controls to Qur’an reader headers.

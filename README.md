@@ -1,4 +1,4 @@
-# Ummiby Companion v3.12.1
+# Ummiby Companion v3.13.0
 
 **Current release:** Canonical Qur’an Integration QA & Regression Protection — Phase 4
 

@@ -1,3 +1,3 @@
-# Ummiby Companion v3.12.1
+# Ummiby Companion v3.13.0
 
-Reader Display Controls & Journey Reset
+Prayer Companion Foundation

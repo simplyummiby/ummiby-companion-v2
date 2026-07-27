@@ -71,6 +71,12 @@
   --theme-soft: #fff7e7;
 }
 
+[data-theme="prayer"] {
+  --theme-accent: #a6782f;
+  --theme-accent-strong: #75501c;
+  --theme-soft: #fbf3e4;
+}
+
 [data-theme="ramadan"] {
   --theme-accent: #7d3e79;
   --theme-accent-strong: #61255d;
