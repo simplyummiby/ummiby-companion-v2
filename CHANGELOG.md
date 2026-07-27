@@ -1,5 +1,16 @@
 # Changelog
 
+## v3.5.0 — Duaa Memorization Map
+
+- Added independent memorized status tracking for every duaa collection.
+- Added a Memorized control to every duaa in collection lists.
+- Added memorized totals and progress rings to collection index cards.
+- Added the My Duaa Memorization page with summary metrics and collection badge walls.
+- Added white unmemorized badges and filled collection-colored memorized badges.
+- Made every badge open the matching duaa in Reading Mode.
+- Preserved the existing completion, worship, custom order, Qur’anic filter, and Reading Mode behavior.
+
+
 ## v3.4.26 — Qur’anic Duaa Filtered Reading Sequence Fix
 
 - Reading Mode now follows the currently filtered Qur’anic duaa list.

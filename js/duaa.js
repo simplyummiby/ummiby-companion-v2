@@ -8,7 +8,7 @@ export const duaaOrder = ['morning','evening','sleep','travel','weather','prayer
 // Keep the v2.1 storage key so a content restoration does not erase existing
 // completion, worship-history, or custom-order records.
 const key = 'ummiby.duaa.v2.1';
-const emptyState = () => ({ completed:{}, worship:{}, history:{}, order:{}, reading:{ arabicSize: 2.35, showEnglish: true, showTransliteration: true } });
+const emptyState = () => ({ completed:{}, memorized:{}, worship:{}, history:{}, order:{}, reading:{ arabicSize: 2.35, showEnglish: true, showTransliteration: true } });
 
 const legacyItemAliases = {
   morning: { protection:'morning-006', contentment:'morning-013' },
@@ -36,6 +36,7 @@ function migrateLegacyItemIds(next){
 function normalizeState(value){
   const next = value && typeof value === 'object' ? value : emptyState();
   next.completed = next.completed && typeof next.completed === 'object' ? next.completed : {};
+  next.memorized = next.memorized && typeof next.memorized === 'object' ? next.memorized : {};
   next.worship = next.worship && typeof next.worship === 'object' ? next.worship : {};
   next.history = next.history && typeof next.history === 'object' ? next.history : {};
   next.order = next.order && typeof next.order === 'object' ? next.order : {};
@@ -84,6 +85,25 @@ export function setDuaaOrder(collectionId,ids){
   const clean=[...new Set(ids.filter(id=>valid.has(id)))];
   if(clean.length!==valid.size) return false;
   const s=state(); s.order ||= {}; s.order[collectionId]=clean; save(s); return true;
+}
+
+
+export function isMemorized(collectionId,itemId){ return Boolean(state().memorized?.[collectionId]?.[itemId]); }
+export function toggleMemorized(collectionId,itemId){
+  const s=state();
+  s.memorized ||= {};
+  s.memorized[collectionId] ||= {};
+  s.memorized[collectionId][itemId]=!s.memorized[collectionId][itemId];
+  if(!s.memorized[collectionId][itemId]) delete s.memorized[collectionId][itemId];
+  save(s);
+  return Boolean(s.memorized[collectionId][itemId]);
+}
+export function memorizedCount(collectionId){
+  const c=collections[collectionId];
+  return c ? c.items.filter(item=>isMemorized(collectionId,item.id)).length : 0;
+}
+export function totalMemorizedCount(){
+  return Object.values(collections).reduce((sum,c)=>sum+memorizedCount(c.id),0);
 }
 
 export function isComplete(collectionId,itemId){ return Boolean(state().completed?.[collectionId]?.[itemId]); }

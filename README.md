@@ -1,4 +1,6 @@
-# Ummiby Companion
+# Ummiby Companion v3.5.0
+
+This release adds a Duaa Memorization Map: each supplication can be marked memorized, collection cards show memorized progress, and the new My Duaa Memorization page presents every duaa as a visual badge.
 
 **v3.4.26 — Duaa Collections Card Gallery**
 

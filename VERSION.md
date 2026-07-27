@@ -1,9 +1,11 @@
-# Ummiby Companion v3.4.26
+# Ummiby Companion v3.5.0
 
-## Qur’anic Duaa Filtered Reading Sequence Fix
+## Duaa Memorization Map
 
-- Uses the currently filtered Qur’anic duaa results as the active Reading Mode sequence.
-- Updates the Reading Mode position count to reflect only the filtered results.
-- Keeps Previous and Next navigation inside the filtered set.
-- Ends Reading Mode after the final filtered duaa instead of continuing into the full collection.
-- Preserves the existing filter selections and collection scroll position when returning to the list.
+- Adds a separate memorized status for every duaa in every collection.
+- Adds a memorized toggle to each collection list entry.
+- Shows collection-level memorized counts on the Collections Index.
+- Adds a new My Duaa Memorization page with collection sections and one visual badge per duaa.
+- Keeps unmemorized badges white and fills memorized badges with collection color.
+- Lets each badge open its duaa in Reading Mode.
+- Stores memorization locally alongside existing Duaa data without changing daily completion tracking.

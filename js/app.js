@@ -1,5 +1,5 @@
 import { renderShell } from "./shell.js";
-import { toggleComplete, toggleWorshipToday, setDuaaOrder, updateReadingPreferences } from "./duaa.js";
+import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences } from "./duaa.js";
 import {
   onAuthStateChange,
   restoreSession,
@@ -92,6 +92,15 @@ function bindShellEvents() {
       const [collectionId, itemId] = button.dataset.toggleComplete.split(":");
       const complete = toggleComplete(collectionId, itemId);
       toast(complete ? "Duaa marked complete." : "Completion removed.");
+      render();
+    });
+  });
+
+  app.querySelectorAll("[data-toggle-memorized]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const [collectionId, itemId] = button.dataset.toggleMemorized.split(":");
+      const memorized = toggleMemorized(collectionId, itemId);
+      toast(memorized ? "Duaa marked memorized." : "Memorized status removed.");
       render();
     });
   });

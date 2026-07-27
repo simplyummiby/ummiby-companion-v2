@@ -44,3 +44,8 @@ The Collections index and Duaa Home “More Collections” cards use the same re
 ## Qur’anic Duaa collection (v3.4.22)
 
 The `/duaa/quranic` route is an untracked reference collection containing curated Qur’anic supplications. Each entry carries exact surah/ayah metadata, speaker attribution, purpose tags, and brief context. Collection-specific filter controls may combine one speaker with multiple purpose tags. The shared Reading Mode displays the Qur’anic attribution and reference in its About panel.
+
+
+## Duaa Memorization State (v3.5.0)
+
+Memorization is stored independently from daily completion under `memorized[collectionId][itemId]` in the existing Duaa local-storage state. Collection pages expose a memorized toggle, the Collections Index summarizes memorized counts, and `/duaa/memorization` renders the cross-collection badge map. A memorized badge links to the existing Reading Mode route for that item.
