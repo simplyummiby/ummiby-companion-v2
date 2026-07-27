@@ -1,3 +1,12 @@
+## v3.4.21 — Duaa Collections Card Gallery
+
+- Replaced the compact alphabetical row index on `/duaa/collections` with a spacious visual card gallery.
+- Reused the existing resized collection artwork from `assets/collection-index-images-v3411/`.
+- Added rounded card corners, larger image areas, clearer spacing, subtle hover elevation, and consistent white-card styling.
+- Added responsive three-column, two-column, and single-column layouts.
+- Added a compact footer showing tracked progress or the number of duaas in each collection.
+- Preserved all v3.4.20 Prayer and Fasting sidebar placeholders and routes.
+
 ## v3.4.20 — Prayer and Fasting Sidebar Placeholders
 
 - Added Prayer and Fasting to the global sidebar with distinct SVG icon-font symbols.

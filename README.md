@@ -1,6 +1,6 @@
 # Ummiby Companion
 
-**v3.4.20 — Prayer and Fasting Sidebar Placeholders**
+**v3.4.21 — Duaa Collections Card Gallery**
 
 This release establishes one reusable Page Epigraph system across the Duaa module while preserving collection, reader, tracking, account, banner, and application-service behavior.
 
@@ -63,7 +63,7 @@ Copy `js/config.example.js` to `js/config.js` and add the Supabase project URL a
 - Replaced Study Library category navigation with in-page expandable accordion sections.
 - Resource links now appear directly beneath their category and still open externally in a new tab.
 
-## v3.4.20 — Prayer and Fasting Sidebar Placeholders
+## v3.4.21 — Duaa Collections Card Gallery
 
 - Registers Prayer and Fasting as top-level global-navigation modules.
 - Adds working placeholder pages without enabling unfinished tracking or location services.

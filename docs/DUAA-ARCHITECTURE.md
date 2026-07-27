@@ -33,7 +33,7 @@ All solid Duaa interaction accents use `#1F639F`, including the module navigatio
 
 ## Collections library index (v3.4.8)
 
-The `/duaa/collections` route is an alphabetical index rather than a card gallery. It uses the reusable `collectionListItem` renderer and `.collection-index*` CSS classes. The index is centered at a maximum width of 860px, each entire row is a navigation target, and square thumbnails are derived from destination-page banner artwork in `assets/collection-thumbnails/`. Daily Companion cards on Duaa Home remain icon-based because they carry tracking and consistency information.
+The `/duaa/collections` route uses a responsive visual card gallery rendered by `collectionListItem` and the `.collection-index*` CSS classes. The gallery uses three columns on wide screens, two on tablets, and one on small screens. Each entire card is a navigation target, and its artwork comes from the resized destination-page images in `assets/collection-index-images-v3411/`. Daily Companion cards on Duaa Home remain icon-based because they carry tracking and consistency information.
 
 
 ## Shared collection artwork (v3.4.9)
