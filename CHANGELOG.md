@@ -1,6 +1,6 @@
 # Changelog
 
-## 3.8.4 — Reading Unit Reader Polish
+## 3.9.0 — Reading Unit Reader Polish
 
 - Anchored the narrow Reading Companion closer to the left edge and widened the Qur’an reading surface.
 - Renamed the panel to Reading Companion and reordered its sections so Reading Progress appears before Study Resources.
@@ -1004,3 +1004,12 @@
 - Added deliberate Save My Place behavior; scroll position is never treated as proof an ayah was read.
 - Added saved-place resume guidance and persistent local progress.
 - Added responsive desktop and mobile reader layouts.
+
+
+## v3.9.0 — Canonical Qur’an Data Foundation (Phase 1)
+- Added complete canonical Qur’an application data: 114 surahs and 6,236 ayat with Arabic, Hilali–Khan translation, and available footnotes.
+- Added all 294 canonical Reading Units (P0001–P0294).
+- Added `quran-canonical.js` as the compatibility and integrity layer.
+- Added validation for sequence, counts, non-empty text, unit endpoints, duplicate coverage, gaps, and total 6,236-ayah coverage.
+- Added a populated Reading Unit Index grouped by surah.
+- Preserved the v3.8.4 Unit 87 reader behavior for Phase 2 reader integration.

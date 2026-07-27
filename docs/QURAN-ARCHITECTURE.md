@@ -1,4 +1,4 @@
-# Qur'an Module Architecture — v3.8.4
+# Qur'an Module Architecture — v3.9.0
 
 ## Reading Journeys philosophy
 

@@ -1,6 +1,6 @@
 # Ummiby Reader Framework
 
-Version 3.8.4 establishes a reusable immersive-reader architecture.
+Version 3.9.0 establishes a reusable immersive-reader architecture.
 
 ## Principles
 

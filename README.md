@@ -85,4 +85,8 @@ Duaa Reading Mode now offers a calm **Read** view for uninterrupted daily recita
 
 ## Local preview note
 
-The v3.8.4 entry assets use release-specific cache keys so Live Server does not mix JavaScript modules from older builds. A blank `js/config.js` is included intentionally for local preview mode.
+The v3.9.0 entry assets use release-specific cache keys so Live Server does not mix JavaScript modules from older builds. A blank `js/config.js` is included intentionally for local preview mode.
+
+
+## Canonical Qur’an data
+Version 3.9.0 includes the complete Arabic and Hilali–Khan Qur’an dataset plus all 294 canonical Reading Units. The browser validates this foundation at module load through `js/data/quran-canonical.js`. Raw source files are retained in `data/quran/source/`.
