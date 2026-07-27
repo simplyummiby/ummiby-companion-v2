@@ -1,5 +1,5 @@
 # Ummiby Companion
 
-Version: **3.6.1**
+Version: **3.6.2**
 
-Release: **Duaa Read / Learn Polish**
+Release: **Duaa Consistency Persistence**

@@ -1,5 +1,24 @@
 # Changelog
 
+## 3.6.2 — Duaa Consistency Persistence
+
+### Fixed
+- Standardized Duaa consistency records on the user’s local calendar date instead of UTC dates.
+- Fixed Weekly Consistency records that could appear missing or shifted after refresh, especially during Arizona evening hours.
+- Ensured Morning, Evening, and Before Sleep remain independent daily records.
+- Added guarded localStorage writes so persistence failures are surfaced instead of silently ignored.
+
+### Preserved
+- One completed duaa still counts as an active day.
+- Manual Record Today controls continue to add or remove only the selected collection’s current-day record.
+- Collection completion, memorization, Read/Learn preferences, filtering, ordering, and reading progress remain unchanged.
+- Existing `ummiby.duaa.v2.1` data remains compatible; no storage-key reset or destructive migration was introduced.
+
+### Technical debt
+- Centralized local date-key creation and local week-boundary calculation.
+- Removed duplicated UTC date slicing from consistency functions.
+- Added a focused consistency-storage audit helper for regression testing and future History development.
+
 ## 3.6.1 — Duaa Read / Learn Polish
 
 - Added an intentional centered Learn Mode placeholder for duas without segmented phrase data.

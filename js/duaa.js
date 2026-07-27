@@ -10,6 +10,20 @@ export const duaaOrder = ['morning','evening','sleep','travel','weather','prayer
 const key = 'ummiby.duaa.v2.1';
 const emptyState = () => ({ completed:{}, memorized:{}, memorizedCanonical:{}, worship:{}, history:{}, order:{}, reading:{ arabicSize: 2.35, showEnglish: true, showTransliteration: true, mode: 'read' } });
 
+// Consistency is a local-calendar habit record. Never derive its storage key
+// from UTC: doing so can shift an Arizona evening into the following day.
+function localDateKey(date = new Date()){
+  const year=date.getFullYear();
+  const month=String(date.getMonth()+1).padStart(2,'0');
+  const day=String(date.getDate()).padStart(2,'0');
+  return `${year}-${month}-${day}`;
+}
+function startOfLocalWeek(date = new Date()){
+  const start=new Date(date.getFullYear(),date.getMonth(),date.getDate());
+  start.setDate(start.getDate()-start.getDay());
+  return start;
+}
+
 const legacyItemAliases = {
   morning: { protection:'morning-006', contentment:'morning-013' },
   evening: { 'evening-arrived':'evening-003' },
@@ -77,7 +91,15 @@ function state(){
   try { return normalizeState(JSON.parse(localStorage.getItem(key))); }
   catch { return emptyState(); }
 }
-function save(value){ localStorage.setItem(key, JSON.stringify(normalizeState(value))); }
+function save(value){
+  try {
+    localStorage.setItem(key, JSON.stringify(normalizeState(value)));
+    return true;
+  } catch (error) {
+    console.error('Unable to save Duaa state.', error);
+    return false;
+  }
+}
 
 // Used by release QA after restoring collection content. It verifies that item
 // IDs are present, unique within their collection, and safe for persisted state.
@@ -143,19 +165,51 @@ export function toggleComplete(collectionId,itemId){
   return s.completed[collectionId][itemId];
 }
 export function recordWorship(collectionId, existing){
-  const s=existing || state(); const day=new Date().toISOString().slice(0,10); s.worship[collectionId] ||= {}; s.worship[collectionId][day]=true; save(s);
+  if(!collections[collectionId]?.tracked) return false;
+  const s=existing || state();
+  const day=localDateKey();
+  s.worship[collectionId] ||= {};
+  s.worship[collectionId][day]=true;
+  return save(s);
 }
 export function toggleWorshipToday(collectionId){
-  const s=state(); const day=new Date().toISOString().slice(0,10); s.worship[collectionId] ||= {};
+  if(!collections[collectionId]?.tracked) return false;
+  const s=state();
+  const day=localDateKey();
+  s.worship[collectionId] ||= {};
   if(s.worship[collectionId][day]) delete s.worship[collectionId][day];
   else s.worship[collectionId][day]=true;
-  save(s); return Boolean(s.worship[collectionId][day]);
+  const recorded=Boolean(s.worship[collectionId][day]);
+  return save(s) ? recorded : !recorded;
 }
-export function worshipToday(collectionId){ const day=new Date().toISOString().slice(0,10); return Boolean(state().worship?.[collectionId]?.[day]); }
+export function worshipToday(collectionId){
+  return Boolean(state().worship?.[collectionId]?.[localDateKey()]);
+}
 export function completedCount(collectionId){ const c=collections[collectionId]; return c.items.filter(i=>isComplete(collectionId,i.id)).length; }
 export function weekStatus(collectionId){
-  const s=state(); const today=new Date(); const dow=today.getDay(); const sunday=new Date(today); sunday.setDate(today.getDate()-dow);
-  return Array.from({length:7},(_,i)=>{ const d=new Date(sunday); d.setDate(sunday.getDate()+i); const iso=d.toISOString().slice(0,10); return {label:['S','M','T','W','T','F','S'][i], active:Boolean(s.worship?.[collectionId]?.[iso]), today:iso===today.toISOString().slice(0,10)}; });
+  const s=state();
+  const today=new Date();
+  const todayKey=localDateKey(today);
+  const sunday=startOfLocalWeek(today);
+  return Array.from({length:7},(_,i)=>{
+    const date=new Date(sunday.getFullYear(),sunday.getMonth(),sunday.getDate()+i);
+    const dayKey=localDateKey(date);
+    return {label:['S','M','T','W','T','F','S'][i],date:dayKey,active:Boolean(s.worship?.[collectionId]?.[dayKey]),today:dayKey===todayKey};
+  });
+}
+
+// Focused QA helper for release checks and future History work.
+export function consistencyStorageAudit(){
+  const s=state();
+  return ['morning','evening','sleep'].reduce((report,collectionId)=>{
+    const records=s.worship?.[collectionId] || {};
+    report[collectionId]={
+      totalDays:Object.keys(records).filter(day=>records[day]).length,
+      today:Boolean(records[localDateKey()]),
+      week:weekStatus(collectionId)
+    };
+    return report;
+  },{});
 }
 
 
