@@ -39,3 +39,8 @@ The `/duaa/collections` route uses a responsive visual card gallery rendered by 
 ## Shared collection artwork (v3.4.9)
 
 The Collections index and Duaa Home “More Collections” cards use the same resized square thumbnails derived from each destination page banner. Morning, Evening, and Before Sleep remain icon-based on Duaa Home because those cards carry tracking, progress, and weekly consistency content. Istikharah temporarily uses its existing illustration until a dedicated page banner is created.
+
+
+## Qur’anic Duaa collection (v3.4.22)
+
+The `/duaa/quranic` route is an untracked reference collection containing curated Qur’anic supplications. Each entry carries exact surah/ayah metadata, speaker attribution, purpose tags, and brief context. Collection-specific filter controls may combine one speaker with multiple purpose tags. The shared Reading Mode displays the Qur’anic attribution and reference in its About panel.

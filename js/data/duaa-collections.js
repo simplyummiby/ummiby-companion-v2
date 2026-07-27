@@ -4041,6 +4041,2066 @@ export const collections = {
     "quoteSource": "Qur’an 7:26",
     "items": []
   },
+  "quranic": {
+  "id": "quranic",
+  "label": "Qur’anic Duaas",
+  "navLabel": "Qur’anic Duaas",
+  "tracked": false,
+  "intro": "Supplications from the Qur’an, including the prayers of the prophets and the righteous.",
+  "quote": "Our Lord says: Call upon Me; I will respond to you.",
+  "quoteSource": "Qur’an 40:60",
+  "filterable": true,
+  "items": [
+    {
+      "id": "quranic-001",
+      "title": "Good in This Life and the Hereafter",
+      "subtitle": "A comprehensive prayer for goodness and protection from the Fire.",
+      "repeat": "",
+      "arabic": "رَبَّنَآ ءَاتِنَا فِي ٱلدُّنۡيَا حَسَنَةٗ وَفِي ٱلۡأٓخِرَةِ حَسَنَةٗ وَقِنَا عَذَابَ ٱلنَّارِ",
+      "transliteration": "",
+      "english": "Our Lord, give us good in this world and good in the Hereafter, and protect us from the punishment of the Fire.",
+      "source": "Qur’an 2:201",
+      "sourceDetails": {
+        "reference": "Qur’an 2:201",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/2/201",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبَّنَآ ءَاتِنَا فِي ٱلدُّنۡيَا حَسَنَةٗ وَفِي ٱلۡأٓخِرَةِ حَسَنَةٗ وَقِنَا عَذَابَ ٱلنَّارِ",
+          "english": "Our Lord, give us good in this world and good in the Hereafter, and protect us from the punishment of the Fire.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "2:201",
+      "surahName": "Al-Baqarah",
+      "ayahRange": "201",
+      "speaker": "The believers",
+      "speakerKey": "believers",
+      "purposes": [
+        "Hereafter",
+        "Protection",
+        "Wellbeing"
+      ],
+      "context": "A supplication Allah praises among those who seek both worldly and everlasting good."
+    },
+    {
+      "id": "quranic-002",
+      "title": "Patience and Victory",
+      "subtitle": "Asking Allah for steadfastness and help against opposition.",
+      "repeat": "",
+      "arabic": "رَبَّنَآ أَفۡرِغۡ عَلَيۡنَا صَبۡرٗا وَثَبِّتۡ أَقۡدَامَنَا وَٱنصُرۡنَا عَلَى ٱلۡقَوۡمِ ٱلۡكَٰفِرِينَ",
+      "transliteration": "",
+      "english": "Our Lord, pour upon us patience, make our feet firm, and grant us victory over the disbelieving people.",
+      "source": "Qur’an 2:250",
+      "sourceDetails": {
+        "reference": "Qur’an 2:250",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/2/250",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبَّنَآ أَفۡرِغۡ عَلَيۡنَا صَبۡرٗا وَثَبِّتۡ أَقۡدَامَنَا وَٱنصُرۡنَا عَلَى ٱلۡقَوۡمِ ٱلۡكَٰفِرِينَ",
+          "english": "Our Lord, pour upon us patience, make our feet firm, and grant us victory over the disbelieving people.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "2:250",
+      "surahName": "Al-Baqarah",
+      "ayahRange": "250",
+      "speaker": "The believers with Ṭālūt",
+      "speakerKey": "believers",
+      "purposes": [
+        "Patience",
+        "Steadfastness",
+        "Victory"
+      ],
+      "context": "The believing army made this prayer when they advanced to face Jālūt and his forces."
+    },
+    {
+      "id": "quranic-003",
+      "title": "Pardon, Forgiveness, and Mercy",
+      "subtitle": "The closing prayer of Sūrah al-Baqarah.",
+      "repeat": "",
+      "arabic": "رَبَّنَا لَا تُؤَاخِذۡنَآ إِن نَّسِينَآ أَوۡ أَخۡطَأۡنَاۚ رَبَّنَا وَلَا تَحۡمِلۡ عَلَيۡنَآ إِصۡرٗا كَمَا حَمَلۡتَهُۥ عَلَى ٱلَّذِينَ مِن قَبۡلِنَاۚ رَبَّنَا وَلَا تُحَمِّلۡنَا مَا لَا طَاقَةَ لَنَا بِهِۦۖ وَٱعۡفُ عَنَّا وَٱغۡفِرۡ لَنَا وَٱرۡحَمۡنَآۚ أَنتَ مَوۡلَىٰنَا فَٱنصُرۡنَا عَلَى ٱلۡقَوۡمِ ٱلۡكَٰفِرِينَ",
+      "transliteration": "",
+      "english": "Our Lord, do not hold us accountable if we forget or make a mistake. Our Lord, do not place on us a burden like the one You placed on those before us. Our Lord, do not burden us with what we cannot bear. Pardon us, forgive us, and have mercy on us. You are our Protector, so grant us victory over the disbelieving people.",
+      "source": "Qur’an 2:286",
+      "sourceDetails": {
+        "reference": "Qur’an 2:286",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/2/286",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبَّنَا لَا تُؤَاخِذۡنَآ إِن نَّسِينَآ أَوۡ أَخۡطَأۡنَاۚ رَبَّنَا وَلَا تَحۡمِلۡ عَلَيۡنَآ إِصۡرٗا كَمَا حَمَلۡتَهُۥ عَلَى ٱلَّذِينَ مِن قَبۡلِنَاۚ رَبَّنَا وَلَا تُحَمِّلۡنَا مَا لَا طَاقَةَ لَنَا بِهِۦۖ وَٱعۡفُ عَنَّا وَٱغۡفِرۡ لَنَا وَٱرۡحَمۡنَآۚ أَنتَ مَوۡلَىٰنَا فَٱنصُرۡنَا عَلَى ٱلۡقَوۡمِ ٱلۡكَٰفِرِينَ",
+          "english": "Our Lord, do not hold us accountable if we forget or make a mistake. Our Lord, do not place on us a burden like the one You placed on those before us. Our Lord, do not burden us with what we cannot bear. Pardon us, forgive us, and have mercy on us. You are our Protector, so grant us victory over the disbelieving people.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "2:286",
+      "surahName": "Al-Baqarah",
+      "ayahRange": "286",
+      "speaker": "The believers",
+      "speakerKey": "believers",
+      "purposes": [
+        "Forgiveness",
+        "Mercy",
+        "Ease",
+        "Protection",
+        "Victory"
+      ],
+      "context": "Allah teaches the believers to seek pardon, mercy, relief from unbearable burdens, and His help."
+    },
+    {
+      "id": "quranic-004",
+      "title": "Keep Our Hearts Firm",
+      "subtitle": "Seeking protection from deviation after receiving guidance.",
+      "repeat": "",
+      "arabic": "رَبَّنَا لَا تُزِغۡ قُلُوبَنَا بَعۡدَ إِذۡ هَدَيۡتَنَا وَهَبۡ لَنَا مِن لَّدُنكَ رَحۡمَةًۚ إِنَّكَ أَنتَ ٱلۡوَهَّابُ",
+      "transliteration": "",
+      "english": "Our Lord, do not let our hearts deviate after You have guided us, and grant us mercy from Yourself. You are truly the Bestower.",
+      "source": "Qur’an 3:8",
+      "sourceDetails": {
+        "reference": "Qur’an 3:8",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/3/8",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبَّنَا لَا تُزِغۡ قُلُوبَنَا بَعۡدَ إِذۡ هَدَيۡتَنَا وَهَبۡ لَنَا مِن لَّدُنكَ رَحۡمَةًۚ إِنَّكَ أَنتَ ٱلۡوَهَّابُ",
+          "english": "Our Lord, do not let our hearts deviate after You have guided us, and grant us mercy from Yourself. You are truly the Bestower.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "3:8",
+      "surahName": "Āl ʿImrān",
+      "ayahRange": "8",
+      "speaker": "People of firm knowledge",
+      "speakerKey": "believers",
+      "purposes": [
+        "Guidance",
+        "Steadfastness",
+        "Mercy"
+      ],
+      "context": "A prayer of those firmly grounded in knowledge after affirming that all revelation is from Allah."
+    },
+    {
+      "id": "quranic-005",
+      "title": "Forgiveness and Protection from the Fire",
+      "subtitle": "A prayer of those who believe sincerely.",
+      "repeat": "",
+      "arabic": "رَبَّنَآ إِنَّنَآ ءَامَنَّا فَٱغۡفِرۡ لَنَا ذُنُوبَنَا وَقِنَا عَذَابَ ٱلنَّارِ",
+      "transliteration": "",
+      "english": "Our Lord, we have truly believed, so forgive our sins and protect us from the punishment of the Fire.",
+      "source": "Qur’an 3:16",
+      "sourceDetails": {
+        "reference": "Qur’an 3:16",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/3/16",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبَّنَآ إِنَّنَآ ءَامَنَّا فَٱغۡفِرۡ لَنَا ذُنُوبَنَا وَقِنَا عَذَابَ ٱلنَّارِ",
+          "english": "Our Lord, we have truly believed, so forgive our sins and protect us from the punishment of the Fire.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "3:16",
+      "surahName": "Āl ʿImrān",
+      "ayahRange": "16",
+      "speaker": "The believers",
+      "speakerKey": "believers",
+      "purposes": [
+        "Forgiveness",
+        "Protection",
+        "Hereafter"
+      ],
+      "context": "Allah describes the people of taqwā as those who affirm faith and ask for forgiveness and protection."
+    },
+    {
+      "id": "quranic-006",
+      "title": "Righteous Offspring",
+      "subtitle": "Zakariyyā asks Allah for a good child.",
+      "repeat": "",
+      "arabic": "رَبِّ هَبۡ لِي مِن لَّدُنكَ ذُرِّيَّةٗ طَيِّبَةًۖ إِنَّكَ سَمِيعُ ٱلدُّعَآءِ",
+      "transliteration": "",
+      "english": "My Lord, grant me from Yourself righteous offspring. You are truly the Hearer of prayer.",
+      "source": "Qur’an 3:38",
+      "sourceDetails": {
+        "reference": "Qur’an 3:38",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/3/38",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبِّ هَبۡ لِي مِن لَّدُنكَ ذُرِّيَّةٗ طَيِّبَةًۖ إِنَّكَ سَمِيعُ ٱلدُّعَآءِ",
+          "english": "My Lord, grant me from Yourself righteous offspring. You are truly the Hearer of prayer.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "3:38",
+      "surahName": "Āl ʿImrān",
+      "ayahRange": "38",
+      "speaker": "Prophet Zakariyyā عليه السلام",
+      "speakerKey": "zakariyya",
+      "purposes": [
+        "Children",
+        "Family",
+        "Hope"
+      ],
+      "context": "Zakariyyā made this prayer after witnessing Allah’s provision for Maryam."
+    },
+    {
+      "id": "quranic-007",
+      "title": "Write Us Among the Witnesses",
+      "subtitle": "The disciples affirm faith in what Allah revealed.",
+      "repeat": "",
+      "arabic": "رَبَّنَآ ءَامَنَّا بِمَآ أَنزَلۡتَ وَٱتَّبَعۡنَا ٱلرَّسُولَ فَٱكۡتُبۡنَا مَعَ ٱلشَّٰهِدِينَ",
+      "transliteration": "",
+      "english": "Our Lord, we believe in what You have revealed and we follow the messenger, so count us among the witnesses.",
+      "source": "Qur’an 3:53",
+      "sourceDetails": {
+        "reference": "Qur’an 3:53",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/3/53",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبَّنَآ ءَامَنَّا بِمَآ أَنزَلۡتَ وَٱتَّبَعۡنَا ٱلرَّسُولَ فَٱكۡتُبۡنَا مَعَ ٱلشَّٰهِدِينَ",
+          "english": "Our Lord, we believe in what You have revealed and we follow the messenger, so count us among the witnesses.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "3:53",
+      "surahName": "Āl ʿImrān",
+      "ayahRange": "53",
+      "speaker": "The disciples of ʿĪsā",
+      "speakerKey": "believers",
+      "purposes": [
+        "Faith",
+        "Steadfastness",
+        "Hereafter"
+      ],
+      "context": "The sincere disciples responded to ʿĪsā by declaring their submission and asking to be counted among the witnesses."
+    },
+    {
+      "id": "quranic-008",
+      "title": "Forgive Us and Make Us Firm",
+      "subtitle": "A prayer of believers who remained steadfast with their prophets.",
+      "repeat": "",
+      "arabic": "رَبَّنَا ٱغۡفِرۡ لَنَا ذُنُوبَنَا وَإِسۡرَافَنَا فِيٓ أَمۡرِنَا وَثَبِّتۡ أَقۡدَامَنَا وَٱنصُرۡنَا عَلَى ٱلۡقَوۡمِ ٱلۡكَٰفِرِينَ",
+      "transliteration": "",
+      "english": "Our Lord, forgive our sins and our excesses in our affairs, make our feet firm, and grant us victory over the disbelieving people.",
+      "source": "Qur’an 3:147",
+      "sourceDetails": {
+        "reference": "Qur’an 3:147",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/3/147",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبَّنَا ٱغۡفِرۡ لَنَا ذُنُوبَنَا وَإِسۡرَافَنَا فِيٓ أَمۡرِنَا وَثَبِّتۡ أَقۡدَامَنَا وَٱنصُرۡنَا عَلَى ٱلۡقَوۡمِ ٱلۡكَٰفِرِينَ",
+          "english": "Our Lord, forgive our sins and our excesses in our affairs, make our feet firm, and grant us victory over the disbelieving people.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "3:147",
+      "surahName": "Āl ʿImrān",
+      "ayahRange": "147",
+      "speaker": "Followers of the prophets",
+      "speakerKey": "believers",
+      "purposes": [
+        "Forgiveness",
+        "Steadfastness",
+        "Victory"
+      ],
+      "context": "Allah praises believers who did not weaken during hardship and whose words were this prayer."
+    },
+    {
+      "id": "quranic-009",
+      "title": "Count Us Among the Witnesses",
+      "subtitle": "A prayer upon recognizing the truth of revelation.",
+      "repeat": "",
+      "arabic": "رَبَّنَآ ءَامَنَّا فَٱكۡتُبۡنَا مَعَ ٱلشَّٰهِدِينَ",
+      "transliteration": "",
+      "english": "Our Lord, we believe, so count us among the witnesses.",
+      "source": "Qur’an 5:83",
+      "sourceDetails": {
+        "reference": "Qur’an 5:83",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/5/83",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبَّنَآ ءَامَنَّا فَٱكۡتُبۡنَا مَعَ ٱلشَّٰهِدِينَ",
+          "english": "Our Lord, we believe, so count us among the witnesses.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "5:83",
+      "surahName": "Al-Māʾidah",
+      "ayahRange": "83",
+      "speaker": "Those who recognized the truth",
+      "speakerKey": "believers",
+      "purposes": [
+        "Faith",
+        "Hereafter"
+      ],
+      "context": "They wept when hearing revelation because they recognized the truth, then asked to be written among its witnesses."
+    },
+    {
+      "id": "quranic-010",
+      "title": "A Feast and a Sign",
+      "subtitle": "ʿĪsā asks Allah for provision and a sign.",
+      "repeat": "",
+      "arabic": "ٱللَّهُمَّ رَبَّنَآ أَنزِلۡ عَلَيۡنَا مَآئِدَةٗ مِّنَ ٱلسَّمَآءِ تَكُونُ لَنَا عِيدٗا لِّأَوَّلِنَا وَءَاخِرِنَا وَءَايَةٗ مِّنكَۖ وَٱرۡزُقۡنَا وَأَنتَ خَيۡرُ ٱلرَّٰزِقِينَ",
+      "transliteration": "",
+      "english": "O Allah, our Lord, send down to us a table spread from heaven to be a celebration for the first and last of us and a sign from You. Provide for us, for You are the best of providers.",
+      "source": "Qur’an 5:114",
+      "sourceDetails": {
+        "reference": "Qur’an 5:114",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/5/114",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "ٱللَّهُمَّ رَبَّنَآ أَنزِلۡ عَلَيۡنَا مَآئِدَةٗ مِّنَ ٱلسَّمَآءِ تَكُونُ لَنَا عِيدٗا لِّأَوَّلِنَا وَءَاخِرِنَا وَءَايَةٗ مِّنكَۖ وَٱرۡزُقۡنَا وَأَنتَ خَيۡرُ ٱلرَّٰزِقِينَ",
+          "english": "O Allah, our Lord, send down to us a table spread from heaven to be a celebration for the first and last of us and a sign from You. Provide for us, for You are the best of providers.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "5:114",
+      "surahName": "Al-Māʾidah",
+      "ayahRange": "114",
+      "speaker": "Prophet ʿĪsā عليه السلام",
+      "speakerKey": "isa",
+      "purposes": [
+        "Provision",
+        "Gratitude",
+        "Faith"
+      ],
+      "context": "ʿĪsā made this prayer after the disciples requested a table spread from heaven."
+    },
+    {
+      "id": "quranic-011",
+      "title": "We Have Wronged Ourselves",
+      "subtitle": "The repentance of Adam and his wife.",
+      "repeat": "",
+      "arabic": "رَبَّنَا ظَلَمۡنَآ أَنفُسَنَا وَإِن لَّمۡ تَغۡفِرۡ لَنَا وَتَرۡحَمۡنَا لَنَكُونَنَّ مِنَ ٱلۡخَٰسِرِينَ",
+      "transliteration": "",
+      "english": "Our Lord, we have wronged ourselves. If You do not forgive us and have mercy on us, we will certainly be among the losers.",
+      "source": "Qur’an 7:23",
+      "sourceDetails": {
+        "reference": "Qur’an 7:23",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/7/23",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبَّنَا ظَلَمۡنَآ أَنفُسَنَا وَإِن لَّمۡ تَغۡفِرۡ لَنَا وَتَرۡحَمۡنَا لَنَكُونَنَّ مِنَ ٱلۡخَٰسِرِينَ",
+          "english": "Our Lord, we have wronged ourselves. If You do not forgive us and have mercy on us, we will certainly be among the losers.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "7:23",
+      "surahName": "Al-Aʿrāf",
+      "ayahRange": "23",
+      "speaker": "Prophet Adam and his wife عليهما السلام",
+      "speakerKey": "adam",
+      "purposes": [
+        "Repentance",
+        "Forgiveness",
+        "Mercy"
+      ],
+      "context": "Adam and his wife turned to Allah in repentance after their mistake."
+    },
+    {
+      "id": "quranic-012",
+      "title": "Judge Between Us in Truth",
+      "subtitle": "Shuʿayb places full trust in Allah.",
+      "repeat": "",
+      "arabic": "رَبَّنَا ٱفۡتَحۡ بَيۡنَنَا وَبَيۡنَ قَوۡمِنَا بِٱلۡحَقِّ وَأَنتَ خَيۡرُ ٱلۡفَٰتِحِينَ",
+      "transliteration": "",
+      "english": "Our Lord, judge between us and our people in truth, for You are the best of judges.",
+      "source": "Qur’an 7:89",
+      "sourceDetails": {
+        "reference": "Qur’an 7:89",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/7/89",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبَّنَا ٱفۡتَحۡ بَيۡنَنَا وَبَيۡنَ قَوۡمِنَا بِٱلۡحَقِّ وَأَنتَ خَيۡرُ ٱلۡفَٰتِحِينَ",
+          "english": "Our Lord, judge between us and our people in truth, for You are the best of judges.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "7:89",
+      "surahName": "Al-Aʿrāf",
+      "ayahRange": "89",
+      "speaker": "Prophet Shuʿayb عليه السلام",
+      "speakerKey": "shuayb",
+      "purposes": [
+        "Justice",
+        "Reliance",
+        "Protection"
+      ],
+      "context": "Shuʿayb made this prayer after his people threatened to expel him and the believers."
+    },
+    {
+      "id": "quranic-013",
+      "title": "Pour Upon Us Patience",
+      "subtitle": "A prayer for steadfastness at the moment of trial.",
+      "repeat": "",
+      "arabic": "رَبَّنَآ أَفۡرِغۡ عَلَيۡنَا صَبۡرٗا وَتَوَفَّنَا مُسۡلِمِينَ",
+      "transliteration": "",
+      "english": "Our Lord, pour upon us patience and let us die as Muslims.",
+      "source": "Qur’an 7:126",
+      "sourceDetails": {
+        "reference": "Qur’an 7:126",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/7/126",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبَّنَآ أَفۡرِغۡ عَلَيۡنَا صَبۡرٗا وَتَوَفَّنَا مُسۡلِمِينَ",
+          "english": "Our Lord, pour upon us patience and let us die as Muslims.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "7:126",
+      "surahName": "Al-Aʿrāf",
+      "ayahRange": "126",
+      "speaker": "The believing magicians",
+      "speakerKey": "believers",
+      "purposes": [
+        "Patience",
+        "Steadfastness",
+        "Faith"
+      ],
+      "context": "After believing in the Lord of Mūsā and Hārūn, the magicians prayed for patience before Pharaoh’s threat."
+    },
+    {
+      "id": "quranic-014",
+      "title": "Do Not Make Us a Trial",
+      "subtitle": "Believers ask not to become a means of temptation for oppressors.",
+      "repeat": "",
+      "arabic": "رَبَّنَا لَا تَجۡعَلۡنَا فِتۡنَةٗ لِّلۡقَوۡمِ ٱلظَّٰلِمِينَ ۝ وَنَجِّنَا بِرَحۡمَتِكَ مِنَ ٱلۡقَوۡمِ ٱلۡكَٰفِرِينَ",
+      "transliteration": "",
+      "english": "Our Lord, do not make us a trial for the wrongdoing people, and save us by Your mercy from the disbelieving people.",
+      "source": "Qur’an 10:85-86",
+      "sourceDetails": {
+        "reference": "Qur’an 10:85-86",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/10/85-86",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبَّنَا لَا تَجۡعَلۡنَا فِتۡنَةٗ لِّلۡقَوۡمِ ٱلظَّٰلِمِينَ ۝ وَنَجِّنَا بِرَحۡمَتِكَ مِنَ ٱلۡقَوۡمِ ٱلۡكَٰفِرِينَ",
+          "english": "Our Lord, do not make us a trial for the wrongdoing people, and save us by Your mercy from the disbelieving people.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "10:85-86",
+      "surahName": "Yūnus",
+      "ayahRange": "85–86",
+      "speaker": "The followers of Mūsā",
+      "speakerKey": "believers",
+      "purposes": [
+        "Protection",
+        "Mercy",
+        "Deliverance"
+      ],
+      "context": "Mūsā instructed the believers to rely upon Allah, and they answered with this prayer."
+    },
+    {
+      "id": "quranic-015",
+      "title": "Protection from Asking Without Knowledge",
+      "subtitle": "Nūḥ seeks refuge and forgiveness after being corrected.",
+      "repeat": "",
+      "arabic": "رَبِّ إِنِّيٓ أَعُوذُ بِكَ أَنۡ أَسۡـَٔلَكَ مَا لَيۡسَ لِي بِهِۦ عِلۡمٞۖ وَإِلَّا تَغۡفِرۡ لِي وَتَرۡحَمۡنِيٓ أَكُن مِّنَ ٱلۡخَٰسِرِينَ",
+      "transliteration": "",
+      "english": "My Lord, I seek refuge in You from asking You about what I have no knowledge of. Unless You forgive me and have mercy on me, I will be among the losers.",
+      "source": "Qur’an 11:47",
+      "sourceDetails": {
+        "reference": "Qur’an 11:47",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/11/47",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبِّ إِنِّيٓ أَعُوذُ بِكَ أَنۡ أَسۡـَٔلَكَ مَا لَيۡسَ لِي بِهِۦ عِلۡمٞۖ وَإِلَّا تَغۡفِرۡ لِي وَتَرۡحَمۡنِيٓ أَكُن مِّنَ ٱلۡخَٰسِرِينَ",
+          "english": "My Lord, I seek refuge in You from asking You about what I have no knowledge of. Unless You forgive me and have mercy on me, I will be among the losers.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "11:47",
+      "surahName": "Hūd",
+      "ayahRange": "47",
+      "speaker": "Prophet Nūḥ عليه السلام",
+      "speakerKey": "nuh",
+      "purposes": [
+        "Knowledge",
+        "Forgiveness",
+        "Mercy",
+        "Protection"
+      ],
+      "context": "Nūḥ responded humbly when Allah corrected him regarding his son."
+    },
+    {
+      "id": "quranic-016",
+      "title": "Let Me Die as a Muslim",
+      "subtitle": "Yūsuf asks for a faithful end and righteous company.",
+      "repeat": "",
+      "arabic": "رَبِّ قَدۡ ءَاتَيۡتَنِي مِنَ ٱلۡمُلۡكِ وَعَلَّمۡتَنِي مِن تَأۡوِيلِ ٱلۡأَحَادِيثِۚ فَاطِرَ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِ أَنتَ وَلِيِّۦ فِي ٱلدُّنۡيَا وَٱلۡأٓخِرَةِۖ تَوَفَّنِي مُسۡلِمٗا وَأَلۡحِقۡنِي بِٱلصَّٰلِحِينَ",
+      "transliteration": "",
+      "english": "My Lord, You have given me authority and taught me the interpretation of events. Originator of the heavens and earth, You are my Protector in this world and the Hereafter. Let me die as a Muslim and join me with the righteous.",
+      "source": "Qur’an 12:101",
+      "sourceDetails": {
+        "reference": "Qur’an 12:101",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/12/101",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبِّ قَدۡ ءَاتَيۡتَنِي مِنَ ٱلۡمُلۡكِ وَعَلَّمۡتَنِي مِن تَأۡوِيلِ ٱلۡأَحَادِيثِۚ فَاطِرَ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِ أَنتَ وَلِيِّۦ فِي ٱلدُّنۡيَا وَٱلۡأٓخِرَةِۖ تَوَفَّنِي مُسۡلِمٗا وَأَلۡحِقۡنِي بِٱلصَّٰلِحِينَ",
+          "english": "My Lord, You have given me authority and taught me the interpretation of events. Originator of the heavens and earth, You are my Protector in this world and the Hereafter. Let me die as a Muslim and join me with the righteous.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "12:101",
+      "surahName": "Yūsuf",
+      "ayahRange": "101",
+      "speaker": "Prophet Yūsuf عليه السلام",
+      "speakerKey": "yusuf",
+      "purposes": [
+        "Faith",
+        "Hereafter",
+        "Righteousness",
+        "Gratitude"
+      ],
+      "context": "At the reunion of his family and fulfillment of his dream, Yūsuf acknowledged Allah’s favors and asked for a faithful end."
+    },
+    {
+      "id": "quranic-017",
+      "title": "Keep Us Away from Idolatry",
+      "subtitle": "Ibrāhīm asks for safety and protection of faith.",
+      "repeat": "",
+      "arabic": "رَبِّ ٱجۡعَلۡ هَٰذَا ٱلۡبَلَدَ ءَامِنٗا وَٱجۡنُبۡنِي وَبَنِيَّ أَن نَّعۡبُدَ ٱلۡأَصۡنَامَ",
+      "transliteration": "",
+      "english": "My Lord, make this city secure and keep me and my children away from worshipping idols.",
+      "source": "Qur’an 14:35",
+      "sourceDetails": {
+        "reference": "Qur’an 14:35",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/14/35",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبِّ ٱجۡعَلۡ هَٰذَا ٱلۡبَلَدَ ءَامِنٗا وَٱجۡنُبۡنِي وَبَنِيَّ أَن نَّعۡبُدَ ٱلۡأَصۡنَامَ",
+          "english": "My Lord, make this city secure and keep me and my children away from worshipping idols.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "14:35",
+      "surahName": "Ibrāhīm",
+      "ayahRange": "35",
+      "speaker": "Prophet Ibrāhīm عليه السلام",
+      "speakerKey": "ibrahim",
+      "purposes": [
+        "Faith",
+        "Protection",
+        "Family",
+        "Security"
+      ],
+      "context": "Ibrāhīm prayed for the sanctuary and for himself and his descendants to remain far from shirk."
+    },
+    {
+      "id": "quranic-018",
+      "title": "Establish Prayer and Forgive Us",
+      "subtitle": "Ibrāhīm prays for worship and forgiveness for his family.",
+      "repeat": "",
+      "arabic": "رَبِّ ٱجۡعَلۡنِي مُقِيمَ ٱلصَّلَوٰةِ وَمِن ذُرِّيَّتِيۚ رَبَّنَا وَتَقَبَّلۡ دُعَآءِ ۝ رَبَّنَا ٱغۡفِرۡ لِي وَلِوَٰلِدَيَّ وَلِلۡمُؤۡمِنِينَ يَوۡمَ يَقُومُ ٱلۡحِسَابُ",
+      "transliteration": "",
+      "english": "My Lord, make me and those of my descendants steadfast in prayer. Our Lord, accept my prayer. Our Lord, forgive me, my parents, and the believers on the Day the account is established.",
+      "source": "Qur’an 14:40-41",
+      "sourceDetails": {
+        "reference": "Qur’an 14:40-41",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/14/40-41",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبِّ ٱجۡعَلۡنِي مُقِيمَ ٱلصَّلَوٰةِ وَمِن ذُرِّيَّتِيۚ رَبَّنَا وَتَقَبَّلۡ دُعَآءِ ۝ رَبَّنَا ٱغۡفِرۡ لِي وَلِوَٰلِدَيَّ وَلِلۡمُؤۡمِنِينَ يَوۡمَ يَقُومُ ٱلۡحِسَابُ",
+          "english": "My Lord, make me and those of my descendants steadfast in prayer. Our Lord, accept my prayer. Our Lord, forgive me, my parents, and the believers on the Day the account is established.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "14:40-41",
+      "surahName": "Ibrāhīm",
+      "ayahRange": "40–41",
+      "speaker": "Prophet Ibrāhīm عليه السلام",
+      "speakerKey": "ibrahim",
+      "purposes": [
+        "Prayer",
+        "Family",
+        "Forgiveness",
+        "Hereafter"
+      ],
+      "context": "Ibrāhīm asks for steadfast worship and forgiveness for himself, his family, and all believers."
+    },
+    {
+      "id": "quranic-019",
+      "title": "Mercy and Right Guidance",
+      "subtitle": "The youths of the cave seek protection for their faith.",
+      "repeat": "",
+      "arabic": "رَبَّنَآ ءَاتِنَا مِن لَّدُنكَ رَحۡمَةٗ وَهَيِّئۡ لَنَا مِنۡ أَمۡرِنَا رَشَدٗا",
+      "transliteration": "",
+      "english": "Our Lord, grant us mercy from Yourself and guide us rightly through our ordeal.",
+      "source": "Qur’an 18:10",
+      "sourceDetails": {
+        "reference": "Qur’an 18:10",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/18/10",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبَّنَآ ءَاتِنَا مِن لَّدُنكَ رَحۡمَةٗ وَهَيِّئۡ لَنَا مِنۡ أَمۡرِنَا رَشَدٗا",
+          "english": "Our Lord, grant us mercy from Yourself and guide us rightly through our ordeal.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "18:10",
+      "surahName": "Al-Kahf",
+      "ayahRange": "10",
+      "speaker": "The youths of the cave",
+      "speakerKey": "believers",
+      "purposes": [
+        "Mercy",
+        "Guidance",
+        "Protection",
+        "Faith"
+      ],
+      "context": "The believing youths withdrew to the cave to protect their religion and made this prayer."
+    },
+    {
+      "id": "quranic-020",
+      "title": "Open My Heart and Ease My Task",
+      "subtitle": "Mūsā asks for confidence, ease, and clear speech.",
+      "repeat": "",
+      "arabic": "رَبِّ ٱشۡرَحۡ لِي صَدۡرِي ۝ وَيَسِّرۡ لِيٓ أَمۡرِي ۝ وَٱحۡلُلۡ عُقۡدَةٗ مِّن لِّسَانِي ۝ يَفۡقَهُواْ قَوۡلِي",
+      "transliteration": "",
+      "english": "My Lord, open my heart for me, make my task easy, and untie the knot from my tongue so they may understand my speech.",
+      "source": "Qur’an 20:25-28",
+      "sourceDetails": {
+        "reference": "Qur’an 20:25-28",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/20/25-28",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبِّ ٱشۡرَحۡ لِي صَدۡرِي ۝ وَيَسِّرۡ لِيٓ أَمۡرِي ۝ وَٱحۡلُلۡ عُقۡدَةٗ مِّن لِّسَانِي ۝ يَفۡقَهُواْ قَوۡلِي",
+          "english": "My Lord, open my heart for me, make my task easy, and untie the knot from my tongue so they may understand my speech.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "20:25-28",
+      "surahName": "Ṭā Hā",
+      "ayahRange": "25–28",
+      "speaker": "Prophet Mūsā عليه السلام",
+      "speakerKey": "musa",
+      "purposes": [
+        "Ease",
+        "Speech",
+        "Courage",
+        "Daʿwah"
+      ],
+      "context": "Mūsā made this prayer when Allah commanded him to go to Pharaoh."
+    },
+    {
+      "id": "quranic-021",
+      "title": "We Fear He May Transgress",
+      "subtitle": "Mūsā and Hārūn voice their fear before confronting Pharaoh.",
+      "repeat": "",
+      "arabic": "رَبَّنَآ إِنَّنَا نَخَافُ أَن يَفۡرُطَ عَلَيۡنَآ أَوۡ أَن يَطۡغَىٰ",
+      "transliteration": "",
+      "english": "Our Lord, we fear that he may be quick to harm us or act tyrannically.",
+      "source": "Qur’an 20:45",
+      "sourceDetails": {
+        "reference": "Qur’an 20:45",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/20/45",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبَّنَآ إِنَّنَا نَخَافُ أَن يَفۡرُطَ عَلَيۡنَآ أَوۡ أَن يَطۡغَىٰ",
+          "english": "Our Lord, we fear that he may be quick to harm us or act tyrannically.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "20:45",
+      "surahName": "Ṭā Hā",
+      "ayahRange": "45",
+      "speaker": "Prophets Mūsā and Hārūn عليهما السلام",
+      "speakerKey": "musa",
+      "purposes": [
+        "Fear",
+        "Protection",
+        "Courage"
+      ],
+      "context": "Before approaching Pharaoh, Mūsā and Hārūn expressed their fear to Allah and received His reassurance."
+    },
+    {
+      "id": "quranic-022",
+      "title": "Increase Me in Knowledge",
+      "subtitle": "A concise prayer taught to the Prophet ﷺ.",
+      "repeat": "",
+      "arabic": "رَّبِّ زِدۡنِي عِلۡمٗا",
+      "transliteration": "",
+      "english": "My Lord, increase me in knowledge.",
+      "source": "Qur’an 20:114",
+      "sourceDetails": {
+        "reference": "Qur’an 20:114",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/20/114",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَّبِّ زِدۡنِي عِلۡمٗا",
+          "english": "My Lord, increase me in knowledge.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "20:114",
+      "surahName": "Ṭā Hā",
+      "ayahRange": "114",
+      "speaker": "Taught to Prophet Muhammad ﷺ",
+      "speakerKey": "muhammad",
+      "purposes": [
+        "Knowledge",
+        "Learning"
+      ],
+      "context": "Allah commanded His Messenger ﷺ to ask for increase in knowledge."
+    },
+    {
+      "id": "quranic-023",
+      "title": "Harm Has Touched Me",
+      "subtitle": "Ayyūb calls upon Allah during prolonged suffering.",
+      "repeat": "",
+      "arabic": "أَنِّي مَسَّنِيَ ٱلضُّرُّ وَأَنتَ أَرۡحَمُ ٱلرَّٰحِمِينَ",
+      "transliteration": "",
+      "english": "Harm has touched me, and You are the Most Merciful of those who show mercy.",
+      "source": "Qur’an 21:83",
+      "sourceDetails": {
+        "reference": "Qur’an 21:83",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/21/83",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "أَنِّي مَسَّنِيَ ٱلضُّرُّ وَأَنتَ أَرۡحَمُ ٱلرَّٰحِمِينَ",
+          "english": "Harm has touched me, and You are the Most Merciful of those who show mercy.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "21:83",
+      "surahName": "Al-Anbiyāʾ",
+      "ayahRange": "83",
+      "speaker": "Prophet Ayyūb عليه السلام",
+      "speakerKey": "ayyub",
+      "purposes": [
+        "Healing",
+        "Hardship",
+        "Mercy"
+      ],
+      "context": "Ayyūb called upon Allah with patience and beautiful manners during his affliction."
+    },
+    {
+      "id": "quranic-024",
+      "title": "None Has the Right to Be Worshipped but You",
+      "subtitle": "The supplication of Yūnus in the darkness.",
+      "repeat": "",
+      "arabic": "لَّآ إِلَٰهَ إِلَّآ أَنتَ سُبۡحَٰنَكَ إِنِّي كُنتُ مِنَ ٱلظَّٰلِمِينَ",
+      "transliteration": "",
+      "english": "None has the right to be worshipped except You. Glory be to You! I have certainly been among the wrongdoers.",
+      "source": "Qur’an 21:87",
+      "sourceDetails": {
+        "reference": "Qur’an 21:87",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/21/87",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "لَّآ إِلَٰهَ إِلَّآ أَنتَ سُبۡحَٰنَكَ إِنِّي كُنتُ مِنَ ٱلظَّٰلِمِينَ",
+          "english": "None has the right to be worshipped except You. Glory be to You! I have certainly been among the wrongdoers.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "21:87",
+      "surahName": "Al-Anbiyāʾ",
+      "ayahRange": "87",
+      "speaker": "Prophet Yūnus عليه السلام",
+      "speakerKey": "yunus",
+      "purposes": [
+        "Distress",
+        "Repentance",
+        "Tawḥīd",
+        "Deliverance"
+      ],
+      "context": "Yūnus called upon Allah from the darkness of the sea, the night, and the great fish."
+    },
+    {
+      "id": "quranic-025",
+      "title": "Do Not Leave Me Childless",
+      "subtitle": "Zakariyyā asks Allah while affirming His perfect inheritance.",
+      "repeat": "",
+      "arabic": "رَبِّ لَا تَذَرۡنِي فَرۡدٗا وَأَنتَ خَيۡرُ ٱلۡوَٰرِثِينَ",
+      "transliteration": "",
+      "english": "My Lord, do not leave me childless, though You are the best of inheritors.",
+      "source": "Qur’an 21:89",
+      "sourceDetails": {
+        "reference": "Qur’an 21:89",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/21/89",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبِّ لَا تَذَرۡنِي فَرۡدٗا وَأَنتَ خَيۡرُ ٱلۡوَٰرِثِينَ",
+          "english": "My Lord, do not leave me childless, though You are the best of inheritors.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "21:89",
+      "surahName": "Al-Anbiyāʾ",
+      "ayahRange": "89",
+      "speaker": "Prophet Zakariyyā عليه السلام",
+      "speakerKey": "zakariyya",
+      "purposes": [
+        "Children",
+        "Family",
+        "Hope"
+      ],
+      "context": "Zakariyyā called upon Allah for an heir despite his old age and his wife’s barrenness."
+    },
+    {
+      "id": "quranic-026",
+      "title": "Help Me Against Their Rejection",
+      "subtitle": "Nūḥ asks Allah for aid after his people deny him.",
+      "repeat": "",
+      "arabic": "رَبِّ ٱنصُرۡنِي بِمَا كَذَّبُونِ",
+      "transliteration": "",
+      "english": "My Lord, help me because they have denied me.",
+      "source": "Qur’an 23:26",
+      "sourceDetails": {
+        "reference": "Qur’an 23:26",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/23/26",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبِّ ٱنصُرۡنِي بِمَا كَذَّبُونِ",
+          "english": "My Lord, help me because they have denied me.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "23:26",
+      "surahName": "Al-Muʾminūn",
+      "ayahRange": "26",
+      "speaker": "Prophet Nūḥ عليه السلام",
+      "speakerKey": "nuh",
+      "purposes": [
+        "Help",
+        "Victory",
+        "Daʿwah"
+      ],
+      "context": "Nūḥ sought Allah’s aid after persistent rejection from his people."
+    },
+    {
+      "id": "quranic-027",
+      "title": "A Blessed Landing",
+      "subtitle": "A prayer for a good and blessed place of arrival.",
+      "repeat": "",
+      "arabic": "رَّبِّ أَنزِلۡنِي مُنزَلٗا مُّبَارَكٗا وَأَنتَ خَيۡرُ ٱلۡمُنزِلِينَ",
+      "transliteration": "",
+      "english": "My Lord, land me at a blessed landing place, for You are the best to provide a place to settle.",
+      "source": "Qur’an 23:29",
+      "sourceDetails": {
+        "reference": "Qur’an 23:29",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/23/29",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَّبِّ أَنزِلۡنِي مُنزَلٗا مُّبَارَكٗا وَأَنتَ خَيۡرُ ٱلۡمُنزِلِينَ",
+          "english": "My Lord, land me at a blessed landing place, for You are the best to provide a place to settle.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "23:29",
+      "surahName": "Al-Muʾminūn",
+      "ayahRange": "29",
+      "speaker": "Prophet Nūḥ عليه السلام",
+      "speakerKey": "nuh",
+      "purposes": [
+        "Travel",
+        "Safety",
+        "Blessing"
+      ],
+      "context": "Allah taught Nūḥ to say this after boarding the Ark and being saved from the flood."
+    },
+    {
+      "id": "quranic-028",
+      "title": "Refuge from the Whispers of Devils",
+      "subtitle": "A prayer taught to the Prophet ﷺ for spiritual protection.",
+      "repeat": "",
+      "arabic": "رَّبِّ أَعُوذُ بِكَ مِنۡ هَمَزَٰتِ ٱلشَّيَٰطِينِ ۝ وَأَعُوذُ بِكَ رَبِّ أَن يَحۡضُرُونِ",
+      "transliteration": "",
+      "english": "My Lord, I seek refuge in You from the temptations of the devils, and I seek refuge in You, my Lord, from their presence.",
+      "source": "Qur’an 23:97-98",
+      "sourceDetails": {
+        "reference": "Qur’an 23:97-98",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/23/97-98",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَّبِّ أَعُوذُ بِكَ مِنۡ هَمَزَٰتِ ٱلشَّيَٰطِينِ ۝ وَأَعُوذُ بِكَ رَبِّ أَن يَحۡضُرُونِ",
+          "english": "My Lord, I seek refuge in You from the temptations of the devils, and I seek refuge in You, my Lord, from their presence.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "23:97-98",
+      "surahName": "Al-Muʾminūn",
+      "ayahRange": "97–98",
+      "speaker": "Taught to Prophet Muhammad ﷺ",
+      "speakerKey": "muhammad",
+      "purposes": [
+        "Protection",
+        "Temptation",
+        "Faith"
+      ],
+      "context": "Allah instructed His Messenger ﷺ to seek refuge from satanic promptings and presence."
+    },
+    {
+      "id": "quranic-029",
+      "title": "Forgive Us and Have Mercy",
+      "subtitle": "A prayer made by believers who were mocked for their faith.",
+      "repeat": "",
+      "arabic": "رَبَّنَآ ءَامَنَّا فَٱغۡفِرۡ لَنَا وَٱرۡحَمۡنَا وَأَنتَ خَيۡرُ ٱلرَّٰحِمِينَ",
+      "transliteration": "",
+      "english": "Our Lord, we believe, so forgive us and have mercy on us. You are the best of those who show mercy.",
+      "source": "Qur’an 23:109",
+      "sourceDetails": {
+        "reference": "Qur’an 23:109",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/23/109",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبَّنَآ ءَامَنَّا فَٱغۡفِرۡ لَنَا وَٱرۡحَمۡنَا وَأَنتَ خَيۡرُ ٱلرَّٰحِمِينَ",
+          "english": "Our Lord, we believe, so forgive us and have mercy on us. You are the best of those who show mercy.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "23:109",
+      "surahName": "Al-Muʾminūn",
+      "ayahRange": "109",
+      "speaker": "The believers",
+      "speakerKey": "believers",
+      "purposes": [
+        "Faith",
+        "Forgiveness",
+        "Mercy"
+      ],
+      "context": "Allah recalls a group of His servants whose faith and supplication were mocked by the disbelievers."
+    },
+    {
+      "id": "quranic-030",
+      "title": "Forgive and Have Mercy",
+      "subtitle": "A concise closing prayer taught to the Prophet ﷺ.",
+      "repeat": "",
+      "arabic": "رَّبِّ ٱغۡفِرۡ وَٱرۡحَمۡ وَأَنتَ خَيۡرُ ٱلرَّٰحِمِينَ",
+      "transliteration": "",
+      "english": "My Lord, forgive and have mercy, for You are the best of those who show mercy.",
+      "source": "Qur’an 23:118",
+      "sourceDetails": {
+        "reference": "Qur’an 23:118",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/23/118",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَّبِّ ٱغۡفِرۡ وَٱرۡحَمۡ وَأَنتَ خَيۡرُ ٱلرَّٰحِمِينَ",
+          "english": "My Lord, forgive and have mercy, for You are the best of those who show mercy.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "23:118",
+      "surahName": "Al-Muʾminūn",
+      "ayahRange": "118",
+      "speaker": "Taught to Prophet Muhammad ﷺ",
+      "speakerKey": "muhammad",
+      "purposes": [
+        "Forgiveness",
+        "Mercy"
+      ],
+      "context": "Allah commands His Messenger ﷺ to close the sūrah with this prayer."
+    },
+    {
+      "id": "quranic-031",
+      "title": "Turn the Punishment of Hell Away",
+      "subtitle": "The servants of the Most Merciful seek protection from Hell.",
+      "repeat": "",
+      "arabic": "رَبَّنَا ٱصۡرِفۡ عَنَّا عَذَابَ جَهَنَّمَۖ إِنَّ عَذَابَهَا كَانَ غَرَامًا ۝ إِنَّهَا سَآءَتۡ مُسۡتَقَرّٗا وَمُقَامٗا",
+      "transliteration": "",
+      "english": "Our Lord, turn away from us the punishment of Hell, for its punishment is truly unrelenting. It is certainly an evil place to settle and reside.",
+      "source": "Qur’an 25:65-66",
+      "sourceDetails": {
+        "reference": "Qur’an 25:65-66",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/25/65-66",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبَّنَا ٱصۡرِفۡ عَنَّا عَذَابَ جَهَنَّمَۖ إِنَّ عَذَابَهَا كَانَ غَرَامًا ۝ إِنَّهَا سَآءَتۡ مُسۡتَقَرّٗا وَمُقَامٗا",
+          "english": "Our Lord, turn away from us the punishment of Hell, for its punishment is truly unrelenting. It is certainly an evil place to settle and reside.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "25:65-66",
+      "surahName": "Al-Furqān",
+      "ayahRange": "65–66",
+      "speaker": "Servants of the Most Merciful",
+      "speakerKey": "believers",
+      "purposes": [
+        "Protection",
+        "Hereafter",
+        "Fear"
+      ],
+      "context": "Among their qualities, the servants of the Most Merciful spend the night worshipping and fearing the punishment of Hell."
+    },
+    {
+      "id": "quranic-032",
+      "title": "Comfort in Our Families",
+      "subtitle": "Asking for righteous family and leadership in piety.",
+      "repeat": "",
+      "arabic": "رَبَّنَا هَبۡ لَنَا مِنۡ أَزۡوَٰجِنَا وَذُرِّيَّٰتِنَا قُرَّةَ أَعۡيُنٖ وَٱجۡعَلۡنَا لِلۡمُتَّقِينَ إِمَامًا",
+      "transliteration": "",
+      "english": "Our Lord, grant us from our spouses and children comfort to our eyes, and make us leaders for the righteous.",
+      "source": "Qur’an 25:74",
+      "sourceDetails": {
+        "reference": "Qur’an 25:74",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/25/74",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبَّنَا هَبۡ لَنَا مِنۡ أَزۡوَٰجِنَا وَذُرِّيَّٰتِنَا قُرَّةَ أَعۡيُنٖ وَٱجۡعَلۡنَا لِلۡمُتَّقِينَ إِمَامًا",
+          "english": "Our Lord, grant us from our spouses and children comfort to our eyes, and make us leaders for the righteous.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "25:74",
+      "surahName": "Al-Furqān",
+      "ayahRange": "74",
+      "speaker": "Servants of the Most Merciful",
+      "speakerKey": "believers",
+      "purposes": [
+        "Family",
+        "Children",
+        "Righteousness"
+      ],
+      "context": "The servants of the Most Merciful ask for families devoted to Allah and the ability to lead by righteous example."
+    },
+    {
+      "id": "quranic-033",
+      "title": "Wisdom, Righteous Company, and a Good Legacy",
+      "subtitle": "Ibrāhīm asks for lasting righteousness and safety on Judgment Day.",
+      "repeat": "",
+      "arabic": "رَبِّ هَبۡ لِي حُكۡمٗا وَأَلۡحِقۡنِي بِٱلصَّٰلِحِينَ ۝ وَٱجۡعَل لِّي لِسَانَ صِدۡقٖ فِي ٱلۡأٓخِرِينَ ۝ وَٱجۡعَلۡنِي مِن وَرَثَةِ جَنَّةِ ٱلنَّعِيمِ ۝ وَٱغۡفِرۡ لِأَبِيٓ إِنَّهُۥ كَانَ مِنَ ٱلضَّآلِّينَ ۝ وَلَا تُخۡزِنِي يَوۡمَ يُبۡعَثُونَ",
+      "transliteration": "",
+      "english": "My Lord, grant me wisdom and join me with the righteous. Grant me an honorable mention among later generations. Make me one of the inheritors of the Garden of Bliss. Forgive my father, for he was among those astray. And do not disgrace me on the Day all are resurrected.",
+      "source": "Qur’an 26:83-87",
+      "sourceDetails": {
+        "reference": "Qur’an 26:83-87",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/26/83-87",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبِّ هَبۡ لِي حُكۡمٗا وَأَلۡحِقۡنِي بِٱلصَّٰلِحِينَ ۝ وَٱجۡعَل لِّي لِسَانَ صِدۡقٖ فِي ٱلۡأٓخِرِينَ ۝ وَٱجۡعَلۡنِي مِن وَرَثَةِ جَنَّةِ ٱلنَّعِيمِ ۝ وَٱغۡفِرۡ لِأَبِيٓ إِنَّهُۥ كَانَ مِنَ ٱلضَّآلِّينَ ۝ وَلَا تُخۡزِنِي يَوۡمَ يُبۡعَثُونَ",
+          "english": "My Lord, grant me wisdom and join me with the righteous. Grant me an honorable mention among later generations. Make me one of the inheritors of the Garden of Bliss. Forgive my father, for he was among those astray. And do not disgrace me on the Day all are resurrected.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "26:83-87",
+      "surahName": "Ash-Shuʿarāʾ",
+      "ayahRange": "83–87",
+      "speaker": "Prophet Ibrāhīm عليه السلام",
+      "speakerKey": "ibrahim",
+      "purposes": [
+        "Wisdom",
+        "Righteousness",
+        "Legacy",
+        "Hereafter"
+      ],
+      "context": "Ibrāhīm asks Allah for wisdom, righteous company, a truthful legacy, Paradise, and safety on Resurrection Day."
+    },
+    {
+      "id": "quranic-034",
+      "title": "Rescue Me and the Believers",
+      "subtitle": "Nūḥ asks Allah to decide between him and his rejecting people.",
+      "repeat": "",
+      "arabic": "رَبِّ إِنَّ قَوۡمِي كَذَّبُونِ ۝ فَٱفۡتَحۡ بَيۡنِي وَبَيۡنَهُمۡ فَتۡحٗا وَنَجِّنِي وَمَن مَّعِيَ مِنَ ٱلۡمُؤۡمِنِينَ",
+      "transliteration": "",
+      "english": "My Lord, my people have denied me. So judge decisively between me and them, and save me and the believers with me.",
+      "source": "Qur’an 26:117-118",
+      "sourceDetails": {
+        "reference": "Qur’an 26:117-118",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/26/117-118",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبِّ إِنَّ قَوۡمِي كَذَّبُونِ ۝ فَٱفۡتَحۡ بَيۡنِي وَبَيۡنَهُمۡ فَتۡحٗا وَنَجِّنِي وَمَن مَّعِيَ مِنَ ٱلۡمُؤۡمِنِينَ",
+          "english": "My Lord, my people have denied me. So judge decisively between me and them, and save me and the believers with me.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "26:117-118",
+      "surahName": "Ash-Shuʿarāʾ",
+      "ayahRange": "117–118",
+      "speaker": "Prophet Nūḥ عليه السلام",
+      "speakerKey": "nuh",
+      "purposes": [
+        "Deliverance",
+        "Justice",
+        "Protection"
+      ],
+      "context": "After long rejection, Nūḥ asks Allah for judgment and rescue for the believers."
+    },
+    {
+      "id": "quranic-035",
+      "title": "Save Me and My Family",
+      "subtitle": "Lūṭ asks for rescue from widespread immorality.",
+      "repeat": "",
+      "arabic": "رَبِّ نَجِّنِي وَأَهۡلِي مِمَّا يَعۡمَلُونَ",
+      "transliteration": "",
+      "english": "My Lord, save me and my family from what they are doing.",
+      "source": "Qur’an 26:169",
+      "sourceDetails": {
+        "reference": "Qur’an 26:169",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/26/169",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبِّ نَجِّنِي وَأَهۡلِي مِمَّا يَعۡمَلُونَ",
+          "english": "My Lord, save me and my family from what they are doing.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "26:169",
+      "surahName": "Ash-Shuʿarāʾ",
+      "ayahRange": "169",
+      "speaker": "Prophet Lūṭ عليه السلام",
+      "speakerKey": "lut",
+      "purposes": [
+        "Family",
+        "Protection",
+        "Deliverance"
+      ],
+      "context": "Lūṭ calls upon Allah to save him and his household from the corrupt deeds of his people."
+    },
+    {
+      "id": "quranic-036",
+      "title": "Inspire Me to Be Grateful",
+      "subtitle": "Sulaymān asks for gratitude and righteous action.",
+      "repeat": "",
+      "arabic": "رَبِّ أَوۡزِعۡنِيٓ أَنۡ أَشۡكُرَ نِعۡمَتَكَ ٱلَّتِيٓ أَنۡعَمۡتَ عَلَيَّ وَعَلَىٰ وَٰلِدَيَّ وَأَنۡ أَعۡمَلَ صَٰلِحٗا تَرۡضَىٰهُ وَأَدۡخِلۡنِي بِرَحۡمَتِكَ فِي عِبَادِكَ ٱلصَّٰلِحِينَ",
+      "transliteration": "",
+      "english": "My Lord, inspire me to be grateful for Your favor which You have bestowed upon me and my parents, to do good that pleases You, and admit me by Your mercy among Your righteous servants.",
+      "source": "Qur’an 27:19",
+      "sourceDetails": {
+        "reference": "Qur’an 27:19",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/27/19",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبِّ أَوۡزِعۡنِيٓ أَنۡ أَشۡكُرَ نِعۡمَتَكَ ٱلَّتِيٓ أَنۡعَمۡتَ عَلَيَّ وَعَلَىٰ وَٰلِدَيَّ وَأَنۡ أَعۡمَلَ صَٰلِحٗا تَرۡضَىٰهُ وَأَدۡخِلۡنِي بِرَحۡمَتِكَ فِي عِبَادِكَ ٱلصَّٰلِحِينَ",
+          "english": "My Lord, inspire me to be grateful for Your favor which You have bestowed upon me and my parents, to do good that pleases You, and admit me by Your mercy among Your righteous servants.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "27:19",
+      "surahName": "An-Naml",
+      "ayahRange": "19",
+      "speaker": "Prophet Sulaymān عليه السلام",
+      "speakerKey": "sulayman",
+      "purposes": [
+        "Gratitude",
+        "Righteousness",
+        "Parents",
+        "Mercy"
+      ],
+      "context": "Sulaymān smiled at the words of the ant and immediately thanked Allah for His blessings."
+    },
+    {
+      "id": "quranic-037",
+      "title": "I Have Wronged Myself",
+      "subtitle": "Mūsā seeks immediate forgiveness after an unintended killing.",
+      "repeat": "",
+      "arabic": "رَبِّ إِنِّي ظَلَمۡتُ نَفۡسِي فَٱغۡفِرۡ لِي",
+      "transliteration": "",
+      "english": "My Lord, I have wronged myself, so forgive me.",
+      "source": "Qur’an 28:16",
+      "sourceDetails": {
+        "reference": "Qur’an 28:16",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/28/16",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبِّ إِنِّي ظَلَمۡتُ نَفۡسِي فَٱغۡفِرۡ لِي",
+          "english": "My Lord, I have wronged myself, so forgive me.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "28:16",
+      "surahName": "Al-Qaṣaṣ",
+      "ayahRange": "16",
+      "speaker": "Prophet Mūsā عليه السلام",
+      "speakerKey": "musa",
+      "purposes": [
+        "Repentance",
+        "Forgiveness"
+      ],
+      "context": "Mūsā recognized his mistake, turned at once to Allah, and Allah forgave him."
+    },
+    {
+      "id": "quranic-038",
+      "title": "Save Me from the Wrongdoing People",
+      "subtitle": "Mūsā asks for safety as he leaves Egypt.",
+      "repeat": "",
+      "arabic": "رَبِّ نَجِّنِي مِنَ ٱلۡقَوۡمِ ٱلظَّٰلِمِينَ",
+      "transliteration": "",
+      "english": "My Lord, save me from the wrongdoing people.",
+      "source": "Qur’an 28:21",
+      "sourceDetails": {
+        "reference": "Qur’an 28:21",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/28/21",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبِّ نَجِّنِي مِنَ ٱلۡقَوۡمِ ٱلظَّٰلِمِينَ",
+          "english": "My Lord, save me from the wrongdoing people.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "28:21",
+      "surahName": "Al-Qaṣaṣ",
+      "ayahRange": "21",
+      "speaker": "Prophet Mūsā عليه السلام",
+      "speakerKey": "musa",
+      "purposes": [
+        "Protection",
+        "Travel",
+        "Deliverance"
+      ],
+      "context": "Mūsā left the city in fear and watchfulness after being warned of a plot against him."
+    },
+    {
+      "id": "quranic-039",
+      "title": "I Am in Need of Whatever Good You Send",
+      "subtitle": "Mūsā asks Allah for provision in a moment of exhaustion and need.",
+      "repeat": "",
+      "arabic": "رَبِّ إِنِّي لِمَآ أَنزَلۡتَ إِلَيَّ مِنۡ خَيۡرٖ فَقِيرٞ",
+      "transliteration": "",
+      "english": "My Lord, I am truly in need of whatever good You may send down to me.",
+      "source": "Qur’an 28:24",
+      "sourceDetails": {
+        "reference": "Qur’an 28:24",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/28/24",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبِّ إِنِّي لِمَآ أَنزَلۡتَ إِلَيَّ مِنۡ خَيۡرٖ فَقِيرٞ",
+          "english": "My Lord, I am truly in need of whatever good You may send down to me.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "28:24",
+      "surahName": "Al-Qaṣaṣ",
+      "ayahRange": "24",
+      "speaker": "Prophet Mūsā عليه السلام",
+      "speakerKey": "musa",
+      "purposes": [
+        "Provision",
+        "Need",
+        "Reliance"
+      ],
+      "context": "After helping two women water their flock, Mūsā withdrew to the shade and expressed his complete need before Allah."
+    },
+    {
+      "id": "quranic-040",
+      "title": "Help Me Against the Corrupt People",
+      "subtitle": "Lūṭ asks Allah for aid against corruption.",
+      "repeat": "",
+      "arabic": "رَبِّ ٱنصُرۡنِي عَلَى ٱلۡقَوۡمِ ٱلۡمُفۡسِدِينَ",
+      "transliteration": "",
+      "english": "My Lord, help me against the corrupting people.",
+      "source": "Qur’an 29:30",
+      "sourceDetails": {
+        "reference": "Qur’an 29:30",
+        "grade": "Qur’anic ayah",
+        "sourceReference": "https://quran.com/29/30",
+        "status": "quran-reference"
+      },
+      "verification": {
+        "verified": true,
+        "arabicChecked": true,
+        "translationChecked": true,
+        "resourcesAdded": false
+      },
+      "resources": [],
+      "explore": [],
+      "focusPhrases": [],
+      "virtues": "",
+      "sourceIds": [],
+      "virtue": {
+        "text": "",
+        "sourceIds": []
+      },
+      "segments": [
+        {
+          "order": 1,
+          "arabic": "رَبِّ ٱنصُرۡنِي عَلَى ٱلۡقَوۡمِ ٱلۡمُفۡسِدِينَ",
+          "english": "My Lord, help me against the corrupting people.",
+          "transliteration": ""
+        }
+      ],
+      "resourceIds": [],
+      "quranReference": "29:30",
+      "surahName": "Al-ʿAnkabūt",
+      "ayahRange": "30",
+      "speaker": "Prophet Lūṭ عليه السلام",
+      "speakerKey": "lut",
+      "purposes": [
+        "Help",
+        "Protection",
+        "Justice"
+      ],
+      "context": "Lūṭ calls upon Allah after warning his people against their grave corruption."
+    }
+  ]
+}
+  ,
   "anxiety": {
     "id": "anxiety",
     "label": "Anxiety & Sadness Duaas",

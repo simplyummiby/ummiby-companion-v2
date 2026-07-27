@@ -150,7 +150,8 @@
   --overlay-edge-alpha: .06;
 }
 
-.module-banner.is-duaa-anxiety-banner {
+.module-banner.is-duaa-anxiety-banner,
+.module-banner.is-duaa-quranic-banner {
   --banner-position-desktop: center 88%;
   --banner-size-desktop: cover;
   --banner-size-tablet: cover;
@@ -159,6 +160,20 @@
   --banner-position-mobile: 68% 88%;
   --overlay-start-alpha: .95;
   --overlay-middle-alpha: .85;
+  --overlay-soft-alpha: .46;
+  --overlay-edge-alpha: .06;
+}
+
+
+.module-banner.is-duaa-quranic-banner {
+  --banner-position-desktop: center 88%;
+  --banner-size-desktop: cover;
+  --banner-size-tablet: cover;
+  --banner-size-mobile: cover;
+  --banner-position-tablet: 58% 88%;
+  --banner-position-mobile: 66% 88%;
+  --overlay-start-alpha: .96;
+  --overlay-middle-alpha: .86;
   --overlay-soft-alpha: .46;
   --overlay-edge-alpha: .06;
 }
@@ -176,7 +191,8 @@
 .module-banner.is-duaa-history-banner,
 .module-banner.is-duaa-food-banner,
 .module-banner.is-duaa-clothing-banner,
-.module-banner.is-duaa-anxiety-banner {
+.module-banner.is-duaa-anxiety-banner,
+.module-banner.is-duaa-quranic-banner {
   background-position: var(--banner-position-desktop);
 }
 
@@ -184,7 +200,8 @@
 .module-banner.is-duaa-history-banner,
 .module-banner.is-duaa-food-banner,
 .module-banner.is-duaa-clothing-banner,
-.module-banner.is-duaa-anxiety-banner {
+.module-banner.is-duaa-anxiety-banner,
+.module-banner.is-duaa-quranic-banner {
   background-size: var(--banner-size-desktop);
 }
 
@@ -211,7 +228,8 @@
 .module-banner.is-duaa-collections-banner::before,
 .module-banner.is-duaa-food-banner::before,
 .module-banner.is-duaa-clothing-banner::before,
-.module-banner.is-duaa-anxiety-banner::before {
+.module-banner.is-duaa-anxiety-banner::before,
+.module-banner.is-duaa-quranic-banner::before {
   background: linear-gradient(90deg,
     rgb(244 250 255 / var(--overlay-start-alpha)) 0%,
     rgb(244 250 255 / var(--overlay-middle-alpha)) 25%,
@@ -259,7 +277,8 @@
   .module-banner.is-duaa-history-banner,
   .module-banner.is-duaa-food-banner,
   .module-banner.is-duaa-clothing-banner,
-  .module-banner.is-duaa-anxiety-banner {
+  .module-banner.is-duaa-anxiety-banner,
+.module-banner.is-duaa-quranic-banner {
     background-position: var(--banner-position-tablet);
   }
 
@@ -267,7 +286,8 @@
   .module-banner.is-duaa-history-banner,
   .module-banner.is-duaa-food-banner,
   .module-banner.is-duaa-clothing-banner,
-  .module-banner.is-duaa-anxiety-banner {
+  .module-banner.is-duaa-anxiety-banner,
+.module-banner.is-duaa-quranic-banner {
     background-size: var(--banner-size-tablet);
   }
 }
@@ -284,7 +304,8 @@
   .module-banner.is-duaa-history-banner,
   .module-banner.is-duaa-food-banner,
   .module-banner.is-duaa-clothing-banner,
-  .module-banner.is-duaa-anxiety-banner {
+  .module-banner.is-duaa-anxiety-banner,
+.module-banner.is-duaa-quranic-banner {
     background-position: var(--banner-position-mobile);
   }
 
@@ -292,14 +313,16 @@
   .module-banner.is-duaa-history-banner,
   .module-banner.is-duaa-food-banner,
   .module-banner.is-duaa-clothing-banner,
-  .module-banner.is-duaa-anxiety-banner {
+  .module-banner.is-duaa-anxiety-banner,
+.module-banner.is-duaa-quranic-banner {
     background-size: var(--banner-size-mobile);
   }
 
   .module-banner.is-duaa-collections-banner::before,
   .module-banner.is-duaa-food-banner::before,
   .module-banner.is-duaa-clothing-banner::before,
-  .module-banner.is-duaa-anxiety-banner::before {
+  .module-banner.is-duaa-anxiety-banner::before,
+.module-banner.is-duaa-quranic-banner::before {
     background: linear-gradient(90deg,
       rgb(244 250 255 / .98) 0%,
       rgb(244 250 255 / .92) 62%,

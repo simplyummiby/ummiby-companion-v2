@@ -50,6 +50,18 @@
 
 # Changelog
 
+## v3.4.22 — Qur’anic Duaa Collection
+
+- Added the new **Qur’anic Duaas** collection to the Collections index.
+- Populated the collection with 40 Qur’anic supplications.
+- Added exact surah/ayah references, prophet or speaker attribution, purpose tags, and short contextual notes.
+- Added combinable speaker and purpose filter chips with responsive horizontal scrolling on small screens.
+- Added Qur’anic speaker/reference context to the Reading Mode sidebar.
+- Added matching banner and collection-card artwork.
+- Extended Collections navigation highlighting to include the new route.
+- Bumped the visible release version to 3.4.22.
+
+
 ## v3.4.15 — Duaa Focus Mode Typography and Alignment Polish
 
 - Switched Focus Mode Arabic text to Amiri Quran with Amiri/serif fallbacks.
@@ -101,6 +113,18 @@
 - Preserved the site-wide static-host routing fix from v3.4.10.
 
 # Changelog
+
+## v3.4.22 — Qur’anic Duaa Collection
+
+- Added the new **Qur’anic Duaas** collection to the Collections index.
+- Populated the collection with 40 Qur’anic supplications.
+- Added exact surah/ayah references, prophet or speaker attribution, purpose tags, and short contextual notes.
+- Added combinable speaker and purpose filter chips with responsive horizontal scrolling on small screens.
+- Added Qur’anic speaker/reference context to the Reading Mode sidebar.
+- Added matching banner and collection-card artwork.
+- Extended Collections navigation highlighting to include the new route.
+- Bumped the visible release version to 3.4.22.
+
 
 ## 3.4.12 — Static Hosting Route Reliability
 
@@ -201,6 +225,18 @@
 
 # Changelog
 
+## v3.4.22 — Qur’anic Duaa Collection
+
+- Added the new **Qur’anic Duaas** collection to the Collections index.
+- Populated the collection with 40 Qur’anic supplications.
+- Added exact surah/ayah references, prophet or speaker attribution, purpose tags, and short contextual notes.
+- Added combinable speaker and purpose filter chips with responsive horizontal scrolling on small screens.
+- Added Qur’anic speaker/reference context to the Reading Mode sidebar.
+- Added matching banner and collection-card artwork.
+- Extended Collections navigation highlighting to include the new route.
+- Bumped the visible release version to 3.4.22.
+
+
 ## 3.4.4.2 — Collections, History, and Collection Page Banners
 
 - Installed the approved Collections banner on `/duaa/collections`.
@@ -222,6 +258,18 @@
 - Preserved all approved banner artwork and unrelated application behavior.
 
 # Changelog
+
+## v3.4.22 — Qur’anic Duaa Collection
+
+- Added the new **Qur’anic Duaas** collection to the Collections index.
+- Populated the collection with 40 Qur’anic supplications.
+- Added exact surah/ayah references, prophet or speaker attribution, purpose tags, and short contextual notes.
+- Added combinable speaker and purpose filter chips with responsive horizontal scrolling on small screens.
+- Added Qur’anic speaker/reference context to the Reading Mode sidebar.
+- Added matching banner and collection-card artwork.
+- Extended Collections navigation highlighting to include the new route.
+- Bumped the visible release version to 3.4.22.
+
 
 ## 3.4.4 — Evening and Before Sleep Banner Integration
 

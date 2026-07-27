@@ -99,6 +99,51 @@ function bindShellEvents() {
     app.querySelector("[data-reading-dialog]")?.showModal();
   });
 
+  app.querySelectorAll("[data-collection-filters]").forEach((panel) => {
+    const collectionId = panel.dataset.collectionFilters;
+    const list = app.querySelector(`[data-collection-list="${collectionId}"]`);
+    if (!list) return;
+    const state = { speaker: 'all', purposes: new Set() };
+    const rows = [...list.querySelectorAll('[data-duaa-row]')];
+    const status = panel.querySelector('[data-filter-status]');
+    const clear = panel.querySelector('[data-clear-collection-filters]');
+    const applyFilters = () => {
+      let shown = 0;
+      rows.forEach((row) => {
+        const speakerMatch = state.speaker === 'all' || row.dataset.speaker === state.speaker;
+        const rowPurposes = new Set((row.dataset.purposes || '').split(' ').filter(Boolean));
+        const purposeMatch = [...state.purposes].every((purpose) => rowPurposes.has(purpose));
+        const visible = speakerMatch && purposeMatch;
+        row.hidden = !visible;
+        if (visible) shown += 1;
+      });
+      panel.querySelectorAll('[data-filter-group="speaker"]').forEach((button) => {
+        const active = button.dataset.filterValue === state.speaker;
+        button.classList.toggle('is-active', active);
+        button.setAttribute('aria-pressed', String(active));
+      });
+      panel.querySelectorAll('[data-filter-group="purpose"]').forEach((button) => {
+        const active = state.purposes.has(button.dataset.filterValue);
+        button.classList.toggle('is-active', active);
+        button.setAttribute('aria-pressed', String(active));
+      });
+      const active = state.speaker !== 'all' || state.purposes.size > 0;
+      if (clear) clear.hidden = !active;
+      if (status) status.textContent = `Showing ${shown} of ${rows.length} duaas`;
+    };
+    panel.querySelectorAll('[data-filter-group="speaker"]').forEach((button) => {
+      button.addEventListener('click', () => { state.speaker = button.dataset.filterValue; applyFilters(); });
+    });
+    panel.querySelectorAll('[data-filter-group="purpose"]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const value = button.dataset.filterValue;
+        state.purposes.has(value) ? state.purposes.delete(value) : state.purposes.add(value);
+        applyFilters();
+      });
+    });
+    clear?.addEventListener('click', () => { state.speaker = 'all'; state.purposes.clear(); applyFilters(); });
+  });
+
   app.querySelectorAll("[data-collection-list]").forEach((list) => {
     let draggedId = null;
     list.querySelectorAll("[data-duaa-row]").forEach((row) => {
