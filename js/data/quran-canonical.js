@@ -1,5 +1,5 @@
-import "./quran-data.js?v=3.10.0";
-import "./readingLibrary.js?v=3.10.0";
+import "./quran-data.js?v=3.11.0";
+import "./readingLibrary.js?v=3.11.0";
 
 export const QURAN_DATA = window.QURAN_DATA;
 export const QURAN_READING_LIBRARY = window.QURAN_READING_LIBRARY;

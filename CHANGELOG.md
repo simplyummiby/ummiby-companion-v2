@@ -1,3 +1,10 @@
+# v3.11.0 — Reading Journey Navigation & Progress (Phase 3)
+
+- Added visible progress states and filters to the complete Reading Unit Index.
+- Added completion-aware next-step navigation in the reader.
+- Added Reading Unit journey activity and milestone history.
+- Refined Home, Journey, Index, Reader, and History continuity without changing canonical data.
+
 # v3.10.0 — Canonical Qur’an Reader Integration (Phase 2)
 
 - Dynamic reader coverage for P0001–P0294.

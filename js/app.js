@@ -1,6 +1,6 @@
-import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.10.0";
-import { renderShell, saveActiveJourney } from "./shell.js?v=3.10.0";
-import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences } from "./duaa.js?v=3.10.0";
+import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.11.0";
+import { renderShell, saveActiveJourney } from "./shell.js?v=3.11.0";
+import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences } from "./duaa.js?v=3.11.0";
 import {
   onAuthStateChange,
   restoreSession,
@@ -8,10 +8,10 @@ import {
   signInWithPassword,
   signOut,
   signUpWithPassword
-} from "./auth.js?v=3.10.0";
-import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.10.0";
-import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.10.0";
-import { clearPreferences, loadPreferences } from "./preferences.js?v=3.10.0";
+} from "./auth.js?v=3.11.0";
+import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.11.0";
+import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.11.0";
+import { clearPreferences, loadPreferences } from "./preferences.js?v=3.11.0";
 
 const app = document.querySelector("#app");
 console.info("Canonical Qur’an data verified", QURAN_CANONICAL_STATUS);
@@ -78,6 +78,18 @@ function recordQuranReading(source='inside') {
   localStorage.setItem('ummiby.quran.readingDays', JSON.stringify(records));
 }
 
+function recordReadingUnitActivity(type, unitOrder, details = {}) {
+  const order = Number(unitOrder);
+  if (!Number.isInteger(order) || order < 1 || order > QURAN_CANONICAL_STATUS.readingUnits) return;
+  let entries = [];
+  try { entries = JSON.parse(localStorage.getItem('ummiby.quran.readingUnit.history') || '[]'); } catch {}
+  const now = new Date();
+  const dateKey = now.toISOString().slice(0, 10);
+  if (type === 'opened' && entries.some(entry => entry.type === 'opened' && entry.unitOrder === order && entry.dateKey === dateKey)) return;
+  entries.unshift({ id: `${now.getTime()}-${type}-${order}`, type, unitOrder: order, dateKey, at: now.toISOString(), ...details });
+  localStorage.setItem('ummiby.quran.readingUnit.history', JSON.stringify(entries.slice(0, 250)));
+}
+
 function bindShellEvents() {
   app.querySelectorAll("[data-route]").forEach((link) => {
     link.addEventListener("click", (event) => {
@@ -137,6 +149,7 @@ function bindShellEvents() {
   }
 
   const activeReadingUnit = Number(app.querySelector('[data-reading-unit-reader]')?.dataset.readingUnit || 0);
+  if (activeReadingUnit) recordReadingUnitActivity('opened', activeReadingUnit);
   let selectedResumeAyah = Number(app.querySelector('.reader-ayah.is-saved-place')?.dataset.readerAyah || 0);
   app.querySelectorAll('[data-select-resume-ayah]').forEach(button => {
     button.addEventListener('click', () => {
@@ -153,6 +166,7 @@ function bindShellEvents() {
     progress.updatedAt = new Date().toISOString();
     localStorage.setItem(`ummiby.quran.readingUnit.${activeReadingUnit}`, JSON.stringify(progress));
     localStorage.setItem('ummiby.quran.readingUnit.current', String(activeReadingUnit));
+    recordReadingUnitActivity('saved', activeReadingUnit, { ayah: selectedResumeAyah });
     toast(`Place saved. You’ll resume at Ayah ${selectedResumeAyah}.`);
     render();
   });
@@ -168,12 +182,37 @@ function bindShellEvents() {
     localStorage.setItem('ummiby.quran.readingUnit.current', String(activeReadingUnit));
     if(progress.completed && activeReadingUnit < QURAN_CANONICAL_STATUS.readingUnits)localStorage.setItem('ummiby.quran.readingUnit.current', String(activeReadingUnit + 1));
     else localStorage.setItem('ummiby.quran.readingUnit.current', String(activeReadingUnit));
+    recordReadingUnitActivity(progress.completed ? 'completed' : 'reopened', activeReadingUnit);
     toast(progress.completed ? `Reading Unit ${activeReadingUnit} marked complete.` : 'Reading Unit completion removed.');
     render();
   });
   app.querySelectorAll('[data-reader-placeholder]').forEach(control => control.addEventListener('click', event => {
     event.preventDefault();
     toast('This control is ready for the full Qur’an data and navigation phase.');
+  }));
+
+  const unitSearch = app.querySelector('[data-unit-search]');
+  const unitFilterButtons = [...app.querySelectorAll('[data-unit-filter]')];
+  const unitRows = [...app.querySelectorAll('[data-unit-index-row]')];
+  const unitGroups = [...app.querySelectorAll('[data-unit-index-group]')];
+  let unitFilter = 'all';
+  const applyUnitFilters = () => {
+    const query = (unitSearch?.value || '').trim().toLowerCase();
+    unitRows.forEach(row => {
+      const matchesText = !query || row.dataset.unitSearch.includes(query);
+      const matchesState = unitFilter === 'all' || row.dataset.unitState === unitFilter;
+      row.hidden = !(matchesText && matchesState);
+    });
+    unitGroups.forEach(group => { group.hidden = !group.querySelector('[data-unit-index-row]:not([hidden])'); });
+    const visible = unitRows.filter(row => !row.hidden).length;
+    const result = app.querySelector('[data-unit-results]');
+    if (result) result.textContent = `${visible} ${visible === 1 ? 'unit' : 'units'} shown`;
+  };
+  unitSearch?.addEventListener('input', applyUnitFilters);
+  unitFilterButtons.forEach(button => button.addEventListener('click', () => {
+    unitFilter = button.dataset.unitFilter;
+    unitFilterButtons.forEach(item => item.classList.toggle('is-active', item === button));
+    applyUnitFilters();
   }));
 
   app.querySelector('[data-record-quran-today]')?.addEventListener('click', () => {

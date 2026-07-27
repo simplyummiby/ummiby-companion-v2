@@ -1,10 +1,10 @@
-# Ummiby Companion v3.10.0
+# Ummiby Companion v3.11.0
 
-**Release:** Canonical Qur’an Reader Integration — Phase 2
+**Release:** Reading Journey Navigation & Progress — Phase 3
 
-- Connected the polished Reading Unit reader to all 294 canonical units.
-- Added dynamic routes for every Reading Unit.
-- Added working Previous and Next navigation with first/last boundaries.
-- Added per-unit saved-place and completion persistence.
-- Added active-journey continuation and automatic advancement after completion.
-- Made every entry in the Reading Unit Index directly openable.
+- Added completed, current, and not-started states to all 294 Reading Units.
+- Added Unit Index search and progress filters.
+- Added a clear continue-to-next-unit state after completion.
+- Added Reading Unit activity history for opens, saved places, completions, and reopened units.
+- Expanded Qur’an Reading History with journey progress and recent milestones.
+- Preserved the canonical 114-surah, 6,236-ayah, 294-unit data foundation and v3.10.0 reader behavior.
