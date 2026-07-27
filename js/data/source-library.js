@@ -5,16 +5,16 @@ export const sourceLibrary = {
     {
       "id": "sahih-al-bukhari-6306",
       "citation": "Sahih al-Bukhari 6306",
-      "url": "",
-      "verificationStatus": "link-needed",
+      "url": "https://sunnah.com/bukhari:6306",
+      "verificationStatus": "verified",
       "grade": "Sahih",
       "type": "Hadith or traditional source"
     },
     {
       "id": "sahih-al-bukhari-6323",
       "citation": "Sahih al-Bukhari 6323",
-      "url": "",
-      "verificationStatus": "link-needed",
+      "url": "https://sunnah.com/bukhari:6323",
+      "verificationStatus": "verified",
       "grade": "Sahih",
       "type": "Hadith or traditional source"
     },

@@ -1,3 +1,10 @@
+## v3.4.17 — Sayyid al-Istighfar Source Links and Data Standard
+
+- Added verified direct links for Sahih al-Bukhari 6306 and 6323 in the shared source library.
+- Updated both Morning and Evening Sayyid al-Istighfar entries to point to the primary evidence link.
+- Kept Arabic, translation, and complete-entry verification flags unchanged pending separate review.
+- Added `docs/DUAA-CONTENT-DATA-STANDARD.md` to standardize evidence, virtue, and Study Resource metadata.
+
 ## v3.4.16 — Duaa Focus Mode Rendered Text Alignment Correction
 
 - Corrected the actual rendered phrase markup in Focus Mode instead of relying only on the parent column styles.

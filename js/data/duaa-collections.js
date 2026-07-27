@@ -21,8 +21,8 @@ export const collections = {
         "sourceDetails": {
           "reference": "Sahih al-Bukhari 6306, 6323",
           "grade": "Sahih",
-          "sourceReference": "",
-          "status": "needs-review"
+          "sourceReference": "https://sunnah.com/bukhari:6306",
+          "status": "source-links-added"
         },
         "verification": {
           "verified": false,
@@ -1731,8 +1731,8 @@ export const collections = {
         "sourceDetails": {
           "reference": "Sahih al-Bukhari 6306, 6323",
           "grade": "Sahih",
-          "sourceReference": "",
-          "status": "needs-review"
+          "sourceReference": "https://sunnah.com/bukhari:6306",
+          "status": "source-links-added"
         },
         "verification": {
           "verified": false,

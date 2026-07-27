@@ -1,6 +1,6 @@
 # Ummiby Companion
 
-**v3.4.16 — Static Hosting Route Reliability**
+**v3.4.17 — Sayyid al-Istighfar Source Links and Data Standard**
 
 This release establishes one reusable Page Epigraph system across the Duaa module while preserving collection, reader, tracking, account, banner, and application-service behavior.
 
@@ -22,7 +22,7 @@ This release establishes one reusable Page Epigraph system across the Duaa modul
 
 ## Current version
 
-**v3.4.16 — Static Hosting Route Reliability**
+**v3.4.17 — Sayyid al-Istighfar Source Links and Data Standard**
 
 ### Changed
 
