@@ -1,3 +1,11 @@
+## v3.4.18 — Focus Mode Study Resources and Collection Ending
+
+- Added a dedicated circular books icon to the Study Resources heading so it visually matches Evidence and Virtue / Benefit.
+- Kept the Study Resources caret independent so only the caret rotates when the section opens.
+- Replaced the empty final navigation slot with an “End of collection / Exit Focus Mode” link.
+- Made the final action return directly to the current collection page.
+- Preserved the compact icon-only footer behavior on small screens.
+
 ## v3.4.17 — Sayyid al-Istighfar Source Links and Data Standard
 
 - Added verified direct links for Sahih al-Bukhari 6306 and 6323 in the shared source library.

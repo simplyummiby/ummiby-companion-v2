@@ -1,8 +1,7 @@
-# Ummiby Companion v3.4.17
+# Ummiby Companion v3.4.18
 
-## Duaa Source-Link Structure
+## Duaa Focus Mode Completion Polish
 
-- Added direct Sunnah.com links for Sahih al-Bukhari 6306 and 6323.
-- Connected the Sayyid al-Istighfar evidence and virtue citations to the shared source library.
-- Preserved separate verification flags for Arabic and translation review.
-- Added a formal Duaa content and Study Resource data standard.
+- Added a Study Resources icon that matches the visual hierarchy of Evidence and Virtue / Benefit.
+- Added a clear end-of-collection state in the bottom navigation.
+- The final navigation action now exits Focus Mode and returns to the current collection.

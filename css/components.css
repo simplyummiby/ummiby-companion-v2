@@ -1345,8 +1345,8 @@
   text-transform:uppercase;
 }
 .focus-study-resources>summary::-webkit-details-marker{display:none}
-.focus-study-resources[open]>summary i{transform:rotate(180deg)}
-.focus-study-resources>summary i{transition:transform .18s ease}
+.focus-study-resources[open]>summary .focus-study-caret{transform:rotate(180deg)}
+.focus-study-resources>summary .focus-study-caret{transition:transform .18s ease}
 .focus-resource-groups{padding:0 22px 20px;border-top:1px solid #e2ebf2}
 .focus-resource-group{padding:16px 0;border-bottom:1px solid #e2ebf2}
 .focus-resource-group:last-child{border-bottom:0}
@@ -1868,3 +1868,57 @@
   }
 }
 
+
+
+/* v3.4.18 — Focus Mode Study Resources icon and collection ending */
+.focus-study-summary-label{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-width:0;
+}
+.focus-study-summary-icon{
+  display:grid;
+  place-items:center;
+  width:44px;
+  height:44px;
+  flex:0 0 44px;
+  border-radius:50%;
+  background:#edf3ff;
+  color:#165fc1;
+  font-size:1.2rem;
+}
+.focus-study-summary-icon i{
+  transform:none!important;
+}
+.focus-study-caret{
+  flex:0 0 auto;
+}
+.focus-end-control{
+  text-align:left;
+}
+.focus-end-control>span{
+  display:grid;
+  gap:3px;
+}
+.focus-end-control small{
+  color:rgb(255 255 255 / .72);
+  font-size:.68rem;
+  font-weight:700;
+  letter-spacing:.035em;
+  text-transform:uppercase;
+}
+.focus-end-control strong{
+  color:#fff;
+  font-size:.9rem;
+  font-weight:850;
+}
+@media(max-width:700px){
+  .focus-study-resources>summary{padding-inline:18px}
+  .focus-study-summary-icon{width:40px;height:40px;flex-basis:40px}
+  .focus-control-group>a.focus-end-control{
+    width:54px;
+    min-width:54px;
+  }
+  .focus-control-group>a.focus-end-control>span{display:none}
+}
