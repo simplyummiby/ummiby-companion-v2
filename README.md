@@ -1,6 +1,6 @@
 # Ummiby Companion
 
-**v3.4.18 — Focus Mode Study Resources and Collection Ending**
+**v3.4.19 — Focus Mode Study Resources and Collection Ending**
 
 This release establishes one reusable Page Epigraph system across the Duaa module while preserving collection, reader, tracking, account, banner, and application-service behavior.
 
@@ -22,7 +22,7 @@ This release establishes one reusable Page Epigraph system across the Duaa modul
 
 ## Current version
 
-**v3.4.18 — Focus Mode Study Resources and Collection Ending**
+**v3.4.19 — Focus Mode Study Resources and Collection Ending**
 
 ### Changed
 

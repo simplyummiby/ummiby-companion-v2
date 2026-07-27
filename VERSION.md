@@ -1,7 +1,8 @@
-# Ummiby Companion v3.4.18
+# Ummiby Companion v3.4.19
 
-## Duaa Focus Mode Completion Polish
+## Duaa Collection Page Composition Polish
 
-- Added a Study Resources icon that matches the visual hierarchy of Evidence and Virtue / Benefit.
-- Added a clear end-of-collection state in the bottom navigation.
-- The final navigation action now exits Focus Mode and returns to the current collection.
+- Refined the shared Duaa Page Epigraph system for a tighter editorial opening across collection and supporting pages.
+- Narrowed and centered the duaa collection list for more comfortable scanning.
+- Redesigned Today’s Status as a unified premium card with a pale-blue header and structured white content area.
+- Added restrained row-card styling and responsive composition improvements.

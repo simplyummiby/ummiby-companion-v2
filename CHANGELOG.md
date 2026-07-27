@@ -1,3 +1,13 @@
+## v3.4.19 — Duaa Collection Page Composition Polish
+
+- Tightened the reusable Duaa epigraph styling across all pages while preserving its clean, unboxed editorial treatment.
+- Reduced excess vertical whitespace around context, quotation, citation, detail, source, and divider elements.
+- Narrowed and centered the collection workspace so duaa rows no longer stretch across the full page.
+- Rebuilt Today’s Status as a premium header-and-body card matching the visual language of About This Duaa.
+- Grouped status, recording action, collection progress, and weekly consistency inside the unified card body.
+- Refined collection rows with restrained borders, rounding, spacing, and subtle depth for easier scanning.
+- Improved desktop, tablet, and mobile layout behavior without changing tracking or reading functionality.
+
 ## v3.4.18 — Focus Mode Study Resources and Collection Ending
 
 - Added a dedicated circular books icon to the Study Resources heading so it visually matches Evidence and Virtue / Benefit.
