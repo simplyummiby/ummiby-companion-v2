@@ -1,5 +1,13 @@
 # Changelog
 
+## v3.7.1 — Duaa History Navigation Polish
+
+- Removed the History epigraph so the explanatory page heading appears higher.
+- Kept the History introduction because it explains active days, completed days, and the “Every Duaa Counts” streak approach.
+- Constrained and tightened the five KPI cards so they read as a compact summary group rather than full-width dashboard tiles.
+- Added an accessible year selector to the calendar header for direct year navigation.
+- Preserved previous/next month navigation, collection tabs, calendar states, selected-day details, and existing history records.
+
 ## 3.7.0 — Duaa History Experience
 
 ### Added

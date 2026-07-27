@@ -1,5 +1,5 @@
 # Ummiby Companion
 
-Version: **3.7.0**
+Version: **3.7.1**
 
-Release: **Duaa History Experience**
+Release: **Duaa History Navigation Polish**

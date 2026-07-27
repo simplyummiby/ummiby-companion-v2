@@ -94,6 +94,14 @@ function bindShellEvents() {
       render();
     });
   });
+  app.querySelectorAll('[data-history-year]').forEach(select => {
+    select.addEventListener('change', () => {
+      const year=Number(select.value);
+      if(!Number.isInteger(year)) return;
+      historyView={...historyView,year,selectedDate:null};
+      render();
+    });
+  });
   app.querySelectorAll('[data-history-day]').forEach(button => {
     button.addEventListener('click', () => {
       historyView={...historyView,selectedDate:button.dataset.historyDay};

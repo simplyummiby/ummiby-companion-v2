@@ -12,3 +12,10 @@ Version 3.7.0 replaces the earlier three-card weekly history placeholder with a 
 ## Persistence
 
 History remains local-first under `ummiby.duaa.v2.1`. Version 3.7.0 enriches new tracked-day records with completed count, total count, and full-completion status while preserving earlier boolean consistency records. The UI reads through data-service helpers so cloud synchronization can be added later without redesigning the History page.
+
+
+## v3.7.1 polish
+
+- The History page intentionally omits the standard epigraph to keep its explanatory heading high on the page.
+- KPI cards use a constrained compact summary layout.
+- The calendar supports direct year selection in addition to month-by-month navigation.
