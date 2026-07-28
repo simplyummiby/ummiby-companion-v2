@@ -92,7 +92,7 @@
 - Standardized About this Reading Unit presentation and updated Fuṣṣilat 41:1–29.
 
 
-## v3.17.0 — Qur’an Basmalah Placement Correction
+## v3.17.1 — Qur’an Basmalah Placement Correction
 - Retained the basmalah as Ayah 1 only in Surah 1 • Al-Fātiḥah.
 - Displayed the basmalah separately above Ayah 1 for every other surah except Surah 9 • At-Tawbah.
 - Removed the embedded basmalah from the Arabic text of Ayah 1 in Surahs 2–8 and 10–114 without changing canonical ayah numbering.
