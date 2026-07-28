@@ -1,5 +1,15 @@
 # Changelog
 
+## 3.15.0 — Fasting Companion Foundation
+
+- Replaced the Fasting placeholder with a complete module shell and navigation.
+- Added Learn About Fasting, Sunnah Fasts, Fasting History, Make-up Fasts, Fasting Library, and Settings routes.
+- Added a muted olive visual identity distinct from the Qur’an module.
+- Established a unified fasting-history boundary: Ramadan Central owns Ramadan records while Fasting Companion presents them in the lifelong record.
+- Added responsive home, topic, detail, history, make-up, library, and settings layouts.
+- Added the “Can I Fast Today?” future date-aware guidance card.
+- Bumped application and cache versions to 3.15.0.
+
 ## 3.14.0 — Names of Allah Companion Foundation
 - Added all 99 Names from the specified Shaykh Ibn al-'Uthaymeen/Dawud Burbank source.
 - Added Home, Explore, Learn, Review, Favorites, About, and individual Name routes.

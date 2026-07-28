@@ -77,6 +77,12 @@
   --theme-soft: #fbf3e4;
 }
 
+[data-theme="fasting"] {
+  --theme-accent: #667449;
+  --theme-accent-strong: #44512f;
+  --theme-soft: #f1f4e9;
+}
+
 [data-theme="ramadan"] {
   --theme-accent: #7d3e79;
   --theme-accent-strong: #61255d;
