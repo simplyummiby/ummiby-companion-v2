@@ -97,3 +97,13 @@
 - Displayed the basmalah separately above Ayah 1 for every other surah except Surah 9 • At-Tawbah.
 - Removed the embedded basmalah from the Arabic text of Ayah 1 in Surahs 2–8 and 10–114 without changing canonical ayah numbering.
 - Added canonical validation checks to prevent basmalah placement regressions.
+
+## v3.18.0 — Qur’an Journey Indexes & Navigator
+
+- Replaced the Reading Unit Journey’s long surah-grouped list with a dense, responsive 294-tile journey grid.
+- Added All, Current, Completed, and Remaining filters, search, and Jump to Current Unit behavior.
+- Redesigned the journey overview around the current unit, completion total, and direct continuation.
+- Replaced “Completed in Ummiby” and “Covered before Ummiby” with one completion state.
+- Updated starting-point setup so earlier units can either be marked complete or left incomplete.
+- Added a Juz-based Classic Journey index.
+- Expanded the Qur’an Navigator into a searchable 114-surah tile grid.

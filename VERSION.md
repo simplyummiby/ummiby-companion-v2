@@ -1,3 +1,3 @@
-# Ummiby Companion v3.17.1
+# Ummiby Companion v3.18.0
 
-**Release:** Al-Kahf Friday Experience
+**Release:** Qur'an Journey Indexes & Navigator
