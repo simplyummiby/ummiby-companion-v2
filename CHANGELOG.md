@@ -85,3 +85,8 @@
 - Dynamic reader navigation and per-unit saved places.
 - Completion, Continue Reading, Unit Index, filters, and Reading History behavior.
 - Existing Duaa, Ramadan, app-shell, authentication, preferences, and Supabase foundation.
+
+## v3.16.1 — Qur’an Reading Experience Refinement
+- Simplified the Reading Companion metadata into a resume-focused Current Reading card.
+- Standardized full Surah references across reader and journey UI.
+- Standardized About this Reading Unit presentation and updated Fuṣṣilat 41:1–29.

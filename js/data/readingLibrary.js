@@ -2297,7 +2297,14 @@ const READING_UNITS = [
     "startAyah": 1,
     "endAyah": 29,
     "title": "Revelation and the Response to It",
-    "type": "Address"
+    "type": "Address",
+    "includes": [
+      "The revelation of the Qur'an.",
+      "The responses of believers and disbelievers.",
+      "Allah's creation of the earth and the heavens.",
+      "The account of ʿĀd and Thamūd.",
+      "Scenes from the Day of Judgment."
+    ]
   },
   {
     "id": "P0209",

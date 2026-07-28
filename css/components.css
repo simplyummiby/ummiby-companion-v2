@@ -2867,3 +2867,7 @@
 .reading-unit-index-row.is-previously-covered .reading-unit-number{color:var(--theme-accent);border-color:color-mix(in srgb,var(--theme-accent) 35%,var(--color-border))}
 .starting-point-field{display:grid;gap:.5rem;margin:1.25rem 0}.starting-point-field span{font-weight:700}.starting-point-field input{width:100%;padding:.8rem;border:1px solid var(--color-border);border-radius:.7rem;font:inherit}
 @media(max-width:720px){.toast-region{bottom:7rem;left:1rem;right:1rem;width:auto}}
+
+/* v3.16.1 — neutral Reading Unit overview */
+.reader-topic-intro{margin:.15rem 0 .65rem;color:var(--color-muted);font-size:.84rem}
+.reader-progress-card dl{margin-bottom:0}

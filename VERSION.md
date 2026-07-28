@@ -1,3 +1,3 @@
-# Ummiby Companion v3.16.0
+# Ummiby Companion v3.16.1
 
-Qur’an Reading Position & Journey Starting Point
+Qur’an Reading Experience Refinement
