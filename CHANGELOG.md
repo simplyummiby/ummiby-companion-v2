@@ -1,6 +1,6 @@
 # Changelog
 
-## v3.20.2 — Reader Active Icon Fix
+## v3.21.0 — Reader Active Icon Fix
 
 - Corrected filled Phosphor rendering for Saved Ayāt, private notes, and Resume pins.
 - Saved stars now fill yellow while retaining a transparent button background.
@@ -124,3 +124,12 @@
 - Updated starting-point setup so earlier units can either be marked complete or left incomplete.
 - Added a Juz-based Classic Journey index.
 - Expanded the Qur’an Navigator into a searchable 114-surah tile grid.
+
+
+## v3.21.0 — Featured Readings Foundation
+
+- Built a dedicated Featured Readings index for Surah 18 • Al-Kahf, Surah 32 • As-Sajdah, and Surah 67 • Al-Mulk.
+- Added concise Sunnah timing and evidence references to each card.
+- Connected Al-Kahf to the existing Friday reading experience.
+- Left As-Sajdah and Al-Mulk clearly marked as upcoming reader experiences.
+- Added responsive three-, two-, and one-column card layouts.

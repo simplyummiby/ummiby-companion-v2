@@ -1,10 +1,10 @@
-import { QURAN_DATA, QURAN_READING_LIBRARY, QURAN_CANONICAL_STATUS, BASMALAH_ARABIC, getReadingUnit, getReadingUnitAyat } from "./data/quran-canonical.js?v=3.20.2";
+import { QURAN_DATA, QURAN_READING_LIBRARY, QURAN_CANONICAL_STATUS, BASMALAH_ARABIC, getReadingUnit, getReadingUnitAyat } from "./data/quran-canonical.js?v=3.21.0";
 import { modules, sidebarOrder, moduleForPath } from './modules.js';
 import { duaaCollections, duaaOrder, orderedItems, isComplete, completedCount, isMemorized, memorizedCount, totalMemorizedCount, totalUniqueDuaaCount, worshipToday, weekStatus, readingPreferences, duaaHistoryRecords, duaaHistorySummary } from './duaa.js';
 import { APP_VERSION } from './version.js';
 import { sourcesByIds } from './data/source-library.js';
 import { resourcesByIds } from './data/resource-library.js';
-import { NAMES_OF_ALLAH, nameById } from './data/names-of-allah.js?v=3.20.2';
+import { NAMES_OF_ALLAH, nameById } from './data/names-of-allah.js?v=3.21.0';
 
 const esc=(v='')=>String(v).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
 const routeParts=(p)=>p.split('/').filter(Boolean);
@@ -373,6 +373,51 @@ function studyLibraryCue(){return `<a class="study-library-cue" href="#quran-stu
 function ayatRows(){const unit=getReadingUnit(25);return readingUnitAyatRows(unit,getReadingUnitAyat(unit.order))}
 function sharedStudy(count=3){return `<section class="quran-study"><div class="reader-study-heading"><span class="vision-icon"><i class="ph ph-books"></i></span><div><p class="section-eyebrow">Study Library</p><h3>Study Resources</h3><p>${count} contextual resource categories are ready for trusted links as they are added.</p></div></div><div class="study-shortcuts"><button type="button" data-reader-placeholder><i class="ph ph-headphones"></i> Audio</button><button type="button" data-reader-placeholder><i class="ph ph-video"></i> Video</button><button type="button" data-reader-placeholder><i class="ph ph-article"></i> Articles</button></div></section>`}
 function quranReader(mode,unitOrder=1){const prefs=readingPreferences();if(mode==='unit'){const unit=getReadingUnit(normalizeReadingUnitOrder(unitOrder));if(!unit)return `<section class="empty-state"><h2>Reading Unit not found</h2><a href="/quran/reading-units" data-route>Return to Unit Index</a></section>`;const ayat=getReadingUnitAyat(unit.order),unitProgress=readingUnitProgress(unit.order),saved=Number(unitProgress.resumeAyah)||0;return `<section class="quran-reader reader-framework reader-framework-quran" data-quran-reading-inside data-reading-unit-reader data-reading-unit="${unit.order}" style="--reader-arabic-size:${prefs.arabicSize}rem"><header class="quran-reader-top reader-framework-top"><a class="quran-reader-exit" href="/quran" data-route aria-label="Exit Reading Mode and return to Qur’an Home"><i class="ph ph-caret-left"></i><span>Exit Reading Mode</span></a><div><span>Reading Unit ${unit.order}</span><strong>${esc(quranSurahLabel(unit.surahNumber,unit.surahName))} · ${unit.reference}</strong><div class="reader-header-progress reader-scroll-progress"><div class="progress-track" role="progressbar" aria-label="Position through this reading page" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span data-reader-scroll-progress style="width:0%"></span></div><small data-reader-scroll-label>0% through this page</small></div></div><div class="reader-display-controls" aria-label="Arabic text size controls"><button type="button" data-arabic-size-step="-0.1" aria-label="Decrease Arabic text size">A−</button><button type="button" data-arabic-size-step="0.1" aria-label="Increase Arabic text size">A+</button><button type="button" data-reading-settings aria-label="Open reading preferences"><i class="ph ph-gear-six"></i></button></div></header><div class="reader-framework-workspace">${readingUnitCompanion(unit)}<main class="reader-reading-surface">${unitProgress.completed?`<aside class="reader-completion-notice"><span><i class="ph ph-check-circle-fill"></i><span><small>Reading Unit ${unit.order}</small><strong>Completed</strong></span></span>${unit.order<QURAN_CANONICAL_STATUS.readingUnits?`<a class="button button-primary" href="/quran/reading-unit/${unit.order+1}" data-route>Continue to Unit ${unit.order+1} <i class="ph ph-arrow-right"></i></a>`:'<a class="button button-primary" href="/quran/reading-units" data-route>View completed journey</a>'}</aside>`:readingUnitResumeNotice(unit)}<header class="reader-passage-heading"><p class="section-eyebrow">Reading Unit ${unit.order}</p><h1>${esc(quranSurahLabel(unit.surahNumber,unit.surahName))}</h1><p>${esc(unit.reference)}</p></header>${readingUnitAyatRows(unit,ayat)}</main></div>${readerFrameworkFooter(unit)}${quranReadingSettings(prefs)}</section>`}const pct=18;return `<section class="quran-reader" data-quran-reading-inside style="--reader-arabic-size:${prefs.arabicSize}rem"><header class="quran-reader-top"><a class="quran-reader-exit" href="/quran" data-route><i class="ph ph-caret-left"></i><span>Exit Reading Mode</span></a><div><span>Classic Journey</span><strong>Surah 2 • Al-Baqarah, Ayah 253</strong></div><div class="reader-display-controls" aria-label="Arabic text size controls"><button type="button" data-arabic-size-step="-0.1" aria-label="Decrease Arabic text size">A−</button><button type="button" data-arabic-size-step="0.1" aria-label="Increase Arabic text size">A+</button><button type="button" data-reading-settings aria-label="Open reading preferences"><i class="ph ph-gear"></i></button></div></header><section class="reader-context compact"><div><p class="section-eyebrow">Surah progress</p><h2>Surah 2 • Al-Baqarah</h2><span>Resume at Ayah 253 of 286</span></div>${progressBar(pct)}</section>${ayatRows()}${sharedStudy()}<nav class="quran-reader-controls"><div class="reader-control-actions"><a href="#" data-reader-placeholder><i class="ph ph-caret-left"></i><span>Previous</span></a><button class="reader-center-action" type="button" data-reader-placeholder><i class="ph ph-bookmark-simple"></i><span>Save Place</span></button><a href="#" data-reader-placeholder><span>Next</span><i class="ph ph-caret-right"></i></a></div></nav>${quranReadingSettings(prefs)}</section>`}
+function featuredReadings(){
+  const readings=[
+    {
+      number:18,
+      name:'Al-Kahf',
+      arabic:'الكهف',
+      timing:'Friday',
+      icon:'sun-horizon',
+      description:'Read on Friday. The Prophet ﷺ informed that the one who recites Surah Al-Kahf on Friday is granted light until the following Friday.',
+      evidence:'Mishkat al-Masabih 2175 • Hasan',
+      source:'https://sunnah.com/mishkat:2175',
+      route:'/quran/al-kahf-friday',
+      action:'Open Friday Experience',
+      available:true
+    },
+    {
+      number:32,
+      name:'As-Sajdah',
+      arabic:'السجدة',
+      timing:'Friday Fajr',
+      icon:'sunrise',
+      description:'The Prophet ﷺ recited Surah As-Sajdah in the first rakʿah of Fajr on Friday and Surah Al-Insān in the second rakʿah.',
+      evidence:'Sahih al-Bukhari 891',
+      source:'https://sunnah.com/bukhari:891',
+      route:'',
+      action:'Reader Coming Later',
+      available:false
+    },
+    {
+      number:67,
+      name:'Al-Mulk',
+      arabic:'الملك',
+      timing:'Night reading',
+      icon:'moon-stars',
+      description:'A thirty-ayah surah that intercedes for its companion until he is forgiven. It is often kept as a regular nightly reading.',
+      evidence:'Jamiʿ at-Tirmidhi 2891 • Hasan',
+      source:'https://sunnah.com/tirmidhi:2891',
+      route:'',
+      action:'Reader Coming Later',
+      available:false
+    }
+  ];
+  const cards=readings.map(x=>`<article class="featured-surah-card${x.available?' is-available':' is-upcoming'}"><div class="featured-surah-number" aria-hidden="true">${x.number}</div><div class="featured-surah-card-main"><div class="featured-surah-card-heading"><span class="featured-surah-icon">${visionIcon(x.icon)}</span><div><p class="section-eyebrow">${esc(x.timing)}</p><h3>Surah ${x.number} • ${esc(x.name)}</h3><span class="featured-surah-arabic" lang="ar" dir="rtl">${x.arabic}</span></div></div><p class="featured-surah-sunnah">${esc(x.description)}</p><a class="featured-surah-evidence" href="${x.source}" target="_blank" rel="noopener noreferrer"><i class="ph ph-book-open-text" aria-hidden="true"></i><span>${esc(x.evidence)}</span><i class="ph ph-arrow-square-out" aria-hidden="true"></i></a></div><div class="featured-surah-card-action">${x.available?`<a class="button button-primary" href="${x.route}" data-route>${esc(x.action)} <i class="ph ph-arrow-right"></i></a>`:`<span class="status-pill"><i class="ph ph-clock"></i> ${esc(x.action)}</span>`}</div></article>`).join('');
+  return `<section class="vision-page featured-readings-page"><header class="editorial-header"><p class="page-kicker">Qur’an</p><h2>Featured Readings</h2><p>Return to surahs connected to established times and practices from the Sunnah.</p></header><section class="featured-readings-intro"><span>${visionIcon('sparkle')}</span><div><p class="section-eyebrow">A purposeful reading library</p><h3>Read with the Sunnah in mind</h3><p>Each card explains when the surah is especially connected to the Sunnah. More dedicated reading experiences can be added without changing this foundation.</p></div></section><div class="featured-surah-grid">${cards}</div></section>`;
+}
 function featuredReader(slug){const map={
  'al-kahf':['Surah 18 • Al-Kahf','Friday Reading','The People of the Cave','Ayat 9–26','It is authentically reported that whoever recites Surah al-Kahf on Friday will have a light between the two Fridays.'],
  'al-mulk':['Surah 67 • Al-Mulk','Night Reading','The Sovereignty','Ayat 1–30','A thirty-ayah surah that intercedes for its companion until he is forgiven.'],

@@ -1,3 +1,3 @@
-# Ummiby Companion v3.20.2
+# Ummiby Companion v3.21.0
 
-Reader active-icon visibility and ayah-reference sizing fix.
+Featured Readings foundation with Al-Kahf, As-Sajdah, and Al-Mulk.
