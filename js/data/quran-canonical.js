@@ -1,7 +1,20 @@
 import "./quran-data.js?v=3.13.0";
 import "./readingLibrary.js?v=3.13.0";
 
-export const QURAN_DATA = window.QURAN_DATA;
+export const BASMALAH_ARABIC = "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ";
+
+function normalizeBasmalahPlacement(quranData) {
+  if (!Array.isArray(quranData)) return quranData;
+  quranData.forEach((surah) => {
+    if (surah.number === 1 || surah.number === 9) return;
+    const firstAyah = surah.ayahs?.[0];
+    if (!firstAyah?.arabic?.startsWith(BASMALAH_ARABIC)) return;
+    firstAyah.arabic = firstAyah.arabic.slice(BASMALAH_ARABIC.length).trimStart();
+  });
+  return quranData;
+}
+
+export const QURAN_DATA = normalizeBasmalahPlacement(window.QURAN_DATA);
 export const QURAN_READING_LIBRARY = window.QURAN_READING_LIBRARY;
 
 export function getSurah(surahNumber) {
@@ -64,6 +77,15 @@ export function validateCanonicalQuranData() {
     }
   }
   if (covered.size !== 6236) throw new Error(`Reading Units cover ${covered.size} ayat instead of 6,236.`);
+
+  if (getAyah(1, 1)?.arabic !== BASMALAH_ARABIC) throw new Error("Al-Fātiḥah must retain the basmalah as Ayah 1.");
+  if (getAyah(9, 1)?.arabic?.startsWith(BASMALAH_ARABIC)) throw new Error("At-Tawbah must not begin with a basmalah.");
+  for (const surah of QURAN_DATA) {
+    if (surah.number === 1 || surah.number === 9) continue;
+    if (surah.ayahs[0]?.arabic?.startsWith(BASMALAH_ARABIC)) {
+      throw new Error(`Basmalah is still embedded in Surah ${surah.number}:1.`);
+    }
+  }
 
   return Object.freeze({
     surahs: QURAN_DATA.length,

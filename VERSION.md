@@ -1,3 +1,3 @@
-# Ummiby Companion v3.16.1
+# Ummiby Companion v3.16.2
 
-Qur’an Reading Experience Refinement
+Qur’an Basmalah Placement Correction
