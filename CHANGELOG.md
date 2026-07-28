@@ -1,5 +1,12 @@
 # Changelog
 
+## v3.22.1 — Al-Kahf Reader Polish
+
+- Replaced the reader eyebrow “A New Section” with “Section X of 8” in every Al-Kahf section.
+- Tuned the Mūsā and Al-Khiḍr and Closing Reminder banner focal points without increasing banner height.
+- Simplified the Al-Kahf Reading Companion to the Friday virtue, Current Reading, and Study Sources.
+- Preserved Friday history, streaks, navigation, progress, artwork, featured reading, and routing behavior.
+
 ## v3.22.0 — The Illustrated Al-Kahf Experience
 
 - Installed the approved nine-image Al-Kahf illustration collection.

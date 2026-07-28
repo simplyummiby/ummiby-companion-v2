@@ -1,4 +1,12 @@
-# Ummiby Companion v3.16.1
+# Ummiby Companion v3.22.1
+
+**Current release:** Al-Kahf Reader Polish
+
+See `BUILD-REPORT-v3.22.1.md` for release details.
+
+---
+
+## Ummiby Companion
 
 **Current release:** Canonical Qur’an Integration QA & Regression Protection — Phase 4
 

@@ -2926,3 +2926,11 @@
 .kahf-section-card:nth-child(8) .kahf-section-art img{object-position:center 58%}
 .kahf-reader-banner{box-shadow:0 10px 28px rgb(20 57 43/.10)}
 @media(max-width:680px){.featured-surah-card-art{height:155px}}
+
+
+/* v3.22.1 — Al-Kahf Reader Polish */
+.kahf-section-count{margin-bottom:.25rem;color:color-mix(in srgb,var(--theme-accent) 72%,var(--color-muted));font-size:.78rem;font-weight:800;letter-spacing:.055em;text-transform:uppercase}
+.kahf-reader-banner.is-section-6 img{object-position:center 72%}
+.kahf-reader-banner.is-section-8 img{object-position:center 72%}
+@media(max-width:900px){.kahf-reader-banner.is-section-6 img{object-position:center 70%}.kahf-reader-banner.is-section-8 img{object-position:center 70%}}
+@media(max-width:760px){.kahf-reader-banner.is-section-6 img{object-position:center 68%}.kahf-reader-banner.is-section-8 img{object-position:center 68%}}
