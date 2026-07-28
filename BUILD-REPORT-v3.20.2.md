@@ -1,4 +1,4 @@
-# Ummiby Companion v3.21.0 — Reader Active Icon Fix
+# Ummiby Companion v3.22.0 — Reader Active Icon Fix
 
 ## Corrected
 

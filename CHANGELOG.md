@@ -1,6 +1,14 @@
 # Changelog
 
-## v3.21.0 — Reader Active Icon Fix
+## v3.22.0 — The Illustrated Al-Kahf Experience
+
+- Installed the approved nine-image Al-Kahf illustration collection.
+- Added final cave artwork to the Qur’an Home Friday card and Featured Readings Al-Kahf card.
+- Added matching artwork to all eight Al-Kahf section cards and reader banners.
+- Kept reader banners compact at 230px desktop, 190px tablet, and 160px mobile.
+- Optimized all production artwork as WebP assets.
+
+## v3.22.0 — Reader Active Icon Fix
 
 - Corrected filled Phosphor rendering for Saved Ayāt, private notes, and Resume pins.
 - Saved stars now fill yellow while retaining a transparent button background.
@@ -126,7 +134,7 @@
 - Expanded the Qur’an Navigator into a searchable 114-surah tile grid.
 
 
-## v3.21.0 — Featured Readings Foundation
+## v3.22.0 — Featured Readings Foundation
 
 - Built a dedicated Featured Readings index for Surah 18 • Al-Kahf, Surah 32 • As-Sajdah, and Surah 67 • Al-Mulk.
 - Added concise Sunnah timing and evidence references to each card.
