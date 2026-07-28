@@ -1,3 +1,3 @@
-# Ummiby Companion v3.22.1
+# Ummiby Companion v3.23.0
 
-Al-Kahf Reader Polish.
+Featured Reading Card System.

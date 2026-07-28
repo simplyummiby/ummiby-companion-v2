@@ -2928,9 +2928,218 @@
 @media(max-width:680px){.featured-surah-card-art{height:155px}}
 
 
-/* v3.22.1 — Al-Kahf Reader Polish */
+/* v3.22.2 — Al-Kahf Reader Polish */
 .kahf-section-count{margin-bottom:.25rem;color:color-mix(in srgb,var(--theme-accent) 72%,var(--color-muted));font-size:.78rem;font-weight:800;letter-spacing:.055em;text-transform:uppercase}
 .kahf-reader-banner.is-section-6 img{object-position:center 72%}
 .kahf-reader-banner.is-section-8 img{object-position:center 72%}
 @media(max-width:900px){.kahf-reader-banner.is-section-6 img{object-position:center 70%}.kahf-reader-banner.is-section-8 img{object-position:center 70%}}
 @media(max-width:760px){.kahf-reader-banner.is-section-6 img{object-position:center 68%}.kahf-reader-banner.is-section-8 img{object-position:center 68%}}
+
+
+/* v3.22.2 — Reading Companion consistency and Al-Kahf study resources */
+.reader-framework{--reader-panel-width:330px}
+.reader-framework-workspace{column-gap:clamp(.85rem,1.5vw,1.35rem)}
+.reader-companion{padding-left:clamp(1rem,1.8vw,1.5rem)}
+.reader-companion-inner{padding:1rem 1.08rem}
+.reader-companion header{padding-bottom:.82rem}
+.reader-companion h2{margin:.16rem 0 .42rem}
+.reader-companion header p:last-child{line-height:1.4}
+.reader-companion section,.reader-resource-group{padding:.78rem 0}
+.reader-companion h3,.reader-resource-group summary{margin-bottom:.55rem;line-height:1.28}
+.kahf-virtue{padding:.85rem .9rem}
+.kahf-virtue p{margin:.35rem 0 .38rem;font-weight:700;line-height:1.38}
+.kahf-virtue small{display:block;line-height:1.3}
+.reader-progress-card dl{margin-bottom:.15rem}
+.kahf-study-links{display:grid;gap:.45rem;margin-top:.68rem}
+.kahf-study-links a{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:.65rem;padding:.68rem;border-radius:.72rem;color:inherit;text-decoration:none;background:color-mix(in srgb,var(--theme-soft) 22%,white)}
+.kahf-study-links a>i:first-child{color:var(--theme-accent);font-size:1rem}
+.kahf-study-links a>i:last-child{color:var(--color-muted);font-size:.82rem}
+.kahf-study-links a span{display:grid;gap:.08rem;min-width:0}
+.kahf-study-links a strong{font-size:.8rem;line-height:1.25}
+.kahf-study-links a small{color:var(--color-muted);font-size:.7rem;line-height:1.25}
+.reader-info-control{position:relative;display:inline-flex}
+.reader-info-button{display:grid!important;place-items:center;width:2.1rem;height:2.1rem;padding:0!important;border:1px solid rgb(255 255 255/.34)!important;border-radius:50%!important;background:rgb(255 255 255/.1)!important;color:#fff!important}
+.reader-info-tooltip{position:absolute;z-index:60;top:calc(100% + .55rem);right:0;display:none;width:250px;padding:.72rem .8rem;border:1px solid color-mix(in srgb,var(--theme-accent) 20%,var(--color-border));border-radius:.75rem;background:#fff;color:var(--color-text);box-shadow:0 12px 28px rgb(15 45 35/.18);font-size:.73rem;line-height:1.35;text-align:left}
+.reader-info-tooltip strong,.reader-info-tooltip span{display:block}
+.reader-info-tooltip strong{margin-bottom:.28rem;font-size:.78rem}
+.reader-info-tooltip span+span{margin-top:.22rem}
+.reader-info-control:hover .reader-info-tooltip,.reader-info-control:focus-within .reader-info-tooltip{display:block}
+.kahf-navigator-study{max-width:1020px;margin-inline:auto}
+@media(max-width:980px){.reader-framework{--reader-panel-width:286px}.reader-framework-workspace{column-gap:0}.reader-companion{padding-left:1rem}}
+@media(max-width:680px){.reader-info-tooltip{position:fixed;top:4.4rem;right:.75rem;left:.75rem;width:auto}}
+
+/* v3.22.5 — Al-Kahf reader controls and study source polish */
+.kahf-study-links{gap:.8rem}
+.kahf-study-category{display:grid;gap:.28rem}
+.kahf-study-category>p{margin:0;padding:0 .15rem;color:var(--theme-accent);font-size:.68rem;font-weight:850;letter-spacing:.075em;text-transform:uppercase}
+.kahf-study-category>a{margin:0}
+.kahf-friday-reader .reader-control-actions{width:min(780px,100%);margin-inline:auto;grid-template-columns:1fr minmax(180px,auto) 1fr}
+.kahf-friday-reader .reader-control-actions>a:first-child,.kahf-friday-reader .reader-control-actions>a:last-child{justify-content:center;padding-inline:1rem}
+.reader-info-dialog{width:min(430px,calc(100vw - 2rem));padding:0;border:0;border-radius:1rem;background:#fff;box-shadow:0 24px 70px rgb(8 35 25/.28)}
+.reader-info-dialog::backdrop{background:rgb(9 29 22/.45);backdrop-filter:blur(2px)}
+.reader-info-dialog>div{padding:1.15rem}
+.reader-info-dialog header{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:.8rem;padding-bottom:1rem;border-bottom:1px solid var(--color-border)}
+.reader-info-dialog header>span{display:grid;place-items:center;width:2.35rem;height:2.35rem;border-radius:50%;background:color-mix(in srgb,var(--theme-soft) 55%,white);color:var(--theme-accent)}
+.reader-info-dialog header p,.reader-info-dialog header h2{margin:0}
+.reader-info-dialog header h2{font-size:1.05rem}
+.reader-info-dialog header button{display:grid;place-items:center;width:2rem;height:2rem;border:0;border-radius:50%;background:var(--color-surface-soft);color:inherit}
+.reader-info-dialog dl{display:grid;gap:.75rem;margin:1rem 0 0}
+.reader-info-dialog dl>div{display:grid;gap:.16rem;padding:.8rem;border-radius:.75rem;background:color-mix(in srgb,var(--theme-soft) 25%,white)}
+.reader-info-dialog dt{color:var(--color-muted);font-size:.72rem;font-weight:750;text-transform:uppercase;letter-spacing:.04em}
+.reader-info-dialog dd{margin:0;font-size:.9rem;font-weight:700}
+@media(max-width:620px){.kahf-friday-reader .reader-control-actions{grid-template-columns:1fr auto 1fr}.kahf-friday-reader .reader-control-actions>a:first-child,.kahf-friday-reader .reader-control-actions>a:last-child{padding-inline:.35rem}.kahf-friday-reader .reader-control-actions{font-size:.78rem}}
+
+
+/* v3.22.5 — Al-Kahf final reader polish */
+.kahf-friday-reader .reader-companion-inner section>h3,
+.kahf-friday-reader .reader-resource-group>summary span{
+  gap:.55rem;
+}
+.kahf-friday-reader .reader-companion-inner section>h3>i,
+.kahf-friday-reader .reader-resource-group>summary span>i{
+  flex:0 0 auto;
+  font-size:1.18rem;
+}
+.kahf-friday-reader .kahf-virtue{
+  padding:1.08rem 1.12rem;
+}
+.reader-info-dialog[open]{
+  position:fixed;
+  right:auto;
+  bottom:auto;
+  margin:0;
+}
+.kahf-reader-footer{
+  position:fixed;
+  display:flex;
+  justify-content:center;
+  padding-inline:clamp(.75rem,2vw,1.5rem);
+}
+.kahf-reader-footer .kahf-section-index-link{
+  position:absolute;
+  left:clamp(.75rem,2vw,1.5rem);
+  bottom:.35rem;
+  display:flex;
+  align-items:center;
+  gap:.42rem;
+  min-height:4rem;
+  padding:.55rem .7rem;
+  font-weight:750;
+}
+.kahf-reader-footer .reader-control-actions{
+  width:min(780px,calc(100% - 280px));
+  margin:0 auto;
+}
+.kahf-reader-footer .kahf-control-placeholder{
+  display:block;
+  min-width:1px;
+}
+@media(max-width:760px){
+  .kahf-reader-footer{
+    padding-left:.25rem;
+  }
+  .kahf-reader-footer .kahf-section-index-link{
+    left:.2rem;
+    bottom:.25rem;
+    padding:.45rem;
+  }
+  .kahf-reader-footer .kahf-section-index-link span{display:none}
+  .kahf-reader-footer .reader-control-actions{
+    width:min(100%,calc(100% - 52px));
+    margin-left:52px;
+  }
+}
+@media(max-width:520px){
+  .reader-info-dialog[open]{
+    left:.75rem!important;
+    right:.75rem!important;
+    top:4.5rem!important;
+    width:auto;
+  }
+}
+
+
+/* v3.22.5 — Al-Kahf completion, access, and overflow polish */
+.kahf-friday-reader .reader-framework-top,
+.kahf-reader-footer{
+  background:var(--theme-accent-strong);
+}
+.kahf-friday-reader .kahf-virtue{
+  border:0!important;
+  border-top:0!important;
+  border-bottom:0!important;
+  border-radius:.8rem;
+  padding:1.18rem 1.2rem;
+}
+.kahf-reader-footer .kahf-section-index-link{
+  border-right:0!important;
+  box-shadow:none!important;
+}
+.kahf-friday-reader .reader-companion{
+  height:calc(100vh - 166px);
+}
+.kahf-friday-reader .reader-companion-inner{
+  scroll-padding-bottom:2rem;
+  padding-bottom:2rem;
+}
+.kahf-friday-reader .reader-resource-group:last-child{
+  padding-bottom:1.5rem;
+}
+.kahf-friday-reader .reader-display-controls .reader-saved-ayat-shortcut{
+  display:grid;
+  place-items:center;
+  width:2.5rem;
+  height:2.5rem;
+  border-radius:50%;
+  background:rgb(255 255 255/.14);
+  color:#fff;
+  text-decoration:none;
+}
+.kahf-friday-reader .reader-display-controls .reader-saved-ayat-shortcut:hover{
+  background:rgb(255 255 255/.23);
+}
+.kahf-reader-footer .reader-center-action{
+  border:1px solid rgb(255 255 255/.62);
+  background:transparent;
+  color:#fff;
+  box-shadow:none;
+}
+.kahf-reader-footer .reader-center-action:hover{
+  background:rgb(255 255 255/.12);
+}
+.kahf-reader-footer .reader-center-action.is-complete{
+  border-color:#fff;
+  background:#fff;
+  color:var(--theme-accent-strong);
+  box-shadow:0 3px 11px rgb(0 0 0/.14);
+}
+.kahf-reader-footer .reader-center-action.is-complete:hover{
+  background:color-mix(in srgb,var(--theme-soft) 38%,white);
+}
+.kahf-reset-friday{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:.42rem;
+  margin-top:.25rem;
+  padding:.62rem .75rem;
+  border:0;
+  background:transparent;
+  color:var(--color-muted);
+  font:inherit;
+  font-size:.8rem;
+  font-weight:750;
+  cursor:pointer;
+}
+.kahf-reset-friday:hover{color:#8f3f3f}
+@media(max-width:980px){
+  .kahf-friday-reader .reader-companion{height:auto}
+  .kahf-friday-reader .reader-companion-inner{padding-bottom:1.25rem}
+}
+@media(max-width:620px){
+  .kahf-friday-reader .reader-display-controls .reader-saved-ayat-shortcut{width:2.3rem;height:2.3rem}
+  .kahf-reader-footer .reader-center-action span{max-width:82px;line-height:1.08}
+}
+
+/* v3.23.0 — reusable Home Featured Reading Card system */
+.featured-reading-system-card{position:relative;isolation:isolate;min-height:410px;overflow:hidden;border:1px solid rgb(198 166 91/.42);border-radius:1.2rem;background:#10251b;color:#fff;box-shadow:0 18px 45px rgb(16 37 27/.18)}.featured-reading-system-art,.featured-reading-system-shade{position:absolute;inset:0;width:100%;height:100%}.featured-reading-system-art{z-index:-3;object-fit:cover;object-position:center}.featured-reading-system-shade{z-index:-2;background:linear-gradient(90deg,rgb(4 13 9/.9) 0%,rgb(5 17 11/.77) 37%,rgb(6 18 12/.18) 72%,rgb(5 14 10/.25) 100%),linear-gradient(0deg,rgb(4 13 9/.8) 0%,transparent 48%)}.featured-reading-ribbon{position:absolute;top:0;left:2rem;display:grid;justify-items:center;align-content:start;width:68px;min-height:91px;padding:.75rem .35rem 1.15rem;background:linear-gradient(180deg,#d8bd72,#b18a36);color:#27321c;text-transform:uppercase;letter-spacing:.08em;filter:drop-shadow(0 5px 8px rgb(0 0 0/.25));clip-path:polygon(0 0,100% 0,100% 83%,50% 100%,0 83%)}.featured-reading-ribbon i{font-size:1.35rem}.featured-reading-ribbon strong{margin-top:.3rem;font-family:var(--font-serif);font-size:.67rem;line-height:1}.featured-reading-system-copy{position:relative;z-index:1;display:grid;align-content:end;max-width:590px;min-height:272px;padding:6.1rem 2rem 1rem}.featured-reading-category{margin:0;color:#dfc579;font-size:.77rem;font-weight:850;letter-spacing:.19em;text-transform:uppercase}.featured-reading-system-copy h2{margin:.25rem 0 .4rem;color:#fff;font-family:var(--font-serif);font-size:clamp(2.45rem,5vw,4rem);font-weight:500;line-height:1.02;text-shadow:0 2px 12px rgb(0 0 0/.3)}.featured-reading-system-copy blockquote{max-width:420px;margin:.2rem 0 0;padding:0;border:0}.featured-reading-system-copy blockquote p{margin:0;color:rgb(255 255 255/.92);font-family:var(--font-serif);font-size:1rem;line-height:1.42}.featured-reading-system-copy cite{display:block;margin-top:.25rem;color:#dabe69;font-size:.78rem;font-style:normal}.featured-reading-system-footer{position:absolute;z-index:2;left:2rem;right:2rem;bottom:1.65rem;display:grid;grid-template-columns:minmax(190px,250px) minmax(245px,1fr);align-items:center;gap:1.5rem;max-width:720px}.featured-reading-system-action{display:flex;align-items:center;justify-content:center;gap:.8rem;min-height:64px;padding:.8rem 1.25rem;border:1px solid rgb(216 197 129/.55);border-radius:.8rem;background:linear-gradient(180deg,rgb(60 112 73/.96),rgb(30 77 45/.96));box-shadow:inset 0 1px rgb(255 255 255/.16),0 8px 20px rgb(0 0 0/.2);color:#fff;text-decoration:none;font-family:var(--font-serif);font-size:1.55rem;transition:transform .16s ease,filter .16s ease,box-shadow .16s ease}.featured-reading-system-action i{font-size:1.7rem}.featured-reading-system-action:hover{transform:translateY(-1px);filter:brightness(1.08);box-shadow:inset 0 1px rgb(255 255 255/.2),0 10px 25px rgb(0 0 0/.28)}.featured-reading-system-status{display:grid;gap:.15rem;padding-left:1.25rem;border-left:1px solid rgb(255 255 255/.42)}.featured-reading-system-status p{margin:0;color:#e0d5b5;font-size:.65rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.featured-reading-system-status strong{display:flex;align-items:center;gap:.55rem;color:#fff;font-family:var(--font-serif);font-size:1rem;font-weight:500}.featured-reading-system-status strong i{width:1.15rem;height:1.15rem;border:1.7px solid #fff;border-radius:50%;background:transparent}.featured-reading-system-card.is-in-progress .featured-reading-system-status strong i{background:linear-gradient(90deg,#fff 50%,transparent 50%)}.featured-reading-system-card.is-complete .featured-reading-system-status strong i{position:relative;background:#fff}.featured-reading-system-card.is-complete .featured-reading-system-status strong i:after{content:'✓';position:absolute;inset:0;display:grid;place-items:center;color:#254d31;font-size:.7rem;font-weight:900}.featured-reading-system-status span{color:rgb(255 255 255/.76);font-size:.78rem}@media(max-width:760px){.featured-reading-system-card{min-height:500px}.featured-reading-system-art{object-position:62% center}.featured-reading-system-shade{background:linear-gradient(90deg,rgb(4 13 9/.9),rgb(5 17 11/.56)),linear-gradient(0deg,rgb(4 13 9/.92) 0%,transparent 68%)}.featured-reading-ribbon{left:1.25rem}.featured-reading-system-copy{min-height:318px;padding:6.2rem 1.25rem 1rem}.featured-reading-system-copy h2{font-size:2.6rem}.featured-reading-system-footer{left:1.25rem;right:1.25rem;bottom:1.25rem;grid-template-columns:1fr;gap:.8rem}.featured-reading-system-status{padding:.75rem 0 0;border-left:0;border-top:1px solid rgb(255 255 255/.35)}.featured-reading-system-action{min-height:58px;font-size:1.35rem}}

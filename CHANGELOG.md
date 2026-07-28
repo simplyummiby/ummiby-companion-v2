@@ -1,5 +1,40 @@
 # Changelog
 
+## 3.23.0 — Featured Reading Card System
+
+- Introduced a reusable `featuredReadingCard` Home-page component with configurable artwork, ribbon, category, title, subtitle, action, status, and reference fields.
+- Rebuilt the Friday Al-Kahf Home feature with image-only cave artwork and fully accessible HTML overlay text.
+- Added dynamic Read, Continue, and Review states from the Friday reading record.
+- Added current/upcoming Friday date context in the status panel.
+- Established the base styling contract for future special reading cards.
+
+## v3.23.0 — Al-Kahf Reader Final Polish
+
+- Positioned the reader information dialog beside and slightly below its information button on desktop.
+- Kept the Section Index control permanently available in the bottom-left corner throughout all eight sections.
+- Centered the Previous Section, Mark Section Read, and Next Section controls independently of the Section Index link.
+- Enlarged the Reading Companion icons for the virtue, current reading, and study sources.
+- Changed the Al-Kahf reading-resource icon to a paper document.
+- Added more internal padding to the Friday virtue quotation card while retaining its tightened typography.
+- Preserved the horizontal shared-axis slide transition.
+
+## v3.23.0 — Al-Kahf Reader Controls & Study Categories
+
+- Grouped Al-Kahf study resources under Video, Audio, and Reading labels.
+- Centered the Previous Section, Mark Section Read, and Next Section control group in the Al-Kahf reader.
+- Replaced the empty reader information behavior with a populated, accessible modal.
+- Removed the redundant font-settings gear from the Al-Kahf reader while preserving A− and A+ controls.
+- Preserved the last viewed Al-Kahf section when returning through the Section Index.
+- Kept the existing horizontal shared-axis section transition.
+
+## v3.22.2 — Reading Companion Consistency & Al-Kahf Study Sources
+
+- Widened and repositioned the desktop Reading Companion for better breathing room.
+- Tightened line spacing and vertical rhythm inside companion cards, especially the Friday virtue and citation.
+- Moved reader text metadata into an information tooltip in the top reader bar.
+- Removed Arabic text, English translation, and Friday virtue metadata from Study Sources.
+- Added three trusted Surah Al-Kahf resources throughout the Friday experience, Reading Unit Journey passages in Surah 18, and the Navigator Surah 18 reader.
+
 ## v3.22.1 — Al-Kahf Reader Polish
 
 - Replaced the reader eyebrow “A New Section” with “Section X of 8” in every Al-Kahf section.
