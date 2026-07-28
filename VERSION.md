@@ -1,3 +1,3 @@
-# Ummiby Companion v3.16.2
+# Ummiby Companion v3.17.0
 
-Qur’an Basmalah Placement Correction
+**Release:** Al-Kahf Friday Experience
