@@ -1,6 +1,17 @@
 # Changelog
 
-## 3.14.1 — Learned Names Page
+## v3.16.0 – Qur’an Reading Position & Journey Starting Point
+
+- Fixed **Go to saved spot** in Reading Unit mode and added a temporary restored-location highlight.
+- Changed the reader header bar into a live page-scroll gauge.
+- Moved and shortened save confirmations so they do not cover **Save My Place**.
+- Added **Set Starting Point** for readers joining midway through a Qur’an journey.
+- Added a distinct **Covered before Ummiby** state, separate from completions recorded in Ummiby.
+- Split overall journey position from completed-in-Ummiby totals.
+- Updated release numbering to v3.16.0.
+
+
+## 3.16.0 — Learned Names Page
 
 - Added **Learned** to the Names of Allah module navigation.
 - Added the dedicated **My Learned Names** page.
@@ -9,7 +20,7 @@
 - Reused the existing Names learning status so the detail page, journey, review page, and learned-card page remain synchronized.
 
 
-## 3.14.1 — Learned Names Page
+## 3.16.0 — Learned Names Page
 
 - Added **Learned** to the Names of Allah module navigation.
 - Added the dedicated **My Learned Names** page.
@@ -18,7 +29,7 @@
 - Reused the existing Names learning status so the detail page, journey, review page, and learned-card page remain synchronized.
 
 
-## 3.14.1 — Names of Allah Companion Foundation
+## 3.16.0 — Names of Allah Companion Foundation
 - Added all 99 Names from the specified Shaykh Ibn al-'Uthaymeen/Dawud Burbank source.
 - Added Home, Explore, Learn, Review, Favorites, About, and individual Name routes.
 - Added search, Qur’an/Sunnah filters, favorites, and studied-state persistence.

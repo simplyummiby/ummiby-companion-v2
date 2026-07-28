@@ -1,3 +1,3 @@
-# Ummiby Companion v3.14.1
+# Ummiby Companion v3.16.0
 
-Names of Allah Learned Names Page
+Qur’an Reading Position & Journey Starting Point

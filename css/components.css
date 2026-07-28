@@ -2828,7 +2828,7 @@
 @media(max-width:850px){.names-home-grid,.names-journey-card{grid-template-columns:1fr}.names-toolbar{grid-template-columns:1fr}.names-progress-card{align-items:flex-start}.names-journey-card>aside{border-top:1px solid var(--color-border)}.names-about-grid{grid-template-columns:1fr}}
 @media(max-width:650px){.names-action-grid,.names-library-grid,.names-stage-grid{grid-template-columns:1fr}.names-toolbar{align-items:stretch}.names-filter-group{overflow-x:auto}.names-filter-group button{white-space:nowrap}.name-hero-arabic{font-size:4rem}.names-detail-actions{grid-template-columns:1fr}.names-detail-actions a,.names-detail-actions a:last-child,.names-detail-actions button{justify-self:stretch;justify-content:center}.name-card.is-compact>a{grid-template-columns:1fr;justify-items:center;text-align:center}.name-card.is-compact .name-arabic{grid-row:auto;margin:0}.names-breadcrumb{overflow-x:auto;white-space:nowrap}.names-source-card{grid-template-columns:1fr}.names-home-section>header{align-items:start;flex-direction:column}}
 
-/* v3.14.1 — Names of Allah learned-card record */
+/* v3.16.0 — Names of Allah learned-card record */
 .names-learned-page{width:min(100%,1180px);margin-inline:auto}
 .names-learned-summary{margin-top:1.5rem}
 .names-learned-collection{--memory-fill:var(--theme-accent-strong);margin-top:.25rem}
@@ -2841,7 +2841,7 @@
 .name-learning-badge>button{min-height:36px}
 @media(max-width:640px){.names-learned-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.name-learning-badge>a{min-height:176px;padding:.75rem}.name-learning-badge .name-learning-arabic{font-size:1.7rem}}
 
-/* v3.14.1 — Names of Allah learned-card record */
+/* v3.16.0 — Names of Allah learned-card record */
 .names-learned-page{width:min(100%,1180px);margin-inline:auto}
 .names-learned-summary{margin-top:1.5rem}
 .names-learned-collection{--memory-fill:var(--theme-accent-strong);margin-top:.25rem}
@@ -2853,3 +2853,17 @@
 .name-learning-badge.is-memorized .name-learning-arabic,.name-learning-badge.is-memorized small{color:#fff}
 .name-learning-badge>button{min-height:36px}
 @media(max-width:640px){.names-learned-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.name-learning-badge>a{min-height:176px;padding:.75rem}.name-learning-badge .name-learning-arabic{font-size:1.7rem}}
+
+
+/* v3.16.0 Qur'an reading position and journey starting point */
+.toast-region{bottom:6.1rem}
+.toast{padding:.7rem 1rem;font-size:.9rem;animation:toast-in .16s ease-out}
+@keyframes toast-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.reader-scroll-progress .progress-track{height:5px;overflow:hidden;border-radius:999px;background:rgb(255 255 255/.25)}
+.reader-scroll-progress .progress-track>span{display:block;height:100%;border-radius:inherit;background:#fff;transition:width .12s linear}
+.reader-ayah.is-restored-place{animation:restored-place 2.2s ease-out}
+@keyframes restored-place{0%,35%{background:color-mix(in srgb,var(--theme-soft) 70%,white);box-shadow:inset 4px 0 var(--theme-accent)}100%{background:transparent;box-shadow:none}}
+.reading-unit-index-row.is-previously-covered{background:color-mix(in srgb,var(--theme-soft) 28%,white)}
+.reading-unit-index-row.is-previously-covered .reading-unit-number{color:var(--theme-accent);border-color:color-mix(in srgb,var(--theme-accent) 35%,var(--color-border))}
+.starting-point-field{display:grid;gap:.5rem;margin:1.25rem 0}.starting-point-field span{font-weight:700}.starting-point-field input{width:100%;padding:.8rem;border:1px solid var(--color-border);border-radius:.7rem;font:inherit}
+@media(max-width:720px){.toast-region{bottom:7rem;left:1rem;right:1rem;width:auto}}

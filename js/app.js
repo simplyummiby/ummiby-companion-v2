@@ -1,6 +1,6 @@
-import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.14.1";
-import { renderShell, saveActiveJourney } from "./shell.js?v=3.14.1";
-import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences } from "./duaa.js?v=3.14.1";
+import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.16.0";
+import { renderShell, saveActiveJourney } from "./shell.js?v=3.16.0";
+import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences } from "./duaa.js?v=3.16.0";
 import {
   onAuthStateChange,
   restoreSession,
@@ -8,10 +8,10 @@ import {
   signInWithPassword,
   signOut,
   signUpWithPassword
-} from "./auth.js?v=3.14.1";
-import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.14.1";
-import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.14.1";
-import { clearPreferences, loadPreferences } from "./preferences.js?v=3.14.1";
+} from "./auth.js?v=3.16.0";
+import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.16.0";
+import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.16.0";
+import { clearPreferences, loadPreferences } from "./preferences.js?v=3.16.0";
 
 const app = document.querySelector("#app");
 console.info("Canonical Qur’an data verified", QURAN_CANONICAL_STATUS);
@@ -61,7 +61,7 @@ function toast(message, type = "info") {
   item.className = `toast${type === "error" ? " is-error" : ""}`;
   item.textContent = message;
   toastRegion.append(item);
-  window.setTimeout(() => item.remove(), 4200);
+  window.setTimeout(() => item.remove(), 1800);
 }
 
 function render() {
@@ -164,6 +164,19 @@ function bindShellEvents() {
 
   const activeReadingUnit = Number(app.querySelector('[data-reading-unit-reader]')?.dataset.readingUnit || 0);
   if (activeReadingUnit) recordReadingUnitActivity('opened', activeReadingUnit);
+  const readerScrollBar = app.querySelector('[data-reader-scroll-progress]');
+  const readerScrollLabel = app.querySelector('[data-reader-scroll-label]');
+  if (readerScrollBar) {
+    const updateReaderScrollProgress = () => {
+      const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      const percent = Math.max(0, Math.min(100, Math.round((window.scrollY / maxScroll) * 100)));
+      readerScrollBar.style.width = `${percent}%`;
+      readerScrollBar.setAttribute('aria-valuenow', String(percent));
+      if (readerScrollLabel) readerScrollLabel.textContent = `${percent}% through this page`;
+    };
+    updateReaderScrollProgress();
+    window.addEventListener('scroll', updateReaderScrollProgress, { passive:true, once:false });
+  }
   let selectedResumeAyah = Number(app.querySelector('.reader-ayah.is-saved-place')?.dataset.readerAyah || 0);
   app.querySelectorAll('[data-select-resume-ayah]').forEach(button => {
     button.addEventListener('click', () => {
@@ -184,8 +197,13 @@ function bindShellEvents() {
     toast(`Place saved. You’ll resume at Ayah ${selectedResumeAyah}.`);
     render();
   });
-  app.querySelector('[data-resume-saved-ayah]')?.addEventListener('click', button => {
-    document.querySelector(`#ayah-${button.dataset.resumeSurah}-${button.dataset.resumeSavedAyah}`)?.scrollIntoView({ behavior:'smooth', block:'center' });
+  app.querySelector('[data-resume-saved-ayah]')?.addEventListener('click', event => {
+    const button = event.currentTarget;
+    const target = document.querySelector(`#ayah-${button.dataset.resumeSurah}-${button.dataset.resumeSavedAyah}`);
+    if (!target) { toast('Your saved ayah could not be found on this page.', 'error'); return; }
+    target.scrollIntoView({ behavior:'smooth', block:'center' });
+    target.classList.add('is-restored-place');
+    window.setTimeout(() => target.classList.remove('is-restored-place'), 2200);
   });
   app.querySelector('[data-complete-reading-unit]')?.addEventListener('click', button => {
     let progress = {};
@@ -229,6 +247,33 @@ function bindShellEvents() {
     applyUnitFilters();
   }));
 
+  const startingPointDialog = app.querySelector('[data-reading-starting-point-dialog]');
+  app.querySelector('[data-open-reading-starting-point]')?.addEventListener('click', () => startingPointDialog?.showModal());
+  app.querySelector('[data-save-reading-starting-point]')?.addEventListener('click', () => {
+    const input = app.querySelector('[data-reading-starting-unit]');
+    const start = Number(input?.value || 1);
+    if (!Number.isInteger(start) || start < 1 || start > 294) { toast('Choose a Reading Unit from 1 to 294.', 'error'); return; }
+    for (let order = 1; order <= 294; order += 1) {
+      let progress = {};
+      try { progress = JSON.parse(localStorage.getItem(`ummiby.quran.readingUnit.${order}`) || '{}'); } catch {}
+      if (progress.previouslyCovered) {
+        delete progress.previouslyCovered;
+        delete progress.coveredAt;
+      }
+      if (order < start && !progress.completed) {
+        progress.previouslyCovered = true;
+        progress.coveredAt = new Date().toISOString();
+      }
+      if (Object.keys(progress).length) localStorage.setItem(`ummiby.quran.readingUnit.${order}`, JSON.stringify(progress));
+      else localStorage.removeItem(`ummiby.quran.readingUnit.${order}`);
+    }
+    localStorage.setItem('ummiby.quran.readingUnit.current', String(start));
+    localStorage.setItem('ummiby.quran.readingUnit.startingPoint', String(start));
+    startingPointDialog?.close();
+    toast(`Journey now continues from Reading Unit ${start}.`);
+    render();
+  });
+
   const resetJourneyDialog = app.querySelector('[data-reading-journey-reset-dialog]');
   app.querySelector('[data-open-reading-journey-reset]')?.addEventListener('click', () => resetJourneyDialog?.showModal());
   app.querySelector('[data-confirm-reading-journey-reset]')?.addEventListener('click', () => {
@@ -240,6 +285,7 @@ function bindShellEvents() {
     keysToRemove.forEach(key => localStorage.removeItem(key));
     localStorage.removeItem('ummiby.quran.readingUnit.current');
     localStorage.removeItem('ummiby.quran.readingUnit.history');
+    localStorage.removeItem('ummiby.quran.readingUnit.startingPoint');
     resetJourneyDialog?.close();
     toast('Reading Unit Journey reset. Unit 1 is ready to begin.');
     render();
