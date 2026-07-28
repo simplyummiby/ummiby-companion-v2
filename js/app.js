@@ -1,6 +1,6 @@
-import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.18.0";
-import { renderShell, saveActiveJourney } from "./shell.js?v=3.18.0";
-import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences } from "./duaa.js?v=3.18.0";
+import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.19.0";
+import { renderShell, saveActiveJourney } from "./shell.js?v=3.19.0";
+import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences } from "./duaa.js?v=3.19.0";
 import {
   onAuthStateChange,
   restoreSession,
@@ -8,10 +8,10 @@ import {
   signInWithPassword,
   signOut,
   signUpWithPassword
-} from "./auth.js?v=3.18.0";
-import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.18.0";
-import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.18.0";
-import { clearPreferences, loadPreferences } from "./preferences.js?v=3.18.0";
+} from "./auth.js?v=3.19.0";
+import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.19.0";
+import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.19.0";
+import { clearPreferences, loadPreferences } from "./preferences.js?v=3.19.0";
 
 const app = document.querySelector("#app");
 console.info("Canonical Qur’an data verified", QURAN_CANONICAL_STATUS);
@@ -110,6 +110,7 @@ function bindShellEvents() {
       event.preventDefault();
       const currentPath = normalizedPath();
       const targetRoute = link.dataset.appRoute || "/home";
+      if (link.dataset.openSavedAyah) sessionStorage.setItem('ummiby.quran.openSavedAyah', link.dataset.openSavedAyah);
       if (currentPath === '/duaa/quranic' && targetRoute.startsWith('/duaa/quranic/read/')) {
         sessionStorage.setItem(collectionScrollKey('quranic'), String(window.scrollY));
       }
@@ -144,6 +145,17 @@ function bindShellEvents() {
 
   const saveKahf=(mutator)=>{let active={};try{active=JSON.parse(localStorage.getItem('ummiby.quran.kahfFriday.active')||'{}')}catch{}const friday=(()=>{const d=new Date(),day=d.getDay(),delta=day===5?0:(day===6?-1:-(day+2));d.setDate(d.getDate()+delta);return localDateKey(d)})();if(active.fridayDate!==friday)active={fridayDate:friday,completedSections:[],currentSection:1,savedAyah:0};mutator(active,friday);localStorage.setItem('ummiby.quran.kahfFriday.active',JSON.stringify(active));return {active,friday}};
   const recordKahf=(status)=>{const {friday}=saveKahf(()=>{});let records={};try{records=JSON.parse(localStorage.getItem('ummiby.quran.kahfFriday.records')||'{}')}catch{}records[friday]={...(records[friday]||{}),status,readingMethod:records[friday]?.readingMethod||'ummiby',updatedAt:new Date().toISOString()};localStorage.setItem('ummiby.quran.kahfFriday.records',JSON.stringify(records));recordQuranReading(status==='complete'?'kahf-full':'kahf-partial')};
+  app.querySelectorAll('[data-toggle-saved-ayah]').forEach(button=>button.addEventListener('click',()=>{
+    const surah=Number(button.dataset.savedSurah),ayah=Number(button.dataset.savedAyah),surahName=button.dataset.savedSurahName||`Surah ${surah}`;
+    let records=[];try{records=JSON.parse(localStorage.getItem('ummiby.quran.savedAyat')||'[]')}catch{}if(!Array.isArray(records))records=[];
+    const key=`${surah}:${ayah}`,exists=records.some(item=>`${Number(item.surah)}:${Number(item.ayah)}`===key);
+    records=exists?records.filter(item=>`${Number(item.surah)}:${Number(item.ayah)}`!==key):[...records,{surah,ayah,surahName,savedAt:new Date().toISOString()}];
+    records.sort((a,b)=>Number(a.surah)-Number(b.surah)||Number(a.ayah)-Number(b.ayah));
+    localStorage.setItem('ummiby.quran.savedAyat',JSON.stringify(records));
+    toast(exists?`${surahName} ${surah}:${ayah} removed from Saved Ayāt.`:`${surahName} ${surah}:${ayah} added to Saved Ayāt.`);
+    render();
+  }));
+
   app.querySelectorAll('[data-kahf-record]').forEach(button=>button.addEventListener('click',()=>{recordKahf(button.dataset.kahfRecord);toast(button.dataset.kahfRecord==='complete'?'Al-Kahf marked fully read for this Friday.':'Partial Al-Kahf reading recorded for this Friday.');render()}));
   app.querySelectorAll('[data-kahf-month]').forEach(button=>button.addEventListener('click',()=>{const current=Number(localStorage.getItem('ummiby.quran.kahfFriday.calendarOffset')||0);localStorage.setItem('ummiby.quran.kahfFriday.calendarOffset',String(current+Number(button.dataset.kahfMonth)));render()}));
   app.querySelectorAll('[data-kahf-save-ayah]').forEach(button=>button.addEventListener('click',()=>{const ayah=Number(button.dataset.kahfSaveAyah),section=Number(app.querySelector('[data-kahf-section]')?.dataset.kahfSection||1);saveKahf(active=>{active.currentSection=section;active.savedAyah=ayah;active.lastActivityAt=new Date().toISOString()});recordKahf('partial');toast(`Saved at Surah 18 • Al-Kahf, Ayah ${ayah}.`);render()}));
@@ -163,6 +175,12 @@ function bindShellEvents() {
     });
   });
 
+
+  const requestedSavedAyah=sessionStorage.getItem('ummiby.quran.openSavedAyah');
+  if(requestedSavedAyah){
+    sessionStorage.removeItem('ummiby.quran.openSavedAyah');
+    requestAnimationFrame(()=>{const [surah,ayah]=requestedSavedAyah.split(':'),target=document.getElementById(`ayah-${surah}-${ayah}`);if(target){target.scrollIntoView({behavior:'smooth',block:'center'});target.classList.add('is-restored-place');setTimeout(()=>target.classList.remove('is-restored-place'),2200)}});
+  }
 
   const companionDisclosure = app.querySelector('.reader-companion-disclosure');
   if (companionDisclosure) {

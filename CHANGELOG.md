@@ -1,3 +1,8 @@
+# v3.19.0
+
+- Added Saved Ayāt with heart toggles, canonical ordering, an external collection page, and in-reader access.
+- Replaced reading-place bookmark icons with pins while retaining the Resume label.
+
 # Changelog
 
 ## v3.16.0 – Qur’an Reading Position & Journey Starting Point

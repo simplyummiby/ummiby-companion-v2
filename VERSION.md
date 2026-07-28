@@ -1,3 +1,3 @@
-# Ummiby Companion v3.18.0
+# Ummiby Companion v3.19.0
 
-**Release:** Qur'an Journey Indexes & Navigator
+Saved Ayāt and distinct reader place controls.
