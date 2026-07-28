@@ -1,6 +1,6 @@
-import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.19.0";
-import { renderShell, saveActiveJourney } from "./shell.js?v=3.19.0";
-import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences } from "./duaa.js?v=3.19.0";
+import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.20.2";
+import { renderShell, saveActiveJourney } from "./shell.js?v=3.20.2";
+import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences } from "./duaa.js?v=3.20.2";
 import {
   onAuthStateChange,
   restoreSession,
@@ -8,10 +8,10 @@ import {
   signInWithPassword,
   signOut,
   signUpWithPassword
-} from "./auth.js?v=3.19.0";
-import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.19.0";
-import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.19.0";
-import { clearPreferences, loadPreferences } from "./preferences.js?v=3.19.0";
+} from "./auth.js?v=3.20.2";
+import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.20.2";
+import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.20.2";
+import { clearPreferences, loadPreferences } from "./preferences.js?v=3.20.2";
 
 const app = document.querySelector("#app");
 console.info("Canonical Qur’an data verified", QURAN_CANONICAL_STATUS);
@@ -155,6 +155,23 @@ function bindShellEvents() {
     toast(exists?`${surahName} ${surah}:${ayah} removed from Saved Ayāt.`:`${surahName} ${surah}:${ayah} added to Saved Ayāt.`);
     render();
   }));
+
+  const noteDialog=app.querySelector('[data-ayah-note-dialog]');
+  const noteText=noteDialog?.querySelector('[data-ayah-note-text]');
+  let activeNoteKey='';
+  const readNotes=()=>{try{const value=JSON.parse(localStorage.getItem('ummiby.quran.ayahNotes')||'{}');return value&&typeof value==='object'&&!Array.isArray(value)?value:{}}catch{return {}}};
+  const updateNoteCount=()=>{const count=noteText?.value.length||0;const label=noteDialog?.querySelector('[data-ayah-note-count]');if(label)label.textContent=`${count} / 2000`};
+  app.querySelectorAll('[data-open-ayah-note]').forEach(button=>button.addEventListener('click',()=>{
+    activeNoteKey=`${Number(button.dataset.noteSurah)}:${Number(button.dataset.noteAyah)}`;const record=readNotes()[activeNoteKey];
+    if(noteText)noteText.value=record?.text||'';const title=noteDialog?.querySelector('[data-note-dialog-title]');if(title)title.textContent=`Personal Note · ${activeNoteKey}`;
+    const edited=noteDialog?.querySelector('[data-ayah-note-edited]');if(edited)edited.textContent=record?.updatedAt?`Last edited ${new Date(record.updatedAt).toLocaleDateString()}`:'';
+    const del=noteDialog?.querySelector('[data-delete-ayah-note]');if(del)del.hidden=!record;updateNoteCount();noteDialog?.showModal();noteText?.focus();
+  }));
+  noteText?.addEventListener('input',updateNoteCount);
+  app.querySelectorAll('[data-close-ayah-note]').forEach(button=>button.addEventListener('click',()=>noteDialog?.close()));
+  noteDialog?.addEventListener('click',event=>{if(event.target===noteDialog)noteDialog.close()});
+  app.querySelector('[data-save-ayah-note]')?.addEventListener('click',()=>{const text=(noteText?.value||'').trim();if(!activeNoteKey)return;const records=readNotes();if(text)records[activeNoteKey]={text,updatedAt:new Date().toISOString()};else delete records[activeNoteKey];localStorage.setItem('ummiby.quran.ayahNotes',JSON.stringify(records));toast(text?'Private note saved.':'Empty note removed.');noteDialog?.close();render()});
+  app.querySelector('[data-delete-ayah-note]')?.addEventListener('click',()=>{if(!activeNoteKey)return;const records=readNotes();delete records[activeNoteKey];localStorage.setItem('ummiby.quran.ayahNotes',JSON.stringify(records));toast('Private note deleted.');noteDialog?.close();render()});
 
   app.querySelectorAll('[data-kahf-record]').forEach(button=>button.addEventListener('click',()=>{recordKahf(button.dataset.kahfRecord);toast(button.dataset.kahfRecord==='complete'?'Al-Kahf marked fully read for this Friday.':'Partial Al-Kahf reading recorded for this Friday.');render()}));
   app.querySelectorAll('[data-kahf-month]').forEach(button=>button.addEventListener('click',()=>{const current=Number(localStorage.getItem('ummiby.quran.kahfFriday.calendarOffset')||0);localStorage.setItem('ummiby.quran.kahfFriday.calendarOffset',String(current+Number(button.dataset.kahfMonth)));render()}));

@@ -1,4 +1,16 @@
-# v3.19.0
+# Changelog
+
+## v3.20.2 — Reader Active Icon Fix
+
+- Corrected filled Phosphor rendering for Saved Ayāt, private notes, and Resume pins.
+- Saved stars now fill yellow while retaining a transparent button background.
+- Increased the in-reader surah:ayah reference size.
+
+## v3.20.0
+- Added Phosphor star, note, and map-pin reader controls with compact canonical references.
+- Added private per-ayah notes and in-reader My Library access.
+- Consolidated duplicate reader action rendering and storage parsing.
+
 
 - Added Saved Ayāt with heart toggles, canonical ordering, an external collection page, and in-reader access.
 - Replaced reading-place bookmark icons with pins while retaining the Resume label.

@@ -1,3 +1,3 @@
-# Ummiby Companion v3.19.0
+# Ummiby Companion v3.20.2
 
-Saved Ayāt and distinct reader place controls.
+Reader active-icon visibility and ayah-reference sizing fix.
