@@ -1,3 +1,3 @@
-# Ummiby Companion v3.15.0
+# Ummiby Companion v3.14.1
 
-Fasting Companion Foundation
+Names of Allah Learned Names Page

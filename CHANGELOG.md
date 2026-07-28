@@ -1,16 +1,24 @@
 # Changelog
 
-## 3.15.0 — Fasting Companion Foundation
+## 3.14.1 — Learned Names Page
 
-- Replaced the Fasting placeholder with a complete module shell and navigation.
-- Added Learn About Fasting, Sunnah Fasts, Fasting History, Make-up Fasts, Fasting Library, and Settings routes.
-- Added a muted olive visual identity distinct from the Qur’an module.
-- Established a unified fasting-history boundary: Ramadan Central owns Ramadan records while Fasting Companion presents them in the lifelong record.
-- Added responsive home, topic, detail, history, make-up, library, and settings layouts.
-- Added the “Can I Fast Today?” future date-aware guidance card.
-- Bumped application and cache versions to 3.15.0.
+- Added **Learned** to the Names of Allah module navigation.
+- Added the dedicated **My Learned Names** page.
+- Mirrored the Duaa memorization-card concept: each Name fills with the module's lapis color when marked learned.
+- Added learned, remaining, and percentage summaries plus a full-collection progress bar.
+- Reused the existing Names learning status so the detail page, journey, review page, and learned-card page remain synchronized.
 
-## 3.14.0 — Names of Allah Companion Foundation
+
+## 3.14.1 — Learned Names Page
+
+- Added **Learned** to the Names of Allah module navigation.
+- Added the dedicated **My Learned Names** page.
+- Mirrored the Duaa memorization-card concept: each Name fills with the module's lapis color when marked learned.
+- Added learned, remaining, and percentage summaries plus a full-collection progress bar.
+- Reused the existing Names learning status so the detail page, journey, review page, and learned-card page remain synchronized.
+
+
+## 3.14.1 — Names of Allah Companion Foundation
 - Added all 99 Names from the specified Shaykh Ibn al-'Uthaymeen/Dawud Burbank source.
 - Added Home, Explore, Learn, Review, Favorites, About, and individual Name routes.
 - Added search, Qur’an/Sunnah filters, favorites, and studied-state persistence.

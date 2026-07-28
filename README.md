@@ -1,4 +1,4 @@
-# Ummiby Companion v3.15.0
+# Ummiby Companion v3.14.1
 
 **Current release:** Canonical Qur’an Integration QA & Regression Protection — Phase 4
 
@@ -98,10 +98,5 @@ The v3.9.0 entry assets use release-specific cache keys so Live Server does not 
 Version 3.9.0 includes the complete Arabic and Hilali–Khan Qur’an dataset plus all 294 canonical Reading Units. The browser validates this foundation at module load through `js/data/quran-canonical.js`. Raw source files are retained in `data/quran/source/`.
 
 
-## Names of Allah Companion (v3.14.0)
+## Names of Allah Companion (v3.14.1)
 Complete module shell with the Ibn al-'Uthaymeen list, Explore, Learn, Review, Favorites, detail routes, local progress, and explicit source attribution.
-
-
-## Fasting Companion (v3.15.0)
-
-The Fasting Companion foundation adds a complete year-round module shell for learning about fasting, Sunnah fasts, unified fasting history, make-up fasts, a resource library, and settings. Ramadan Central remains responsible for Ramadan-specific records; Fasting Companion reads those records into a lifelong history without duplication.
