@@ -1,7 +1,7 @@
-import './quran-sync.js?v=3.27.0';
-import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.27.0";
-import { renderShell, saveActiveJourney } from "./shell.js?v=3.27.0";
-import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences, dailyActivityForDate, setDailyActivities } from "./duaa.js?v=3.27.0";
+import './quran-sync.js?v=3.27.1';
+import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.27.1";
+import { renderShell, saveActiveJourney } from "./shell.js?v=3.27.1";
+import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences, dailyActivityForDate, setDailyActivities } from "./duaa.js?v=3.27.1";
 import {
   onAuthStateChange,
   restoreSession,
@@ -9,11 +9,11 @@ import {
   signInWithPassword,
   signOut,
   signUpWithPassword
-} from "./auth.js?v=3.27.0";
-import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.27.0";
-import { setSyncUser, hydrateSyncData, flushSyncQueue } from "./sync.js?v=3.27.0";
-import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.27.0";
-import { clearPreferences, loadPreferences } from "./preferences.js?v=3.27.0";
+} from "./auth.js?v=3.27.1";
+import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.27.1";
+import { setSyncUser, hydrateSyncData, flushSyncQueue } from "./sync.js?v=3.27.1";
+import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.27.1";
+import { clearPreferences, loadPreferences } from "./preferences.js?v=3.27.1";
 
 const app = document.querySelector("#app");
 console.info("Canonical Qur’an data verified", QURAN_CANONICAL_STATUS);
@@ -22,6 +22,7 @@ let currentUser = null;
 let configured = false;
 const nowForHistory = new Date();
 let historyView = { collectionId:'morning', year:nowForHistory.getFullYear(), month:nowForHistory.getMonth() };
+let quranHistoryView = { year:nowForHistory.getFullYear(), month:nowForHistory.getMonth() };
 
 const collectionFilterKey = (collectionId) => `ummiby.collectionFilters.${collectionId}`;
 const collectionScrollKey = (collectionId) => `ummiby.collectionScroll.${collectionId}`;
@@ -68,7 +69,7 @@ function toast(message, type = "info") {
 
 function render() {
   const pathname = normalizedPath();
-  app.innerHTML = renderShell({ pathname, user: currentUser, identity: getIdentity(), configured, historyView });
+  app.innerHTML = renderShell({ pathname, user: currentUser, identity: getIdentity(), configured, historyView, quranHistoryView });
   prepareRouteLinks();
   bindShellEvents();
 }
@@ -140,6 +141,46 @@ function bindShellEvents() {
       historyView={...historyView,year};
       render();
     });
+  });
+
+  app.querySelectorAll('[data-quran-history-month]').forEach(button => {
+    button.addEventListener('click', () => {
+      const date=new Date(quranHistoryView.year,quranHistoryView.month+Number(button.dataset.quranHistoryMonth),1);
+      quranHistoryView={year:date.getFullYear(),month:date.getMonth()};
+      render();
+    });
+  });
+  app.querySelector('[data-quran-history-year]')?.addEventListener('change', event => {
+    const year=Number(event.target.value);
+    if(!Number.isInteger(year))return;
+    quranHistoryView={...quranHistoryView,year};
+    render();
+  });
+  const quranDayDialog=app.querySelector('[data-quran-day-dialog]');
+  let selectedQuranDay='';
+  const formatQuranDay=(day)=>new Date(`${day}T12:00:00`).toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+  app.querySelectorAll('[data-edit-quran-day]').forEach(button=>button.addEventListener('click',()=>{
+    selectedQuranDay=button.dataset.editQuranDay;
+    const records=(()=>{try{return JSON.parse(localStorage.getItem('ummiby.quran.readingDays')||'{}')}catch{return {}}})();
+    const title=quranDayDialog?.querySelector('[data-quran-day-title]');
+    if(title)title.textContent=formatQuranDay(selectedQuranDay);
+    const input=quranDayDialog?.querySelector('[data-quran-day-activity]');
+    if(input)input.checked=Boolean(records[selectedQuranDay]);
+    quranDayDialog?.showModal();
+  }));
+  app.querySelectorAll('[data-close-quran-day]').forEach(button=>button.addEventListener('click',()=>quranDayDialog?.close()));
+  quranDayDialog?.addEventListener('click',event=>{if(event.target===quranDayDialog)quranDayDialog.close();});
+  app.querySelector('[data-save-quran-day]')?.addEventListener('click',()=>{
+    if(!selectedQuranDay)return;
+    let records={};
+    try{records=JSON.parse(localStorage.getItem('ummiby.quran.readingDays')||'{}')}catch{}
+    const checked=Boolean(quranDayDialog.querySelector('[data-quran-day-activity]')?.checked);
+    if(checked)records[selectedQuranDay]={source:'manual',updatedAt:new Date().toISOString()};
+    else delete records[selectedQuranDay];
+    localStorage.setItem('ummiby.quran.readingDays',JSON.stringify(records));
+    quranDayDialog.close();
+    toast(checked?'Qur’an reading recorded.':'Qur’an reading record removed.');
+    render();
   });
 
   const duaaDayDialog=app.querySelector('[data-duaa-day-dialog]');

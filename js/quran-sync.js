@@ -1,4 +1,4 @@
-import { enqueueSync, registerSyncAdapter } from './sync.js?v=3.27.0';
+import { enqueueSync, registerSyncAdapter } from './sync.js?v=3.27.1';
 
 const META_KEY='ummiby.quran.syncMeta.v1';
 const MIGRATION_KEY='ummiby.quran.syncMigration.v1';

@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.27.1 — Shared History Framework + Qur’an Calendar History
+- Rebuilt Qur’an Reading History around the reusable Duaa-style monthly calendar and daily activity editor.
+- Added editing for today and past Qur’an reading days; future dates remain disabled.
+- Added current and longest streaks, monthly consistency, reading-day totals, and immediate calendar updates.
+- Manual changes update the same synced `ummiby.quran.readingDays` record used by the Qur’an home status and weekly consistency.
+- Preserved Reading Unit Journey activity as a supporting history section.
+- No additional Supabase SQL is required.
+
 ## 3.27.0 — Qur’an Sync Migration
 - Extended the shared local-first sync service to Qur’an journeys, positions, daily activity, saved ayat, notes, and Featured Reading progress.
 - Added one-time migration of existing local Qur’an data.

@@ -1,3 +1,3 @@
-# Ummiby Companion v3.27.0
+# Ummiby Companion v3.27.1
 
-Site-wide sync foundation extended to the Qur’an module.
+Shared History Framework and Qur’an Calendar History.
