@@ -1,5 +1,5 @@
-import { getSupabaseClient, isSupabaseConfigured } from './supabase.js?v=3.26.2';
-import { dateContext } from './time.js?v=3.26.2';
+import { getSupabaseClient, isSupabaseConfigured } from './supabase.js?v=3.27.0';
+import { dateContext } from './time.js?v=3.27.0';
 
 const QUEUE_KEY='ummiby.sync.queue.v1';
 const META_KEY='ummiby.sync.meta.v1';

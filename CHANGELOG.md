@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.27.0 — Qur’an Sync Migration
+- Extended the shared local-first sync service to Qur’an journeys, positions, daily activity, saved ayat, notes, and Featured Reading progress.
+- Added one-time migration of existing local Qur’an data.
+- Added merge-aware hydration for dated reading records, ayah notes, saved ayat, and reading-unit history.
+- No additional Supabase SQL is required.
+
 ## 3.26.2 — Shared Daily Activity Editor + Duaa History
 
 - Added the reusable calendar-day editing pattern for today and past dates.

@@ -1,8 +1,8 @@
 // Duaa collection content restored from the verified v0.5.5 collection package.
 // v2.1.3 keeps the v2.1 storage key and migrates compatible legacy item IDs.
 import { collections } from './data/duaa-collections.js';
-import { localDateKey } from './time.js?v=3.26.2';
-import { enqueueSync, registerSyncAdapter } from './sync.js?v=3.26.2';
+import { localDateKey } from './time.js?v=3.27.0';
+import { enqueueSync, registerSyncAdapter } from './sync.js?v=3.27.0';
 
 export const duaaCollections = collections;
 export const duaaOrder = ['morning','evening','sleep','travel','weather','prayer','istikharah','food','clothing','anxiety','quranic'];

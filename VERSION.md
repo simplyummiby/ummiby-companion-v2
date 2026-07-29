@@ -1,3 +1,3 @@
-# Ummiby Companion v3.26.2
+# Ummiby Companion v3.27.0
 
-Site-wide local-first sync foundation and Duaa daily tracking migration.
+Site-wide sync foundation extended to the Qur’an module.

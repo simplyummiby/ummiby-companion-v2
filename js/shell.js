@@ -1,10 +1,10 @@
-import { QURAN_DATA, QURAN_READING_LIBRARY, QURAN_CANONICAL_STATUS, BASMALAH_ARABIC, getReadingUnit, getReadingUnitAyat } from "./data/quran-canonical.js?v=3.26.2";
+import { QURAN_DATA, QURAN_READING_LIBRARY, QURAN_CANONICAL_STATUS, BASMALAH_ARABIC, getReadingUnit, getReadingUnitAyat } from "./data/quran-canonical.js?v=3.27.0";
 import { modules, sidebarOrder, moduleForPath } from './modules.js';
 import { duaaCollections, duaaOrder, orderedItems, isComplete, completedCount, isMemorized, memorizedCount, totalMemorizedCount, totalUniqueDuaaCount, worshipToday, weekStatus, readingPreferences, duaaHistoryRecords, duaaHistorySummary } from './duaa.js';
 import { APP_VERSION } from './version.js';
 import { sourcesByIds } from './data/source-library.js';
 import { resourcesByIds } from './data/resource-library.js';
-import { NAMES_OF_ALLAH, nameById } from './data/names-of-allah.js?v=3.26.2';
+import { NAMES_OF_ALLAH, nameById } from './data/names-of-allah.js?v=3.27.0';
 
 const esc=(v='')=>String(v).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
 const routeParts=(p)=>p.split('/').filter(Boolean);
