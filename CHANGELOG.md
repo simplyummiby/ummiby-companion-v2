@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.30.0 — Qur’an Reader Settings Consolidation
+- Consolidated Qur’an display controls into shared settings panels.
+- Removed A− and A+ buttons from reader headers.
+- Added live text-size preview, footnote visibility, expandable footnotes, and reset defaults.
+- Added the Saheeh International preference slot pending verified dataset import.
+
 ## 3.29.1 — Featured Reading Hero Consolidation (Corrected)
 
 - Preserved all artwork on the Featured Readings home page, including the existing card images, layout, and spacing.

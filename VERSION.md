@@ -1,5 +1,5 @@
 # Ummiby Companion
 
-Version: 3.29.3
+Version: 3.30.1
 
-Release: Featured Reading Consistency Start-Date Fix
+Release: Reader Settings and Featured Reading Action Polish

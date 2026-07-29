@@ -3642,3 +3642,51 @@ a.button:hover, a[class*="button"]:hover, .button:hover, [role="button"]:hover, 
 
 /* v3.29.2 Featured Reading history fixes */
 .history-day.is-complete > .kahf-calendar-marker.is-complete{background:var(--theme-accent)!important;border:1px solid var(--theme-accent)!important}
+
+/* v3.30.0 Qur’an settings consolidation */
+.quran-settings-fields{display:grid;gap:1.2rem}
+.settings-fieldset{display:grid;gap:.65rem;margin:0;padding:0;border:0}
+.settings-fieldset legend{margin-bottom:.35rem;font-weight:800;color:var(--ink)}
+.choice-row,.switch-row{display:flex;align-items:center;gap:.8rem;padding:.9rem 1rem;border:1px solid var(--line);border-radius:.85rem;background:#fff}
+.choice-row>span,.switch-row>span{display:grid;gap:.15rem;flex:1}
+.choice-row small,.switch-row small{color:var(--muted)}
+.choice-row em{font-size:.72rem;font-style:normal;font-weight:800;color:var(--muted);background:var(--surface-soft);padding:.25rem .45rem;border-radius:999px}
+.choice-row.is-unavailable{opacity:.68}
+.switch-row input{width:1.2rem;height:1.2rem}
+.quran-settings-preview{padding:1rem 1.1rem;border:1px solid color-mix(in srgb,var(--quran) 24%,var(--line));border-radius:1rem;background:color-mix(in srgb,var(--quran) 5%,#fff)}
+.quran-settings-preview>small{display:block;margin-bottom:.65rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--muted)}
+.quran-settings-preview p{margin:.4rem 0}
+.quran-preview-arabic{font-family:'Amiri Quran','Amiri',serif;font-size:var(--preview-arabic-size,2.35rem);line-height:1.8;text-align:right;color:var(--ink)}
+.quran-settings-reset{justify-self:start}
+.quran-footnotes{margin-top:.85rem;border-top:1px solid var(--line);padding-top:.65rem}
+.quran-footnotes summary{display:flex;align-items:center;justify-content:space-between;gap:.75rem;cursor:pointer;font-size:.82rem;font-weight:800;color:var(--quran)}
+.quran-footnotes summary::-webkit-details-marker{display:none}
+.quran-footnotes summary span{display:flex;align-items:center;gap:.4rem}
+.quran-footnotes[open] summary>i{transform:rotate(180deg)}
+.quran-footnotes>div{display:grid;gap:.55rem;padding:.75rem 0 .15rem}
+.quran-footnotes>div p{margin:0!important;font-size:.86rem;line-height:1.65;color:var(--muted)}
+.quran-settings-page-card{max-width:760px}
+
+/* v3.30.1 Reader settings and Featured Reading action polish */
+.quran-reading-settings{width:min(92vw,520px)}
+.quran-reading-settings form{display:grid;gap:0}
+.quran-reading-settings .quran-settings-fields{margin-top:.1rem}
+.quran-settings-actions{display:flex;justify-content:flex-end;align-items:center;gap:.8rem;margin-top:1.35rem;padding-top:1.1rem;border-top:1px solid var(--color-border)}
+.reading-settings .quran-settings-actions .button{width:auto;min-width:124px;padding-inline:1.4rem;justify-content:center;text-align:center}
+.quran-settings-reset{justify-self:auto}
+
+.featured-surah-card-action{display:flex;justify-content:center}
+.featured-surah-card-action .button{width:auto;min-width:148px;padding-inline:1.45rem;justify-content:center;text-align:center}
+
+.featured-reading-landing .kahf-section-card .button{align-self:center;min-width:144px;padding-inline:1.4rem;justify-content:center;text-align:center}
+.featured-reading-landing .kahf-reading-status .kahf-panel-body{align-items:center}
+.featured-reading-landing .kahf-reading-status-top{width:100%;align-self:stretch}
+.featured-reading-landing .kahf-reading-status .button{width:auto;min-width:148px;padding-inline:1.45rem;justify-content:center;text-align:center}
+.featured-reset-progress{width:auto}
+
+@media(max-width:520px){
+  .quran-settings-actions{justify-content:flex-end;flex-wrap:wrap}
+  .reading-settings .quran-settings-actions .button{min-width:116px}
+}
+.quran-settings-page-actions{display:flex;justify-content:flex-end;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--color-border)}
+.quran-settings-page-actions .button{width:auto;min-width:148px;padding-inline:1.4rem;justify-content:center;text-align:center}

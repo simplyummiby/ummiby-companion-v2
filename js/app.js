@@ -546,17 +546,34 @@ function bindShellEvents() {
       updateReadingPreferences({ arabicSize: next });
       app.querySelector(".reader-page, .quran-reader")?.style.setProperty("--reader-arabic-size", `${next}rem`);
       if (sizeInput) sizeInput.value = String(next);
-      if (sizeOutput) sizeOutput.textContent = `${next.toFixed(1)}rem`;
-      toast(`Arabic text size set to ${next.toFixed(1)}rem.`);
+      if (sizeOutput) sizeOutput.textContent = arabicSizeLabel(next);
+      toast(`Arabic text size set to ${arabicSizeLabel(next)}.`);
     });
   });
   const sizeInput = app.querySelector("[data-reading-size]");
   const sizeOutput = app.querySelector("[data-size-output]");
   sizeInput?.addEventListener("input", () => {
     const size = Number(sizeInput.value);
-    if (sizeOutput) sizeOutput.textContent = `${size.toFixed(1)}rem`;
+    if (sizeOutput) sizeOutput.textContent = arabicSizeLabel(size);
     app.querySelector(".reader-page, .quran-reader")?.style.setProperty("--reader-arabic-size", `${size}rem`);
+    app.querySelector("[data-quran-settings-preview]")?.style.setProperty("--preview-arabic-size", `${size}rem`);
     updateReadingPreferences({ arabicSize: size });
+  });
+  app.querySelectorAll("[data-quran-translation]").forEach(input => input.addEventListener("change", event => {
+    if(event.currentTarget.disabled) return;
+    updateReadingPreferences({ quranTranslation:event.currentTarget.value });
+    render();
+  }));
+  app.querySelector("[data-quran-footnotes]")?.addEventListener("change", event => {
+    updateReadingPreferences({ showQuranFootnotes:event.currentTarget.checked });
+    render();
+    app.querySelector("[data-reading-dialog]")?.showModal();
+  });
+  app.querySelector("[data-reset-quran-settings]")?.addEventListener("click", () => {
+    updateReadingPreferences({ arabicSize:2.35, quranTranslation:'hilali', showEnglish:true, showQuranFootnotes:true });
+    render();
+    app.querySelector("[data-reading-dialog]")?.showModal();
+    toast("Qur’an display settings reset.");
   });
   app.querySelector("[data-reading-transliteration]")?.addEventListener("change", (event) => {
     updateReadingPreferences({ showTransliteration: event.currentTarget.checked });
