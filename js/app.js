@@ -1,7 +1,7 @@
-import './quran-sync.js?v=3.27.1.5';
-import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.27.1.5";
-import { renderShell, saveActiveJourney } from "./shell.js?v=3.27.1.5";
-import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences, dailyActivityForDate, setDailyActivities } from "./duaa.js?v=3.27.1.5";
+import './quran-sync.js?v=3.27.1.6';
+import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.27.1.6";
+import { renderShell, saveActiveJourney } from "./shell.js?v=3.27.1.6";
+import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences, dailyActivityForDate, setDailyActivities } from "./duaa.js?v=3.27.1.6";
 import {
   onAuthStateChange,
   restoreSession,
@@ -9,11 +9,11 @@ import {
   signInWithPassword,
   signOut,
   signUpWithPassword
-} from "./auth.js?v=3.27.1.5";
-import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.27.1.5";
-import { setSyncUser, hydrateSyncData, flushSyncQueue } from "./sync.js?v=3.27.1.5";
-import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.27.1.5";
-import { clearPreferences, loadPreferences } from "./preferences.js?v=3.27.1.5";
+} from "./auth.js?v=3.27.1.6";
+import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.27.1.6";
+import { setSyncUser, hydrateSyncData, flushSyncQueue } from "./sync.js?v=3.27.1.6";
+import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.27.1.6";
+import { clearPreferences, loadPreferences } from "./preferences.js?v=3.27.1.6";
 
 const app = document.querySelector("#app");
 console.info("Canonical Qur’an data verified", QURAN_CANONICAL_STATUS);

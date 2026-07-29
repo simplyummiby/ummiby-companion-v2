@@ -1,5 +1,3 @@
-# Ummiby Companion
+# Ummiby Companion v3.27.1.6
 
-**Version:** 3.27.1.5
-
-Featured Readings Framework and Reader Navigation Repair.
+Featured Reading Framework Polish and Canonical Al-Mulk Artwork

@@ -1,3 +1,13 @@
+## v3.27.1.6 – Featured Reading Framework Polish and Canonical Al-Mulk Artwork
+
+- Established a shared Featured Reading layout contract for landing, section, history, and reader routes.
+- Standardized CTA wording to “Open Surah … Reader.”
+- Removed public “Experience” wording from the Al-Kahf reader companion.
+- Removed “illustrated” from the Al-Mulk landing description.
+- Installed the supplied Al-Mulk hero and four section images everywhere Al-Mulk artwork appears.
+- Removed hyperlink underlines from all button-style and navigation controls site-wide.
+- Reinforced the shared hero/main/sticky-sidebar landing layout for current and future Featured Readings.
+
 # Changelog
 
 ## 3.27.1.5 — Featured Readings Framework and Reader Navigation Repair

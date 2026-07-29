@@ -3411,3 +3411,13 @@
   .featured-reading-landing .kahf-index-sidebar,
   .mulk-featured-index .mulk-index-sidebar{grid-template-columns:1fr}
 }
+
+
+/* v3.27.1.6 — Featured Reading framework polish */
+a.button, a[class*="button"], .button, [role="button"], .featured-reading-system-action, .featured-surah-card-action a, .kahf-section-card a, .quran-reader-controls a, .quran-reader-top a, .kahf-history-link, .section-link, .read-link {text-decoration:none!important;}
+a.button:hover, a[class*="button"]:hover, .button:hover, [role="button"]:hover, .featured-reading-system-action:hover, .featured-surah-card-action a:hover, .kahf-section-card a:hover, .quran-reader-controls a:hover, .quran-reader-top a:hover, .kahf-history-link:hover, .section-link:hover, .read-link:hover {text-decoration:none!important;}
+/* All Featured Reading landing pages inherit the same two-column shell. */
+.featured-reading-landing .kahf-index-layout{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(350px,390px)!important;gap:clamp(1.5rem,2.5vw,2.5rem)!important;align-items:start!important;}
+.featured-reading-landing .kahf-index-sidebar{display:grid!important;grid-template-columns:1fr!important;gap:1rem!important;position:sticky!important;top:1rem!important;align-self:start!important;grid-row:auto!important;}
+@media(max-width:1120px){.featured-reading-landing .kahf-index-layout{grid-template-columns:1fr!important}.featured-reading-landing .kahf-index-sidebar{position:static!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-row:auto!important}}
+@media(max-width:760px){.featured-reading-landing .kahf-index-sidebar{grid-template-columns:1fr!important}}
