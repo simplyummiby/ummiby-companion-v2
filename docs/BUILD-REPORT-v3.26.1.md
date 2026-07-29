@@ -1,4 +1,4 @@
-# Build Report — v3.26.1
+# Build Report — v3.26.2
 
 ## Scope
 Established a reusable site-wide local-first synchronization foundation and migrated tracked Duaa collections as the first consumer.

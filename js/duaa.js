@@ -1,8 +1,8 @@
 // Duaa collection content restored from the verified v0.5.5 collection package.
 // v2.1.3 keeps the v2.1 storage key and migrates compatible legacy item IDs.
 import { collections } from './data/duaa-collections.js';
-import { localDateKey } from './time.js?v=3.26.1';
-import { enqueueSync, registerSyncAdapter } from './sync.js?v=3.26.1';
+import { localDateKey } from './time.js?v=3.26.2';
+import { enqueueSync, registerSyncAdapter } from './sync.js?v=3.26.2';
 
 export const duaaCollections = collections;
 export const duaaOrder = ['morning','evening','sleep','travel','weather','prayer','istikharah','food','clothing','anxiety','quranic'];
@@ -237,6 +237,37 @@ export function consistencyStorageAudit(){
     };
     return report;
   },{});
+}
+
+export function dailyActivityForDate(day){
+  const s=state();
+  return ['morning','evening','sleep'].reduce((result,collectionId)=>{
+    result[collectionId]=Boolean(s.worship?.[collectionId]?.[day] || s.history?.[collectionId]?.[day]?.active);
+    return result;
+  },{});
+}
+export function setDailyActivities(day,activities={},source='manual'){
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(String(day))) return false;
+  if(String(day)>localDateKey()) return false;
+  const s=state();
+  for(const collectionId of ['morning','evening','sleep']){
+    const collection=collections[collectionId];
+    if(!collection?.tracked) continue;
+    s.worship[collectionId] ||= {};
+    s.history[collectionId] ||= {};
+    s.dailyCompleted[collectionId] ||= {};
+    if(activities[collectionId]){
+      const completedIds=collection.items.map(item=>item.id);
+      s.worship[collectionId][day]=true;
+      s.dailyCompleted[collectionId][day]=Object.fromEntries(completedIds.map(id=>[id,true]));
+      s.history[collectionId][day]={active:true,completedCount:completedIds.length,totalCount:collection.items.length,complete:true,completedIds,source,updatedAt:new Date().toISOString()};
+    }else{
+      delete s.worship[collectionId][day];
+      delete s.history[collectionId][day];
+      delete s.dailyCompleted[collectionId][day];
+    }
+  }
+  return save(s);
 }
 
 export function duaaHistoryRecords(collectionId){

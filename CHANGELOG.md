@@ -1,4 +1,15 @@
-## 3.26.1
+# Changelog
+
+## 3.26.2 — Shared Daily Activity Editor + Duaa History
+
+- Added the reusable calendar-day editing pattern for today and past dates.
+- Added a Duaa History editor for Morning, Evening, and Before Sleep activity.
+- Manual changes now update calendar dots, summaries, streaks, monthly insights, weekly consistency, and Today’s Status from the same dated records.
+- Future dates remain disabled.
+- Manual activity is synced through the shared v3.26 local-first foundation.
+- Clearing today also clears today’s item completion state; marking today complete fills it.
+
+## 3.26.2
 - Added shared local-first sync foundation, offline queue, hydration, device-timezone dates, and migrated Duaa daily tracking.
 
 # Changelog

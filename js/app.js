@@ -1,6 +1,6 @@
-import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.26.1";
-import { renderShell, saveActiveJourney } from "./shell.js?v=3.26.1";
-import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences } from "./duaa.js?v=3.26.1";
+import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.26.2";
+import { renderShell, saveActiveJourney } from "./shell.js?v=3.26.2";
+import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences, dailyActivityForDate, setDailyActivities } from "./duaa.js?v=3.26.2";
 import {
   onAuthStateChange,
   restoreSession,
@@ -8,11 +8,11 @@ import {
   signInWithPassword,
   signOut,
   signUpWithPassword
-} from "./auth.js?v=3.26.1";
-import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.26.1";
-import { setSyncUser, hydrateSyncData, flushSyncQueue } from "./sync.js?v=3.26.1";
-import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.26.1";
-import { clearPreferences, loadPreferences } from "./preferences.js?v=3.26.1";
+} from "./auth.js?v=3.26.2";
+import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.26.2";
+import { setSyncUser, hydrateSyncData, flushSyncQueue } from "./sync.js?v=3.26.2";
+import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.26.2";
+import { clearPreferences, loadPreferences } from "./preferences.js?v=3.26.2";
 
 const app = document.querySelector("#app");
 console.info("Canonical Qur’an data verified", QURAN_CANONICAL_STATUS);
@@ -139,6 +139,30 @@ function bindShellEvents() {
       historyView={...historyView,year};
       render();
     });
+  });
+
+  const duaaDayDialog=app.querySelector('[data-duaa-day-dialog]');
+  let selectedDuaaDay='';
+  const formatDuaaDay=(day)=>new Date(`${day}T12:00:00`).toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+  app.querySelectorAll('[data-edit-duaa-day]').forEach(button=>button.addEventListener('click',()=>{
+    selectedDuaaDay=button.dataset.editDuaaDay;
+    const values=dailyActivityForDate(selectedDuaaDay);
+    const title=duaaDayDialog?.querySelector('[data-duaa-day-title]');
+    if(title) title.textContent=formatDuaaDay(selectedDuaaDay);
+    duaaDayDialog?.querySelectorAll('[data-duaa-day-activity]').forEach(input=>{input.checked=Boolean(values[input.dataset.duaaDayActivity]);});
+    duaaDayDialog?.showModal();
+  }));
+  app.querySelectorAll('[data-close-duaa-day]').forEach(button=>button.addEventListener('click',()=>duaaDayDialog?.close()));
+  duaaDayDialog?.addEventListener('click',event=>{if(event.target===duaaDayDialog)duaaDayDialog.close();});
+  app.querySelector('[data-save-duaa-day]')?.addEventListener('click',()=>{
+    if(!selectedDuaaDay)return;
+    const activities={};
+    duaaDayDialog.querySelectorAll('[data-duaa-day-activity]').forEach(input=>{activities[input.dataset.duaaDayActivity]=input.checked;});
+    if(setDailyActivities(selectedDuaaDay,activities,'manual')){
+      duaaDayDialog.close();
+      toast('Duaa activity updated.');
+      render();
+    }else toast('Unable to update that date.','error');
   });
 
 
