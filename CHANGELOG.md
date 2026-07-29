@@ -1,13 +1,6 @@
 # Changelog
 
-## 3.29.2 — Featured Reading History Fixes
-
-- Repaired Reset History on the Al-Kahf, Al-Mulk, and As-Sajdah history pages.
-- Reset History now clears the selected Surah’s calendar records and its matching general Qur’an reading-day entries without changing current section progress.
-- Corrected Fully Read markers on history-page calendars so they render as filled accent circles, matching the landing-page calendars and legends.
-- Preserved the three-state Not Read, Partially Read, and Fully Read system.
-
-## 3.29.2 — Featured Reading Hero Consolidation (Corrected)
+## 3.29.1 — Featured Reading Hero Consolidation (Corrected)
 
 - Preserved all artwork on the Featured Readings home page, including the existing card images, layout, and spacing.
 - Preserved every section illustration inside the Al-Kahf, Al-Mulk, and As-Sajdah readers.

@@ -1,5 +1,5 @@
 # Ummiby Companion
 
-Version: 3.29.2
+Version: 3.29.3
 
-Release: Featured Reading History Fixes
+Release: Featured Reading Consistency Start-Date Fix
