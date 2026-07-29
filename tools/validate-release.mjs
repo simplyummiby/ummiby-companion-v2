@@ -54,8 +54,8 @@ for (const file of ['js/app.js', 'js/shell.js', 'js/data/quran-canonical.js']) {
 }
 
 const version = fs.readFileSync(path.join(root, 'js/version.js'), 'utf8');
-check(version.includes("'3.27.1.6'"), 'Application version is 3.27.1.6');
-check(index.includes('v=3.27.1.6'), 'Entry cache keys are 3.27.1.6');
+check(version.includes("'3.28.5'"), 'Application version is 3.28.5');
+check(index.includes('v=3.28.5'), 'Entry cache keys are 3.28.5');
 
 console.log(`Ummiby Companion release validation: ${checks.length - failures.length}/${checks.length} checks passed.`);
 for (const result of checks) console.log(`${result.passed ? 'PASS' : 'FAIL'}  ${result.label}`);

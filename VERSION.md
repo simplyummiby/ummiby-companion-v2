@@ -1,3 +1,5 @@
-# Ummiby Companion v3.27.1.6
+# Ummiby Companion
 
-Featured Reading Framework Polish and Canonical Al-Mulk Artwork
+Version: 3.28.5
+
+Release: Featured Reading Banner Artwork Consolidation

@@ -849,3 +849,47 @@ body {
 .module-banner.is-duaa-quranic-banner .banner-copy,
   .module-banner.is-duaa-history-banner .banner-copy { max-width:calc(100% - 2.5rem); }
 }
+
+
+/* v3.28.4 Featured Reading banner artwork consolidation
+   The shared global banner dimensions remain unchanged. */
+.module-banner.is-kahf-featured-banner,
+.module-banner.is-mulk-featured-banner,
+.module-banner.is-sajdah-featured-banner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.module-banner.is-kahf-featured-banner {
+  background-image: url('../assets/images/quran/al-kahf/friday-hero.webp');
+  background-position: center 48%;
+}
+.module-banner.is-mulk-featured-banner {
+  background-image: url('../assets/images/quran/al-mulk/mulk-hero-image.png');
+  background-position: center 54%;
+}
+.module-banner.is-sajdah-featured-banner {
+  background-image: url('../assets/images/quran/as-sajdah/sajdah-hero.png');
+  background-position: center 56%;
+}
+.module-banner.is-kahf-featured-banner::before,
+.module-banner.is-mulk-featured-banner::before,
+.module-banner.is-sajdah-featured-banner::before {
+  background: linear-gradient(90deg, rgb(247 252 247 / .98) 0%, rgb(247 252 247 / .90) 34%, rgb(247 252 247 / .42) 62%, rgb(247 252 247 / .10) 100%);
+}
+.module-banner.is-kahf-featured-banner .banner-copy,
+.module-banner.is-mulk-featured-banner .banner-copy,
+.module-banner.is-sajdah-featured-banner .banner-copy { max-width: min(58%, 720px); }
+@media (max-width: 760px) {
+  .module-banner.is-kahf-featured-banner,
+  .module-banner.is-mulk-featured-banner,
+  .module-banner.is-sajdah-featured-banner { background-position: 62% center; }
+  .module-banner.is-kahf-featured-banner::before,
+  .module-banner.is-mulk-featured-banner::before,
+  .module-banner.is-sajdah-featured-banner::before {
+    background: linear-gradient(90deg, rgb(247 252 247 / .98) 0%, rgb(247 252 247 / .92) 60%, rgb(247 252 247 / .48) 100%);
+  }
+  .module-banner.is-kahf-featured-banner .banner-copy,
+  .module-banner.is-mulk-featured-banner .banner-copy,
+  .module-banner.is-sajdah-featured-banner .banner-copy { max-width: calc(100% - 2.5rem); }
+}

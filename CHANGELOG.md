@@ -1,3 +1,44 @@
+# Changelog
+
+## 3.28.5 — Featured Reading Hero Consolidation (Corrected)
+
+- Preserved all artwork on the Featured Readings home page, including the existing card images, layout, and spacing.
+- Preserved every section illustration inside the Al-Kahf, Al-Mulk, and As-Sajdah readers.
+- Kept the three Featured Reading landing pages on the shared compact framework: global banner, Open Reader action, section cards, sidebar, virtues, and other Featured Readings.
+- Confirmed that only the duplicate content-area landing hero is absent; the approved landing artwork remains in the unchanged-height global banner.
+- Kept generated build documentation in `docs/`.
+
+## 3.28.4 — Featured Reading Banner Artwork Consolidation
+
+- Removed the oversized in-content hero blocks from the Al-Kahf, Al-Mulk, and As-Sajdah landing pages.
+- Reused each approved hero image as the background artwork in its page banner.
+- Kept the shared global banner height and spacing unchanged.
+- Added a compact landing action row with reading status and an Open Reader button.
+- Preserved the section grids, sticky sidebars, virtues, history, and reader routes.
+
+## v3.28.3 — Featured Reading Landing and Reader Consistency
+
+- Displays all four Surah As-Sajdah section cards in one desktop row, matching Al-Kahf and Al-Mulk.
+- Restores the shared Featured Reading reader workspace width for Surah As-Sajdah.
+- Adds Surah-specific Qur’an banner titles and descriptions to the Al-Kahf, Al-Mulk, and As-Sajdah landing pages.
+- Preserves responsive two-column and single-column card behavior on smaller screens.
+
+# Changelog
+
+## 3.28.2 — Featured Reading Banner and Shared Section Card Repair
+
+- Restored the Featured Readings page banner to the shared compact Qur’an banner height.
+- Repaired Surah As-Sajdah landing cards so artwork, metadata, descriptions, and actions use the same stacked card contract as Al-Kahf and Al-Mulk.
+- Added defensive shared Featured Reading card rules to prevent text from overlaying section artwork.
+- Preserved equal-height cards and bottom-aligned Read Section actions across all Featured Reading landing pages.
+- No Supabase migration is required.
+
+# v3.28.2 — Surah As-Sajdah Featured Reading
+
+- Added complete Surah As-Sajdah landing, reader, calendar, history, artwork, and Sunnah quote panels.
+- Standardized Featured Reading section-card action alignment.
+- Updated Featured Readings availability and routing.
+
 ## v3.27.1.6 – Featured Reading Framework Polish and Canonical Al-Mulk Artwork
 
 - Established a shared Featured Reading layout contract for landing, section, history, and reader routes.

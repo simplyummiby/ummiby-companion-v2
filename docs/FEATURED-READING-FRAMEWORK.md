@@ -31,3 +31,9 @@ Use the shared reader framework and route each section through the central `qura
 ## Per-reading configuration
 
 Only these values should vary: Surah number and name, schedule wording, section count/data, artwork, supporting text/resources, calendar eligibility rules, and storage keys.
+
+
+## v3.28.0 Framework additions
+- Equal-height section cards with bottom-aligned action buttons.
+- One- or two-card virtues area.
+- Surah As-Sajdah is the first new module built end-to-end on the shared framework.
