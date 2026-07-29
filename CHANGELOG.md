@@ -1,5 +1,25 @@
 # Changelog
 
+## 3.27.1.5 — Featured Readings Framework and Reader Navigation Repair
+
+- Restored reliable navigation for Al-Kahf, Al-Mulk, and Reading Unit Journey readers.
+- Removed the conflicting Al-Mulk click handler that rewrote already-normalized hash routes.
+- Hardened the shared route handler so one click can trigger only one application navigation.
+- Standardized Al-Kahf and Al-Mulk on a canonical two-column Featured Reading landing shell.
+- Kept history and current-reading controls in the sticky right sidebar on desktop.
+- Removed the CSS override that forced the Al-Mulk landing layout into a single block and pushed history below the sections.
+- Added a reusable `.featured-reading-landing` contract for future Surah submodules.
+
+## 3.27.1.4 — Al-Mulk Landing and Navigation Repair
+
+- Rebuilt the Surah Al-Mulk landing page around the Al-Kahf two-column layout.
+- Added the nightly history calendar and History link to the right-side panel.
+- Restored and hardened all Al-Mulk section navigation links.
+- Replaced the incorrect cave artwork on the Al-Mulk landing page and Featured Readings card.
+- Removed public use of the internal term “Experience” from Qur’an reading pages.
+
+# Changelog
+
 ## 3.27.1.3
 - Centered KPI icons and values beneath every history-card heading.
 - Added separate history pages for Surah Al-Kahf, Surah Al-Mulk, and Surah As-Sajdah.

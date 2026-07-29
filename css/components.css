@@ -3316,8 +3316,8 @@
 .mulk-featured-index{width:100%;max-width:none;margin:0;padding:0}
 .mulk-featured-index .kahf-landing-hero{min-height:410px;margin:0 0 clamp(1.6rem,2.5vw,2.4rem)}
 .mulk-featured-index .kahf-landing-hero-copy{width:min(660px,66%);max-width:none;min-height:410px}
-.mulk-index-layout{display:block}
-.mulk-index-layout>main{width:100%;min-width:0}
+.mulk-index-layout{display:grid}
+.mulk-index-layout>main{min-width:0}
 .mulk-featured-index .kahf-section-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(.8rem,1.15vw,1.1rem)}
 .mulk-featured-index .kahf-section-card>div:nth-child(2){display:flex;flex-direction:column;align-items:flex-start;padding:1rem}
 .mulk-featured-index .kahf-section-card h3{font-size:clamp(1rem,1.15vw,1.18rem);line-height:1.3}
@@ -3361,3 +3361,53 @@
 .history-summary-grid article>.history-kpi-value{order:2!important;flex:0 0 100%!important}
 .history-summary-grid article>i{order:2!important;grid-row:auto!important;align-self:center!important;margin:0!important}
 .history-summary-grid article>strong{order:2!important;margin:0!important}
+
+/* v3.27.1.4 — Al-Mulk landing repair and Kahf-aligned history panel */
+.mulk-index-layout{grid-template-columns:minmax(0,1fr) minmax(350px,390px)}
+.mulk-index-sidebar{position:sticky;top:1rem;align-self:start}
+.mulk-history-card .kahf-panel-body>p{margin:0 0 .85rem;color:var(--text-muted);font-size:.9rem;line-height:1.55}
+.mulk-calendar .kahf-calendar-day.is-nightly{background:transparent!important}
+.mulk-calendar .kahf-calendar-day.is-today{outline:2px solid var(--theme-accent);outline-offset:0}
+.mulk-calendar .kahf-calendar-day.is-complete{background:color-mix(in srgb,var(--theme-soft) 30%,white)!important}
+.mulk-featured-index .kahf-landing-hero>img{object-position:center 56%}
+.mulk-featured-index .kahf-section-card .button{position:relative;z-index:3;pointer-events:auto}
+@media(max-width:1120px){.mulk-index-layout{grid-template-columns:1fr}.mulk-index-sidebar{position:static;grid-row:1;display:grid;grid-template-columns:1fr 1fr}.mulk-section-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.mulk-index-sidebar{grid-template-columns:1fr}.mulk-section-grid{grid-template-columns:1fr}}
+
+
+/* v3.27.1.5 — canonical Featured Reading landing shell */
+.featured-reading-landing.kahf-friday-index,
+.kahf-friday-index.mulk-featured-index{
+  width:min(1580px,100%);
+  max-width:none;
+  margin-inline:auto;
+  padding-inline:clamp(1.25rem,3vw,3rem);
+}
+.featured-reading-landing .kahf-index-layout,
+.mulk-featured-index .mulk-index-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(350px,390px);
+  gap:clamp(1.5rem,2.5vw,2.5rem);
+  align-items:start;
+}
+.featured-reading-landing .kahf-index-sidebar,
+.mulk-featured-index .mulk-index-sidebar{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1rem;
+  position:sticky;
+  top:1rem;
+  grid-row:auto;
+}
+@media(max-width:1120px){
+  .featured-reading-landing .kahf-index-layout,
+  .mulk-featured-index .mulk-index-layout{grid-template-columns:1fr}
+  .featured-reading-landing .kahf-index-sidebar,
+  .mulk-featured-index .mulk-index-sidebar{position:static;grid-row:1;grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:760px){
+  .featured-reading-landing.kahf-friday-index,
+  .kahf-friday-index.mulk-featured-index{padding-inline:1rem}
+  .featured-reading-landing .kahf-index-sidebar,
+  .mulk-featured-index .mulk-index-sidebar{grid-template-columns:1fr}
+}

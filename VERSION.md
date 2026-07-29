@@ -1,3 +1,5 @@
-# Ummiby Companion v3.27.1.3
+# Ummiby Companion
 
-Centered History KPIs and Surah-Specific History Calendars.
+**Version:** 3.27.1.5
+
+Featured Readings Framework and Reader Navigation Repair.
