@@ -1,5 +1,5 @@
 # Ummiby Companion
 
-Version: 3.28.5
+Version: 3.29.2
 
-Release: Featured Reading Banner Artwork Consolidation
+Release: Featured Reading History Fixes
