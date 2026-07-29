@@ -1,6 +1,8 @@
 // Duaa collection content restored from the verified v0.5.5 collection package.
 // v2.1.3 keeps the v2.1 storage key and migrates compatible legacy item IDs.
 import { collections } from './data/duaa-collections.js';
+import { localDateKey } from './time.js?v=3.26.1';
+import { enqueueSync, registerSyncAdapter } from './sync.js?v=3.26.1';
 
 export const duaaCollections = collections;
 export const duaaOrder = ['morning','evening','sleep','travel','weather','prayer','istikharah','food','clothing','anxiety','quranic'];
@@ -8,16 +10,9 @@ export const duaaOrder = ['morning','evening','sleep','travel','weather','prayer
 // Keep the v2.1 storage key so a content restoration does not erase existing
 // completion, worship-history, or custom-order records.
 const key = 'ummiby.duaa.v2.1';
-const emptyState = () => ({ completed:{}, memorized:{}, memorizedCanonical:{}, worship:{}, history:{}, order:{}, reading:{ arabicSize: 2.35, showEnglish: true, showTransliteration: true, mode: 'read' } });
+const emptyState = () => ({ completed:{}, dailyCompleted:{}, memorized:{}, memorizedCanonical:{}, worship:{}, history:{}, order:{}, reading:{ arabicSize: 2.35, showEnglish: true, showTransliteration: true, mode: 'read' } });
 
-// Consistency is a local-calendar habit record. Never derive its storage key
-// from UTC: doing so can shift an Arizona evening into the following day.
-function localDateKey(date = new Date()){
-  const year=date.getFullYear();
-  const month=String(date.getMonth()+1).padStart(2,'0');
-  const day=String(date.getDate()).padStart(2,'0');
-  return `${year}-${month}-${day}`;
-}
+// Daily keys come from the shared automatic-device-timezone service.
 function startOfLocalWeek(date = new Date()){
   const start=new Date(date.getFullYear(),date.getMonth(),date.getDate());
   start.setDate(start.getDate()-start.getDay());
@@ -73,6 +68,15 @@ export function totalUniqueDuaaCount(){ return uniqueCanonicalIds().size; }
 function normalizeState(value){
   const next = value && typeof value === 'object' ? value : emptyState();
   next.completed = next.completed && typeof next.completed === 'object' ? next.completed : {};
+  next.dailyCompleted = next.dailyCompleted && typeof next.dailyCompleted === 'object' ? next.dailyCompleted : {};
+  // Migrate only a legacy state that is demonstrably tied to today. Stale checks never roll forward.
+  const today=localDateKey();
+  for(const collectionId of ['morning','evening','sleep']){
+    next.dailyCompleted[collectionId] ||= {};
+    if(!next.dailyCompleted[collectionId][today] && next.history?.[collectionId]?.[today]){
+      next.dailyCompleted[collectionId][today]={...(next.completed?.[collectionId]||{})};
+    }
+  }
   next.memorized = next.memorized && typeof next.memorized === 'object' ? next.memorized : {};
   next.memorizedCanonical = next.memorizedCanonical && typeof next.memorizedCanonical === 'object' ? next.memorizedCanonical : {};
   migrateMemorizationToCanonical(next);
@@ -91,9 +95,11 @@ function state(){
   try { return normalizeState(JSON.parse(localStorage.getItem(key))); }
   catch { return emptyState(); }
 }
-function save(value){
+function save(value,{sync=true}={}){
   try {
-    localStorage.setItem(key, JSON.stringify(normalizeState(value)));
+    const normalized=normalizeState(value);
+    localStorage.setItem(key, JSON.stringify(normalized));
+    if(sync) enqueueSync('duaa','state',normalized);
     return true;
   } catch (error) {
     console.error('Unable to save Duaa state.', error);
@@ -158,24 +164,26 @@ export function totalMemorizedCount(){
   return [...uniqueCanonicalIds()].filter(id=>Boolean(s.memorizedCanonical?.[id])).length;
 }
 
-export function isComplete(collectionId,itemId){ return Boolean(state().completed?.[collectionId]?.[itemId]); }
+function todayCompleted(s,collectionId){const day=localDateKey();s.dailyCompleted ||= {};s.dailyCompleted[collectionId] ||= {};s.dailyCompleted[collectionId][day] ||= {};return s.dailyCompleted[collectionId][day];}
+export function isComplete(collectionId,itemId){ const s=state(); return Boolean(s.dailyCompleted?.[collectionId]?.[localDateKey()]?.[itemId]); }
 function updateDailyHistory(collectionId,s,day=localDateKey()){
   const collection=collections[collectionId];
   if(!collection?.tracked) return;
-  const completedIds=collection.items.filter(item=>Boolean(s.completed?.[collectionId]?.[item.id])).map(item=>item.id);
+  const completed=todayCompleted(s,collectionId);
+  const completedIds=collection.items.filter(item=>Boolean(completed[item.id])).map(item=>item.id);
   s.history[collectionId] ||= {};
   s.history[collectionId][day]={ active:true, completedCount:completedIds.length, totalCount:collection.items.length, complete:completedIds.length===collection.items.length, completedIds };
 }
 export function toggleComplete(collectionId,itemId){
-  const s=state(); s.completed[collectionId] ||= {}; s.completed[collectionId][itemId]=!s.completed[collectionId][itemId];
+  const s=state(); const completed=todayCompleted(s,collectionId); completed[itemId]=!completed[itemId];
   if(collections[collectionId]?.tracked){
     const day=localDateKey();
     s.worship[collectionId] ||= {};
-    if(s.completed[collectionId][itemId]) s.worship[collectionId][day]=true;
+    if(completed[itemId]) s.worship[collectionId][day]=true;
     if(s.worship[collectionId][day]) updateDailyHistory(collectionId,s,day);
   }
   save(s);
-  return s.completed[collectionId][itemId];
+  return completed[itemId];
 }
 export function recordWorship(collectionId, existing){
   if(!collections[collectionId]?.tracked) return false;
@@ -289,3 +297,5 @@ export function updateReadingPreferences(changes={}){
   save(s);
   return readingPreferences();
 }
+
+registerSyncAdapter('duaa',{hydrate(recordKey,payload,meta){if(recordKey!=='state'||!payload)return;const local=state();const remote=normalizeState(payload);const merged={...local,...remote,history:{...local.history,...remote.history},worship:{...local.worship,...remote.worship},dailyCompleted:{...local.dailyCompleted,...remote.dailyCompleted}};save(merged,{sync:false});}});

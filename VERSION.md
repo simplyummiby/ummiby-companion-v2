@@ -1,3 +1,3 @@
-# Ummiby Companion v3.25.3
+# Ummiby Companion v3.26.1
 
-Illustrated Surah Al-Mulk Featured Reading Experience.
+Site-wide local-first sync foundation and Duaa daily tracking migration.

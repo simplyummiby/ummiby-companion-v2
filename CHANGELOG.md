@@ -1,3 +1,6 @@
+## 3.26.1
+- Added shared local-first sync foundation, offline queue, hydration, device-timezone dates, and migrated Duaa daily tracking.
+
 # Changelog
 
 ## v3.25.3 – Al-Mulk Landing Page Alignment

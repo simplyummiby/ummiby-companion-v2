@@ -1,6 +1,6 @@
-import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.25.3";
-import { renderShell, saveActiveJourney } from "./shell.js?v=3.25.3";
-import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences } from "./duaa.js?v=3.25.3";
+import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.26.1";
+import { renderShell, saveActiveJourney } from "./shell.js?v=3.26.1";
+import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences } from "./duaa.js?v=3.26.1";
 import {
   onAuthStateChange,
   restoreSession,
@@ -8,10 +8,11 @@ import {
   signInWithPassword,
   signOut,
   signUpWithPassword
-} from "./auth.js?v=3.25.3";
-import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.25.3";
-import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.25.3";
-import { clearPreferences, loadPreferences } from "./preferences.js?v=3.25.3";
+} from "./auth.js?v=3.26.1";
+import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.26.1";
+import { setSyncUser, hydrateSyncData, flushSyncQueue } from "./sync.js?v=3.26.1";
+import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.26.1";
+import { clearPreferences, loadPreferences } from "./preferences.js?v=3.26.1";
 
 const app = document.querySelector("#app");
 console.info("Canonical Qur’an data verified", QURAN_CANONICAL_STATUS);
@@ -715,11 +716,13 @@ function authScreen(mode = "signin") {
 
 async function loadApplicationContext(user) {
   if (!user) {
+    setSyncUser(null);
     clearIdentity();
     clearPreferences();
     return;
   }
 
+  setSyncUser(user.id);
   const client = getSupabaseClient();
 
   // 3. Load Profile
@@ -735,6 +738,8 @@ async function loadApplicationContext(user) {
 
   // 5. Initialize Identity
   initializeIdentity(profile, user);
+  await hydrateSyncData();
+  await flushSyncQueue();
 }
 
 async function handleAuthenticatedUser(user) {
@@ -783,6 +788,9 @@ async function start() {
   }
 }
 
+let lastDailyContext=`${new Date().toDateString()}|${Intl.DateTimeFormat().resolvedOptions().timeZone}`;
+setInterval(()=>{const next=`${new Date().toDateString()}|${Intl.DateTimeFormat().resolvedOptions().timeZone}`;if(next!==lastDailyContext){lastDailyContext=next;render();}},60000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)render()});
 window.addEventListener("hashchange", () => {
   window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   render();
