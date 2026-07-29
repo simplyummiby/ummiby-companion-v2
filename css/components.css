@@ -3143,3 +3143,124 @@
 
 /* v3.23.0 — reusable Home Featured Reading Card system */
 .featured-reading-system-card{position:relative;isolation:isolate;min-height:410px;overflow:hidden;border:1px solid rgb(198 166 91/.42);border-radius:1.2rem;background:#10251b;color:#fff;box-shadow:0 18px 45px rgb(16 37 27/.18)}.featured-reading-system-art,.featured-reading-system-shade{position:absolute;inset:0;width:100%;height:100%}.featured-reading-system-art{z-index:-3;object-fit:cover;object-position:center}.featured-reading-system-shade{z-index:-2;background:linear-gradient(90deg,rgb(4 13 9/.9) 0%,rgb(5 17 11/.77) 37%,rgb(6 18 12/.18) 72%,rgb(5 14 10/.25) 100%),linear-gradient(0deg,rgb(4 13 9/.8) 0%,transparent 48%)}.featured-reading-ribbon{position:absolute;top:0;left:2rem;display:grid;justify-items:center;align-content:start;width:68px;min-height:91px;padding:.75rem .35rem 1.15rem;background:linear-gradient(180deg,#d8bd72,#b18a36);color:#27321c;text-transform:uppercase;letter-spacing:.08em;filter:drop-shadow(0 5px 8px rgb(0 0 0/.25));clip-path:polygon(0 0,100% 0,100% 83%,50% 100%,0 83%)}.featured-reading-ribbon i{font-size:1.35rem}.featured-reading-ribbon strong{margin-top:.3rem;font-family:var(--font-serif);font-size:.67rem;line-height:1}.featured-reading-system-copy{position:relative;z-index:1;display:grid;align-content:end;max-width:590px;min-height:272px;padding:6.1rem 2rem 1rem}.featured-reading-category{margin:0;color:#dfc579;font-size:.77rem;font-weight:850;letter-spacing:.19em;text-transform:uppercase}.featured-reading-system-copy h2{margin:.25rem 0 .4rem;color:#fff;font-family:var(--font-serif);font-size:clamp(2.45rem,5vw,4rem);font-weight:500;line-height:1.02;text-shadow:0 2px 12px rgb(0 0 0/.3)}.featured-reading-system-copy blockquote{max-width:420px;margin:.2rem 0 0;padding:0;border:0}.featured-reading-system-copy blockquote p{margin:0;color:rgb(255 255 255/.92);font-family:var(--font-serif);font-size:1rem;line-height:1.42}.featured-reading-system-copy cite{display:block;margin-top:.25rem;color:#dabe69;font-size:.78rem;font-style:normal}.featured-reading-system-footer{position:absolute;z-index:2;left:2rem;right:2rem;bottom:1.65rem;display:grid;grid-template-columns:minmax(190px,250px) minmax(245px,1fr);align-items:center;gap:1.5rem;max-width:720px}.featured-reading-system-action{display:flex;align-items:center;justify-content:center;gap:.8rem;min-height:64px;padding:.8rem 1.25rem;border:1px solid rgb(216 197 129/.55);border-radius:.8rem;background:linear-gradient(180deg,rgb(60 112 73/.96),rgb(30 77 45/.96));box-shadow:inset 0 1px rgb(255 255 255/.16),0 8px 20px rgb(0 0 0/.2);color:#fff;text-decoration:none;font-family:var(--font-serif);font-size:1.55rem;transition:transform .16s ease,filter .16s ease,box-shadow .16s ease}.featured-reading-system-action i{font-size:1.7rem}.featured-reading-system-action:hover{transform:translateY(-1px);filter:brightness(1.08);box-shadow:inset 0 1px rgb(255 255 255/.2),0 10px 25px rgb(0 0 0/.28)}.featured-reading-system-status{display:grid;gap:.15rem;padding-left:1.25rem;border-left:1px solid rgb(255 255 255/.42)}.featured-reading-system-status p{margin:0;color:#e0d5b5;font-size:.65rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.featured-reading-system-status strong{display:flex;align-items:center;gap:.55rem;color:#fff;font-family:var(--font-serif);font-size:1rem;font-weight:500}.featured-reading-system-status strong i{width:1.15rem;height:1.15rem;border:1.7px solid #fff;border-radius:50%;background:transparent}.featured-reading-system-card.is-in-progress .featured-reading-system-status strong i{background:linear-gradient(90deg,#fff 50%,transparent 50%)}.featured-reading-system-card.is-complete .featured-reading-system-status strong i{position:relative;background:#fff}.featured-reading-system-card.is-complete .featured-reading-system-status strong i:after{content:'✓';position:absolute;inset:0;display:grid;place-items:center;color:#254d31;font-size:.7rem;font-weight:900}.featured-reading-system-status span{color:rgb(255 255 255/.76);font-size:.78rem}@media(max-width:760px){.featured-reading-system-card{min-height:500px}.featured-reading-system-art{object-position:62% center}.featured-reading-system-shade{background:linear-gradient(90deg,rgb(4 13 9/.9),rgb(5 17 11/.56)),linear-gradient(0deg,rgb(4 13 9/.92) 0%,transparent 68%)}.featured-reading-ribbon{left:1.25rem}.featured-reading-system-copy{min-height:318px;padding:6.2rem 1.25rem 1rem}.featured-reading-system-copy h2{font-size:2.6rem}.featured-reading-system-footer{left:1.25rem;right:1.25rem;bottom:1.25rem;grid-template-columns:1fr;gap:.8rem}.featured-reading-system-status{padding:.75rem 0 0;border-left:0;border-top:1px solid rgb(255 255 255/.35)}.featured-reading-system-action{min-height:58px;font-size:1.35rem}}
+
+/* v3.24.0 — Al-Kahf Experience Landing Page */
+.kahf-index-layout{grid-template-columns:minmax(0,1fr) 360px}
+.kahf-section-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.kahf-index-sidebar{top:1rem;align-self:start}
+.kahf-experience-card{overflow:hidden;border:1px solid var(--color-border);border-radius:1rem;background:#fff;box-shadow:0 8px 24px rgb(24 56 43/.055)}
+.kahf-experience-card>summary{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.9rem 1rem;list-style:none;cursor:pointer;font-weight:800}
+.kahf-experience-card>summary::-webkit-details-marker{display:none}.kahf-experience-card>summary span{display:flex;align-items:center;gap:.55rem}.kahf-experience-card>summary span i{color:var(--theme-accent);font-size:1.05rem}.kahf-experience-card>summary>i{transition:transform .2s ease}.kahf-experience-card[open]>summary>i{transform:rotate(180deg)}
+.kahf-panel-body{display:grid;gap:.75rem;padding:0 1rem 1rem}.kahf-panel-body p{margin:0;color:var(--color-muted);line-height:1.5}.kahf-panel-body .button{width:100%}
+.kahf-friday-dates{display:grid;gap:.15rem;padding:.75rem;border-radius:.8rem;background:color-mix(in srgb,var(--theme-soft) 42%,white)}.kahf-friday-dates strong{font-size:.9rem}.kahf-friday-dates span{color:var(--color-muted);font-size:.78rem}
+.kahf-calendar{display:grid;gap:.65rem}.kahf-calendar header{display:grid;grid-template-columns:auto 1fr auto;align-items:center;text-align:center}.kahf-calendar header button{display:grid;place-items:center;width:2rem;height:2rem;border:0;border-radius:50%;background:transparent}.kahf-calendar header button:hover{background:var(--theme-soft)}.kahf-calendar h3{margin:0;font-size:1rem}
+.kahf-calendar-day{border:1px solid transparent}.kahf-calendar-day.is-friday{background:color-mix(in srgb,var(--theme-soft) 42%,white)}.kahf-calendar-day.is-complete{border-color:color-mix(in srgb,var(--theme-accent) 55%,white);background:color-mix(in srgb,var(--theme-accent) 18%,white);color:var(--theme-accent)}.kahf-calendar-day.is-partial{border-color:#b78a2e;background:#fff8e8;color:#8b6516}.kahf-calendar-day.is-upcoming{border-color:color-mix(in srgb,var(--theme-accent) 38%,white);background:#fff}.kahf-calendar-day.is-future:not(.is-friday){color:color-mix(in srgb,var(--color-muted) 60%,white)}.kahf-calendar-day.is-current-friday{outline:2px solid var(--theme-accent);outline-offset:1px;font-weight:900}.kahf-calendar-day.is-today:not(.is-current-friday){box-shadow:inset 0 0 0 1px var(--theme-accent)}
+.kahf-legend-swatch{display:block;width:.62rem;height:.62rem;border-radius:50%}.kahf-legend-swatch.is-complete{background:var(--theme-accent)}.kahf-legend-swatch.is-partial{border:2px solid #b78a2e;background:#fff8e8}.kahf-legend-swatch.is-upcoming{border:1px solid var(--theme-accent);background:#fff}.kahf-calendar-legend{gap:.55rem;font-size:.66rem}.kahf-history-link{display:flex;align-items:center;justify-content:space-between;padding-top:.7rem;border-top:1px solid var(--color-border);color:var(--theme-accent);font-size:.82rem;font-weight:800;text-decoration:none}
+.kahf-progress-card{grid-template-columns:auto 1fr;align-items:center}.kahf-progress-ring{display:grid;place-items:center;width:92px;height:92px;border-radius:50%;background:conic-gradient(var(--theme-accent) var(--kahf-progress),color-mix(in srgb,var(--theme-soft) 72%,white) 0);position:relative}.kahf-progress-ring:after{content:"";position:absolute;inset:9px;border-radius:50%;background:#fff}.kahf-progress-ring span{z-index:1;display:grid;text-align:center}.kahf-progress-ring strong{font-size:1.55rem;line-height:1}.kahf-progress-ring small{color:var(--color-muted)}
+.kahf-continue-card h3{margin:0}.kahf-continue-card>strong{color:var(--theme-accent);font-size:.82rem}.kahf-utility-card .button{color:#8f3f3f;border-color:color-mix(in srgb,#8f3f3f 34%,var(--color-border))}.kahf-external-dialog{max-width:470px}.kahf-external-dialog>p{color:var(--color-muted);line-height:1.55}
+@media(max-width:1450px){.kahf-section-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:1180px){.kahf-index-layout{grid-template-columns:1fr}.kahf-index-sidebar{position:static;grid-row:1;grid-template-columns:repeat(2,minmax(0,1fr))}.kahf-current-friday{grid-row:span 2}.kahf-section-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.kahf-index-sidebar{grid-template-columns:1fr}.kahf-current-friday{grid-row:auto}.kahf-section-grid{grid-template-columns:1fr}.kahf-experience-card>summary{padding:.85rem .9rem}.kahf-panel-body{padding:0 .9rem .9rem}.kahf-progress-card{grid-template-columns:auto 1fr}.kahf-index-actions{align-items:stretch}.kahf-index-actions .button{width:100%}}
+
+/* v3.24.0 refinement — spacious Al-Kahf landing composition */
+.kahf-friday-index{width:min(1580px,100%);padding-inline:clamp(1.25rem,3vw,3rem)}
+.kahf-landing-hero{position:relative;isolation:isolate;min-height:390px;margin-bottom:2rem;overflow:hidden;border:1px solid rgb(198 166 91/.38);border-radius:1.25rem;background:#10251b;box-shadow:0 18px 42px rgb(16 37 27/.16)}
+.kahf-landing-hero>img,.kahf-landing-hero-shade{position:absolute;inset:0;width:100%;height:100%}.kahf-landing-hero>img{z-index:-2;object-fit:cover;object-position:center}.kahf-landing-hero-shade{z-index:-1;background:linear-gradient(90deg,rgb(5 16 11/.92) 0%,rgb(5 18 12/.76) 38%,rgb(5 18 12/.16) 72%,rgb(5 16 11/.12) 100%),linear-gradient(0deg,rgb(4 14 9/.7),transparent 58%)}
+.kahf-landing-hero-copy{display:grid;align-content:end;width:min(660px,66%);min-height:390px;padding:clamp(2rem,4vw,3.5rem);color:#fff}.kahf-landing-hero-copy .page-kicker{color:#dfc579}.kahf-landing-hero-copy h2{margin:.35rem 0 .7rem;color:#fff;font-family:var(--font-serif);font-size:clamp(2.8rem,5vw,4.8rem);font-weight:500;line-height:1}.kahf-landing-hero-copy>p:not(.page-kicker){max-width:570px;margin:0;color:rgb(255 255 255/.9);font-size:1rem;line-height:1.65}.kahf-landing-hero .kahf-index-actions{margin-top:1.35rem}.kahf-landing-hero .kahf-index-actions span{color:rgb(255 255 255/.78)}
+.kahf-index-layout{grid-template-columns:minmax(0,1fr) minmax(350px,390px);gap:clamp(1.5rem,2.5vw,2.5rem)}
+.kahf-section-grid{grid-template-columns:repeat(4,minmax(210px,1fr));gap:1.15rem}
+.kahf-index-sidebar{display:grid;gap:1rem;position:sticky;top:1rem;align-self:start}
+.kahf-experience-card{border-radius:1.05rem;box-shadow:0 10px 28px rgb(24 56 43/.065)}
+.kahf-reading-status-top{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:1rem}.kahf-reading-status-top h3{margin:.12rem 0 .22rem;font-family:var(--font-serif);font-size:1.15rem}.kahf-reading-status-top>div>strong{color:var(--theme-accent);font-size:.78rem}
+.kahf-friday-actions .kahf-panel-body{gap:0}.kahf-action-block{display:grid;gap:.7rem;padding:.15rem 0 1rem}.kahf-action-block+ .kahf-action-block{padding-top:1rem;border-top:1px solid var(--color-border)}.kahf-action-block h3{margin:0 0 .2rem;font-size:.94rem}.kahf-action-block p{font-size:.8rem}.kahf-reset-block .button{color:#8f3f3f;border-color:color-mix(in srgb,#8f3f3f 34%,var(--color-border))}
+@media(max-width:1380px){.kahf-section-grid{grid-template-columns:repeat(3,minmax(220px,1fr))}}
+@media(max-width:1120px){.kahf-index-layout{grid-template-columns:1fr}.kahf-index-sidebar{position:static;grid-row:1;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr)}.kahf-current-friday{grid-row:span 2}.kahf-section-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.kahf-friday-index{padding-inline:1rem}.kahf-landing-hero{min-height:470px}.kahf-landing-hero>img{object-position:62% center}.kahf-landing-hero-shade{background:linear-gradient(90deg,rgb(5 16 11/.88),rgb(5 18 12/.42)),linear-gradient(0deg,rgb(4 14 9/.92) 0%,transparent 75%)}.kahf-landing-hero-copy{align-content:end;width:100%;min-height:470px;padding:1.4rem}.kahf-landing-hero-copy h2{font-size:2.65rem}.kahf-index-sidebar{grid-template-columns:1fr}.kahf-current-friday{grid-row:auto}.kahf-section-grid{grid-template-columns:1fr}}
+@media (min-width:1121px){.kahf-index-layout{grid-template-columns:minmax(0,1fr) minmax(350px,390px)}.kahf-index-sidebar{position:sticky;top:1rem;grid-template-columns:1fr;grid-row:auto}.kahf-current-friday{grid-row:auto}.kahf-section-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* v3.24.0 final landing composition — dedicated wide Al-Kahf canvas */
+.module-content:has(.kahf-friday-index){
+  width:100%;
+  max-width:none;
+  padding:clamp(1rem,1.6vw,1.5rem);
+}
+.kahf-friday-index{
+  width:100%;
+  max-width:none;
+  padding:0;
+}
+.kahf-landing-hero{
+  width:100%;
+  min-height:410px;
+  margin:0 0 clamp(1.6rem,2.5vw,2.4rem);
+}
+.kahf-index-layout{
+  grid-template-columns:minmax(0,1fr) minmax(300px,330px);
+  gap:clamp(1.25rem,2vw,2rem);
+}
+.kahf-index-layout>main{min-width:0}
+.kahf-index-layout .section-heading{margin-bottom:1rem}
+.kahf-section-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:clamp(.8rem,1.15vw,1.1rem);
+}
+.kahf-section-card>div:nth-child(2){padding:1rem}
+.kahf-section-card h3{font-size:clamp(1rem,1.15vw,1.18rem);line-height:1.3}
+.kahf-section-card p{font-size:.83rem;line-height:1.48}
+.kahf-section-art{min-height:190px}
+
+/* One calm Friday dashboard rather than a stack of disconnected cards. */
+.kahf-index-sidebar{
+  gap:0;
+  overflow:hidden;
+  border:1px solid var(--color-border);
+  border-radius:1.15rem;
+  background:#fff;
+  box-shadow:0 14px 36px rgb(24 56 43/.08);
+}
+.kahf-experience-card{
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+}
+.kahf-experience-card+.kahf-experience-card{border-top:1px solid var(--color-border)}
+.kahf-experience-card>summary{padding:1rem 1.1rem}
+.kahf-panel-body{padding:0 1.1rem 1.15rem}
+.kahf-current-friday .kahf-panel-body{gap:.9rem}
+.kahf-calendar-day,.kahf-calendar-empty{min-height:38px}
+.kahf-reading-status-top{gap:.85rem}
+.kahf-progress-ring{width:82px;height:82px}
+.kahf-friday-actions .kahf-panel-body{padding-bottom:1.1rem}
+
+@media(max-width:1280px){
+  .module-content:has(.kahf-friday-index){padding:1rem}
+  .kahf-index-layout{grid-template-columns:minmax(0,1fr) 310px;gap:1rem}
+  .kahf-section-grid{gap:.8rem}
+  .kahf-section-art{min-height:170px}
+}
+@media(max-width:1080px){
+  .kahf-index-layout{grid-template-columns:1fr}
+  .kahf-index-sidebar{position:static;grid-row:1;display:grid;grid-template-columns:1.15fr .85fr}
+  .kahf-experience-card+.kahf-experience-card{border-top:0;border-left:1px solid var(--color-border)}
+  .kahf-current-friday{grid-row:span 2}
+  .kahf-section-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+  .kahf-section-art{min-height:220px}
+}
+@media(max-width:760px){
+  .module-content:has(.kahf-friday-index){padding:.75rem}
+  .kahf-index-sidebar{grid-template-columns:1fr}
+  .kahf-current-friday{grid-row:auto}
+  .kahf-experience-card+.kahf-experience-card{border-left:0;border-top:1px solid var(--color-border)}
+  .kahf-section-grid{grid-template-columns:1fr}
+  .kahf-section-art{min-height:230px}
+}
+
+/* v3.24.0 Al-Kahf calendar: calendar states mirror the circular legend. */
+.kahf-calendar-day{position:relative;grid-template-rows:1fr auto;gap:.12rem;padding:.2rem .08rem;background:transparent!important}
+.kahf-calendar-day.is-friday{background:color-mix(in srgb,var(--theme-soft) 26%,white)!important}
+.kahf-calendar-day.is-complete,.kahf-calendar-day.is-partial,.kahf-calendar-day.is-upcoming{border-color:transparent;color:var(--color-text)}
+.kahf-calendar-marker{display:block;width:.55rem;height:.55rem;border-radius:50%;margin-bottom:.08rem;box-sizing:border-box}
+.kahf-calendar-marker.is-complete{background:var(--theme-accent);border:1px solid var(--theme-accent)}
+.kahf-calendar-marker.is-partial{background:#fff;border:2px solid #b78a2e}
+.kahf-calendar-marker.is-upcoming{background:#fff;border:1px solid var(--theme-accent)}
+.kahf-calendar-day.is-current-friday{outline:2px solid var(--theme-accent);outline-offset:0;background:color-mix(in srgb,var(--theme-soft) 34%,white)!important}

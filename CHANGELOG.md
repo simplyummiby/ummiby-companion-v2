@@ -1,6 +1,11 @@
 # Changelog
 
-## 3.23.0 — Featured Reading Card System
+## v3.24.0 – Al-Kahf Experience Landing Page
+- Redesigned the Al-Kahf Section Index into the official Friday experience landing page.
+- Added a sticky, responsive Experience Panel with integrated Friday calendar, dates, progress, continue reading, reset, external completion, and study access.
+- Preserved the existing hero, eight section cards, reader, routing, history store, and Friday streak behavior.
+
+## 3.24.0 — Featured Reading Card System
 
 - Introduced a reusable `featuredReadingCard` Home-page component with configurable artwork, ribbon, category, title, subtitle, action, status, and reference fields.
 - Rebuilt the Friday Al-Kahf Home feature with image-only cave artwork and fully accessible HTML overlay text.
@@ -8,7 +13,7 @@
 - Added current/upcoming Friday date context in the status panel.
 - Established the base styling contract for future special reading cards.
 
-## v3.23.0 — Al-Kahf Reader Final Polish
+## v3.24.0 — Al-Kahf Reader Final Polish
 
 - Positioned the reader information dialog beside and slightly below its information button on desktop.
 - Kept the Section Index control permanently available in the bottom-left corner throughout all eight sections.
@@ -18,7 +23,7 @@
 - Added more internal padding to the Friday virtue quotation card while retaining its tightened typography.
 - Preserved the horizontal shared-axis slide transition.
 
-## v3.23.0 — Al-Kahf Reader Controls & Study Categories
+## v3.24.0 — Al-Kahf Reader Controls & Study Categories
 
 - Grouped Al-Kahf study resources under Video, Audio, and Reading labels.
 - Centered the Previous Section, Mark Section Read, and Next Section control group in the Al-Kahf reader.

@@ -1,3 +1,3 @@
-# Ummiby Companion v3.23.0
+# Ummiby Companion v3.24.0
 
 Featured Reading Card System.
