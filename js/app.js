@@ -1,7 +1,7 @@
-import './quran-sync.js?v=3.27.1.1';
-import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.27.1.1";
-import { renderShell, saveActiveJourney } from "./shell.js?v=3.27.1.1";
-import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences, dailyActivityForDate, setDailyActivities } from "./duaa.js?v=3.27.1.1";
+import './quran-sync.js?v=3.27.1.3';
+import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.27.1.3";
+import { renderShell, saveActiveJourney } from "./shell.js?v=3.27.1.3";
+import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences, dailyActivityForDate, setDailyActivities } from "./duaa.js?v=3.27.1.3";
 import {
   onAuthStateChange,
   restoreSession,
@@ -9,11 +9,11 @@ import {
   signInWithPassword,
   signOut,
   signUpWithPassword
-} from "./auth.js?v=3.27.1.1";
-import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.27.1.1";
-import { setSyncUser, hydrateSyncData, flushSyncQueue } from "./sync.js?v=3.27.1.1";
-import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.27.1.1";
-import { clearPreferences, loadPreferences } from "./preferences.js?v=3.27.1.1";
+} from "./auth.js?v=3.27.1.3";
+import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.27.1.3";
+import { setSyncUser, hydrateSyncData, flushSyncQueue } from "./sync.js?v=3.27.1.3";
+import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.27.1.3";
+import { clearPreferences, loadPreferences } from "./preferences.js?v=3.27.1.3";
 
 const app = document.querySelector("#app");
 console.info("Canonical Qur’an data verified", QURAN_CANONICAL_STATUS);
@@ -88,7 +88,7 @@ function recordQuranReading(source='manual') {
 }
 
 function removeLegacyReaderOpenMarks() {
-  const migrationKey = 'ummiby.migrations.quranReaderOpenMarks.v3.27.1.1';
+  const migrationKey = 'ummiby.migrations.quranReaderOpenMarks.v3.27.1.3';
   if (localStorage.getItem(migrationKey) === 'done') return;
   let records = {};
   try { records = JSON.parse(localStorage.getItem('ummiby.quran.readingDays') || '{}'); } catch {}
@@ -199,6 +199,12 @@ function bindShellEvents() {
     render();
   });
 
+  app.querySelectorAll('[data-featured-history-month]').forEach(button=>button.addEventListener('click',()=>{const date=new Date(quranHistoryView.year,quranHistoryView.month+Number(button.dataset.featuredHistoryMonth),1);quranHistoryView={year:date.getFullYear(),month:date.getMonth()};render()}));
+  const featuredPage=app.querySelector('[data-featured-history-kind]'),featuredDialog=app.querySelector('[data-featured-day-dialog]');let selectedFeaturedDay='';
+  app.querySelectorAll('[data-edit-featured-day]').forEach(button=>button.addEventListener('click',()=>{selectedFeaturedDay=button.dataset.editFeaturedDay;const kind=featuredPage?.dataset.featuredHistoryKind,keys={kahf:'ummiby.quran.kahfFriday.records',mulk:'ummiby.quran.mulkFeatured.records',sajdah:'ummiby.quran.sajdahFeatured.records'},key=keys[kind];let records={};try{records=JSON.parse(localStorage.getItem(key)||'{}')}catch{}const title=featuredDialog?.querySelector('[data-featured-day-title]');if(title)title.textContent=new Date(`${selectedFeaturedDay}T12:00:00`).toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});const input=featuredDialog?.querySelector('[data-featured-day-activity]');if(input)input.checked=Boolean(records[selectedFeaturedDay]&&(records[selectedFeaturedDay].status==='complete'||records[selectedFeaturedDay].completed||records[selectedFeaturedDay].source));featuredDialog?.showModal()}));
+  app.querySelectorAll('[data-close-featured-day]').forEach(button=>button.addEventListener('click',()=>featuredDialog?.close()));
+  app.querySelector('[data-save-featured-day]')?.addEventListener('click',()=>{if(!selectedFeaturedDay)return;const kind=featuredPage?.dataset.featuredHistoryKind,keys={kahf:'ummiby.quran.kahfFriday.records',mulk:'ummiby.quran.mulkFeatured.records',sajdah:'ummiby.quran.sajdahFeatured.records'},key=keys[kind];let records={};try{records=JSON.parse(localStorage.getItem(key)||'{}')}catch{}const checked=Boolean(featuredDialog.querySelector('[data-featured-day-activity]')?.checked);if(checked)records[selectedFeaturedDay]={...(records[selectedFeaturedDay]||{}),status:'complete',source:'manual',readingMethod:'external',updatedAt:new Date().toISOString()};else delete records[selectedFeaturedDay];localStorage.setItem(key,JSON.stringify(records));if(checked){let readingDays={};try{readingDays=JSON.parse(localStorage.getItem('ummiby.quran.readingDays')||'{}')}catch{}readingDays[selectedFeaturedDay]={source:`${kind}-full`,updatedAt:new Date().toISOString()};localStorage.setItem('ummiby.quran.readingDays',JSON.stringify(readingDays))}featuredDialog.close();toast(checked?'Surah reading recorded.':'Surah reading record removed.');render()});
+
   const duaaDayDialog=app.querySelector('[data-duaa-day-dialog]');
   let selectedDuaaDay='';
   const formatDuaaDay=(day)=>new Date(`${day}T12:00:00`).toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
@@ -292,7 +298,7 @@ function bindShellEvents() {
   app.querySelectorAll('[data-mulk-return-index]').forEach(link=>link.addEventListener('click',()=>{const section=Number(link.dataset.mulkReturnIndex);if(section)saveMulk(active=>{active.currentSection=section;active.lastActivityAt=new Date().toISOString()})}));
   app.querySelectorAll('[data-mulk-save-ayah]').forEach(button=>button.addEventListener('click',()=>{const ayah=Number(button.dataset.mulkSaveAyah),section=Number(app.querySelector('[data-mulk-section]')?.dataset.mulkSection||1);saveMulk(active=>{active.currentSection=section;active.savedAyah=ayah;active.lastActivityAt=new Date().toISOString()});toast(`Saved at Surah 67 • Al-Mulk, Ayah ${ayah}.`);render()}));
   app.querySelector('[data-mulk-complete-section]')?.addEventListener('click',button=>{const section=Number(button.dataset.mulkCompleteSection);let removed=false;const active=saveMulk(active=>{const completed=new Set(active.completedSections||[]);if(completed.has(section)){completed.delete(section);removed=true;active.currentSection=section}else{completed.add(section);active.currentSection=Math.min(4,section+1);active.savedAyah=0}active.completedSections=[...completed].sort((a,b)=>a-b);active.lastActivityAt=new Date().toISOString()});toast(removed?'Section marked unread.':active.completedSections.length===4?'Surah Al-Mulk completed.':'Section marked complete.');render()});
-  app.querySelector('[data-mulk-complete-surah]')?.addEventListener('click',()=>{saveMulk(active=>{active.completedSections=[1,2,3,4];active.currentSection=4;active.savedAyah=0;active.completedAt=new Date().toISOString()});toast('Surah Al-Mulk completed.');navigate('/quran/al-mulk')});
+  app.querySelector('[data-mulk-complete-surah]')?.addEventListener('click',()=>{saveMulk(active=>{active.completedSections=[1,2,3,4];active.currentSection=4;active.savedAyah=0;active.completedAt=new Date().toISOString()});let records={};try{records=JSON.parse(localStorage.getItem('ummiby.quran.mulkFeatured.records')||'{}')}catch{}records[localDateKey(new Date())]={status:'complete',source:'app',updatedAt:new Date().toISOString()};localStorage.setItem('ummiby.quran.mulkFeatured.records',JSON.stringify(records));recordQuranReading('mulk-full');toast('Surah Al-Mulk completed.');navigate('/quran/al-mulk')});
 
   app.querySelectorAll('[data-open-active-journey]').forEach(button => {
     button.addEventListener('click', () => app.querySelector(`#make-active-${button.dataset.openActiveJourney}`)?.showModal());

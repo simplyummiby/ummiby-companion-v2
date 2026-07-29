@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.27.1.3
+- Centered KPI icons and values beneath every history-card heading.
+- Added separate history pages for Surah Al-Kahf, Surah Al-Mulk, and Surah As-Sajdah.
+- Restricted the Al-Kahf editor to Fridays while Al-Mulk and As-Sajdah remain nightly, daily calendars.
+- Added clear Surah-specific titles and tracking schedules.
+- Added synced manual history records for Al-Mulk and As-Sajdah.
+
+
 ## 3.27.1.2 — Shared History KPI Layout and Qur’an History Cleanup
 - Removed the Recent Journey Activity section from Qur’an Reading History.
 - Standardized history KPI order: Active Days, completion metric, Completion Rate, Current Streak, Longest Streak.

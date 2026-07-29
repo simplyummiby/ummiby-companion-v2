@@ -1,3 +1,3 @@
-# Ummiby Companion v3.27.1.2
+# Ummiby Companion v3.27.1.3
 
-Shared History KPI Layout and Qur’an History Cleanup.
+Centered History KPIs and Surah-Specific History Calendars.

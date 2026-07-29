@@ -9,7 +9,7 @@ let hydrating=false;
 const EXACT_KEYS=new Set([
   'ummiby.quran.activeJourney','ummiby.quran.ayahNotes','ummiby.quran.journeys',
   'ummiby.quran.kahfFriday.active','ummiby.quran.kahfFriday.records',
-  'ummiby.quran.mulkFeatured.active','ummiby.quran.readingDays',
+  'ummiby.quran.mulkFeatured.active','ummiby.quran.mulkFeatured.records','ummiby.quran.sajdahFeatured.records','ummiby.quran.readingDays',
   'ummiby.quran.readingUnit.current','ummiby.quran.readingUnit.history',
   'ummiby.quran.readingUnit.startingPoint','ummiby.quran.savedAyat'
 ]);
