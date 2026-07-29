@@ -1,3 +1,3 @@
-# Ummiby Companion v3.27.1
+# Ummiby Companion v3.27.1.1
 
-Shared History Framework and Qur’an Calendar History.
+Qur’an Reading-Day False-Positive Hotfix.

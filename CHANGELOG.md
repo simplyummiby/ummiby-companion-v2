@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.27.1.1 — Qur’an Reading-Day False-Positive Hotfix
+- Removed the automatic daily Qur’an reading mark that fired merely when any Qur’an reader was rendered or opened.
+- Reading Unit opening, browsing, saving a place, saving an ayah, writing a note, and changing reader settings no longer count as a reading day.
+- Completing a Reading Unit now explicitly records the day as Qur’an reading.
+- Preserved manual Qur’an History edits, the Qur’an Home “Read Today” control, and explicit Featured Reading completion actions.
+- Added a one-time cleanup that removes legacy `inside` records created solely by the old reader-open trigger while preserving manual and completion-based records.
+- No Supabase SQL changes are required.
+
 ## 3.27.1 — Shared History Framework + Qur’an Calendar History
 - Rebuilt Qur’an Reading History around the reusable Duaa-style monthly calendar and daily activity editor.
 - Added editing for today and past Qur’an reading days; future dates remain disabled.

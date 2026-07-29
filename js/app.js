@@ -1,7 +1,7 @@
-import './quran-sync.js?v=3.27.1';
-import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.27.1";
-import { renderShell, saveActiveJourney } from "./shell.js?v=3.27.1";
-import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences, dailyActivityForDate, setDailyActivities } from "./duaa.js?v=3.27.1";
+import './quran-sync.js?v=3.27.1.1';
+import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.27.1.1";
+import { renderShell, saveActiveJourney } from "./shell.js?v=3.27.1.1";
+import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences, dailyActivityForDate, setDailyActivities } from "./duaa.js?v=3.27.1.1";
 import {
   onAuthStateChange,
   restoreSession,
@@ -9,11 +9,11 @@ import {
   signInWithPassword,
   signOut,
   signUpWithPassword
-} from "./auth.js?v=3.27.1";
-import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.27.1";
-import { setSyncUser, hydrateSyncData, flushSyncQueue } from "./sync.js?v=3.27.1";
-import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.27.1";
-import { clearPreferences, loadPreferences } from "./preferences.js?v=3.27.1";
+} from "./auth.js?v=3.27.1.1";
+import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.27.1.1";
+import { setSyncUser, hydrateSyncData, flushSyncQueue } from "./sync.js?v=3.27.1.1";
+import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.27.1.1";
+import { clearPreferences, loadPreferences } from "./preferences.js?v=3.27.1.1";
 
 const app = document.querySelector("#app");
 console.info("Canonical Qur’an data verified", QURAN_CANONICAL_STATUS);
@@ -79,12 +79,28 @@ function navigate(route) {
   window.location.hash = route;
 }
 
-function recordQuranReading(source='inside') {
+function recordQuranReading(source='manual') {
   const key = localDateKey();
   let records = {};
   try { records = JSON.parse(localStorage.getItem('ummiby.quran.readingDays') || '{}'); } catch {}
   records[key] = source;
   localStorage.setItem('ummiby.quran.readingDays', JSON.stringify(records));
+}
+
+function removeLegacyReaderOpenMarks() {
+  const migrationKey = 'ummiby.migrations.quranReaderOpenMarks.v3.27.1.1';
+  if (localStorage.getItem(migrationKey) === 'done') return;
+  let records = {};
+  try { records = JSON.parse(localStorage.getItem('ummiby.quran.readingDays') || '{}'); } catch {}
+  let changed = false;
+  for (const [dateKey, value] of Object.entries(records)) {
+    if (value === 'inside') {
+      delete records[dateKey];
+      changed = true;
+    }
+  }
+  if (changed) localStorage.setItem('ummiby.quran.readingDays', JSON.stringify(records));
+  localStorage.setItem(migrationKey, 'done');
 }
 
 function recordReadingUnitActivity(type, unitOrder, details = {}) {
@@ -207,8 +223,6 @@ function bindShellEvents() {
     }else toast('Unable to update that date.','error');
   });
 
-
-  if (app.querySelector('[data-quran-reading-inside]')) recordQuranReading('inside');
 
   const saveKahf=(mutator)=>{let active={};try{active=JSON.parse(localStorage.getItem('ummiby.quran.kahfFriday.active')||'{}')}catch{}const friday=(()=>{const d=new Date(),day=d.getDay(),delta=day===5?0:(day===6?-1:-(day+2));d.setDate(d.getDate()+delta);return localDateKey(d)})();if(active.fridayDate!==friday)active={fridayDate:friday,completedSections:[],currentSection:1,savedAyah:0};mutator(active,friday);localStorage.setItem('ummiby.quran.kahfFriday.active',JSON.stringify(active));return {active,friday}};
   const recordKahf=(status)=>{const {friday}=saveKahf(()=>{});let records={};try{records=JSON.parse(localStorage.getItem('ummiby.quran.kahfFriday.records')||'{}')}catch{}records[friday]={...(records[friday]||{}),status,readingMethod:records[friday]?.readingMethod||'ummiby',updatedAt:new Date().toISOString()};localStorage.setItem('ummiby.quran.kahfFriday.records',JSON.stringify(records));recordQuranReading(status==='complete'?'kahf-full':'kahf-partial')};
@@ -358,6 +372,7 @@ function bindShellEvents() {
     if(progress.completed && activeReadingUnit < QURAN_CANONICAL_STATUS.readingUnits)localStorage.setItem('ummiby.quran.readingUnit.current', String(activeReadingUnit + 1));
     else localStorage.setItem('ummiby.quran.readingUnit.current', String(activeReadingUnit));
     recordReadingUnitActivity(progress.completed ? 'completed' : 'reopened', activeReadingUnit);
+    if (progress.completed) recordQuranReading('reading-unit-complete');
     toast(progress.completed ? `Reading Unit ${activeReadingUnit} marked complete.` : 'Reading Unit completion removed.');
     render();
   });
@@ -816,6 +831,7 @@ async function handleAuthenticatedUser(user) {
 
 async function start() {
   try {
+    removeLegacyReaderOpenMarks();
     // 1. Initialize Supabase
     const supabaseState = await initializeSupabase();
     configured = supabaseState.configured;
