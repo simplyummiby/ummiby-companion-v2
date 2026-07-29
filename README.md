@@ -1,8 +1,8 @@
-# Ummiby Companion v3.24.0
+# Ummiby Companion v3.25.3
 
 **Current release:** Al-Kahf Reader Polish
 
-See `BUILD-REPORT-v3.24.0.md` for release details.
+See `docs/BUILD-REPORT-v3.25.3.md` for release details.
 
 ---
 

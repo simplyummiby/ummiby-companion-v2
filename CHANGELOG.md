@@ -1,5 +1,23 @@
 # Changelog
 
+## v3.25.3 – Al-Mulk Landing Page Alignment
+
+- Rebuilt only the Surah Al-Mulk landing page to match the established Al-Kahf experience style.
+- Restored the same spacious editorial hero proportions, copy treatment, primary action, and reading-status line.
+- Replaced the custom two-column Al-Mulk section arrangement with the responsive Al-Kahf four-card grid.
+- Restyled Current Reading as a supporting experience card instead of a dashboard strip.
+- Preserved the full-width Al-Mulk layout without an Al-Kahf calendar or right-side tracking panel.
+- Left the Al-Mulk reader unchanged.
+
+## v3.25.3 – Illustrated Surah Al-Mulk Experience
+
+- Added Surah 67 • Al-Mulk to Featured Readings.
+- Added a calm, full-width landing page with no calendar, streak, or nightly tracking.
+- Added four illustrated reading sections covering Ayat 1–30.
+- Integrated Al-Mulk into the shared Qur’an reader with independent saved-position and section-completion state.
+- Added Al-Mulk-only Reading Companion resources and closing hadith reminder.
+- Preserved Al-Kahf and existing Qur’an journey behavior.
+
 ## v3.24.0 – Al-Kahf Experience Landing Page
 - Redesigned the Al-Kahf Section Index into the official Friday experience landing page.
 - Added a sticky, responsive Experience Panel with integrated Friday calendar, dates, progress, continue reading, reset, external completion, and study access.

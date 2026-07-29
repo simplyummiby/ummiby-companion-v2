@@ -3264,3 +3264,65 @@
 .kahf-calendar-marker.is-partial{background:#fff;border:2px solid #b78a2e}
 .kahf-calendar-marker.is-upcoming{background:#fff;border:1px solid var(--theme-accent)}
 .kahf-calendar-day.is-current-friday{outline:2px solid var(--theme-accent);outline-offset:0;background:color-mix(in srgb,var(--theme-soft) 34%,white)!important}
+
+/* v3.25.0 — Surah Al-Mulk Featured Reading */
+.mulk-featured-index{max-width:1440px;margin-inline:auto}
+.mulk-featured-index .kahf-landing-hero{min-height:420px}
+.mulk-featured-index .kahf-landing-hero-copy{max-width:760px}
+.mulk-featured-index .kahf-landing-hero-copy h3{margin:.25rem 0 1rem;font-size:clamp(1.15rem,2vw,1.45rem);font-weight:600}
+.mulk-featured-index .kahf-landing-hero-copy blockquote{margin:1rem 0 .65rem;max-width:720px;font-family:Georgia,serif;font-size:clamp(1rem,1.6vw,1.2rem);line-height:1.65}
+.mulk-hero-citation{color:inherit;border-color:rgba(255,255,255,.45)}
+.mulk-current-reading{display:grid;grid-template-columns:minmax(220px,1.2fr) minmax(360px,2fr) auto;gap:1.5rem;align-items:center;margin:2rem 0;padding:1.5rem;border:1px solid var(--border-subtle);border-radius:var(--radius-xl);background:var(--surface-raised);box-shadow:var(--shadow-sm)}
+.mulk-current-reading h2{margin:.2rem 0 0}
+.mulk-current-reading dl{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:0}
+.mulk-current-reading dt{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted)}
+.mulk-current-reading dd{margin:.25rem 0 0;font-weight:700}
+.mulk-section-grid{grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:2rem}
+.mulk-section-grid .kahf-section-card p:not(.section-eyebrow){display:none}
+.mulk-closing-reminder{position:relative;overflow:hidden;min-height:300px;border-radius:var(--radius-xl);display:flex;align-items:center;margin:2.5rem 0 1rem;color:#fff}
+.mulk-closing-reminder>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.mulk-closing-reminder>span{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,25,22,.88),rgba(10,25,22,.35))}
+.mulk-closing-reminder>div{position:relative;z-index:1;max-width:760px;padding:clamp(1.5rem,4vw,3rem)}
+.mulk-closing-reminder blockquote{font-family:Georgia,serif;font-size:clamp(1.15rem,2vw,1.5rem);line-height:1.65;margin:.5rem 0 1rem}
+.mulk-closing-reminder a{color:#fff;font-weight:700}
+.mulk-reader .kahf-reader-banner img{object-position:center}
+@media(max-width:900px){.mulk-current-reading{grid-template-columns:1fr}.mulk-current-reading dl{grid-template-columns:1fr 1fr}.mulk-section-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.mulk-current-reading dl{grid-template-columns:1fr}.mulk-featured-index .kahf-landing-hero{min-height:520px}.mulk-featured-index .kahf-landing-hero-copy{padding:1.25rem}.mulk-closing-reminder{min-height:380px}}
+
+/* v3.25.1 — Al-Mulk landing aligned to the Al-Kahf experience */
+.mulk-featured-index{width:min(1580px,100%);max-width:none;margin-inline:auto;padding-inline:clamp(1.25rem,3vw,3rem)}
+.mulk-featured-index .kahf-landing-hero{min-height:390px;margin-bottom:2rem}
+.mulk-featured-index .kahf-landing-hero-copy{width:min(660px,66%);max-width:none;min-height:390px}
+.mulk-featured-index .kahf-landing-hero-copy h2{margin:.35rem 0 .7rem}
+.mulk-featured-index .kahf-landing-hero-copy>p:not(.page-kicker){max-width:570px;margin:0;color:rgb(255 255 255/.9);font-size:1rem;line-height:1.65}
+.mulk-landing-main{display:block}
+.mulk-reading-status{display:grid;grid-template-columns:minmax(260px,1.25fr) minmax(440px,1.8fr) auto;align-items:center;gap:1.5rem;margin:0 0 2rem;padding:1.35rem 1.5rem}
+.mulk-reading-status-copy h2{margin:.15rem 0 .35rem;font-family:var(--font-serif);font-size:1.35rem}
+.mulk-reading-status-copy>p:last-child{margin:0;color:var(--color-muted);line-height:1.5}
+.mulk-reading-status dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:0}
+.mulk-reading-status dl>div{padding-left:1rem;border-left:1px solid var(--color-border)}
+.mulk-reading-status dt{color:var(--color-muted);font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.mulk-reading-status dd{margin:.25rem 0 0;font-weight:800;line-height:1.35}
+.mulk-section-grid{grid-template-columns:repeat(4,minmax(210px,1fr));gap:1.15rem;margin-bottom:2rem}
+.mulk-section-grid .kahf-section-card>div:last-of-type{display:flex;flex-direction:column;align-items:flex-start}
+.mulk-section-grid .kahf-section-card .button{margin-top:auto}
+.mulk-closing-reminder{border:1px solid rgb(198 166 91/.38);border-radius:1.25rem;box-shadow:0 18px 42px rgb(16 37 27/.12)}
+@media(max-width:1380px){.mulk-section-grid{grid-template-columns:repeat(3,minmax(220px,1fr))}}
+@media(max-width:1120px){.mulk-reading-status{grid-template-columns:1fr}.mulk-reading-status dl{grid-template-columns:repeat(3,minmax(0,1fr))}.mulk-reading-status .button{justify-self:start}.mulk-section-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.mulk-featured-index .kahf-landing-hero{min-height:470px}.mulk-featured-index .kahf-landing-hero-copy{width:100%;min-height:470px;padding:1.5rem}.mulk-reading-status dl{grid-template-columns:1fr}.mulk-reading-status dl>div{padding:.75rem 0 0;border-left:0;border-top:1px solid var(--color-border)}.mulk-reading-status .button{width:100%}.mulk-section-grid{grid-template-columns:1fr}}
+
+
+/* v3.25.2 — Al-Mulk landing now uses the Al-Kahf landing structure directly */
+.mulk-featured-index{width:100%;max-width:none;margin:0;padding:0}
+.mulk-featured-index .kahf-landing-hero{min-height:410px;margin:0 0 clamp(1.6rem,2.5vw,2.4rem)}
+.mulk-featured-index .kahf-landing-hero-copy{width:min(660px,66%);max-width:none;min-height:410px}
+.mulk-index-layout{display:block}
+.mulk-index-layout>main{width:100%;min-width:0}
+.mulk-featured-index .kahf-section-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(.8rem,1.15vw,1.1rem)}
+.mulk-featured-index .kahf-section-card>div:nth-child(2){display:flex;flex-direction:column;align-items:flex-start;padding:1rem}
+.mulk-featured-index .kahf-section-card h3{font-size:clamp(1rem,1.15vw,1.18rem);line-height:1.3}
+.mulk-featured-index .kahf-section-card strong{margin-bottom:1rem}
+.mulk-featured-index .kahf-section-card .button{margin-top:auto}
+.mulk-featured-index .kahf-section-art{min-height:190px}
+@media(max-width:1080px){.mulk-featured-index .kahf-section-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.mulk-featured-index .kahf-section-art{min-height:220px}}
+@media(max-width:760px){.mulk-featured-index .kahf-landing-hero{min-height:470px}.mulk-featured-index .kahf-landing-hero-copy{width:100%;min-height:470px;padding:1.4rem}.mulk-featured-index .kahf-section-grid{grid-template-columns:1fr}.mulk-featured-index .kahf-section-art{min-height:230px}}

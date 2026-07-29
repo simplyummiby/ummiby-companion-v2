@@ -1,6 +1,6 @@
-import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.22.5";
-import { renderShell, saveActiveJourney } from "./shell.js?v=3.22.5";
-import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences } from "./duaa.js?v=3.22.5";
+import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.25.3";
+import { renderShell, saveActiveJourney } from "./shell.js?v=3.25.3";
+import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences } from "./duaa.js?v=3.25.3";
 import {
   onAuthStateChange,
   restoreSession,
@@ -8,10 +8,10 @@ import {
   signInWithPassword,
   signOut,
   signUpWithPassword
-} from "./auth.js?v=3.22.5";
-import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.22.5";
-import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.22.5";
-import { clearPreferences, loadPreferences } from "./preferences.js?v=3.22.5";
+} from "./auth.js?v=3.25.3";
+import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.25.3";
+import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.25.3";
+import { clearPreferences, loadPreferences } from "./preferences.js?v=3.25.3";
 
 const app = document.querySelector("#app");
 console.info("Canonical Qur’an data verified", QURAN_CANONICAL_STATUS);
@@ -205,6 +205,13 @@ function bindShellEvents() {
   app.querySelector('[data-kahf-reset-friday]')?.addEventListener('click',()=>{const {friday}=saveKahf(active=>{active.completedSections=[];active.currentSection=1;active.savedAyah=0;delete active.completedAt;active.lastActivityAt=new Date().toISOString()});let records={};try{records=JSON.parse(localStorage.getItem('ummiby.quran.kahfFriday.records')||'{}')}catch{}delete records[friday];localStorage.setItem('ummiby.quran.kahfFriday.records',JSON.stringify(records));toast('This Friday’s Al-Kahf progress and calendar status were reset.');render()});
   app.querySelector('[data-kahf-complete-surah]')?.addEventListener('click',()=>{saveKahf(active=>{active.completedSections=[1,2,3,4,5,6,7,8];active.currentSection=8;active.savedAyah=0;active.completedAt=new Date().toISOString()});recordKahf('complete');toast('Surah Al-Kahf completed this Friday.');navigate('/quran/al-kahf-friday')});
 
+
+
+  const saveMulk=(mutator)=>{let active={};try{active=JSON.parse(localStorage.getItem('ummiby.quran.mulkFeatured.active')||'{}')}catch{}active={completedSections:[],currentSection:1,savedAyah:0,...active};mutator(active);localStorage.setItem('ummiby.quran.mulkFeatured.active',JSON.stringify(active));return active};
+  app.querySelectorAll('[data-mulk-return-index]').forEach(link=>link.addEventListener('click',()=>{const section=Number(link.dataset.mulkReturnIndex);if(section)saveMulk(active=>{active.currentSection=section;active.lastActivityAt=new Date().toISOString()})}));
+  app.querySelectorAll('[data-mulk-save-ayah]').forEach(button=>button.addEventListener('click',()=>{const ayah=Number(button.dataset.mulkSaveAyah),section=Number(app.querySelector('[data-mulk-section]')?.dataset.mulkSection||1);saveMulk(active=>{active.currentSection=section;active.savedAyah=ayah;active.lastActivityAt=new Date().toISOString()});toast(`Saved at Surah 67 • Al-Mulk, Ayah ${ayah}.`);render()}));
+  app.querySelector('[data-mulk-complete-section]')?.addEventListener('click',button=>{const section=Number(button.dataset.mulkCompleteSection);let removed=false;const active=saveMulk(active=>{const completed=new Set(active.completedSections||[]);if(completed.has(section)){completed.delete(section);removed=true;active.currentSection=section}else{completed.add(section);active.currentSection=Math.min(4,section+1);active.savedAyah=0}active.completedSections=[...completed].sort((a,b)=>a-b);active.lastActivityAt=new Date().toISOString()});toast(removed?'Section marked unread.':active.completedSections.length===4?'Surah Al-Mulk completed.':'Section marked complete.');render()});
+  app.querySelector('[data-mulk-complete-surah]')?.addEventListener('click',()=>{saveMulk(active=>{active.completedSections=[1,2,3,4];active.currentSection=4;active.savedAyah=0;active.completedAt=new Date().toISOString()});toast('Surah Al-Mulk completed.');navigate('/quran/al-mulk')});
 
   app.querySelectorAll('[data-open-active-journey]').forEach(button => {
     button.addEventListener('click', () => app.querySelector(`#make-active-${button.dataset.openActiveJourney}`)?.showModal());

@@ -1,3 +1,3 @@
-# Ummiby Companion v3.24.0
+# Ummiby Companion v3.25.3
 
-Featured Reading Card System.
+Illustrated Surah Al-Mulk Featured Reading Experience.
