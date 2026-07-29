@@ -1,3 +1,3 @@
-# Ummiby Companion v3.27.1.1
+# Ummiby Companion v3.27.1.2
 
-Qur’an Reading-Day False-Positive Hotfix.
+Shared History KPI Layout and Qur’an History Cleanup.

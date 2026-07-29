@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.27.1.2 — Shared History KPI Layout and Qur’an History Cleanup
+- Removed the Recent Journey Activity section from Qur’an Reading History.
+- Standardized history KPI order: Active Days, completion metric, Completion Rate, Current Streak, Longest Streak.
+- Made five KPI cards compact enough to remain on one desktop row.
+- Applied the shared KPI row layout to current Duaa and Qur’an history pages so future module histories can inherit the same structure.
+- Preserved responsive three-, two-, and one-column layouts for smaller screens.
+- No Supabase SQL changes are required.
+
 ## 3.27.1.1 — Qur’an Reading-Day False-Positive Hotfix
 - Removed the automatic daily Qur’an reading mark that fired merely when any Qur’an reader was rendered or opened.
 - Reading Unit opening, browsing, saving a place, saving an ayah, writing a note, and changing reader settings no longer count as a reading day.
