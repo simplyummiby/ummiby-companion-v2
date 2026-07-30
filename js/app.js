@@ -1,6 +1,6 @@
 import './quran-sync.js?v=3.29.0';
 import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.29.0";
-import { renderShell, saveActiveJourney } from "./shell.js?v=3.29.0";
+import { renderShell, saveActiveJourney } from "./shell.js?v=3.31.1";
 import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences, dailyActivityForDate, setDailyActivities } from "./duaa.js?v=3.29.0";
 import {
   onAuthStateChange,
@@ -14,6 +14,7 @@ import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.29.0";
 import { setSyncUser, hydrateSyncData, flushSyncQueue } from "./sync.js?v=3.29.0";
 import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.29.0";
 import { clearPreferences, loadPreferences } from "./preferences.js?v=3.29.0";
+import { getPrayerSettings, savePrayerSettings, requestAutomaticLocation, calculatePrayerTimes, formatPrayerTime, getNextPrayer, getPrayerTracker, togglePrayerTracked } from './services/prayer-times.js?v=3.31.1';
 
 const app = document.querySelector("#app");
 console.info("Canonical Qur’an data verified", QURAN_CANONICAL_STATUS);
@@ -115,7 +116,57 @@ function recordReadingUnitActivity(type, unitOrder, details = {}) {
   localStorage.setItem('ummiby.quran.readingUnit.history', JSON.stringify(entries.slice(0, 250)));
 }
 
+async function refreshPrayerTimeUI() {
+  const lists = [...app.querySelectorAll('[data-prayer-times-list]')];
+  if (!lists.length) return;
+  const settings = getPrayerSettings();
+  app.querySelectorAll('[data-prayer-method-summary]').forEach(summary => {
+    summary.textContent = `${settings.calculationMethod === 'UmmAlQura' ? 'Umm al-Qura' : settings.calculationMethod} · ${settings.madhab} Asr`;
+  });
+  app.querySelectorAll('[data-prayer-live-location]').forEach(node => { node.textContent = settings.locationLabel || 'Location not set'; });
+  if (!Number.isFinite(settings.latitude) || !Number.isFinite(settings.longitude)) return;
+  lists.forEach(list => { list.innerHTML = '<p class="prayer-loading">Calculating local prayer times…</p>'; });
+  try {
+    const now = new Date();
+    const times = await calculatePrayerTimes(now, settings);
+    const next = getNextPrayer(times, now);
+    const tracker = getPrayerTracker(now);
+    const rows = [['fajr','Fajr',times.fajr,true],['sunrise','Sunrise',times.sunrise,false],['dhuhr','Dhuhr',times.dhuhr,true],['asr','Asr',times.asr,true],['maghrib','Maghrib',times.maghrib,true],['isha','Isha',times.isha,true]];
+    const count = Object.values(tracker).filter(Boolean).length;
+    const markup = rows.map(([key,name,time,trackable]) => {
+      const completed = trackable && tracker[key];
+      const isNext = next?.[0] === name;
+      return `<div class="prayer-tracker-row${isNext?' is-next':''}${completed?' is-complete':''}${!trackable?' is-sunrise':''}"><span class="prayer-row-name">${trackable?`<button type="button" class="prayer-track-toggle" data-prayer-track="${key}" aria-pressed="${completed}" aria-label="${completed?'Undo':'Mark'} ${name} as prayed"><i class="ph ${completed?'ph-check-circle-fill':'ph-circle'}"></i></button>`:'<span class="prayer-sunrise-icon"><i class="ph ph-sun-horizon"></i></span>'}<span>${name}${isNext?'<small>Next prayer</small>':!trackable?'<small>Information only</small>':''}</span></span><strong>${formatPrayerTime(time, settings)}</strong></div>`;
+    }).join('');
+    lists.forEach(list => { list.innerHTML = markup; });
+    app.querySelectorAll('[data-prayer-progress]').forEach(node => { node.textContent = `${count} of 5`; });
+    app.querySelectorAll('[data-prayer-completion-message]').forEach(node => { node.textContent = count === 5 ? 'All five prayers completed today. Alhamdulillah.' : `${count} of 5 prayers completed today.`; });
+    app.querySelectorAll('[data-prayer-next-summary]').forEach(node => {
+      if (next) { node.hidden = false; node.innerHTML = `<span>Next prayer</span><strong>${next[0]} · ${formatPrayerTime(next[1], settings)}</strong>`; }
+      else { node.hidden = true; node.innerHTML = ''; }
+    });
+    app.querySelectorAll('[data-prayer-track]').forEach(button => button.addEventListener('click', async () => {
+      const prayer = button.dataset.prayerTrack;
+      const updated = togglePrayerTracked(prayer, new Date());
+      toast(updated[prayer] ? `${prayer.charAt(0).toUpperCase()+prayer.slice(1)} marked as prayed.` : 'Prayer mark removed.');
+      await refreshPrayerTimeUI();
+    }));
+  } catch (error) {
+    lists.forEach(list => { list.innerHTML = `<p class="prayer-loading">${error.message}</p>`; });
+  }
+}
+
 function bindShellEvents() {
+  refreshPrayerTimeUI();
+  app.querySelector('[data-prayer-location]')?.addEventListener('click', async event => {
+    const button=event.currentTarget; const status=app.querySelector('[data-prayer-location-status]');
+    button.disabled=true; if(status) status.textContent='Requesting your device location…';
+    try { const settings=await requestAutomaticLocation(); if(status) status.textContent=settings.locationLabel; toast('Automatic location saved.'); await refreshPrayerTimeUI(); }
+    catch(error){ if(status) status.textContent=error.message; toast(error.message,'error'); } finally { button.disabled=false; }
+  });
+  app.querySelector('[data-prayer-settings-form]')?.addEventListener('submit', async event => {
+    event.preventDefault(); savePrayerSettings({ calculationMethod:app.querySelector('[data-prayer-calculation]')?.value||'UmmAlQura', madhab:app.querySelector('[data-prayer-madhab]')?.value||'Hanafi' }); toast('Prayer time settings saved.'); await refreshPrayerTimeUI();
+  });
   let namesFilter='all';
   const applyNamesFilters=()=>{const query=(app.querySelector('[data-names-search]')?.value||'').trim().toLowerCase();const cards=[...app.querySelectorAll('[data-name-card]')];let visible=0;cards.forEach(card=>{const matchesText=!query||card.dataset.nameSearch.includes(query);const matchesSource=namesFilter==='all'||card.dataset.nameSource===namesFilter;card.hidden=!(matchesText&&matchesSource);if(!card.hidden)visible+=1});const output=app.querySelector('[data-names-results]');if(output)output.textContent=`${visible} ${visible===1?'Name':'Names'} shown`;const empty=app.querySelector('[data-names-empty]');if(empty)empty.hidden=visible!==0};
   app.querySelector('[data-names-search]')?.addEventListener('input',applyNamesFilters);

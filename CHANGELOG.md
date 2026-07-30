@@ -1,5 +1,16 @@
 # Changelog
 
+## v3.31.0 — Automatic Location Prayer-Time Foundation
+
+- Added a shared Adhan.js prayer-time service for browser-based calculations.
+- Added automatic device geolocation with explicit permission.
+- Added selectable prayer calculation methods, defaulting to Umm al-Qura.
+- Added selectable Asr juristic method, defaulting to Hanafi.
+- Replaced the Prayer Settings placeholder with a working settings and verification page.
+- Added calculated Fajr, Sunrise, Dhuhr, Asr, Maghrib, and Isha display with next-prayer highlighting.
+- Stored prayer preferences locally in a reusable schema ready for future account sync and Home-page integration.
+
+
 ## 3.30.0 — Qur’an Reader Settings Consolidation
 - Consolidated Qur’an display controls into shared settings panels.
 - Removed A− and A+ buttons from reader headers.
@@ -335,3 +346,11 @@
 - Connected Al-Kahf to the existing Friday reading experience.
 - Left As-Sajdah and Al-Mulk clearly marked as upcoming reader experiences.
 - Added responsive three-, two-, and one-column card layouts.
+
+## v3.31.1 — Live Prayer Times & Daily Tracker
+
+- Replaced the Prayer Home placeholder with the shared live prayer-time engine.
+- Displayed the same reusable prayer schedule and tracker on Prayer Home and Prayer Times.
+- Added five daily prayer completion toggles with undo support; Sunrise remains informational only.
+- Added next-prayer highlighting, a daily 0–5 summary, and an all-prayers-complete message.
+- Stored completion status by local calendar date in localStorage for daily history continuity.
