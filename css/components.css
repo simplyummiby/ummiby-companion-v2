@@ -3971,3 +3971,468 @@ a.button:hover, a[class*="button"]:hover, .button:hover, [role="button"]:hover, 
   .dynamic-home-page .home-activity-card{grid-template-columns:58px minmax(0,1fr)}
   .dynamic-home-page .home-card-icon{width:48px;height:48px;font-size:1.5rem}
 }
+
+/* v3.37.0 — Home prayer card placement and status interaction */
+.dynamic-home-page .home-content{
+  display:grid;
+  grid-template-columns:minmax(0,1.55fr) minmax(440px,.95fr);
+  grid-template-areas:"activities prayer";
+  align-items:start;
+  gap:.9rem;
+  margin-top:-5rem;
+}
+.dynamic-home-page .home-action-grid{
+  grid-area:activities;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  margin-top:0;
+}
+.dynamic-home-page .home-action-grid .home-activity-card:first-child{grid-column:1 / -1}
+.dynamic-home-page .home-prayer-card{
+  grid-area:prayer;
+  margin-top:0;
+  padding:.9rem 1rem .75rem;
+}
+.dynamic-home-page .home-prayer-card .prayer-tracker-list{
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:.2rem;
+  margin:.7rem 0 .35rem;
+  border:0;
+  overflow:visible;
+}
+.dynamic-home-page .home-prayer-card .prayer-tracker-row,
+.dynamic-home-page .home-prayer-card .prayer-tracker-row.is-next{
+  min-height:126px;
+  padding:0;
+  border:0;
+  overflow:visible;
+  box-shadow:none;
+}
+.dynamic-home-page .home-prayer-choice{
+  width:100%;
+  min-height:126px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  gap:.3rem;
+  padding:.3rem .12rem .45rem;
+  border:0;
+  border-radius:.85rem;
+  background:transparent;
+  color:#344054;
+  cursor:pointer;
+  font:inherit;
+  transition:background-color .2s ease,transform .2s ease;
+}
+.dynamic-home-page .home-prayer-choice:hover,
+.dynamic-home-page .home-prayer-choice:focus-visible{background:rgba(255,255,255,.54);outline:none}
+.dynamic-home-page .home-prayer-choice:active{transform:scale(.98)}
+.dynamic-home-page .prayer-status-circle{
+  display:grid;
+  place-items:center;
+  width:24px;
+  height:24px;
+  border:2px solid #9aa1ac;
+  border-radius:50%;
+  color:#8c949f;
+  font-size:.82rem;
+  transition:background-color .23s ease,border-color .23s ease,color .23s ease,transform .23s ease;
+}
+.dynamic-home-page .prayer-display-icon{
+  display:grid;
+  place-items:center;
+  width:34px;
+  height:34px;
+  margin-top:.05rem;
+  color:var(--home-accent);
+  font-size:1.8rem;
+}
+.dynamic-home-page .prayer-display-name{font-size:.82rem;font-weight:800;line-height:1.1}
+.dynamic-home-page .home-prayer-choice>strong{margin:0;font-size:.72rem;font-weight:700;color:#6d7583;white-space:nowrap}
+.dynamic-home-page .prayer-status-on_time .prayer-status-circle{border-color:#a67a2f;background:#a67a2f;color:#fff}
+.dynamic-home-page .prayer-status-late .prayer-status-circle{border-color:#b59658;background:#b59658;color:#fff}
+.dynamic-home-page .prayer-status-missed .prayer-status-circle{border-color:#9a7378;background:#9a7378;color:#fff}
+.dynamic-home-page .prayer-tracker-row.is-next .prayer-display-name{color:var(--home-accent)}
+.dynamic-home-page .prayer-tracker-row.is-next .home-prayer-choice{background:color-mix(in srgb,var(--home-accent) 7%,transparent)}
+.dynamic-home-page .prayer-status-menu{
+  position:absolute;
+  z-index:60;
+  right:50%;
+  bottom:calc(100% + .55rem);
+  width:min(270px,calc(100vw - 2rem));
+  transform:translateX(50%);
+  padding:.42rem;
+  border:1px solid rgba(255,255,255,.78);
+  border-radius:1rem;
+  background:rgba(255,255,255,.96);
+  box-shadow:0 18px 42px rgba(26,33,46,.18);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
+.dynamic-home-page .prayer-status-menu[hidden]{display:none}
+.dynamic-home-page .prayer-status-menu button{
+  display:grid;
+  grid-template-columns:28px minmax(0,1fr);
+  gap:.55rem;
+  width:100%;
+  padding:.62rem .68rem;
+  border:0;
+  border-radius:.7rem;
+  background:transparent;
+  color:#354052;
+  text-align:left;
+  cursor:pointer;
+}
+.dynamic-home-page .prayer-status-menu button:hover,
+.dynamic-home-page .prayer-status-menu button:focus-visible,
+.dynamic-home-page .prayer-status-menu button[aria-checked="true"]{background:color-mix(in srgb,var(--home-accent) 10%,#fff);outline:none}
+.dynamic-home-page .prayer-status-menu button>i{margin-top:.08rem;font-size:1.25rem;color:var(--home-accent)}
+.dynamic-home-page .prayer-status-menu button span,.dynamic-home-page .prayer-status-menu button strong,.dynamic-home-page .prayer-status-menu button small{display:block}
+.dynamic-home-page .prayer-status-menu button strong{font-size:.78rem}
+.dynamic-home-page .prayer-status-menu button small{margin-top:.12rem;font-size:.65rem;color:#737b88;line-height:1.25}
+.dynamic-home-page .prayer-status-menu .prayer-clear-status{margin-top:.3rem;border-top:1px solid #e7e9ed;border-radius:0 0 .7rem .7rem}
+
+@media(max-width:1180px){
+  .dynamic-home-page .home-content{grid-template-columns:1fr;grid-template-areas:"prayer" "activities";margin-top:-3rem}
+  .dynamic-home-page .home-prayer-card{max-width:none}
+}
+@media(max-width:760px){
+  .dynamic-home-page .home-content{margin-top:-2rem}
+  .dynamic-home-page .home-action-grid{grid-template-columns:1fr}
+  .dynamic-home-page .home-action-grid .home-activity-card:first-child{grid-column:auto}
+  .dynamic-home-page .home-prayer-card .prayer-tracker-list{grid-template-columns:repeat(5,minmax(58px,1fr));overflow-x:auto;padding-bottom:.2rem}
+  .dynamic-home-page .home-prayer-card .prayer-tracker-row{min-height:118px}
+  .dynamic-home-page .home-prayer-choice{min-height:118px}
+  .dynamic-home-page .prayer-status-menu{position:fixed;left:1rem;right:1rem;bottom:1rem;width:auto;transform:none}
+}
+
+
+/* v3.38.0 — Home Companion Station first draft */
+.home-companion-station{transition:opacity .42s ease;background:#ece6dd}
+.home-companion-station.is-transitioning{opacity:.18}
+.home-companion-station .home-status-strip{position:relative;z-index:5;justify-content:space-evenly;background:rgba(255,255,255,.88);color:#26344c;border-bottom:1px solid rgba(71,80,98,.12);box-shadow:0 6px 18px rgba(30,38,52,.06)}
+.home-companion-station .home-status-divider{background:rgba(57,67,84,.14)}
+.home-companion-station .home-status-group>i{color:var(--home-accent)}
+.home-companion-station .home-status-group small{color:#7c8492}
+.home-companion-station .home-status-group strong{color:#25324a}
+.home-companion-station .home-hero{min-height:clamp(430px,47vw,650px);padding:clamp(1.2rem,3vw,3rem);align-items:flex-start}
+.home-companion-station .home-hero-overlay{width:100%;display:grid;grid-template-columns:minmax(220px,.72fr) minmax(520px,1.55fr) minmax(220px,.72fr);gap:1rem;align-items:start}
+.home-companion-station .home-greeting-panel,.home-companion-station .home-quote-panel,.home-companion-station .home-hero-prayers{margin:0;border:1px solid rgba(255,255,255,.3);border-radius:1.2rem;background:rgba(20,24,31,.24);color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.34);box-shadow:0 14px 36px rgba(0,0,0,.08);backdrop-filter:blur(9px) saturate(110%);-webkit-backdrop-filter:blur(9px) saturate(110%)}
+.home-companion-station .home-greeting-panel{width:auto;padding:1.25rem}
+.home-companion-station .home-greeting-panel h1{font-size:clamp(2rem,3.5vw,3.6rem)}
+.home-companion-station .home-quote-panel{padding:1.35rem;text-align:center}
+.home-companion-station .home-quote-panel .section-eyebrow{color:rgba(255,255,255,.8)}
+.home-companion-station .home-quote-panel blockquote{margin:1rem 0;font:italic clamp(1rem,1.45vw,1.35rem)/1.55 var(--font-serif)}
+.home-companion-station .home-quote-panel small{color:rgba(255,255,255,.82)}
+.home-companion-station .home-hero-prayers{padding:.85rem 1rem .65rem;background:rgba(255,255,255,.82);color:#26344c;text-shadow:none}
+.home-companion-station .home-hero-prayers>header{display:flex;justify-content:space-between;align-items:center;padding:.15rem .3rem .45rem}
+.home-companion-station .home-hero-prayers>header p{margin:0}.home-companion-station .home-hero-prayers>header>strong{font-size:.78rem;color:var(--home-accent)}
+.home-companion-station .home-hero-prayers .prayer-tracker-list{grid-template-columns:repeat(5,minmax(72px,1fr));margin:0;border-top:1px solid rgba(55,66,86,.1)}
+.home-companion-station .home-hero-prayers .prayer-tracker-row,.home-companion-station .home-hero-prayers .prayer-tracker-row.is-next{min-height:110px}
+.home-companion-station .home-content{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:none;gap:1rem;max-width:1480px;margin:-4.25rem auto 0;padding:0 clamp(1rem,4vw,4rem) 2.5rem}
+.home-station-panel{position:relative;padding:1.1rem;border:1px solid rgba(255,255,255,.72);border-radius:1.35rem;background:rgba(255,255,255,.82);box-shadow:0 16px 38px rgba(29,36,50,.1);backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px)}
+.home-station-panel>header{display:flex;align-items:center;gap:.75rem;padding:.15rem .25rem .9rem}
+.home-station-panel>header h2{margin:.12rem 0 0;font-size:1rem;color:#4e596c;font-weight:650}.home-station-panel>header p{margin:0}
+.home-panel-heading-icon{display:grid;place-items:center;flex:0 0 auto;width:42px;height:42px;border-radius:50%;background:color-mix(in srgb,var(--home-accent) 11%,#fff);color:var(--home-accent);font-size:1.25rem}
+.home-station-list{display:grid;gap:.65rem}.home-station-item{display:grid;grid-template-columns:48px minmax(0,1fr) auto;align-items:center;gap:.75rem;min-height:78px;padding:.72rem .8rem;border:1px solid rgba(57,67,84,.1);border-radius:1rem;background:rgba(255,255,255,.78);color:#27344c;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.home-station-item:hover,.home-station-item:focus-visible{transform:translateY(-1px);border-color:color-mix(in srgb,var(--home-accent) 28%,transparent);box-shadow:0 8px 18px rgba(29,36,50,.07);outline:none}
+.home-station-icon{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:color-mix(in srgb,var(--home-accent) 9%,#fff);color:var(--home-accent);font-size:1.35rem}.home-station-copy{display:grid;gap:.16rem}.home-station-copy strong{font-family:var(--font-serif);font-size:1.05rem}.home-station-copy small{color:#657083;line-height:1.35}.home-station-copy em{font-size:.72rem;font-style:normal;font-weight:800;color:var(--home-accent)}.home-station-item.is-complete .home-station-copy em{color:#2f8458}.home-station-arrow{color:#89909d}
+@media(max-width:1180px){.home-companion-station .home-hero-overlay{grid-template-columns:1fr 1.65fr}.home-companion-station .home-quote-panel{grid-column:1/-1;max-width:600px;justify-self:center}.home-companion-station .home-content{margin-top:-2.5rem}}
+@media(max-width:860px){.home-companion-station .home-hero{min-height:auto;padding-bottom:5rem}.home-companion-station .home-hero-overlay{grid-template-columns:1fr}.home-companion-station .home-quote-panel{grid-column:auto;max-width:none}.home-companion-station .home-content{grid-template-columns:1fr;margin-top:-3rem}.home-companion-station .home-status-strip{justify-content:flex-start}.home-companion-station .home-hero-prayers .prayer-tracker-list{overflow-x:auto}}
+@media(max-width:560px){.home-companion-station .home-app-header{grid-template-columns:1fr auto}.home-companion-station .home-brand span:last-child{display:none}.home-companion-station .home-hero{padding:.8rem .8rem 4rem}.home-companion-station .home-greeting-panel h1{font-size:2.25rem}.home-companion-station .home-hero-prayers{padding:.7rem}.home-companion-station .home-content{padding:0 .8rem 2rem}.home-station-panel{padding:.8rem}.home-station-item{grid-template-columns:42px minmax(0,1fr) auto;padding:.65rem}.home-station-icon{width:40px;height:40px}.home-companion-station .home-preview-control{display:none}}
+
+/* v3.39.0 — Cohesive full-courtyard Companion Station */
+.home-companion-station{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  background:#d9c8ae;
+  overflow:visible;
+}
+.home-companion-station .home-background{
+  position:fixed;
+  inset:0;
+  background-size:cover;
+  background-position:center top;
+}
+.home-companion-station .home-background-wash{
+  position:fixed;
+  background:linear-gradient(180deg,rgba(16,20,28,.02),rgba(16,20,28,.02) 58%,rgba(16,20,28,.10));
+}
+.home-companion-station .home-status-strip{
+  background:color-mix(in srgb,var(--home-accent) 78%,#31404b);
+  color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.18);
+  box-shadow:0 6px 18px rgba(30,38,52,.12);
+}
+.home-companion-station .home-status-divider{background:rgba(255,255,255,.28)}
+.home-companion-station .home-status-group>i,
+.home-companion-station .home-status-group small,
+.home-companion-station .home-status-group strong{color:#fff}
+.home-companion-station .home-hero{
+  min-height:0;
+  padding:clamp(.85rem,1.8vw,1.45rem) clamp(1rem,4vw,4rem) .75rem;
+}
+.home-companion-station .home-hero-overlay{
+  max-width:1352px;
+  margin:0 auto;
+  grid-template-columns:minmax(230px,.76fr) minmax(590px,1.72fr) minmax(230px,.76fr);
+  gap:1rem;
+  align-items:stretch;
+}
+.home-companion-station .home-greeting-panel,
+.home-companion-station .home-quote-panel,
+.home-companion-station .home-hero-prayers,
+.home-companion-station .home-station-panel{
+  border:1px solid rgba(126,99,60,.28);
+  border-radius:1.1rem;
+  background:rgba(250,245,234,.94);
+  color:#29364a;
+  text-shadow:none;
+  box-shadow:0 12px 28px rgba(31,38,49,.13);
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+}
+.home-companion-station .home-greeting-panel{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-height:174px;
+  padding:1rem 1.15rem;
+}
+.home-companion-station .home-greeting-panel h1{
+  margin:.12rem 0 .55rem;
+  color:#29364a;
+  font-size:clamp(1.65rem,2.3vw,2.35rem);
+  line-height:1.08;
+}
+.home-companion-station .home-period-label{color:var(--home-accent)}
+.home-companion-station .home-date{color:#4e5968}
+.home-companion-station .home-date.is-hijri{color:#6d7480}
+.home-companion-station .home-quote-panel{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-height:174px;
+  padding:1rem 1.2rem;
+}
+.home-companion-station .home-quote-panel .section-eyebrow{color:var(--home-accent)}
+.home-companion-station .home-quote-panel blockquote{
+  margin:.65rem 0;
+  color:#39465a;
+  font-size:clamp(.95rem,1.15vw,1.12rem);
+  line-height:1.48;
+}
+.home-companion-station .home-quote-panel small{color:#747b86}
+.home-companion-station .home-hero-prayers{
+  min-height:174px;
+  padding:.65rem .8rem .55rem;
+}
+.home-companion-station .home-hero-prayers>header{padding:.05rem .3rem .35rem}
+.home-companion-station .home-hero-prayers .prayer-tracker-list{
+  grid-template-columns:repeat(6,minmax(68px,1fr));
+  gap:.18rem;
+  border-top:1px solid rgba(126,99,60,.16);
+}
+.home-companion-station .home-hero-prayers .prayer-tracker-row,
+.home-companion-station .home-hero-prayers .prayer-tracker-row.is-next{min-height:126px}
+.home-companion-station .home-prayer-choice{min-height:126px;padding:.28rem .08rem .35rem}
+.home-companion-station .home-prayer-choice.is-information{cursor:default}
+.home-companion-station .prayer-status-circle.is-information{
+  border-color:color-mix(in srgb,var(--home-accent) 42%,#aaa);
+  color:var(--home-accent);
+  background:transparent;
+}
+.home-companion-station .home-hero-prayers .prayer-tracker-row.is-sunrise{
+  background:color-mix(in srgb,var(--home-accent) 5%,transparent);
+}
+.home-companion-station .home-content{
+  flex:1;
+  width:100%;
+  max-width:1352px;
+  margin:0 auto;
+  padding:.2rem 0 clamp(1rem,2vw,1.6rem);
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1rem;
+}
+.home-companion-station .home-station-panel{padding:.88rem 1rem}
+.home-companion-station .home-station-panel>header{padding:.05rem .15rem .65rem}
+.home-companion-station .home-station-panel>header h2{font-size:.92rem}
+.home-companion-station .home-station-list{gap:.48rem}
+.home-companion-station .home-station-item{
+  min-height:68px;
+  padding:.58rem .7rem;
+  border-color:rgba(126,99,60,.14);
+  background:rgba(255,252,245,.86);
+}
+.home-companion-station .home-footer{
+  position:relative;
+  z-index:3;
+  margin-top:auto;
+  padding:.9rem 1.5rem;
+  color:rgba(255,255,255,.9);
+  background:color-mix(in srgb,var(--home-accent) 68%,#3e352b);
+  border-top:1px solid rgba(255,255,255,.18);
+  text-shadow:none;
+}
+@media(max-width:1180px){
+  .home-companion-station .home-hero-overlay{grid-template-columns:1fr 1.6fr}
+  .home-companion-station .home-quote-panel{grid-column:1/-1;max-width:none}
+  .home-companion-station .home-content{width:calc(100% - 2rem)}
+}
+@media(max-width:860px){
+  .home-companion-station .home-hero-overlay{grid-template-columns:1fr}
+  .home-companion-station .home-content{width:calc(100% - 1.6rem);grid-template-columns:1fr}
+  .home-companion-station .home-hero-prayers .prayer-tracker-list{grid-template-columns:repeat(6,minmax(72px,1fr));overflow-x:auto}
+}
+
+/* v3.40.0 — Home Companion Station grid correction */
+@media (min-width:1181px){
+  .home-companion-station .home-hero,
+  .home-companion-station .home-content{
+    --home-frame-width:min(1320px,calc(100vw - 5rem));
+  }
+  .home-companion-station .home-hero{
+    display:block;
+    padding:1.25rem 0 .65rem;
+  }
+  .home-companion-station .home-hero-overlay{
+    width:var(--home-frame-width);
+    max-width:none;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:minmax(260px,0.82fr) minmax(620px,1.72fr) minmax(280px,0.9fr);
+    grid-template-areas:"greeting prayers reflection";
+    column-gap:1rem;
+    align-items:stretch;
+  }
+  .home-companion-station .home-greeting-panel{
+    grid-area:greeting;
+    width:auto;
+    min-width:0;
+    overflow:hidden;
+  }
+  .home-companion-station .home-hero-prayers{
+    grid-area:prayers;
+    width:auto;
+    min-width:0;
+    margin:0;
+  }
+  .home-companion-station .home-quote-panel{
+    grid-area:reflection;
+    width:auto;
+    min-width:0;
+    margin:0;
+  }
+  .home-companion-station .home-greeting-panel h1{
+    white-space:normal;
+    overflow-wrap:normal;
+    font-size:clamp(1.55rem,1.85vw,2.05rem);
+  }
+  .home-companion-station .home-content{
+    width:var(--home-frame-width);
+    max-width:none;
+    margin:0 auto;
+    padding:.35rem 0 1.35rem;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:1rem;
+  }
+  .home-companion-station .home-station-panel{
+    width:auto;
+    min-width:0;
+    margin:0;
+  }
+}
+
+/* v3.41.0 — Daily Rhythm experience states */
+.home-companion-station .is-rhythm .home-station-list{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:.62rem;
+}
+.home-companion-station .home-station-item.is-rhythm-item{
+  grid-template-columns:92px minmax(0,1fr);
+  min-height:82px;
+  padding:.48rem .58rem;
+}
+.home-companion-station .home-station-art{
+  display:block;
+  width:92px;
+  height:62px;
+  overflow:hidden;
+  border-radius:.72rem;
+  background:rgba(126,99,60,.08);
+}
+.home-companion-station .home-station-art img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.home-companion-station .home-station-action{
+  display:inline-flex;
+  align-items:center;
+  gap:.28rem;
+  width:max-content;
+  margin-top:.08rem;
+  color:var(--home-accent);
+  font-size:.76rem;
+  font-weight:800;
+  text-decoration:none;
+}
+.home-companion-station .home-station-action:hover,
+.home-companion-station .home-station-action:focus-visible{
+  text-decoration:underline;
+}
+.home-companion-station .home-station-item.is-rhythm-item:not(:has(.home-station-action)){
+  cursor:default;
+}
+@media(max-width:1180px){
+  .home-companion-station .is-rhythm .home-station-list{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .home-companion-station .home-station-item.is-rhythm-item{grid-template-columns:78px minmax(0,1fr)}
+  .home-companion-station .home-station-art{width:78px;height:56px}
+}
+
+/* v3.42.0 — Companion Home return path */
+.companion-return-trail{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:.42rem;
+  margin:0 0 .9rem;
+  padding:.58rem .72rem;
+  border:1px solid var(--color-border);
+  border-radius:.78rem;
+  background:rgba(255,255,255,.88);
+  color:var(--color-muted);
+  font-size:.78rem;
+}
+.companion-return-trail a{
+  display:inline-flex;
+  align-items:center;
+  gap:.32rem;
+  color:var(--theme-accent-strong);
+  font-weight:800;
+  text-decoration:none;
+}
+.companion-return-trail a:first-child{
+  padding:.28rem .5rem;
+  border-radius:.55rem;
+  background:var(--theme-soft);
+}
+.companion-return-trail a:hover,
+.companion-return-trail a:focus-visible{text-decoration:underline}
+.companion-return-trail>i{font-size:.65rem;opacity:.7}
+.companion-return-trail [aria-current="page"]{font-weight:700;color:var(--color-text)}
+.module-content.is-reader-content>.companion-return-trail{
+  position:relative;
+  z-index:5;
+  margin:.65rem .8rem 0;
+}
+@media(max-width:620px){
+  .companion-return-trail{font-size:.72rem}
+  .companion-return-trail [aria-current="page"]{display:none}
+  .companion-return-trail>i:last-of-type{display:none}
+}

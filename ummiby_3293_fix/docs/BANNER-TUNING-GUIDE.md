@@ -1,0 +1,71 @@
+# Banner Tuning Guide
+
+Banner crop and overlay controls live in:
+
+```text
+css/banner-tuning.css
+```
+
+This file was created so a visual adjustment does not require searching through the primary application styles.
+
+## Move the artwork
+
+Find the page class, such as:
+
+```css
+.module-banner.is-duaa-sleep-banner {
+  --banner-position-desktop: center center;
+  --banner-position-tablet: 62% center;
+  --banner-position-mobile: 72% center;
+}
+```
+
+The first percentage controls horizontal positioning. A larger percentage reveals more of the left side of the artwork; a smaller percentage reveals more of the right side. Each device range may be tuned independently.
+
+## Brighten or darken an overlay
+
+Find the alpha variables for the banner:
+
+```css
+--overlay-start-alpha: .56;
+--overlay-middle-alpha: .44;
+--overlay-soft-alpha: .21;
+--overlay-edge-alpha: .035;
+```
+
+Lower values reveal more of the image. Higher values make the overlay stronger. Start with a change of `.05`, save, and reload the page. Values must remain between `0` and `1`.
+
+## Safe workflow
+
+1. Change one value at a time.
+2. Reload the page and check the banner.
+3. Check both a wide desktop window and a narrow mobile window.
+4. Keep the title and description readable.
+5. Confirm the page-specific subject remains visible.
+
+The artwork files and the main `app-shell.css` file normally do not need to be touched for a simple crop or opacity adjustment.
+
+
+## v3.4.4.2 additions
+
+The editable profile list now also includes:
+
+- Collections
+- History
+- Food & Drink
+- Clothing
+- Anxiety & Sadness
+
+Each profile can be adjusted without affecting any other banner.
+## Showing more of the bottom of an image
+
+Use `bottom` as the second value in a banner position, for example:
+
+```css
+--banner-position-desktop: center bottom;
+--banner-position-tablet: 58% bottom;
+--banner-position-mobile: 66% bottom;
+```
+
+The first value controls left/right positioning. The second controls top/bottom positioning. A value of `100%` is the full-bottom anchor; smaller values raise the image. In v3.4.4.5, the five newest banners use independent vertical values so each can be tuned without affecting the others.
+

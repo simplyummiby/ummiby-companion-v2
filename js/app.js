@@ -1,6 +1,6 @@
 import './quran-sync.js?v=3.29.0';
 import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.29.0";
-import { renderShell, saveActiveJourney } from "./shell.js?v=3.36.0";
+import { renderShell, saveActiveJourney } from "./shell.js?v=3.42.0";
 import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences, dailyActivityForDate, setDailyActivities } from "./duaa.js?v=3.29.0";
 import {
   onAuthStateChange,
@@ -14,7 +14,7 @@ import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.29.0";
 import { setSyncUser, hydrateSyncData, flushSyncQueue } from "./sync.js?v=3.29.0";
 import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.29.0";
 import { clearPreferences, loadPreferences } from "./preferences.js?v=3.29.0";
-import { getPrayerSettings, savePrayerSettings, requestAutomaticLocation, calculatePrayerTimes, formatPrayerTime, getNextPrayer, getPrayerTracker, togglePrayerTracked } from './services/prayer-times.js?v=3.32.0';
+import { getPrayerSettings, savePrayerSettings, requestAutomaticLocation, calculatePrayerTimes, formatPrayerTime, getNextPrayer, getPrayerTracker, togglePrayerTracked, setPrayerStatus } from './services/prayer-times.js?v=3.41.0';
 
 const app = document.querySelector("#app");
 console.info("Canonical Qur’an data verified", QURAN_CANONICAL_STATUS);
@@ -24,10 +24,13 @@ let configured = false;
 const nowForHistory = new Date();
 let historyView = { collectionId:'morning', year:nowForHistory.getFullYear(), month:nowForHistory.getMonth() };
 let quranHistoryView = { year:nowForHistory.getFullYear(), month:nowForHistory.getMonth() };
+let homeTransitionTimer = null;
+let lastAutomaticHomeExperience = null;
 
 const collectionFilterKey = (collectionId) => `ummiby.collectionFilters.${collectionId}`;
 const collectionScrollKey = (collectionId) => `ummiby.collectionScroll.${collectionId}`;
 const collectionReadingSequenceKey = (collectionId) => `ummiby.collectionReadingSequence.${collectionId}`;
+document.addEventListener('keydown', event => { if (event.key === 'Escape') closePrayerStatusMenus(); });
 function localDateKey(date = new Date()) {
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -57,6 +60,12 @@ function prepareRouteLinks() {
     const route = link.getAttribute("href") || "/home";
     link.dataset.appRoute = route;
     link.setAttribute("href", `#${route}`);
+    if (link.hasAttribute('data-companion-entry')) link.addEventListener('click', () => {
+      sessionStorage.setItem('ummiby.navigation.origin', 'companion-home');
+    });
+    if (route === '/home') link.addEventListener('click', () => {
+      sessionStorage.removeItem('ummiby.navigation.origin');
+    });
   });
 }
 
@@ -131,16 +140,52 @@ async function refreshPrayerTimeUI() {
     const times = await calculatePrayerTimes(now, settings);
     const next = getNextPrayer(times, now);
     const tracker = getPrayerTracker(now);
-    const rows = [['fajr','Fajr',times.fajr,true],['sunrise','Sunrise',times.sunrise,false],['dhuhr','Dhuhr',times.dhuhr,true],['asr','Asr',times.asr,true],['maghrib','Maghrib',times.maghrib,true],['isha','Isha',times.isha,true]];
+    const allRows = [['fajr','Fajr',times.fajr,true,'sunrise'],['sunrise','Sunrise',times.sunrise,false,'sun-horizon'],['dhuhr','Dhuhr',times.dhuhr,true,'sun'],['asr','Asr',times.asr,true,'cloud-sun'],['maghrib','Maghrib',times.maghrib,true,'sunset'],['isha','Isha',times.isha,true,'moon-stars']];
     const count = Object.values(tracker).filter(Boolean).length;
-    const markup = rows.map(([key,name,time,trackable]) => {
-      const completed = trackable && tracker[key];
-      const isNext = next?.[0] === name;
-      return `<div class="prayer-tracker-row${isNext?' is-next':''}${completed?' is-complete':''}${!trackable?' is-sunrise':''}"><span class="prayer-row-name">${trackable?`<button type="button" class="prayer-track-toggle" data-prayer-track="${key}" aria-pressed="${completed}" aria-label="${completed?'Undo':'Mark'} ${name} as prayed"><i class="ph ${completed?'ph-check-circle-fill':'ph-circle'}"></i></button>`:'<span class="prayer-sunrise-icon"><i class="ph ph-sun-horizon"></i></span>'}<span>${name}${isNext?'<small>Next prayer</small>':!trackable?'<small>Information only</small>':''}</span></span><strong>${formatPrayerTime(time, settings)}</strong></div>`;
-    }).join('');
-    lists.forEach(list => { list.innerHTML = markup; });
+    const statusMeta = {
+      on_time:{label:'Prayed on time',icon:'check'},
+      late:{label:'Prayed late',icon:'clock'},
+      missed:{label:'Missed',icon:'x'}
+    };
+    lists.forEach(list => {
+      const isHome = Boolean(list.closest('.home-prayer-card'));
+      const rows = allRows;
+      list.innerHTML = rows.map(([key,name,time,trackable,prayerIcon]) => {
+        const status = trackable ? tracker[key] : null;
+        const isNext = next?.[0] === name;
+        if (isHome) {
+          if (!trackable) {
+            return `<div class="prayer-tracker-row is-sunrise${isNext?' is-next':''}" data-prayer-column="${key}">
+              <div class="home-prayer-choice is-information" aria-label="${name} at ${formatPrayerTime(time, settings)}">
+                <span class="prayer-status-circle is-information"><i class="ph ph-info"></i></span>
+                <span class="prayer-display-icon"><i class="ph ph-${prayerIcon}"></i></span>
+                <span class="prayer-display-name">${name}</span>
+                <strong>${formatPrayerTime(time, settings)}</strong>
+              </div>
+            </div>`;
+          }
+          const meta = statusMeta[status] || {label:'Not recorded',icon:'check'};
+          return `<div class="prayer-tracker-row prayer-status-${status || 'unrecorded'}${isNext?' is-next':''}" data-prayer-column="${key}">
+            <button type="button" class="home-prayer-choice" data-prayer-menu-trigger="${key}" aria-haspopup="menu" aria-expanded="false" aria-label="Set ${name} prayer status. Current status: ${meta.label}">
+              <span class="prayer-status-circle"><i class="ph ph-${meta.icon}"></i></span>
+              <span class="prayer-display-icon"><i class="ph ph-${prayerIcon}"></i></span>
+              <span class="prayer-display-name">${name}</span>
+              <strong>${formatPrayerTime(time, settings)}</strong>
+            </button>
+            <div class="prayer-status-menu" data-prayer-status-menu="${key}" role="menu" hidden>
+              <button type="button" role="menuitemradio" aria-checked="${status==='on_time'}" data-prayer-status-choice="on_time"><i class="ph ph-check-circle"></i><span><strong>Prayed on time</strong><small>Completed within its prayer time</small></span></button>
+              <button type="button" role="menuitemradio" aria-checked="${status==='late'}" data-prayer-status-choice="late"><i class="ph ph-clock"></i><span><strong>Prayed late</strong><small>Completed after its prayer time</small></span></button>
+              <button type="button" role="menuitemradio" aria-checked="${status==='missed'}" data-prayer-status-choice="missed"><i class="ph ph-x-circle"></i><span><strong>Missed</strong><small>Not prayed</small></span></button>
+              ${status ? '<button type="button" class="prayer-clear-status" role="menuitem" data-prayer-status-choice="clear"><i class="ph ph-arrow-counter-clockwise"></i><span><strong>Clear status</strong></span></button>' : ''}
+            </div>
+          </div>`;
+        }
+        const completed = Boolean(status);
+        return `<div class="prayer-tracker-row${isNext?' is-next':''}${completed?' is-complete':''}${!trackable?' is-sunrise':''}"><span class="prayer-row-name">${trackable?`<button type="button" class="prayer-track-toggle" data-prayer-track="${key}" aria-pressed="${completed}" aria-label="${completed?'Undo':'Mark'} ${name} as prayed"><i class="ph ${completed?'ph-check-circle-fill':'ph-circle'}"></i></button>`:'<span class="prayer-sunrise-icon"><i class="ph ph-sun-horizon"></i></span>'}<span>${name}${isNext?'<small>Next prayer</small>':!trackable?'<small>Information only</small>':''}</span></span><strong>${formatPrayerTime(time, settings)}</strong></div>`;
+      }).join('');
+    });
     app.querySelectorAll('[data-prayer-progress]').forEach(node => { node.textContent = `${count} of 5`; });
-    app.querySelectorAll('[data-prayer-completion-message]').forEach(node => { node.textContent = count === 5 ? 'All five prayers completed today. Alhamdulillah.' : `${count} of 5 prayers completed today.`; });
+    app.querySelectorAll('[data-prayer-completion-message]').forEach(node => { node.textContent = count === 5 ? 'All five prayers recorded today. Alhamdulillah.' : `${count} of 5 prayers recorded today.`; });
     app.querySelectorAll('[data-prayer-next-summary]').forEach(node => {
       if (next) { node.hidden = false; node.innerHTML = `<span>Next prayer</span><strong>${next[0]} · ${formatPrayerTime(next[1], settings)}</strong>`; }
       else { node.hidden = true; node.innerHTML = ''; }
@@ -151,9 +196,39 @@ async function refreshPrayerTimeUI() {
       toast(updated[prayer] ? `${prayer.charAt(0).toUpperCase()+prayer.slice(1)} marked as prayed.` : 'Prayer mark removed.');
       await refreshPrayerTimeUI();
     }));
+    bindHomePrayerStatusMenus();
   } catch (error) {
     lists.forEach(list => { list.innerHTML = `<p class="prayer-loading">${error.message}</p>`; });
   }
+}
+
+function closePrayerStatusMenus() {
+  app.querySelectorAll('[data-prayer-status-menu]').forEach(menu => { menu.hidden = true; });
+  app.querySelectorAll('[data-prayer-menu-trigger]').forEach(trigger => trigger.setAttribute('aria-expanded','false'));
+}
+
+function bindHomePrayerStatusMenus() {
+  const triggers = [...app.querySelectorAll('[data-prayer-menu-trigger]')];
+  if (!triggers.length) return;
+  triggers.forEach(trigger => trigger.addEventListener('click', event => {
+    event.stopPropagation();
+    const prayer = trigger.dataset.prayerMenuTrigger;
+    const menu = app.querySelector(`[data-prayer-status-menu="${prayer}"]`);
+    const willOpen = menu?.hidden;
+    closePrayerStatusMenus();
+    if (menu && willOpen) { menu.hidden = false; trigger.setAttribute('aria-expanded','true'); menu.querySelector('button')?.focus(); setTimeout(() => document.addEventListener('click', closePrayerStatusMenus, {once:true}), 0); }
+  }));
+  app.querySelectorAll('[data-prayer-status-choice]').forEach(choice => choice.addEventListener('click', async event => {
+    event.stopPropagation();
+    const row = choice.closest('[data-prayer-column]');
+    const prayer = row?.dataset.prayerColumn;
+    if (!prayer) return;
+    const selected = choice.dataset.prayerStatusChoice;
+    setPrayerStatus(prayer, selected === 'clear' ? null : selected, new Date());
+    const labels = {on_time:'Prayed on time.',late:'Prayer recorded as late.',missed:'Prayer recorded as missed.',clear:'Prayer status cleared.'};
+    toast(labels[selected] || 'Prayer status updated.');
+    await refreshPrayerTimeUI();
+  }));
 }
 
 async function refreshHomeStatus(){
@@ -173,7 +248,27 @@ async function refreshHomeStatus(){
   }catch{if(weatherNode)weatherNode.innerHTML='<i class="ph ph-cloud-slash"></i><span><small>Weather</small><strong>Unavailable</strong></span>';}
 }
 
+
+function scheduleHomeLiveTransition(){
+  if(homeTransitionTimer){window.clearInterval(homeTransitionTimer);homeTransitionTimer=null;}
+  const page=app.querySelector('[data-home-experience]');
+  if(!page||page.dataset.homePreviewMode!=='automatic')return;
+  lastAutomaticHomeExperience=page.dataset.homeExperience;
+  homeTransitionTimer=window.setInterval(()=>{
+    const current=automaticHomeExperienceForApp(new Date());
+    if(current===lastAutomaticHomeExperience)return;
+    lastAutomaticHomeExperience=current;
+    page.classList.add('is-transitioning');
+    window.setTimeout(()=>render(),420);
+  },30000);
+}
+function automaticHomeExperienceForApp(date=new Date()){
+  const h=date.getHours()+date.getMinutes()/60;
+  if(h<6)return'fajr'; if(h<11.5)return'morning'; if(h<16)return'dhuhr'; if(h<18.5)return'asr'; if(h<20.5)return'maghrib'; return'isha';
+}
+
 function bindShellEvents() {
+  scheduleHomeLiveTransition();
   refreshPrayerTimeUI().then(refreshHomeStatus);
   app.querySelector('[data-home-preview]')?.addEventListener('change', event => {
     localStorage.setItem('ummiby.home.preview', event.currentTarget.value);

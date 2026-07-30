@@ -1,4 +1,65 @@
+## v3.42.0 — Companion Navigation Continuity
+
+- Cemented the navigation rule: every journey launched from Companion Home preserves a visible path back to Companion Home at every level.
+- Clearly distinguishes **Companion Home** from module landing pages such as **Duaa Home** and **Qur’an Home**.
+- Added a contextual navigation trail to collection pages, landing pages, and reading modes entered through Daily Rhythm.
+- Preserved normal module navigation when users enter modules directly rather than through Companion Home.
+- Retained the Daily Rhythm two-column, three-row arrangement and all other v3.41.0 Home behavior.
+
 # Changelog
+
+## v3.41.0 — Daily Rhythm Experience States
+
+- Expanded Daily Rhythm to six persistent cards: Qur’an Reading, Morning Adhkār, Evening Adhkār, Surah Al-Mulk, Surah As-Sajdah, and Before Sleep Duʿā.
+- Replaced software-like “Available now” labels with contextual action links such as Read, Continue Reading, and Read Again.
+- Added non-clickable timing guidance including Later Today, Tonight, and Earlier Today when an item is outside its natural experience.
+- Added completion-aware states for adhkār and nightly featured readings.
+- Added reusable landscape artwork to each Daily Rhythm card while preserving the rest of the Home Companion Station.
+
+## v3.40.0 — Home Companion Station Grid Correction
+
+- Rebuilt the desktop Home layout around one explicit shared content frame.
+- Locked the top row to Greeting | Prayer Times | Daily Reflection.
+- Forced Prayer Times into the center column rather than relying on incidental document flow.
+- Matched the outer edges of Daily Rhythm and Today’s Opportunities to the outer edges of the top row.
+- Removed the desktop greeting overflow and reduced its title scale.
+- Preserved the continuous courtyard background, time-of-day weather strip, and themed footer.
+
+## v3.39.0 — Cohesive Full-Courtyard Companion Station
+
+- Rebuilt Home as one continuous courtyard beneath the time-responsive weather strip.
+- Aligned Greeting, Prayer Times, and Daily Reflection in one cohesive top row.
+- Reduced the greeting scale and removed frosted-glass styling from the five primary panels.
+- Added Sunrise to the Home prayer strip as an informational, non-trackable time.
+- Aligned Daily Rhythm and Today’s Opportunities to the same outer content frame as the top row.
+- Brought the lower panels upward and tightened vertical spacing to improve full-screen visibility.
+- Added a themed footer that follows the current time-of-day accent.
+
+## 3.39.0 — Home Companion Station First Draft
+
+- Reframed Home as a responsive, leave-open companion station.
+- Added Daily Rhythm and Today’s Opportunities panels.
+- Kept the weather/status strip directly beneath navigation.
+- Moved prayer times into a horizontal hero layout.
+- Added live automatic time-of-day transitions.
+
+## 3.37.0 — Home Prayer Status & Top-Right Layout
+
+- Moved Today’s Prayer into the upper-right of the desktop Home content region.
+- Added four-state daily prayer tracking: unrecorded, on time, late, and missed.
+- Added floating status choices with outside-click and Escape dismissal.
+- Removed individual prayer boxes and introduced icon-led vertical prayer columns.
+- Preserved earlier boolean prayer records as on-time entries.
+
+# Changelog
+
+## v3.41.0 — Daily Rhythm Experience States
+
+- Expanded Daily Rhythm to six persistent cards: Qur’an Reading, Morning Adhkār, Evening Adhkār, Surah Al-Mulk, Surah As-Sajdah, and Before Sleep Duʿā.
+- Replaced software-like “Available now” labels with contextual action links such as Read, Continue Reading, and Read Again.
+- Added non-clickable timing guidance including Later Today, Tonight, and Earlier Today when an item is outside its natural experience.
+- Added completion-aware states for adhkār and nightly featured readings.
+- Added reusable landscape artwork to each Daily Rhythm card while preserving the rest of the Home Companion Station.
 
 ## 3.36.0 — Home Experience Layout Refinement
 
@@ -60,6 +121,14 @@
 
 # Changelog
 
+## v3.41.0 — Daily Rhythm Experience States
+
+- Expanded Daily Rhythm to six persistent cards: Qur’an Reading, Morning Adhkār, Evening Adhkār, Surah Al-Mulk, Surah As-Sajdah, and Before Sleep Duʿā.
+- Replaced software-like “Available now” labels with contextual action links such as Read, Continue Reading, and Read Again.
+- Added non-clickable timing guidance including Later Today, Tonight, and Earlier Today when an item is outside its natural experience.
+- Added completion-aware states for adhkār and nightly featured readings.
+- Added reusable landscape artwork to each Daily Rhythm card while preserving the rest of the Home Companion Station.
+
 ## 3.28.2 — Featured Reading Banner and Shared Section Card Repair
 
 - Restored the Featured Readings page banner to the shared compact Qur’an banner height.
@@ -86,6 +155,14 @@
 
 # Changelog
 
+## v3.41.0 — Daily Rhythm Experience States
+
+- Expanded Daily Rhythm to six persistent cards: Qur’an Reading, Morning Adhkār, Evening Adhkār, Surah Al-Mulk, Surah As-Sajdah, and Before Sleep Duʿā.
+- Replaced software-like “Available now” labels with contextual action links such as Read, Continue Reading, and Read Again.
+- Added non-clickable timing guidance including Later Today, Tonight, and Earlier Today when an item is outside its natural experience.
+- Added completion-aware states for adhkār and nightly featured readings.
+- Added reusable landscape artwork to each Daily Rhythm card while preserving the rest of the Home Companion Station.
+
 ## 3.27.1.5 — Featured Readings Framework and Reader Navigation Repair
 
 - Restored reliable navigation for Al-Kahf, Al-Mulk, and Reading Unit Journey readers.
@@ -105,6 +182,14 @@
 - Removed public use of the internal term “Experience” from Qur’an reading pages.
 
 # Changelog
+
+## v3.41.0 — Daily Rhythm Experience States
+
+- Expanded Daily Rhythm to six persistent cards: Qur’an Reading, Morning Adhkār, Evening Adhkār, Surah Al-Mulk, Surah As-Sajdah, and Before Sleep Duʿā.
+- Replaced software-like “Available now” labels with contextual action links such as Read, Continue Reading, and Read Again.
+- Added non-clickable timing guidance including Later Today, Tonight, and Earlier Today when an item is outside its natural experience.
+- Added completion-aware states for adhkār and nightly featured readings.
+- Added reusable landscape artwork to each Daily Rhythm card while preserving the rest of the Home Companion Station.
 
 ## 3.27.1.3
 - Centered KPI icons and values beneath every history-card heading.
@@ -157,6 +242,14 @@
 - Added shared local-first sync foundation, offline queue, hydration, device-timezone dates, and migrated Duaa daily tracking.
 
 # Changelog
+
+## v3.41.0 — Daily Rhythm Experience States
+
+- Expanded Daily Rhythm to six persistent cards: Qur’an Reading, Morning Adhkār, Evening Adhkār, Surah Al-Mulk, Surah As-Sajdah, and Before Sleep Duʿā.
+- Replaced software-like “Available now” labels with contextual action links such as Read, Continue Reading, and Read Again.
+- Added non-clickable timing guidance including Later Today, Tonight, and Earlier Today when an item is outside its natural experience.
+- Added completion-aware states for adhkār and nightly featured readings.
+- Added reusable landscape artwork to each Daily Rhythm card while preserving the rest of the Home Companion Station.
 
 ## v3.25.3 – Al-Mulk Landing Page Alignment
 
@@ -248,6 +341,14 @@
 
 # Changelog
 
+## v3.41.0 — Daily Rhythm Experience States
+
+- Expanded Daily Rhythm to six persistent cards: Qur’an Reading, Morning Adhkār, Evening Adhkār, Surah Al-Mulk, Surah As-Sajdah, and Before Sleep Duʿā.
+- Replaced software-like “Available now” labels with contextual action links such as Read, Continue Reading, and Read Again.
+- Added non-clickable timing guidance including Later Today, Tonight, and Earlier Today when an item is outside its natural experience.
+- Added completion-aware states for adhkār and nightly featured readings.
+- Added reusable landscape artwork to each Daily Rhythm card while preserving the rest of the Home Companion Station.
+
 ## v3.16.0 – Qur’an Reading Position & Journey Starting Point
 
 - Fixed **Go to saved spot** in Reading Unit mode and added a temporary restored-location highlight.
@@ -285,6 +386,14 @@
 - Preserved Prayer Companion v3.13.0 and all existing modules.
 
 # Changelog
+
+## v3.41.0 — Daily Rhythm Experience States
+
+- Expanded Daily Rhythm to six persistent cards: Qur’an Reading, Morning Adhkār, Evening Adhkār, Surah Al-Mulk, Surah As-Sajdah, and Before Sleep Duʿā.
+- Replaced software-like “Available now” labels with contextual action links such as Read, Continue Reading, and Read Again.
+- Added non-clickable timing guidance including Later Today, Tonight, and Earlier Today when an item is outside its natural experience.
+- Added completion-aware states for adhkār and nightly featured readings.
+- Added reusable landscape artwork to each Daily Rhythm card while preserving the rest of the Home Companion Station.
 
 ## v3.13.0 — Prayer Companion Foundation
 - Added the complete Prayer Companion module shell, navigation, routing, ancient-gold visual identity, responsive home, prayer-time placeholder panel, and standardized banner.

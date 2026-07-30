@@ -1,0 +1,895 @@
+body {
+  min-width: 320px;
+  background: var(--color-canvas);
+}
+
+.boot-screen {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: var(--space-4);
+  color: var(--color-muted);
+}
+
+.boot-mark,
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 62px;
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in srgb, var(--theme-accent) 28%, var(--color-border));
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--theme-soft) 70%, white);
+  color: var(--theme-accent-strong);
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  box-shadow: inset 0 1px 0 white, 0 5px 14px rgb(28 54 86 / 0.06);
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  grid-template-rows: var(--banner-height) minmax(0, 1fr);
+  grid-template-areas:
+    "brand banner"
+    "sidebar workspace";
+}
+
+.brand-panel {
+  grid-area: brand;
+  display: grid;
+  place-items: center;
+  padding: var(--space-5);
+  background: var(--color-sidebar);
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.brand-lockup {
+  display: grid;
+  justify-items: center;
+  gap: 0.62rem;
+  text-align: center;
+}
+
+.brand-name {
+  margin: 0;
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  font-size: 1.02rem;
+  line-height: 1.16;
+}
+
+.brand-version {
+  margin: -0.1rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.64rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.module-banner {
+  grid-area: banner;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+  z-index: 20;
+  padding: var(--space-6) clamp(1.5rem, 4vw, 4rem);
+  background: color-mix(in srgb, var(--theme-soft) 68%, #fffefa);
+  border-bottom: 1px solid color-mix(in srgb, var(--theme-accent) 16%, var(--color-border));
+}
+
+.module-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 72% 32%, rgb(255 255 255 / 0.72), transparent 26%),
+    linear-gradient(90deg, rgb(255 255 255 / 0.95) 0%, rgb(255 255 255 / 0.7) 42%, transparent 76%);
+}
+
+.banner-copy {
+  width: min(100%, 980px);
+  max-width: none;
+}
+
+.banner-eyebrow {
+  margin: 0 0 var(--space-2);
+  font-size: 0.73rem;
+  font-weight: 850;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--theme-accent-strong);
+}
+
+.banner-title {
+  margin: 0;
+  max-width: none;
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.25vw, 3.15rem);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+}
+
+.banner-description {
+  max-width: none;
+  margin: 0.5rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.app-sidebar {
+  grid-area: sidebar;
+  position: sticky;
+  top: 0;
+  align-self: start;
+  min-height: calc(100vh - var(--banner-height));
+  padding: 0.9rem 0.65rem 1.2rem;
+  background: var(--color-sidebar);
+  border-right: 1px solid var(--color-border);
+}
+
+.sidebar-nav {
+  display: grid;
+  justify-items: center;
+  gap: 0.34rem;
+}
+
+.sidebar-link {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 0.4rem;
+  width: 112px;
+  min-height: 82px;
+  padding: 0.65rem 0.42rem;
+  border: 1px solid transparent;
+  border-radius: 0.9rem;
+  color: var(--color-sidebar-muted);
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 780;
+  line-height: 1.12;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.sidebar-link:hover {
+  background: #f8fafb;
+  color: var(--theme-accent-strong);
+  transform: translateY(-1px);
+}
+
+.sidebar-link.is-active {
+  background: color-mix(in srgb, var(--theme-soft) 65%, white);
+  color: var(--theme-accent-strong);
+  border-color: color-mix(in srgb, var(--theme-accent) 18%, var(--color-border));
+  box-shadow: 0 6px 16px rgb(28 54 86 / 0.055), inset 0 1px 0 white;
+}
+
+.sidebar-icon {
+  display: block;
+  width: 36px;
+  height: 36px;
+  font-size: 36px;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+
+.module-workspace {
+  grid-area: workspace;
+  min-width: 0;
+  background: var(--color-canvas);
+}
+
+.module-nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  min-height: var(--module-nav-height);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  overflow-x: auto;
+  padding: 0 clamp(1rem, 3vw, 3rem);
+  background: var(--theme-accent-strong);
+  color: var(--theme-contrast);
+  box-shadow: 0 4px 12px rgb(23 46 75 / 0.11);
+  scrollbar-width: thin;
+}
+
+.module-nav-link {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  min-height: var(--module-nav-height);
+  padding: 0 var(--space-4);
+  border-bottom: 3px solid transparent;
+  color: rgb(255 255 255 / 0.92);
+  text-decoration: none;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.005em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  transition: color 150ms ease, border-color 150ms ease, background 150ms ease;
+}
+
+.module-nav-link:hover {
+  color: white;
+  background: rgb(255 255 255 / 0.07);
+}
+
+.module-nav-link.is-active {
+  color: white;
+  border-bottom-color: white;
+}
+
+.module-content {
+  width: min(100%, var(--content-max-width));
+  margin-inline: auto;
+  padding: clamp(1.5rem, 4vw, 3.75rem);
+}
+
+@media (max-width: 780px) {
+  .app-shell { display: block; }
+
+  .brand-panel {
+    min-height: 74px;
+    padding: var(--space-3) var(--space-4);
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .brand-lockup {
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    justify-items: start;
+    column-gap: 0.85rem;
+    text-align: left;
+  }
+
+  .brand-mark { width: 46px; font-size: 1.4rem; }
+  .brand-version { margin: 0 0 0 auto; }
+  .module-banner { min-height: 154px; padding-block: 1.45rem; }
+  .banner-title,
+  .banner-description { white-space: normal; }
+  .banner-title { font-size: clamp(1.8rem, 8vw, 2.55rem); }
+  .banner-description { max-width: 46ch; font-size: 0.78rem; }
+
+  .app-sidebar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    min-height: auto;
+    padding: 0.45rem;
+    overflow-x: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .sidebar-nav {
+    display: flex;
+    min-width: max-content;
+    gap: 0.25rem;
+  }
+
+  .sidebar-link {
+    width: 88px;
+    min-height: 72px;
+    padding: 0.5rem;
+  }
+
+  .sidebar-icon { width: 31px; height: 31px; font-size: 31px; }
+  .module-nav-bar { top: 81px; }
+}
+
+@media (max-width: 520px) {
+  .module-banner {
+    background-position: 62% center;
+  }
+
+  .module-banner::before {
+    background: linear-gradient(90deg, rgb(255 255 255 / 0.98) 0%, rgb(255 255 255 / 0.92) 58%, rgb(255 255 255 / 0.55) 100%);
+  }
+
+  .banner-description { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar-link,
+  .module-nav-link { transition: none; }
+}
+
+/* v2.1.3 active module navigation */
+.module-nav-link.is-active {
+  background: rgb(255 255 255 / .14);
+  color: #fff;
+}
+
+/* v3.2.2 account menu polish and layout fixes */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.account-control {
+  position: absolute;
+  top: 1.15rem;
+  right: clamp(1rem, 2.5vw, 2.5rem);
+  z-index: 40;
+}
+
+.profile-button {
+  display: inline-flex;
+  align-items: center;
+  gap: .34rem;
+  padding: .15rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--theme-accent-strong);
+  cursor: pointer;
+}
+
+.profile-button:hover,
+.profile-button:focus-visible,
+.profile-button[aria-expanded="true"] {
+  background: rgb(255 255 255 / .45);
+  outline: none;
+}
+
+.profile-button:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--theme-accent) 24%, transparent);
+}
+
+.profile-button > i {
+  font-size: .9rem;
+  filter: drop-shadow(0 1px 1px rgb(255 255 255 / .8));
+  transition: transform 160ms ease;
+}
+
+.profile-button[aria-expanded="true"] > i { transform: rotate(180deg); }
+
+.profile-avatar {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  aspect-ratio: 1;
+  border: 2px solid rgb(255 255 255 / .92);
+  border-radius: 50%;
+  background: var(--theme-accent-strong);
+  color: white;
+  font-size: .75rem;
+  font-weight: 850;
+  letter-spacing: .02em;
+  box-shadow: 0 6px 16px rgb(23 46 75 / .18);
+}
+
+.profile-avatar.is-large {
+  width: 48px;
+  border-width: 0;
+  font-size: .86rem;
+  box-shadow: none;
+}
+
+.account-menu {
+  position: absolute;
+  top: calc(100% + .85rem);
+  right: 0;
+  z-index: 60;
+  width: min(352px, calc(100vw - 2rem));
+  padding: .72rem;
+  border: 1px solid color-mix(in srgb, var(--theme-accent) 12%, var(--color-border));
+  border-radius: 1.05rem;
+  background: white;
+  box-shadow: 0 24px 64px rgb(23 46 75 / .22), 0 4px 14px rgb(23 46 75 / .08);
+  transform-origin: top right;
+  animation: account-menu-in 170ms ease-out;
+}
+
+@keyframes account-menu-in {
+  from { opacity: 0; transform: translateY(-6px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.account-menu[hidden] { display: none; }
+
+.account-summary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: .9rem;
+  padding: .72rem .72rem .82rem;
+}
+
+.account-summary div { min-width: 0; }
+.account-summary strong,
+.account-summary span { display: block; }
+.account-summary strong { color: var(--color-ink); font-size: .96rem; }
+.account-summary div span {
+  margin-top: .18rem;
+  overflow: hidden;
+  color: var(--color-muted);
+  font-size: .78rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.account-menu-divider {
+  height: 1px;
+  margin: .38rem .25rem;
+  background: var(--color-border);
+}
+
+.account-menu > button {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  align-items: center;
+  gap: .7rem;
+  width: 100%;
+  padding: .76rem .78rem;
+  border: 0;
+  border-radius: .74rem;
+  background: transparent;
+  color: var(--color-ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.account-menu > button:hover,
+.account-menu > button:focus-visible {
+  background: var(--theme-soft);
+  color: var(--theme-accent-strong);
+  outline: none;
+}
+
+.account-menu > button i { font-size: 1.18rem; }
+.account-menu > .account-sign-out { color: var(--color-danger); }
+.account-menu > .account-sign-out:hover,
+.account-menu > .account-sign-out:focus-visible { background: #fff2f4; color: var(--color-danger); }
+
+.account-dialog {
+  width: min(520px, calc(100vw - 2rem));
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 1.2rem;
+  color: var(--color-ink);
+  box-shadow: 0 22px 70px rgb(23 46 75 / .24);
+}
+
+.account-dialog::backdrop { background: rgb(17 30 48 / .46); }
+.account-dialog form { padding: 1.5rem; }
+
+.dialog-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.35rem;
+}
+.dialog-heading h2 { margin: .2rem 0 0; font-family: var(--font-serif); font-size: 1.85rem; }
+.dialog-heading .page-kicker { margin: 0; }
+.dialog-close {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  aspect-ratio: 1;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: white;
+  color: var(--color-muted);
+  cursor: pointer;
+}
+.dialog-close:hover,
+.dialog-close:focus-visible { color: var(--color-ink); background: var(--theme-soft); outline: none; }
+
+.account-details { display: grid; gap: .2rem; margin: 0; }
+.account-details > div {
+  display: grid;
+  grid-template-columns: minmax(130px, .8fr) minmax(0, 1.4fr);
+  gap: 1rem;
+  padding: .85rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.account-details dt { color: var(--color-muted); font-size: .8rem; font-weight: 750; }
+.account-details dd { margin: 0; overflow-wrap: anywhere; font-size: .88rem; font-weight: 650; }
+.dialog-note { margin: 1rem 0 0; color: var(--color-muted); font-size: .78rem; line-height: 1.55; }
+.account-empty-state { padding: 1.4rem .5rem 1rem; text-align: center; }
+.account-empty-state > i { color: var(--theme-accent-strong); font-size: 2.5rem; }
+.account-empty-state h3 { margin: .8rem 0 .4rem; }
+.account-empty-state p { max-width: 42ch; margin: 0 auto; color: var(--color-muted); line-height: 1.6; }
+.about-mark {
+  display: grid;
+  place-items: center;
+  width: 70px;
+  aspect-ratio: 1;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: var(--theme-soft);
+  color: var(--theme-accent-strong);
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 750;
+}
+.dialog-actions { display: flex; justify-content: flex-end; gap: .7rem; margin-top: 1.35rem; }
+.button-danger { border-color: var(--color-danger); background: var(--color-danger); color: white; }
+.button-danger:hover { filter: brightness(.94); }
+
+@media (max-width: 780px) {
+  .module-banner { padding-right: 5.25rem; }
+  .account-control { top: .85rem; right: .85rem; }
+}
+
+@media (max-width: 520px) {
+  .module-banner { padding-right: 4.75rem; }
+  .profile-avatar { width: 37px; }
+  .account-menu { right: -.2rem; width: min(352px, calc(100vw - 1.5rem)); }
+  .account-details > div { grid-template-columns: 1fr; gap: .25rem; }
+}
+
+
+.account-preview-note {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: .55rem;
+  margin: .5rem .4rem .25rem;
+  padding: .7rem;
+  border-radius: .7rem;
+  background: var(--theme-soft);
+  color: var(--color-muted);
+  font-size: .72rem;
+  line-height: 1.45;
+}
+.account-preview-note i { color: var(--theme-accent-strong); font-size: 1rem; }
+
+
+/* v3.4.0 Duaa Home intentionally composed banner */
+.module-banner.is-duaa-home-banner {
+  background-color: #dceefa;
+  background-image: url('../assets/banners/duaa-home-banner.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  border-bottom-color: rgb(39 104 153 / .2);
+}
+
+.module-banner.is-duaa-home-banner::before {
+  background: linear-gradient(90deg,
+    rgb(244 250 255 / .97) 0%,
+    rgb(244 250 255 / .9) 25%,
+    rgb(244 250 255 / .62) 39%,
+    rgb(244 250 255 / .12) 56%,
+    transparent 70%);
+}
+
+.module-banner.is-duaa-home-banner .banner-copy {
+  max-width: min(43%, 620px);
+}
+
+.module-banner.is-duaa-home-banner .banner-eyebrow { color: #1f639f; }
+.module-banner.is-duaa-home-banner .banner-title { color: #163e5e; }
+.module-banner.is-duaa-home-banner .banner-description {
+  max-width: 40ch;
+  color: #355f7a;
+}
+
+@media (max-width: 780px) {
+  .module-banner.is-duaa-home-banner { background-position: 57% center; }
+  .module-banner.is-duaa-home-banner .banner-copy { max-width: 68%; }
+}
+
+@media (max-width: 520px) {
+  .module-banner.is-duaa-home-banner { background-position: 63% center; }
+  .module-banner.is-duaa-home-banner::before {
+    background: linear-gradient(90deg, rgb(244 250 255 / .98) 0%, rgb(244 250 255 / .92) 62%, rgb(244 250 255 / .48) 100%);
+  }
+  .module-banner.is-duaa-home-banner .banner-copy { max-width: calc(100% - 2.5rem); }
+}
+
+/* v3.4.2 Morning Duaas — same place, different time of day */
+.module-banner.is-duaa-morning-banner {
+  background-color: #e5f2fb;
+  background-image:
+    linear-gradient(90deg, rgb(255 224 181 / .16), rgb(93 151 190 / .1)),
+    url('../assets/banners/duaa-morning-banner.jpg');
+  background-repeat: no-repeat;
+  background-blend-mode: multiply, normal;
+  background-position: center center;
+  background-size: cover;
+  border-bottom-color: rgb(39 104 153 / .2);
+}
+.module-banner.is-duaa-morning-banner::before {
+  background: linear-gradient(90deg,
+    rgb(247 249 252 / .97) 0%,
+    rgb(247 249 252 / .89) 25%,
+    rgb(236 242 248 / .59) 39%,
+    rgb(188 211 228 / .12) 56%,
+    transparent 70%);
+}
+.module-banner.is-duaa-morning-banner .banner-copy { max-width: min(43%, 620px); }
+.module-banner.is-duaa-morning-banner .banner-eyebrow { color: #1f639f; }
+.module-banner.is-duaa-morning-banner .banner-title { color: #163e5e; }
+.module-banner.is-duaa-morning-banner .banner-description { max-width: 40ch; color: #355f7a; }
+@media (max-width: 780px) {
+  .module-banner.is-duaa-morning-banner { background-position: 57% center; }
+  .module-banner.is-duaa-morning-banner .banner-copy { max-width: 68%; }
+}
+@media (max-width: 520px) {
+  .module-banner.is-duaa-morning-banner { background-position: 63% center; }
+  .module-banner.is-duaa-morning-banner::before {
+    background: linear-gradient(90deg, rgb(247 251 255 / .98) 0%, rgb(247 251 255 / .93) 62%, rgb(247 251 255 / .5) 100%);
+  }
+  .module-banner.is-duaa-morning-banner .banner-copy { max-width: calc(100% - 2.5rem); }
+}
+
+/* v3.4.3.1 situational Duaa banner presentation polish */
+.module-banner.is-duaa-travel-banner,
+.module-banner.is-duaa-weather-banner,
+.module-banner.is-duaa-prayer-banner {
+  isolation: isolate;
+  background-color: #dceefa;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border-bottom-color: rgb(39 104 153 / .2);
+}
+.module-banner.is-duaa-travel-banner { background-image: url('../assets/banners/duaa-travel-banner.jpg'); }
+.module-banner.is-duaa-weather-banner { background-image: url('../assets/banners/duaa-weather-banner.jpg'); }
+.module-banner.is-duaa-prayer-banner { background-image: url('../assets/banners/duaa-prayer-banner.jpg'); }
+.module-banner.is-duaa-travel-banner::before,
+.module-banner.is-duaa-prayer-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgb(244 250 255 / .94) 0%, rgb(244 250 255 / .84) 25%, rgb(244 250 255 / .48) 42%, rgb(244 250 255 / .08) 61%, transparent 74%);
+}
+.module-banner.is-duaa-weather-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgb(239 246 251 / .93) 0%, rgb(239 246 251 / .82) 27%, rgb(225 236 244 / .47) 44%, rgb(211 225 235 / .08) 62%, transparent 75%);
+}
+.module-banner.is-duaa-travel-banner .banner-copy,
+.module-banner.is-duaa-weather-banner .banner-copy,
+.module-banner.is-duaa-prayer-banner .banner-copy { max-width: min(43%, 620px); }
+.module-banner.is-duaa-travel-banner .banner-eyebrow,
+.module-banner.is-duaa-weather-banner .banner-eyebrow,
+.module-banner.is-duaa-prayer-banner .banner-eyebrow { color: #1f639f; }
+.module-banner.is-duaa-travel-banner .banner-title,
+.module-banner.is-duaa-weather-banner .banner-title,
+.module-banner.is-duaa-prayer-banner .banner-title { color: #163e5e; text-shadow: none; }
+.module-banner.is-duaa-travel-banner .banner-description,
+.module-banner.is-duaa-weather-banner .banner-description,
+.module-banner.is-duaa-prayer-banner .banner-description { max-width: 40ch; color: #355f7a; text-shadow: none; }
+@media (max-width: 900px) {
+  .module-banner.is-duaa-travel-banner,
+  .module-banner.is-duaa-weather-banner,
+  .module-banner.is-duaa-prayer-banner { background-position: 58% center; }
+  .module-banner.is-duaa-travel-banner .banner-copy,
+  .module-banner.is-duaa-weather-banner .banner-copy,
+  .module-banner.is-duaa-prayer-banner .banner-copy { max-width: 68%; }
+}
+@media (max-width: 620px) {
+  .module-banner.is-duaa-travel-banner,
+  .module-banner.is-duaa-weather-banner,
+  .module-banner.is-duaa-prayer-banner { background-position: 66% center; }
+  .module-banner.is-duaa-travel-banner::before,
+  .module-banner.is-duaa-prayer-banner::before {
+    background: linear-gradient(90deg, rgb(244 250 255 / .98) 0%, rgb(244 250 255 / .92) 62%, rgb(244 250 255 / .5) 100%);
+  }
+  .module-banner.is-duaa-weather-banner::before {
+    background: linear-gradient(90deg, rgb(239 246 251 / .98) 0%, rgb(239 246 251 / .92) 62%, rgb(225 236 244 / .52) 100%);
+  }
+  .module-banner.is-duaa-travel-banner .banner-copy,
+  .module-banner.is-duaa-weather-banner .banner-copy,
+  .module-banner.is-duaa-prayer-banner .banner-copy { max-width: calc(100% - 2.5rem); }
+}
+
+
+/* v3.4.4 Evening and Before Sleep — same place, later hours */
+.module-banner.is-duaa-evening-banner,
+.module-banner.is-duaa-sleep-banner {
+  isolation: isolate;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border-bottom-color: rgb(39 104 153 / .24);
+}
+.module-banner.is-duaa-evening-banner {
+  background-color: #384c70;
+  background-image: url('../assets/banners/duaa-evening-banner.jpg');
+}
+.module-banner.is-duaa-sleep-banner {
+  background-color: #101f38;
+  background-image: url('../assets/banners/duaa-sleep-banner.jpg');
+}
+.module-banner.is-duaa-evening-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg,
+    rgb(20 37 64 / .76) 0%,
+    rgb(23 42 72 / .64) 25%,
+    rgb(34 49 78 / .34) 43%,
+    rgb(34 49 78 / .07) 61%,
+    transparent 74%);
+}
+.module-banner.is-duaa-sleep-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg,
+    rgb(8 20 39 / .82) 0%,
+    rgb(10 24 45 / .7) 27%,
+    rgb(12 28 52 / .38) 45%,
+    rgb(12 28 52 / .09) 63%,
+    transparent 76%);
+}
+.module-banner.is-duaa-evening-banner .banner-copy,
+.module-banner.is-duaa-sleep-banner .banner-copy { max-width: min(43%, 620px); }
+.module-banner.is-duaa-evening-banner .banner-eyebrow,
+.module-banner.is-duaa-sleep-banner .banner-eyebrow { color: #f1c56f; }
+.module-banner.is-duaa-evening-banner .banner-title,
+.module-banner.is-duaa-sleep-banner .banner-title {
+  color: #fffdf8;
+  text-shadow: 0 2px 18px rgb(4 12 26 / .35);
+}
+.module-banner.is-duaa-evening-banner .banner-description,
+.module-banner.is-duaa-sleep-banner .banner-description {
+  max-width: 42ch;
+  color: rgb(244 248 255 / .9);
+  text-shadow: 0 1px 10px rgb(4 12 26 / .38);
+}
+@media (max-width: 900px) {
+  .module-banner.is-duaa-evening-banner { background-position: 59% center; }
+  .module-banner.is-duaa-sleep-banner { background-position: 62% center; }
+  .module-banner.is-duaa-evening-banner .banner-copy,
+  .module-banner.is-duaa-sleep-banner .banner-copy { max-width: 68%; }
+}
+@media (max-width: 620px) {
+  .module-banner.is-duaa-evening-banner { background-position: 67% center; }
+  .module-banner.is-duaa-sleep-banner { background-position: 72% center; }
+  .module-banner.is-duaa-evening-banner::before {
+    background: linear-gradient(90deg, rgb(20 37 64 / .9) 0%, rgb(23 42 72 / .82) 62%, rgb(34 49 78 / .42) 100%);
+  }
+  .module-banner.is-duaa-sleep-banner::before {
+    background: linear-gradient(90deg, rgb(8 20 39 / .92) 0%, rgb(10 24 45 / .86) 62%, rgb(12 28 52 / .48) 100%);
+  }
+  .module-banner.is-duaa-evening-banner .banner-copy,
+  .module-banner.is-duaa-sleep-banner .banner-copy { max-width: calc(100% - 2.5rem); }
+}
+
+/* v3.4.4.2 Collections, History, and additional collection banners */
+.module-banner.is-duaa-collections-banner,
+.module-banner.is-duaa-food-banner,
+.module-banner.is-duaa-clothing-banner,
+.module-banner.is-duaa-anxiety-banner,
+.module-banner.is-duaa-quranic-banner,
+.module-banner.is-duaa-history-banner {
+  isolation: isolate;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border-bottom-color: rgb(39 104 153 / .22);
+}
+.module-banner.is-duaa-collections-banner { background-color:#e7f2f8; background-image:url('../assets/banners/duaa-collections-banner.jpg'); }
+.module-banner.is-duaa-history-banner { background-color:#263f66; background-image:url('../assets/banners/duaa-history-banner.jpg'); }
+.module-banner.is-duaa-food-banner { background-color:#edf5f8; background-image:url('../assets/banners/duaa-food-banner.jpg'); }
+.module-banner.is-duaa-clothing-banner { background-color:#edf3f6; background-image:url('../assets/banners/duaa-clothing-banner.jpg'); }
+.module-banner.is-duaa-anxiety-banner { background-color:#e8f4f6; background-image:url('../assets/banners/duaa-anxiety-banner.jpg'); }
+.module-banner.is-duaa-quranic-banner { background-color:#e8f4f6; background-image:url('../assets/banners/duaa-quranic-banner.jpg'); }
+.module-banner.is-duaa-collections-banner::before,
+.module-banner.is-duaa-food-banner::before,
+.module-banner.is-duaa-clothing-banner::before,
+.module-banner.is-duaa-anxiety-banner::before,
+.module-banner.is-duaa-quranic-banner::before,
+.module-banner.is-duaa-history-banner::before { content:''; position:absolute; inset:0; z-index:-1; }
+.module-banner.is-duaa-collections-banner .banner-copy,
+.module-banner.is-duaa-food-banner .banner-copy,
+.module-banner.is-duaa-clothing-banner .banner-copy,
+.module-banner.is-duaa-anxiety-banner .banner-copy,
+.module-banner.is-duaa-quranic-banner .banner-copy,
+.module-banner.is-duaa-history-banner .banner-copy { max-width:min(43%,620px); }
+.module-banner.is-duaa-collections-banner .banner-eyebrow,
+.module-banner.is-duaa-food-banner .banner-eyebrow,
+.module-banner.is-duaa-clothing-banner .banner-eyebrow,
+.module-banner.is-duaa-anxiety-banner .banner-eyebrow,
+.module-banner.is-duaa-quranic-banner .banner-eyebrow { color:#1f639f; }
+.module-banner.is-duaa-collections-banner .banner-title,
+.module-banner.is-duaa-food-banner .banner-title,
+.module-banner.is-duaa-clothing-banner .banner-title,
+.module-banner.is-duaa-anxiety-banner .banner-title,
+.module-banner.is-duaa-quranic-banner .banner-title { color:#163e5e; text-shadow:none; }
+.module-banner.is-duaa-collections-banner .banner-description,
+.module-banner.is-duaa-food-banner .banner-description,
+.module-banner.is-duaa-clothing-banner .banner-description,
+.module-banner.is-duaa-anxiety-banner .banner-description,
+.module-banner.is-duaa-quranic-banner .banner-description { max-width:42ch; color:#355f7a; text-shadow:none; }
+.module-banner.is-duaa-history-banner .banner-eyebrow { color:#f1c56f; }
+.module-banner.is-duaa-history-banner .banner-title { color:#fffdf8; text-shadow:0 2px 18px rgb(4 12 26 / .35); }
+.module-banner.is-duaa-history-banner .banner-description { max-width:42ch; color:rgb(244 248 255 / .92); text-shadow:0 1px 10px rgb(4 12 26 / .38); }
+@media(max-width:900px){
+  .module-banner.is-duaa-collections-banner .banner-copy,
+  .module-banner.is-duaa-food-banner .banner-copy,
+  .module-banner.is-duaa-clothing-banner .banner-copy,
+  .module-banner.is-duaa-anxiety-banner .banner-copy,
+.module-banner.is-duaa-quranic-banner .banner-copy,
+  .module-banner.is-duaa-history-banner .banner-copy { max-width:68%; }
+}
+@media(max-width:620px){
+  .module-banner.is-duaa-collections-banner .banner-copy,
+  .module-banner.is-duaa-food-banner .banner-copy,
+  .module-banner.is-duaa-clothing-banner .banner-copy,
+  .module-banner.is-duaa-anxiety-banner .banner-copy,
+.module-banner.is-duaa-quranic-banner .banner-copy,
+  .module-banner.is-duaa-history-banner .banner-copy { max-width:calc(100% - 2.5rem); }
+}
+
+
+/* v3.28.4 Featured Reading banner artwork consolidation
+   The shared global banner dimensions remain unchanged. */
+.module-banner.is-kahf-featured-banner,
+.module-banner.is-mulk-featured-banner,
+.module-banner.is-sajdah-featured-banner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.module-banner.is-kahf-featured-banner {
+  background-image: url('../assets/images/quran/al-kahf/friday-hero.webp');
+  background-position: center 48%;
+}
+.module-banner.is-mulk-featured-banner {
+  background-image: url('../assets/images/quran/al-mulk/mulk-hero-image.png');
+  background-position: center 54%;
+}
+.module-banner.is-sajdah-featured-banner {
+  background-image: url('../assets/images/quran/as-sajdah/sajdah-hero.png');
+  background-position: center 56%;
+}
+.module-banner.is-kahf-featured-banner::before,
+.module-banner.is-mulk-featured-banner::before,
+.module-banner.is-sajdah-featured-banner::before {
+  background: linear-gradient(90deg, rgb(247 252 247 / .98) 0%, rgb(247 252 247 / .90) 34%, rgb(247 252 247 / .42) 62%, rgb(247 252 247 / .10) 100%);
+}
+.module-banner.is-kahf-featured-banner .banner-copy,
+.module-banner.is-mulk-featured-banner .banner-copy,
+.module-banner.is-sajdah-featured-banner .banner-copy { max-width: min(58%, 720px); }
+@media (max-width: 760px) {
+  .module-banner.is-kahf-featured-banner,
+  .module-banner.is-mulk-featured-banner,
+  .module-banner.is-sajdah-featured-banner { background-position: 62% center; }
+  .module-banner.is-kahf-featured-banner::before,
+  .module-banner.is-mulk-featured-banner::before,
+  .module-banner.is-sajdah-featured-banner::before {
+    background: linear-gradient(90deg, rgb(247 252 247 / .98) 0%, rgb(247 252 247 / .92) 60%, rgb(247 252 247 / .48) 100%);
+  }
+  .module-banner.is-kahf-featured-banner .banner-copy,
+  .module-banner.is-mulk-featured-banner .banner-copy,
+  .module-banner.is-sajdah-featured-banner .banner-copy { max-width: calc(100% - 2.5rem); }
+}

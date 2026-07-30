@@ -1,0 +1,95 @@
+:root {
+  color-scheme: light;
+
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+  --font-arabic: "Amiri Quran", "Amiri", serif;
+
+  --color-ink: #17233a;
+  --color-muted: #667084;
+  --color-surface: #ffffff;
+  --color-canvas: #fffefa;
+  --color-border: #e3e8ee;
+  --color-sidebar: #fffefb;
+  --color-sidebar-deep: #fafaf7;
+  --color-sidebar-text: #18243a;
+  --color-sidebar-muted: #536173;
+  --color-sidebar-active: #f7f8fb;
+  --color-danger: #a83145;
+  --color-success: #19704e;
+
+  --theme-accent: #4f6f91;
+  --theme-accent-strong: #244f7a;
+  --theme-soft: #edf5fc;
+  --theme-contrast: #ffffff;
+
+  --sidebar-width: 152px;
+  --banner-height: 190px;
+  --module-nav-height: 60px;
+  --content-max-width: 1200px;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+
+  --radius-sm: 0.65rem;
+  --radius-md: 0.95rem;
+  --radius-lg: 1.15rem;
+  --shadow-soft: 0 12px 30px rgb(28 54 86 / 0.07);
+  --shadow-card: 0 8px 22px rgb(28 54 86 / 0.055);
+
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-canvas);
+}
+
+[data-theme="home"] {
+  --theme-accent: #6c64a3;
+  --theme-accent-strong: #4e4388;
+  --theme-soft: #f1effa;
+}
+
+[data-theme="quran"] {
+  --theme-accent: #31825f;
+  --theme-accent-strong: #176342;
+  --theme-soft: #eaf7f0;
+}
+
+[data-theme="duaa"] {
+  --theme-accent: #1f639f;
+  --theme-accent-strong: #1f639f;
+  --theme-soft: #edf6ff;
+}
+
+[data-theme="names"] {
+  --theme-accent: #35558a;
+  --theme-accent-strong: #213d70;
+  --theme-soft: #edf2fb;
+}
+
+[data-theme="prayer"] {
+  --theme-accent: #a6782f;
+  --theme-accent-strong: #75501c;
+  --theme-soft: #fbf3e4;
+}
+
+[data-theme="ramadan"] {
+  --theme-accent: #7d3e79;
+  --theme-accent-strong: #61255d;
+  --theme-soft: #f8eef9;
+}
+
+[data-theme="settings"] {
+  --theme-accent: #52677b;
+  --theme-accent-strong: #344b61;
+  --theme-soft: #f0f4f7;
+}
+
+* { box-sizing: border-box; }
+html, body { min-height: 100%; margin: 0; }
+button, input { font: inherit; }
+a { color: inherit; }
