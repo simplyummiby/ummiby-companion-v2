@@ -1,6 +1,6 @@
 import './quran-sync.js?v=3.29.0';
 import { QURAN_CANONICAL_STATUS } from "./data/quran-canonical.js?v=3.29.0";
-import { renderShell, saveActiveJourney } from "./shell.js?v=3.31.1";
+import { renderShell, saveActiveJourney } from "./shell.js?v=3.36.0";
 import { toggleComplete, toggleMemorized, toggleWorshipToday, setDuaaOrder, updateReadingPreferences, readingPreferences, dailyActivityForDate, setDailyActivities } from "./duaa.js?v=3.29.0";
 import {
   onAuthStateChange,
@@ -14,7 +14,7 @@ import { initializeSupabase, getSupabaseClient } from "./supabase.js?v=3.29.0";
 import { setSyncUser, hydrateSyncData, flushSyncQueue } from "./sync.js?v=3.29.0";
 import { clearIdentity, getIdentity, initializeIdentity, loadProfile } from "./identity.js?v=3.29.0";
 import { clearPreferences, loadPreferences } from "./preferences.js?v=3.29.0";
-import { getPrayerSettings, savePrayerSettings, requestAutomaticLocation, calculatePrayerTimes, formatPrayerTime, getNextPrayer, getPrayerTracker, togglePrayerTracked } from './services/prayer-times.js?v=3.31.1';
+import { getPrayerSettings, savePrayerSettings, requestAutomaticLocation, calculatePrayerTimes, formatPrayerTime, getNextPrayer, getPrayerTracker, togglePrayerTracked } from './services/prayer-times.js?v=3.32.0';
 
 const app = document.querySelector("#app");
 console.info("Canonical Qur’an data verified", QURAN_CANONICAL_STATUS);
@@ -156,8 +156,29 @@ async function refreshPrayerTimeUI() {
   }
 }
 
+async function refreshHomeStatus(){
+  const weatherNode=app.querySelector('[data-home-weather]');
+  if(!weatherNode&&!app.querySelector('[data-home-next-prayer]'))return;
+  const settings=getPrayerSettings();
+  try{
+    if(Number.isFinite(settings.latitude)&&Number.isFinite(settings.longitude)){
+      const times=await calculatePrayerTimes(new Date(),settings),next=getNextPrayer(times,new Date());
+      app.querySelectorAll('[data-home-next-prayer]').forEach(n=>n.textContent=next?`${next[0]} ${formatPrayerTime(next[1],settings)}`:'Tomorrow’s Fajr');
+      const key=`ummiby.weather.${settings.latitude.toFixed(2)}.${settings.longitude.toFixed(2)}`,cached=JSON.parse(localStorage.getItem(key)||'null'),fresh=cached&&Date.now()-cached.at<1800000;
+      let data=cached?.data;
+      if(!fresh){const url=`https://api.open-meteo.com/v1/forecast?latitude=${settings.latitude}&longitude=${settings.longitude}&current=temperature_2m,weather_code&temperature_unit=fahrenheit`;const r=await fetch(url);if(!r.ok)throw new Error('Weather unavailable');data=await r.json();localStorage.setItem(key,JSON.stringify({at:Date.now(),data}));}
+      const code=data?.current?.weather_code,temp=Math.round(data?.current?.temperature_2m);const labels={0:'Clear',1:'Mostly clear',2:'Partly cloudy',3:'Cloudy',45:'Fog',48:'Fog',51:'Drizzle',53:'Drizzle',55:'Drizzle',61:'Rain',63:'Rain',65:'Rain',71:'Snow',80:'Showers',95:'Thunderstorm'};
+      if(weatherNode&&Number.isFinite(temp))weatherNode.innerHTML=`<i class="ph ph-cloud-sun"></i><span><small>Weather</small><strong>${temp}°F · ${labels[code]||'Current weather'}</strong></span>`;
+    }
+  }catch{if(weatherNode)weatherNode.innerHTML='<i class="ph ph-cloud-slash"></i><span><small>Weather</small><strong>Unavailable</strong></span>';}
+}
+
 function bindShellEvents() {
-  refreshPrayerTimeUI();
+  refreshPrayerTimeUI().then(refreshHomeStatus);
+  app.querySelector('[data-home-preview]')?.addEventListener('change', event => {
+    localStorage.setItem('ummiby.home.preview', event.currentTarget.value);
+    render();
+  });
   app.querySelector('[data-prayer-location]')?.addEventListener('click', async event => {
     const button=event.currentTarget; const status=app.querySelector('[data-prayer-location-status]');
     button.disabled=true; if(status) status.textContent='Requesting your device location…';

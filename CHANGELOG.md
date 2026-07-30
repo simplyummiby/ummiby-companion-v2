@@ -1,5 +1,23 @@
 # Changelog
 
+## 3.36.0 — Home Experience Layout Refinement
+
+- Enlarged and spread out integrated Home navigation for improved readability.
+- Raised and tightened the greeting panel while preserving the single-line salutation.
+- Reworked Today’s Prayer into one continuous horizontal schedule with subtle dividers rather than individual pill cards.
+- Raised Today’s Prayer and tightened the overall vertical rhythm to better fit the complete Home experience on a 1080p display.
+- Restyled companion cards to match the lighter reference design, with left-side icons, softer surfaces, and more compact spacing.
+- Preserved the weather strip, dynamic experiences, prayer calculations, and Developer Preview.
+
+## v3.32.0 — Dynamic Home Experience (Phase 1 – Asr Home)
+
+- Replaced the App Home dashboard with an artwork-first Asr courtyard experience.
+- Added a taller Asr hero that preserves the full fountain and foreground rug.
+- Added concise Qur’an, Evening Adhkār, and Prepare for Sleep guidance cards.
+- Moved the live prayer tracker into a warm, textured right-column anchor aligned with the first card.
+- Added Gregorian and Hijri dates plus notification and settings controls in the hero.
+- Kept all other time-of-day layouts unchanged for future phases.
+
 ## v3.31.0 — Automatic Location Prayer-Time Foundation
 
 - Added a shared Adhan.js prayer-time service for browser-based calculations.

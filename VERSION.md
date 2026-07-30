@@ -1,5 +1,4 @@
 # Ummiby Companion
 
-Version: 3.31.1
-
-Release: Live Prayer Times & Daily Tracker
+**Version:** 3.36.0  
+**Release:** Home Experience Layout Refinement
